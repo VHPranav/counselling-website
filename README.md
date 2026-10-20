@@ -64,7 +64,7 @@ docs/                    Malayalam review tracker
 - Every animation uses transform/opacity only and stops under `prefers-reduced-motion`.
 - Smooth scroll, magnetic buttons and the cursor ring load after the page is idle,
   and only on desktop with a mouse (`MotionBoot.tsx`). Touch phones get native scrolling.
-- The breathing circle and testimonial marquee have pause buttons, and pause when off screen.
+- The breathing circle and testimonial marquee have pause buttons; the breathing circle also pauses when off screen.
 - The "How it works" section pins with CSS `position: sticky` on desktop and is a plain list on mobile.
 
 ## Accessibility and contrast
