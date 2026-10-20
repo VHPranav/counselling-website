@@ -60,6 +60,37 @@ scripts/                 i18n-check
 docs/                    Malayalam review tracker
 ```
 
+## Booking
+
+The flow lives at `/[locale]/book` (service → therapist or "match me" → date & time →
+details & consent) and ends at `/[locale]/book/confirmed?ref=XXXXXX`.
+
+- **Links can pre-fill it:** `/ml/book?service=couples`, `?therapist=therapist-2`, `?match=1`.
+- **No health information is collected,** stored, logged or put in a URL. Concerns and
+  notes are for the session itself.
+- **Validation** is one zod schema (`src/lib/booking/schema.ts`), checked in the browser
+  and again on the server (`src/app/[locale]/book/actions.ts`).
+- **Teens (13–17)** get a guardian section and guardian consent; the server rejects teen
+  bookings without it.
+- **Notifications:** set `RESEND_API_KEY`, `BOOKING_NOTIFY_TO` and `BOOKING_EMAIL_FROM`
+  (see `.env.example`) to email the team and the client. Without them the site runs in
+  demo mode: it logs only the booking reference and the confirmation page says so.
+- **Times** are generated in IST and shown in the visitor's own time zone.
+
+### Booking backend
+
+The UI only talks to the `BookingProvider` interface in `src/lib/booking/types.ts`.
+Today that's `mock-provider.ts`, which generates demo availability and stores nothing.
+To go live:
+
+1. Write a provider that reads real availability (e.g. Google Calendar or Cal.com) and
+   saves bookings to a database, holding the slot while the client pays.
+2. Return it from `getBookingProvider()` in `src/lib/booking/index.ts`.
+3. Implement `PaymentProvider` with Razorpay and send the payment link from
+   `submitBooking` (or after a team member confirms).
+
+No component changes are needed.
+
 ## Motion
 
 - Every animation uses transform/opacity only and stops under `prefers-reduced-motion`.

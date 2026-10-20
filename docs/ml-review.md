@@ -7,7 +7,7 @@ in `content/**/ml/*.mdx` is listed separately at the bottom as it is added.
 To approve a string, add its key to `docs/ml-review.status.json` with the value `"approved"`
 (or `"changed"` if you edited the Malayalam), then re-run the script.
 
-**333 of 333 strings still need native-speaker review.**
+**440 of 440 strings still need native-speaker review.**
 
 | Key | Malayalam | English source | Status |
 |---|---|---|---|
@@ -248,6 +248,113 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `therapistsPage.credentialsTitle` | യോഗ്യതയും രജിസ്ട്രേഷനും | Qualifications and registration | needs native-speaker review |
 | `therapistsPage.credentialsBody` | [ബിരുദങ്ങൾ, RCI രജിസ്ട്രേഷൻ നമ്പർ, പ്രൊഫഷണൽ അംഗത്വങ്ങൾ — നൽകി പരിശോധിക്കാനുണ്ട്.] | [Degrees, RCI registration number and professional memberships, to be supplied and verified.] | needs native-speaker review |
 | `therapistsPage.other` | മറ്റ് തെറാപ്പിസ്റ്റുകൾ | Other therapists | needs native-speaker review |
+| `booking.metaTitle` | സെഷൻ ബുക്ക് ചെയ്യാം | Book a session | needs native-speaker review |
+| `booking.metaDescription` | മലയാളത്തിലോ ഇംഗ്ലീഷിലോ ഒരു ഓൺലൈൻ കൗൺസലിങ് സെഷൻ ബുക്ക് ചെയ്യാം. സേവനവും തെറാപ്പിസ്റ്റിനെയും സൗകര്യപ്രദമായ സമയവും തിരഞ്ഞെടുക്കൂ. | Book an online counselling session in Malayalam or English. Choose a service, a therapist and a time that suits you. | needs native-speaker review |
+| `booking.title` | സെഷൻ ബുക്ക് ചെയ്യാം | Book a session | needs native-speaker review |
+| `booking.lead` | കുറച്ച് ചെറിയ ഘട്ടങ്ങൾ മാത്രം. എപ്പോൾ വേണമെങ്കിലും പിന്നോട്ട് പോകാം; അപേക്ഷ അയക്കുന്നത് വരെ ഒന്നും ഉറപ്പാകില്ല. | A few short steps. You can go back at any point, and nothing is final until you send your request. | needs native-speaker review |
+| `booking.progressLabel` | ബുക്കിങ് ഘട്ടങ്ങൾ | Booking steps | needs native-speaker review |
+| `booking.stepOf` | ഘട്ടം {n} / {total} | Step {n} of {total} | needs native-speaker review |
+| `booking.stepService` | സേവനം | Service | needs native-speaker review |
+| `booking.stepTherapist` | തെറാപ്പിസ്റ്റ് | Therapist | needs native-speaker review |
+| `booking.stepTime` | തീയതിയും സമയവും | Date & time | needs native-speaker review |
+| `booking.stepDetails` | നിങ്ങളുടെ വിവരങ്ങൾ | Your details | needs native-speaker review |
+| `booking.back` | പിന്നോട്ട് | Back | needs native-speaker review |
+| `booking.next` | തുടരാം | Continue | needs native-speaker review |
+| `booking.change` | മാറ്റാം | Change | needs native-speaker review |
+| `booking.serviceTitle` | ഏത് തരം സെഷനാണ് വേണ്ടത്? | What kind of session would you like? | needs native-speaker review |
+| `booking.therapistTitle` | ആരോടാണ് സംസാരിക്കാൻ ആഗ്രഹിക്കുന്നത്? | Who would you like to talk to? | needs native-speaker review |
+| `booking.matchTitle` | യോജിച്ച ഒരാളെ കണ്ടെത്തി തരൂ | Match me with someone | needs native-speaker review |
+| `booking.matchBody` | ആരെ തിരഞ്ഞെടുക്കണമെന്ന് ഉറപ്പില്ലേ? ഭാഷയും സമയവും തിരഞ്ഞെടുക്കൂ, നിങ്ങൾക്ക് യോജിച്ച ഒരു തെറാപ്പിസ്റ്റിനെ ഞങ്ങൾ നിർദ്ദേശിക്കാം. | Not sure who to choose? Pick a language and a time, and we'll suggest a therapist who suits you. | needs native-speaker review |
+| `booking.matchLanguage` | ഇഷ്ടമുള്ള ഭാഷ | Preferred language | needs native-speaker review |
+| `booking.either` | ഏതായാലും മതി | Either is fine | needs native-speaker review |
+| `booking.orChoose` | അല്ലെങ്കിൽ നിങ്ങൾ തന്നെ ഒരു തെറാപ്പിസ്റ്റിനെ തിരഞ്ഞെടുക്കൂ | Or choose a therapist yourself | needs native-speaker review |
+| `booking.noTherapists` | ഈ സെഷൻ തരം നൽകുന്ന തെറാപ്പിസ്റ്റുകൾ ഇപ്പോഴില്ല. മറ്റൊരു സേവനം തിരഞ്ഞെടുക്കൂ, അല്ലെങ്കിൽ ഞങ്ങൾ യോജിച്ച ആളെ കണ്ടെത്താം. | No therapists offer this session type yet. Please choose another service or let us match you. | needs native-speaker review |
+| `booking.selected` | തിരഞ്ഞെടുത്തു | Selected | needs native-speaker review |
+| `booking.matched` | ഞങ്ങൾ കണ്ടെത്തും | We'll match you | needs native-speaker review |
+| `booking.timeTitle` | തീയതിയും സമയവും തിരഞ്ഞെടുക്കൂ | Pick a date and time | needs native-speaker review |
+| `booking.timezone` | നിങ്ങളുടെ സമയമേഖലയിലാണ് ({tz}) സമയം കാണിക്കുന്നത്. | Times are shown in your time zone ({tz}). | needs native-speaker review |
+| `booking.loadingSlots` | ഒഴിവുള്ള സമയങ്ങൾ നോക്കുന്നു… | Finding open times… | needs native-speaker review |
+| `booking.noSlotsDay` | ഈ ദിവസം ഒഴിവുള്ള സമയമില്ല. | No open times on this day. | needs native-speaker review |
+| `booking.noSlots` | അടുത്ത മൂന്ന് ആഴ്ചകളിൽ ഒഴിവുള്ള സമയമില്ല. മറ്റൊരു തെറാപ്പിസ്റ്റിനെ നോക്കൂ, അല്ലെങ്കിൽ ഞങ്ങൾ യോജിച്ച ആളെ കണ്ടെത്താം. | No open times in the next three weeks. Try another therapist, or let us match you. | needs native-speaker review |
+| `booking.slotsFor` | {date} — ഒഴിവുള്ള സമയങ്ങൾ | Open times on {date} | needs native-speaker review |
+| `booking.mockNote` | [മാതൃകാ ലഭ്യത. യഥാർത്ഥ സമയങ്ങൾ ഓരോ തെറാപ്പിസ്റ്റിന്റെയും കലണ്ടറിൽ നിന്ന് വരും.] | [Demo availability. Real times will come from each therapist's calendar.] | needs native-speaker review |
+| `booking.mode` | എങ്ങനെ സംസാരിക്കാനാണ് ഇഷ്ടം? | How would you like to meet? | needs native-speaker review |
+| `booking.morning` | രാവിലെ | Morning | needs native-speaker review |
+| `booking.afternoon` | ഉച്ചയ്ക്ക് ശേഷം | Afternoon | needs native-speaker review |
+| `booking.evening` | വൈകുന്നേരം | Evening | needs native-speaker review |
+| `booking.prevDays` | മുമ്പത്തെ തീയതികൾ | Earlier dates | needs native-speaker review |
+| `booking.nextDays` | പിന്നത്തെ തീയതികൾ | Later dates | needs native-speaker review |
+| `booking.dateGroup` | ഒരു തീയതി തിരഞ്ഞെടുക്കൂ | Choose a date | needs native-speaker review |
+| `booking.detailsTitle` | കുറച്ച് വിവരങ്ങൾ | A few details | needs native-speaker review |
+| `booking.detailsLead` | സെഷൻ ക്രമീകരിക്കാൻ ആവശ്യമുള്ളത് മാത്രമേ ഞങ്ങൾ ചോദിക്കുന്നുള്ളൂ. | We only ask for what we need to arrange your session. | needs native-speaker review |
+| `booking.forWhom` | ഈ സെഷൻ ആർക്കുവേണ്ടിയാണ്? | Who is this session for? | needs native-speaker review |
+| `booking.forMe` | എനിക്ക് | For me | needs native-speaker review |
+| `booking.forSomeone` | മറ്റൊരാൾക്ക് | For someone else | needs native-speaker review |
+| `booking.someoneAgree` | ഈ ബുക്കിങ്ങിനെക്കുറിച്ച് അവർക്ക് അറിയാം, അവർ സമ്മതിക്കുന്നു. | They know about this booking and agree to it. | needs native-speaker review |
+| `booking.name` | പേര് | Name | needs native-speaker review |
+| `booking.nameHint` | ആദ്യ പേരോ വിളിപ്പേരോ മതി. | A first name or nickname is fine. | needs native-speaker review |
+| `booking.nameOther` | അവരുടെ പേര് | Their name | needs native-speaker review |
+| `booking.email` | ഇമെയിൽ | Email | needs native-speaker review |
+| `booking.phone` | ഫോൺ അല്ലെങ്കിൽ വാട്സ്ആപ്പ് നമ്പർ | Phone or WhatsApp number | needs native-speaker review |
+| `booking.phoneHint` | കൺട്രി കോഡ് ഉൾപ്പെടെ, ഉദാ. +91. | Include the country code, e.g. +91. | needs native-speaker review |
+| `booking.contactHint` | ഒന്നെങ്കിലും നൽകൂ. സെഷൻ ഉറപ്പിക്കാനും ഓർമ്മിപ്പിക്കാനും മാത്രമേ ഇത് ഉപയോഗിക്കൂ. | Give at least one. We'll use it only to confirm and remind you about sessions. | needs native-speaker review |
+| `booking.whatsappOk` | ഈ ബുക്കിങ്ങിനെക്കുറിച്ച് എനിക്ക് വാട്സ്ആപ്പിൽ മെസ്സേജ് അയക്കാം. | You can message me on WhatsApp about this booking. | needs native-speaker review |
+| `booking.sessionLanguage` | സെഷനിലെ ഭാഷ | Session language | needs native-speaker review |
+| `booking.both` | രണ്ടും | Both | needs native-speaker review |
+| `booking.guardianTitle` | മാതാപിതാക്കൾ / രക്ഷിതാവ് | Parent or guardian | needs native-speaker review |
+| `booking.guardianLead` | കൗമാരക്കാരുടെ സെഷനുകൾക്ക് മാതാപിതാക്കളുടെയോ രക്ഷിതാവിന്റെയോ സമ്മതം വേണം. ഇത് ഒരുമിച്ച് പൂരിപ്പിക്കൂ. | Teen sessions need a parent or guardian's consent. Please fill this in together. | needs native-speaker review |
+| `booking.teenAge` | കുട്ടിയുടെ പ്രായം | Teen's age | needs native-speaker review |
+| `booking.guardianName` | രക്ഷിതാവിന്റെ പേര് | Parent or guardian's name | needs native-speaker review |
+| `booking.guardianRelation` | കുട്ടിയുമായുള്ള ബന്ധം | Relationship to the teen | needs native-speaker review |
+| `booking.mother` | അമ്മ | Mother | needs native-speaker review |
+| `booking.father` | അച്ഛൻ | Father | needs native-speaker review |
+| `booking.legalGuardian` | നിയമപരമായ രക്ഷിതാവ് | Legal guardian | needs native-speaker review |
+| `booking.guardianContact` | രക്ഷിതാവിന്റെ ഫോൺ അല്ലെങ്കിൽ ഇമെയിൽ | Parent or guardian's phone or email | needs native-speaker review |
+| `booking.guardianConsent` | ഞാൻ കുട്ടിയുടെ മാതാവ്/പിതാവ് അല്ലെങ്കിൽ നിയമപരമായ രക്ഷിതാവാണ്. കുട്ടികളുടെ സംരക്ഷണ നയത്തിൽ പറഞ്ഞിരിക്കുന്നത് പ്രകാരം ഈ സെഷനുകൾക്ക് ഞാൻ സമ്മതം നൽകുന്നു. | I am the parent or legal guardian, and I consent to these sessions as described in the Minor Protection Policy. | needs native-speaker review |
+| `booking.under13` | 13 വയസ്സിന് താഴെയുള്ള കുട്ടികൾക്കായി, ഞങ്ങളെ നേരിട്ട് ബന്ധപ്പെടൂ. | For children under 13, please contact us directly. | needs native-speaker review |
+| `booking.consentTitle` | സമ്മതം | Consent | needs native-speaker review |
+| `booking.consentAge` | എനിക്ക് 18 വയസ്സോ അതിൽ കൂടുതലോ ഉണ്ട്. | I am 18 or older. | needs native-speaker review |
+| `booking.consentTerms` | ഉപയോഗ നിബന്ധനകൾ, തെറാപ്പി ഉടമ്പടി, സ്വകാര്യതാ നയം എന്നിവ ഞാൻ വായിച്ചു, അംഗീകരിക്കുന്നു. | I have read and agree to the Terms of Use, the Therapy Agreement and the Privacy Policy. | needs native-speaker review |
+| `booking.consentData` | സ്വകാര്യതാ നയത്തിൽ വിശദീകരിച്ചിരിക്കുന്നത് പോലെ, സെഷനുകൾ ക്രമീകരിക്കാനും നൽകാനും ഈ വിവരങ്ങൾ ഉപയോഗിക്കുന്നതിന് ഞാൻ സമ്മതിക്കുന്നു. | I agree that these details may be used to arrange and provide my sessions, as explained in the Privacy Policy. | needs native-speaker review |
+| `booking.consentCrisis` | ഇതൊരു അടിയന്തര സേവനമല്ലെന്ന് ഞാൻ മനസ്സിലാക്കുന്നു. | I understand this is not an emergency service. | needs native-speaker review |
+| `booking.readPolicies` | നയങ്ങൾ വായിക്കാം | Read the policies | needs native-speaker review |
+| `booking.privacyTitle` | നിങ്ങളുടെ വിവരങ്ങൾക്ക് എന്ത് സംഭവിക്കും | What happens to your details | needs native-speaker review |
+| `booking.privacy1` | സെഷൻ ക്രമീകരിക്കുന്നവർക്കും നിങ്ങളുടെ തെറാപ്പിസ്റ്റിനും മാത്രമേ ഇവ കാണാനാകൂ. | Only the people arranging your session, and your therapist, can see them. | needs native-speaker review |
+| `booking.privacy2` | ഇവ ഒരിക്കലും വിൽക്കുകയോ പരസ്യത്തിനായി പങ്കുവെക്കുകയോ ഇല്ല. | We never sell them or share them for advertising. | needs native-speaker review |
+| `booking.privacy3` | എപ്പോൾ വേണമെങ്കിലും ഇവ കാണാനോ തിരുത്താനോ നീക്കം ചെയ്യാനോ ആവശ്യപ്പെടാം. | You can ask us to see, correct or delete them at any time. | needs native-speaker review |
+| `booking.privacy4` | നിങ്ങൾ എന്താണ് അനുഭവിക്കുന്നതെന്ന് ഇവിടെ ചോദിക്കുന്നില്ല. അത് നിങ്ങളുടെ സമയത്ത്, തെറാപ്പിസ്റ്റിനോട് പറയാം. | We don't ask what you're going through here. You can share that with your therapist, in your own time. | needs native-speaker review |
+| `booking.payTitle` | പണമടയ്ക്കൽ | Payment | needs native-speaker review |
+| `booking.payNote` | [ഓൺലൈൻ പേയ്മെന്റ് (Razorpay) ഉടൻ വരും. ഇപ്പോൾ, സെഷൻ ഉറപ്പിക്കുമ്പോൾ ഒരു സുരക്ഷിത പേയ്മെന്റ് ലിങ്ക് അയച്ചുതരും.] | [Online payment (Razorpay) is coming soon. For now, we'll send a secure payment link when we confirm your session.] | needs native-speaker review |
+| `booking.submit` | ബുക്കിങ് അപേക്ഷ അയക്കാം | Send booking request | needs native-speaker review |
+| `booking.submitting` | അയക്കുന്നു… | Sending… | needs native-speaker review |
+| `booking.summaryTitle` | നിങ്ങളുടെ സെഷൻ | Your session | needs native-speaker review |
+| `booking.summaryService` | സേവനം | Service | needs native-speaker review |
+| `booking.summaryTherapist` | തെറാപ്പിസ്റ്റ് | Therapist | needs native-speaker review |
+| `booking.summaryWhen` | എപ്പോൾ | When | needs native-speaker review |
+| `booking.summaryFormat` | രീതി | Format | needs native-speaker review |
+| `booking.summaryFee` | ഫീസ് | Fee | needs native-speaker review |
+| `booking.errorRequired` | ദയവായി ഇത് പൂരിപ്പിക്കൂ. | Please fill this in. | needs native-speaker review |
+| `booking.errorEmail` | ശരിയായ ഒരു ഇമെയിൽ വിലാസം നൽകൂ. | Please enter a valid email address. | needs native-speaker review |
+| `booking.errorPhone` | കൺട്രി കോഡോടെ ഫോൺ നമ്പർ നൽകൂ. | Please enter a phone number with the country code. | needs native-speaker review |
+| `booking.errorContact` | സ്ഥിരീകരിക്കാനായി ഒരു ഇമെയിലോ ഫോൺ നമ്പറോ നൽകൂ. | Please give an email or a phone number so we can confirm. | needs native-speaker review |
+| `booking.errorConsent` | തുടരാൻ ഇത് ടിക്ക് ചെയ്യൂ. | Please tick this to continue. | needs native-speaker review |
+| `booking.errorSummary` | അടയാളപ്പെടുത്തിയ ഫീൽഡുകൾ ഒന്ന് നോക്കൂ. | Please check the highlighted fields. | needs native-speaker review |
+| `booking.errorServer` | അപേക്ഷ അയക്കുന്നതിൽ ഒരു പ്രശ്നമുണ്ടായി. വീണ്ടും ശ്രമിക്കൂ, അല്ലെങ്കിൽ വാട്സ്ആപ്പിൽ ബന്ധപ്പെടൂ. | Something went wrong sending your request. Please try again, or contact us on WhatsApp. | needs native-speaker review |
+| `booking.errorSlotTaken` | ആ സമയം ഇപ്പോൾ ലഭ്യമല്ല. മറ്റൊന്ന് തിരഞ്ഞെടുക്കൂ. | That time is no longer available. Please choose another. | needs native-speaker review |
+| `booking.honeypot` | ഇത് ഒഴിച്ചിടൂ | Leave this empty | needs native-speaker review |
+| `confirmed.metaTitle` | അപേക്ഷ ലഭിച്ചു | Request received | needs native-speaker review |
+| `confirmed.title` | നന്ദി. നിങ്ങളുടെ അപേക്ഷ ലഭിച്ചു. | Thank you. Your request is in. | needs native-speaker review |
+| `confirmed.lead` | ഈ ചുവട് വെച്ചത് പ്രധാനമാണ്. ഇനി എന്താണ് സംഭവിക്കുക എന്ന് നോക്കാം. | Taking this step matters. Here's what happens next. | needs native-speaker review |
+| `confirmed.ref` | നിങ്ങളുടെ ബുക്കിങ് റഫറൻസ് | Your booking reference | needs native-speaker review |
+| `confirmed.next1` | [X മണിക്കൂറിനുള്ളിൽ] ഇമെയിൽ വഴിയോ വാട്സ്ആപ്പ് വഴിയോ സെഷൻ ഉറപ്പിക്കും. | We'll confirm your session by email or WhatsApp within [X hours]. | needs native-speaker review |
+| `confirmed.next2` | ഒരു സുരക്ഷിത പേയ്മെന്റ് ലിങ്കും സെഷനിൽ ചേരാനുള്ള ലിങ്കും ലഭിക്കും. | You'll get a secure payment link and a link to join the session. | needs native-speaker review |
+| `confirmed.next3` | അന്ന്, ശാന്തവും സ്വകാര്യവുമായ ഒരിടം കണ്ടെത്തൂ. ഹെഡ്‌ഫോൺ ഉപയോഗിക്കുന്നത് നല്ലതാണ്. | On the day, find a quiet, private spot. Headphones help. | needs native-speaker review |
+| `confirmed.whatsapp` | വാട്സ്ആപ്പിൽ മെസ്സേജ് അയക്കാം | Message us on WhatsApp | needs native-speaker review |
+| `confirmed.whatsappText` | നമസ്കാരം, എന്റെ ബുക്കിങ് റഫറൻസ് {ref} ആണ്. | Hello, my booking reference is {ref}. | needs native-speaker review |
+| `confirmed.home` | ഹോം പേജിലേക്ക് | Back to home | needs native-speaker review |
+| `confirmed.breathe` | കാത്തിരിക്കുമ്പോൾ, ഞങ്ങളോടൊപ്പം ഒന്ന് ശ്വാസമെടുക്കൂ | While you wait, take a breath with us | needs native-speaker review |
+| `confirmed.noRef` | ബുക്കിങ് റഫറൻസ് കണ്ടെത്താനായില്ല. ഇപ്പോൾ ബുക്ക് ചെയ്തതാണെങ്കിൽ ഇമെയിൽ നോക്കൂ, അല്ലെങ്കിൽ ഞങ്ങളെ ബന്ധപ്പെടൂ. | We couldn't find a booking reference. If you've just booked, please check your email or contact us. | needs native-speaker review |
+| `confirmed.demoNote` | [ഡെമോ മോഡ്: ഇമെയിൽ ഇതുവരെ സജ്ജീകരിച്ചിട്ടില്ല, അതിനാൽ ഈ അപേക്ഷയെക്കുറിച്ച് ആരെയും അറിയിച്ചിട്ടില്ല.] | [Demo mode: email isn't set up yet, so no one has been notified of this request.] | needs native-speaker review |
 | `data/concerns:concerns[anxiety].name` | ഉത്കണ്ഠ | Anxiety | needs native-speaker review |
 | `data/concerns:concerns[anxiety].summary` | അമിതമായ ആധി, പരിഭ്രമം, നിൽക്കാത്ത ചിന്തകൾ. | Worry, panic and a mind that won't switch off. | needs native-speaker review |
 | `data/concerns:concerns[depression].name` | വിഷാദം | Depression | needs native-speaker review |

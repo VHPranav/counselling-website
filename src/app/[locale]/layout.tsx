@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { ViewTransition } from "react";
 import "../globals.css";
 import { fontVariables } from "../fonts";
 import { siteConfig } from "@/config/site";
@@ -45,11 +44,9 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
       <body className="flex min-h-dvh flex-col">
         <SkipLink label={t.header.skip} />
         <Header locale={locale} t={t} />
-        <ViewTransition>
-          <main id="main" tabIndex={-1} className="flex-1 outline-none">
-            {children}
-          </main>
-        </ViewTransition>
+        <main id="main" tabIndex={-1} className="flex-1 outline-none">
+          {children}
+        </main>
         <Footer locale={locale} t={t} />
         <MotionBoot />
       </body>

@@ -39,10 +39,9 @@ export function Field({
         aria-invalid={error ? true : undefined}
         aria-describedby={[hintId, errorId].filter(Boolean).join(" ") || undefined}
         className={cn(
-          "min-h-12 w-full rounded-2xl bg-cream-soft px-4 text-base text-cocoa ring-1 ring-inset ring-cocoa/25",
-          "placeholder:text-cocoa-soft/70 transition-shadow duration-200 hover:ring-cocoa/45",
-          "focus-visible:ring-2 focus-visible:ring-cocoa",
-          !!error && "ring-2 ring-clay-deep",
+          "min-h-12 w-full rounded-2xl bg-cream-soft px-4 text-base text-cocoa ring-inset",
+          "placeholder:text-cocoa-soft/70 transition-shadow duration-200",
+          error ? "ring-2 ring-clay-deep" : "ring-1 ring-cocoa/25 hover:ring-cocoa/45 focus-visible:ring-2 focus-visible:ring-cocoa",
         )}
         {...input}
       />

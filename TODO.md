@@ -35,7 +35,12 @@ are highlighted on the page so they can't slip through.
 - [ ] Legal review of all policy drafts marked `[NEEDS LEGAL REVIEW]` (Phase 5)
 
 ## Integrations (Phase 4 onwards)
-- [ ] Resend API key + the address that receives booking notifications
+- [ ] Resend API key, a verified sender domain, and the inbox that receives booking requests (`.env.example`)
+- [ ] Confirmation time promised to clients (`[X hours]` in `confirmed.next1`)
+- [ ] Real booking backend: calendar availability + database + slot holds (see README → Booking backend)
+- [ ] Bot protection on the booking form (honeypot is in; consider Cloudflare Turnstile)
+- [ ] Confirm the "What happens to your details" promises on the booking page match your Privacy Policy
+- [ ] WhatsApp number in `src/config/site.ts` (enables the "Message us on WhatsApp" buttons)
 - [ ] Razorpay keys (test first, then live)
 - [ ] Calendar or scheduling backend choice
 - [ ] Analytics: Vercel Web Analytics (cookieless) at launch
