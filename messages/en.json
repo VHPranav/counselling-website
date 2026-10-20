@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "title": "Online counselling in Malayalam & English",
+    "description": "Private online counselling and therapy in Malayalam and English, by video or audio, for Malayalis in Kerala and around the world."
+  },
+  "common": {
+    "placeholderTitle": "Placeholder — to be supplied",
+    "readMore": "Read more",
+    "optional": "optional",
+    "required": "required",
+    "comingSoon": "This page is coming in a later phase."
+  },
+  "header": {
+    "home": "{brand} — home",
+    "primaryNav": "Main",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "language": "Choose language",
+    "skip": "Skip to content"
+  },
+  "nav": {
+    "services": "Services",
+    "concerns": "Concerns",
+    "therapists": "Therapists",
+    "business": "For organisations",
+    "about": "About",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "blog": "Journal",
+    "community": "Workshops",
+    "book": "Book a session"
+  },
+  "crisis": {
+    "title": "We are not a crisis service",
+    "body": "If you or someone near you is in danger, or thinking about ending their life, please reach out right now. These lines are free and open all day and night.",
+    "call": "Call {number}",
+    "alternate": "or {number}",
+    "abroad": "Outside India? Please call your local emergency number."
+  },
+  "footer": {
+    "tagline": "Counselling in Malayalam and English, from wherever you are.",
+    "explore": "Explore",
+    "help": "Help",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "refund": "Refund Policy",
+    "agreement": "Therapy Agreement",
+    "minors": "Minor Protection Policy",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "hours": "Support hours",
+    "disclaimer": "We offer counselling and psychotherapy. We do not diagnose, prescribe medication or provide emergency care.",
+    "rights": "© {year} {brand}. All rights reserved."
+  },
+  "home": {
+    "eyebrow": "Online counselling · Malayalam & English",
+    "title": "Talk to someone who understands, in the language you feel in.",
+    "lead": "Private sessions by video or audio, with counsellors who speak your language — wherever in the world you are.",
+    "ctaPrimary": "Book a session",
+    "ctaSecondary": "Find a therapist",
+    "phaseNote": "Foundation preview. The full home page arrives in Phase 2.",
+    "styleguideLink": "See the design system"
+  },
+  "styleguide": {
+    "title": "Design system",
+    "intro": "Every colour, type size and component used across the site. This page is for the team and is hidden from search engines.",
+    "colours": "Colours",
+    "type": "Type scale",
+    "buttons": "Buttons",
+    "chips": "Chips",
+    "cards": "Cards",
+    "fields": "Form fields",
+    "shapes": "Shapes and texture",
+    "marquee": "Marquee",
+    "malayalam": "Malayalam rendering check",
+    "malayalamNote": "Chillu letters and conjuncts should join cleanly in headings, buttons and chips.",
+    "sample": "Calm, grounded and human. A space to breathe before you begin.",
+    "buttonPrimary": "Book a session",
+    "buttonSecondary": "Find a therapist",
+    "buttonGhost": "How it works",
+    "chipAnxious": "Anxious",
+    "chipLow": "Feeling low",
+    "chipOverwhelmed": "Overwhelmed",
+    "chipTalk": "Just need to talk",
+    "cardTitle": "Individual therapy",
+    "cardBody": "One-to-one sessions at your pace, about whatever is on your mind.",
+    "cardMeta": "50 min · [Price]",
+    "fieldName": "Your name",
+    "fieldNameHint": "Your first name is enough.",
+    "fieldNameError": "Please enter a name, so we know what to call you.",
+    "fieldEmail": "Email",
+    "marqueeItem": "[Placeholder testimonial — awaiting a real, consented quote]"
+  }
+}

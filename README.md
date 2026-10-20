@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [BRAND NAME] — website
 
-## Getting Started
-
-First, run the development server:
+Online counselling in Malayalam and English. Next.js 16 (App Router), TypeScript,
+Tailwind CSS v4, GSAP + Lenis for motion. Every page is pre-rendered as static HTML
+in both languages.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000 → redirects to /ml
+npm run build        # production build
+npm run lint
+npm run typecheck
+npm run i18n:check   # checks ml/en keys match, regenerates docs/ml-review.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The design system page is at `/ml/styleguide` or `/en/styleguide` (hidden from search).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Common changes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| To change… | Edit |
+|---|---|
+| Brand name, domain, email, WhatsApp, support hours | `src/config/site.ts` |
+| Crisis helpline numbers | `src/config/safety.ts` |
+| Colours, type sizes, radii, shadows | `src/app/globals.css` (the `@theme` block at the top) |
+| Fonts | `src/app/fonts.ts` |
+| Any interface text | `messages/en.json` and `messages/ml.json` (same keys in both) |
+| Header / footer links | `src/components/layout/navigation.ts` |
+| Therapists, services, prices, FAQs, concerns | `src/data/*` (added in Phase 3) |
+| Blog posts, concern pages, legal pages | `content/**/{ml,en}/*.mdx` (added in Phases 3–5) |
 
-## Learn More
+Anything written in `[square brackets]` is a placeholder. It shows on the page with a
+striped ochre highlight until you replace it.
 
-To learn more about Next.js, take a look at the following resources:
+## Languages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- URLs are `/ml/...` (default) and `/en/...`. `/` redirects to `/ml`.
+- Built on Next.js's own i18n (`next/root-params`) rather than `next-intl`, so pages
+  stay fully static and no translation code ships to the browser.
+- After editing `messages/ml.json`, run `npm run i18n:check`. It fails if a key is
+  missing in either language and rewrites `docs/ml-review.md`, which lists every
+  Malayalam string for the proofreader. To mark strings as reviewed, add their keys to
+  `docs/ml-review.status.json` with `"approved"`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Folder map
 
-## Deploy on Vercel
+```
+src/app/[locale]/        pages (one folder per route)
+src/components/ui/       Button, Card, Chip, Field, Marquee, Section, Heading, Placeholder
+src/components/layout/   Header, Footer, MobileMenu, LocaleToggle, CrisisNotice, SkipLink
+src/components/motion/   Reveal (more motion islands in Phase 2)
+src/components/shapes/   organic SVGs: Blob, Pebble, BananaLeaf, PalmFrond, Ripple, Arch
+src/config/              site + safety config
+src/i18n/                locale config and message loading
+messages/                interface copy (ml, en)
+scripts/                 i18n-check
+docs/                    Malayalam review tracker
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Accessibility and contrast
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contrast notes are at the top of `globals.css`. In short: `--clay` is too light for
+text or button backgrounds, so primary buttons use `--clay-deep`. Links on sand use
+`--clay-deeper`. Focus rings are two-tone (ochre + cocoa) so they show on every
+background. All motion stops under `prefers-reduced-motion`.

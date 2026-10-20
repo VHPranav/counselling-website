@@ -1,0 +1,57 @@
+import Link from "next/link";
+import { siteConfig } from "@/config/site";
+import { href, type Locale } from "@/i18n/config";
+import { format, type Messages } from "@/i18n/dictionaries";
+import { Button } from "@/components/ui/Button";
+import { Ph } from "@/components/ui/Placeholder";
+import { BrandMark } from "@/components/shapes/Shapes";
+import { LocaleToggle } from "./LocaleToggle";
+import { MobileMenu } from "./MobileMenu";
+import { bookPath, primaryNav } from "./navigation";
+
+export function Header({ locale, t }: { locale: Locale; t: Messages }) {
+  const links = primaryNav.map((item) => ({ href: href(locale, item.path), label: t.nav[item.key] }));
+  return (
+    <header className="sticky top-0 z-40 border-b border-cocoa/[0.06] bg-cream/85 backdrop-blur-md supports-[not(backdrop-filter:blur(1px))]:bg-cream">
+      <div className="mx-auto flex h-16 max-w-[90rem] items-center gap-3 px-4 sm:h-20 sm:px-6 lg:px-10">
+        <Link
+          href={href(locale)}
+          className="mr-auto flex min-h-11 items-center gap-2.5 rounded-full"
+          aria-label={format(t.header.home, { brand: siteConfig.brandName })}
+        >
+          <BrandMark className="size-8 shrink-0 sm:size-9" />
+          <span className="whitespace-nowrap font-display text-lg leading-none tracking-tight sm:text-xl" aria-hidden>
+            <Ph>{siteConfig.brandName}</Ph>
+          </span>
+        </Link>
+
+        <nav aria-label={t.header.primaryNav} className="hidden lg:block">
+          <ul className="flex items-center gap-1 xl:gap-2">
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="link-underline mx-2.5 inline-block py-2 text-[0.9375rem]">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <LocaleToggle current={locale} label={t.header.language} className="lg:ml-3" />
+        <Button href={href(locale, bookPath)} size="sm" magnetic className="max-sm:hidden">
+          {t.nav.book}
+        </Button>
+        <MobileMenu
+          openLabel={t.header.menu}
+          closeLabel={t.header.closeMenu}
+          links={links}
+          footer={
+            <Button href={href(locale, bookPath)} size="lg" className="w-full">
+              {t.nav.book}
+            </Button>
+          }
+        />
+      </div>
+    </header>
+  );
+}
