@@ -17,7 +17,9 @@ export const dmSans = DM_Sans({
 
 export const notoSansMl = Noto_Sans_Malayalam({
   subsets: ["malayalam"],
-  display: "swap",
+  // "optional": no late swap, so long Malayalam paragraphs never reflow (CLS).
+  // Android's own Malayalam font is Noto too, so the fallback looks the same there.
+  display: "optional",
   variable: "--font-noto-sans-ml",
 });
 

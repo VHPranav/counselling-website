@@ -81,4 +81,58 @@ export const faqs: Faq[] = [
       ml: "വേണ്ട. ബുക്ക് ചെയ്യുമ്പോൾ ഓഡിയോ മാത്രമുള്ള സെഷൻ തിരഞ്ഞെടുക്കാം.",
     },
   },
+  {
+    id: "what-you-need",
+    category: "sessions",
+    question: { en: "What do I need for an online session?", ml: "ഓൺലൈൻ സെഷന് എന്താണ് വേണ്ടത്?" },
+    answer: {
+      en: "A phone or computer with a steady internet connection, and a private, quiet space. Headphones help.",
+      ml: "സ്ഥിരമായ ഇന്റർനെറ്റ് കണക്ഷനുള്ള ഫോണോ കമ്പ്യൂട്ടറോ, സ്വകാര്യവും ശാന്തവുമായ ഒരിടവും. ഹെഡ്‌ഫോൺ ഉപയോഗിക്കുന്നത് നല്ലതാണ്.",
+    },
+  },
+  {
+    id: "change-therapist",
+    category: "sessions",
+    question: { en: "Can I change my therapist?", ml: "തെറാപ്പിസ്റ്റിനെ മാറ്റാമോ?" },
+    answer: {
+      en: "Yes. Feeling comfortable with your therapist matters. Just tell us and we'll help you find someone else.",
+      ml: "മാറ്റാം. തെറാപ്പിസ്റ്റിനോട് സൗകര്യം തോന്നുന്നത് പ്രധാനമാണ്. ഞങ്ങളോട് പറഞ്ഞാൽ മറ്റൊരാളെ കണ്ടെത്താൻ സഹായിക്കാം.",
+    },
+  },
+  {
+    id: "data-security",
+    category: "privacy",
+    question: { en: "How is my information kept safe?", ml: "എന്റെ വിവരങ്ങൾ എങ്ങനെയാണ് സുരക്ഷിതമായി സൂക്ഷിക്കുന്നത്?" },
+    answer: {
+      en: "We collect only what's needed to arrange your sessions, and never sell it. [Describe storage, encryption and access controls.]",
+      ml: "സെഷനുകൾ ക്രമീകരിക്കാൻ ആവശ്യമുള്ളത് മാത്രമേ ശേഖരിക്കൂ, ഒരിക്കലും വിൽക്കില്ല. [സംഭരണം, എൻക്രിപ്ഷൻ, ആക്സസ് നിയന്ത്രണം എന്നിവ വിവരിക്കുക.]",
+    },
+  },
+  {
+    id: "how-to-pay",
+    category: "payments",
+    question: { en: "How do I pay?", ml: "എങ്ങനെയാണ് പണമടയ്ക്കേണ്ടത്?" },
+    answer: {
+      en: "Once your session is confirmed, we send a secure payment link. [Accepted methods, e.g. UPI, cards, net banking — confirm.]",
+      ml: "സെഷൻ ഉറപ്പായാൽ ഒരു സുരക്ഷിത പേയ്മെന്റ് ലിങ്ക് അയച്ചുതരും. [സ്വീകരിക്കുന്ന രീതികൾ, ഉദാ. UPI, കാർഡുകൾ, നെറ്റ് ബാങ്കിങ് — ഉറപ്പാക്കുക.]",
+    },
+  },
+  {
+    id: "cancel",
+    category: "payments",
+    question: { en: "What if I need to cancel or reschedule?", ml: "റദ്ദാക്കാനോ സമയം മാറ്റാനോ ഉണ്ടെങ്കിലോ?" },
+    answer: {
+      en: "You can reschedule or cancel up to [24 hours] before your session. The Refund Policy has the details.",
+      ml: "സെഷന് [24 മണിക്കൂർ] മുമ്പ് വരെ സമയം മാറ്റുകയോ റദ്ദാക്കുകയോ ചെയ്യാം. വിശദാംശങ്ങൾ റീഫണ്ട് നയത്തിലുണ്ട്.",
+    },
+  },
+  {
+    id: "pay-from-abroad",
+    category: "payments",
+    question: { en: "Can I pay from outside India?", ml: "ഇന്ത്യയ്ക്ക് പുറത്ത് നിന്ന് പണമടയ്ക്കാമോ?" },
+    answer: {
+      en: "[Confirm: international cards accepted through Razorpay, and in which currency.]",
+      ml: "[ഉറപ്പാക്കുക: Razorpay വഴി അന്താരാഷ്ട്ര കാർഡുകൾ സ്വീകരിക്കുമോ, ഏത് കറൻസിയിൽ.]",
+    },
+  },
 ];

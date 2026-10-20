@@ -7,7 +7,7 @@ in `content/**/ml/*.mdx` is listed separately at the bottom as it is added.
 To approve a string, add its key to `docs/ml-review.status.json` with the value `"approved"`
 (or `"changed"` if you edited the Malayalam), then re-run the script.
 
-**440 of 440 strings still need native-speaker review.**
+**598 of 598 strings still need native-speaker review.**
 
 | Key | Malayalam | English source | Status |
 |---|---|---|---|
@@ -355,6 +355,140 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `confirmed.breathe` | കാത്തിരിക്കുമ്പോൾ, ഞങ്ങളോടൊപ്പം ഒന്ന് ശ്വാസമെടുക്കൂ | While you wait, take a breath with us | needs native-speaker review |
 | `confirmed.noRef` | ബുക്കിങ് റഫറൻസ് കണ്ടെത്താനായില്ല. ഇപ്പോൾ ബുക്ക് ചെയ്തതാണെങ്കിൽ ഇമെയിൽ നോക്കൂ, അല്ലെങ്കിൽ ഞങ്ങളെ ബന്ധപ്പെടൂ. | We couldn't find a booking reference. If you've just booked, please check your email or contact us. | needs native-speaker review |
 | `confirmed.demoNote` | [ഡെമോ മോഡ്: ഇമെയിൽ ഇതുവരെ സജ്ജീകരിച്ചിട്ടില്ല, അതിനാൽ ഈ അപേക്ഷയെക്കുറിച്ച് ആരെയും അറിയിച്ചിട്ടില്ല.] | [Demo mode: email isn't set up yet, so no one has been notified of this request.] | needs native-speaker review |
+| `aboutPage.metaTitle` | ഞങ്ങളെക്കുറിച്ച് | About us | needs native-speaker review |
+| `aboutPage.metaDescription` | മലയാളികൾക്കായി ഒരു ഓൺലൈൻ കൗൺസലിങ് ഇടം തുടങ്ങിയത് എന്തിന്, ഞങ്ങൾ എന്തിനുവേണ്ടി നിലകൊള്ളുന്നു. | Why we started an online counselling space for Malayalis, and what we stand for. | needs native-speaker review |
+| `aboutPage.eyebrow` | ഞങ്ങളെക്കുറിച്ച് | About | needs native-speaker review |
+| `aboutPage.title` | നിങ്ങളുടെ ഭാഷ സംസാരിക്കുന്ന കരുതൽ | Care that speaks your language | needs native-speaker review |
+| `aboutPage.lead` | കേരളത്തിലും ലോകമെമ്പാടുമുള്ള മലയാളികൾക്ക്, അവരുടെ വാക്കുകൾ മാത്രമല്ല, അവർ എവിടെ നിന്ന് വരുന്നു എന്നും മനസ്സിലാക്കുന്ന ഒരാളോട് സംസാരിക്കാനാണ് {brand} തുടങ്ങിയത്. | We started {brand} so that Malayalis, in Kerala and across the world, can talk to someone who understands not just their words, but where they come from. | needs native-speaker review |
+| `aboutPage.storyTitle` | ഞങ്ങൾ എന്തിന് | Why we exist | needs native-speaker review |
+| `aboutPage.story1` | ആധികൾ വീടിനുള്ളിൽ തന്നെ ഒതുക്കണമെന്നോ സ്വയം നിശ്ശബ്ദമായി കൈകാര്യം ചെയ്യണമെന്നോ കേട്ടാണ് നമ്മളിൽ പലരും വളർന്നത്. സഹായം ചോദിക്കുന്നത് വലിയൊരു ചുവടായി തോന്നാം, പ്രത്യേകിച്ച് അത് മറ്റൊരു ഭാഷയിൽ ആകുമ്പോൾ. | Many of us grew up hearing that worries are best kept inside the family, or handled quietly on our own. Asking for help can feel like a big step, especially when it has to happen in a second language. | needs native-speaker review |
+| `aboutPage.story2` | [സ്ഥാപകരുടെ കഥ: ഇത് തുടങ്ങിയത് എന്തിനെന്ന് നിങ്ങളുടെ സ്വന്തം വാക്കുകളിൽ ഏതാനും വാചകങ്ങൾ.] | [Founder story: a few sentences, in your own words, on why you started this.] | needs native-speaker review |
+| `aboutPage.valuesTitle` | ഞങ്ങൾ എന്തിനുവേണ്ടി നിലകൊള്ളുന്നു | What we stand for | needs native-speaker review |
+| `aboutPage.v1Title` | ഭാഷയ്ക്ക് മുൻഗണന | Language first | needs native-speaker review |
+| `aboutPage.v1Body` | വളർന്ന ഭാഷയിൽ വികാരങ്ങൾക്ക് പേരിടാൻ എളുപ്പമാണ്. ഓരോ സെഷനും മലയാളത്തിലോ ഇംഗ്ലീഷിലോ രണ്ടിലുമോ ആകാം. | Feelings are easier to name in the language you grew up with. Every session can be in Malayalam, English or both. | needs native-speaker review |
+| `aboutPage.v2Title` | തുടക്കം മുതലേ സ്വകാര്യത | Privacy by design | needs native-speaker review |
+| `aboutPage.v2Body` | ആവശ്യമുള്ളത് മാത്രം ശേഖരിക്കും, വിവരങ്ങൾ ഒരിക്കലും വിൽക്കില്ല, നിങ്ങൾ പറയുന്നത് നിങ്ങൾക്കും തെറാപ്പിസ്റ്റിനും ഇടയിൽ മാത്രം. | We collect only what we need, never sell data, and keep what you share between you and your therapist. | needs native-speaker review |
+| `aboutPage.v3Title` | സംസ്കാരത്തിൽ വേരൂന്നി | Rooted in culture | needs native-speaker review |
+| `aboutPage.v3Body` | കൂട്ടുകുടുംബം, പ്രവാസ ജീവിതം, വിശ്വാസം, പ്രതീക്ഷകൾ — നിങ്ങൾ ജീവിക്കുന്ന സാഹചര്യം, വിധിക്കാതെ, ഞങ്ങൾ മനസ്സിലാക്കുന്നു. | Joint families, life abroad, faith, expectations: we understand the context you live in, without judging it. | needs native-speaker review |
+| `aboutPage.v4Title` | സത്യസന്ധമായ കരുതൽ | Honest care | needs native-speaker review |
+| `aboutPage.v4Body` | പെട്ടെന്നുള്ള പരിഹാരങ്ങളോ വാഗ്ദാനങ്ങളോ ഇല്ല. നിങ്ങളുടെ വേഗത്തിൽ, സ്ഥിരതയുള്ള പ്രൊഫഷണൽ പിന്തുണ മാത്രം. | No quick fixes and no promises. Just steady, professional support at your pace. | needs native-speaker review |
+| `aboutPage.trustTitle` | നിങ്ങൾ സംസാരിക്കുന്നത് ആരോട് | Who you'll be talking to | needs native-speaker review |
+| `aboutPage.trustLead` | [ഉറപ്പാക്കുക: ചേരുന്നതിന് മുമ്പ് ഓരോ തെറാപ്പിസ്റ്റിന്റെയും യോഗ്യതയും RCI രജിസ്ട്രേഷനും പരിശോധിക്കുന്നു.] | [Confirm: every therapist's qualifications and RCI registration are verified before they join.] | needs native-speaker review |
+| `aboutPage.trust1` | [തിരഞ്ഞെടുപ്പ് രീതി, ഉദാ. കുറഞ്ഞ യോഗ്യത, രജിസ്ട്രേഷൻ പരിശോധന, അഭിമുഖം] | [Vetting process, e.g. minimum qualification, registration check, interview] | needs native-speaker review |
+| `aboutPage.trust2` | [പ്രൊഫഷണൽ അംഗത്വങ്ങളും ബന്ധങ്ങളും] | [Professional memberships and affiliations] | needs native-speaker review |
+| `aboutPage.trust3` | [ക്ലിനിക്കൽ സൂപ്പർവിഷനും തുടർ പരിശീലനവും] | [Clinical supervision and ongoing training] | needs native-speaker review |
+| `aboutPage.teamTitle` | ടീം | The team | needs native-speaker review |
+| `aboutPage.teamNote` | [സ്ഥാപകരും ടീമും: പേരുകൾ, റോളുകൾ, ഫോട്ടോകൾ — അവരുടെ സമ്മതത്തോടെ.] | [Founders and team: names, roles and photos, with their consent.] | needs native-speaker review |
+| `businessPage.metaTitle` | സ്ഥാപനങ്ങൾക്ക് | For organisations | needs native-speaker review |
+| `businessPage.metaDescription` | തൊഴിലിടങ്ങൾക്കും കോളേജുകൾക്കും സ്കൂളുകൾക്കുമായി മലയാളത്തിലും ഇംഗ്ലീഷിലും രഹസ്യാത്മക കൗൺസലിങ്ങും മാനസികാരോഗ്യ വർക്ക്‌ഷോപ്പുകളും. | Confidential counselling and wellbeing workshops in Malayalam and English for workplaces, colleges and schools. | needs native-speaker review |
+| `businessPage.programmesTitle` | പരിപാടികൾ | Programmes | needs native-speaker review |
+| `businessPage.p1Title` | ജീവനക്കാർക്കുള്ള കൗൺസലിങ് | Employee counselling | needs native-speaker review |
+| `businessPage.p1Body` | നിങ്ങളുടെ ജീവനക്കാർക്ക് നേരിട്ട് ബുക്ക് ചെയ്യാവുന്ന സ്വകാര്യ സെഷനുകൾ. ആര് ബുക്ക് ചെയ്തു, എന്ത് സംസാരിച്ചു എന്ന് നിങ്ങൾ ഒരിക്കലും അറിയില്ല. | Private one-to-one sessions your people book directly. You never see who booked or what was discussed. | needs native-speaker review |
+| `businessPage.p2Title` | വർക്ക്‌ഷോപ്പുകളും പ്രഭാഷണങ്ങളും | Workshops and talks | needs native-speaker review |
+| `businessPage.p2Body` | സമ്മർദ്ദം, തളർച്ച, ഉറക്കം, പിണക്കങ്ങൾ തുടങ്ങിയവയെക്കുറിച്ച് ഓൺലൈനായോ [ലഭ്യമെങ്കിൽ] നേരിട്ടോ സംവാദാത്മക സെഷനുകൾ. | Interactive sessions on stress, burnout, sleep, conflict and more, online or in person [if offered]. | needs native-speaker review |
+| `businessPage.p3Title` | മാനേജർമാർക്കുള്ള പരിശീലനം | Manager training | needs native-speaker review |
+| `businessPage.p3Body` | ആരെങ്കിലും ബുദ്ധിമുട്ടുമ്പോൾ തിരിച്ചറിയാനും കരുതലോടെ പ്രതികരിക്കാനും ടീം ലീഡുകളെ സഹായിക്കാം. | Help team leads notice when someone is struggling, and respond with care. | needs native-speaker review |
+| `businessPage.p4Title` | ക്യാമ്പസ് കൗൺസലിങ് | Campus counselling | needs native-speaker review |
+| `businessPage.p4Body` | പരീക്ഷാ സമ്മർദ്ദം, വീട്ടിൽ നിന്ന് അകന്നതിന്റെ വിഷമം, ജീവിതത്തിലെ വലിയ മാറ്റങ്ങൾ എന്നിവയ്ക്ക് പിന്തുണയോടെ വിദ്യാർത്ഥികൾക്ക് കൗൺസലിങ്. | Counselling for students, with support for exam stress, homesickness and big transitions. | needs native-speaker review |
+| `businessPage.p5Title` | മാതാപിതാക്കൾക്കും അധ്യാപകർക്കും സെഷനുകൾ | Parent and teacher sessions | needs native-speaker review |
+| `businessPage.p5Body` | കുട്ടികളുടെ മാനസികാരോഗ്യത്തെ പിന്തുണയ്ക്കാനുള്ള പ്രായോഗിക മാർഗ്ഗനിർദ്ദേശങ്ങൾ. | Practical guidance on supporting young people's mental health. | needs native-speaker review |
+| `businessPage.privacyTitle` | സ്വതവേ രഹസ്യാത്മകം | Confidential by default | needs native-speaker review |
+| `businessPage.privacyBody` | സ്ഥാപനങ്ങൾക്ക് ലഭിക്കുക പേരുകളില്ലാത്ത, ആകെ എണ്ണം മാത്രമുള്ള ഉപയോഗ വിവരങ്ങളാണ് — ഒരിക്കലും പേരുകളോ സെഷനിൽ പറഞ്ഞ കാര്യങ്ങളോ അല്ല. | Organisations receive only anonymised, combined usage figures, never names or anything said in a session. | needs native-speaker review |
+| `businessPage.howTitle` | ഇത് എങ്ങനെ | How it works | needs native-speaker review |
+| `businessPage.h1` | നിങ്ങളുടെ ആളുകളെക്കുറിച്ച് പറയൂ | Tell us about your people | needs native-speaker review |
+| `businessPage.h2` | ഒരുമിച്ച് ഒരു പരിപാടി രൂപപ്പെടുത്താം | We shape a programme together | needs native-speaker review |
+| `businessPage.h3` | നിങ്ങളുടെ ആളുകൾക്ക് സ്വകാര്യമായി പിന്തുണ ലഭിക്കും | Your people get support, privately | needs native-speaker review |
+| `businessPage.formTitle` | ഒരു പരിപാടിയെക്കുറിച്ച് അന്വേഷിക്കാം | Enquire about a programme | needs native-speaker review |
+| `businessPage.formLead` | [2 പ്രവൃത്തി ദിവസത്തിനുള്ളിൽ] മറുപടി നൽകും. | We'll reply within [2 working days]. | needs native-speaker review |
+| `businessPage.clientsNote` | [ക്ലയന്റുകളുടെ ലോഗോകളും അനുഭവങ്ങളും — പ്രദർശിപ്പിക്കാൻ അനുമതി ലഭിച്ചാൽ.] | [Client logos and case studies, once you have permission to show them.] | needs native-speaker review |
+| `enquiry.name` | നിങ്ങളുടെ പേര് | Your name | needs native-speaker review |
+| `enquiry.organisation` | സ്ഥാപനം | Organisation | needs native-speaker review |
+| `enquiry.role` | നിങ്ങളുടെ പദവി | Your role | needs native-speaker review |
+| `enquiry.email` | ഇമെയിൽ | Email | needs native-speaker review |
+| `enquiry.phone` | ഫോൺ | Phone | needs native-speaker review |
+| `enquiry.orgType` | സ്ഥാപനത്തിന്റെ തരം | Type of organisation | needs native-speaker review |
+| `enquiry.orgCompany` | കമ്പനി | Company | needs native-speaker review |
+| `enquiry.orgCollege` | കോളേജ് / സർവകലാശാല | College or university | needs native-speaker review |
+| `enquiry.orgSchool` | സ്കൂൾ | School | needs native-speaker review |
+| `enquiry.orgOther` | മറ്റുള്ളവ | Other | needs native-speaker review |
+| `enquiry.size` | ആളുകളുടെ എണ്ണം | Number of people | needs native-speaker review |
+| `enquiry.topic` | എന്തിനെക്കുറിച്ചാണ്? | What's it about? | needs native-speaker review |
+| `enquiry.topicGeneral` | പൊതുവായ ചോദ്യം | General question | needs native-speaker review |
+| `enquiry.topicBooking` | ബുക്കിങ്ങിന് സഹായം | Help with booking | needs native-speaker review |
+| `enquiry.topicTherapist` | തെറാപ്പിസ്റ്റായി ചേരാൻ | Joining as a therapist | needs native-speaker review |
+| `enquiry.topicMedia` | മാധ്യമം / പങ്കാളിത്തം | Media or partnerships | needs native-speaker review |
+| `enquiry.message` | ഞങ്ങൾക്ക് എങ്ങനെ സഹായിക്കാം? | How can we help? | needs native-speaker review |
+| `enquiry.messageHint` | ദയവായി വ്യക്തിപരമായ ആരോഗ്യ വിവരങ്ങൾ ഇവിടെ ഉൾപ്പെടുത്തരുത്. അവ സെഷനിൽ തെറാപ്പിസ്റ്റിനോട് പറയാം. | Please don't include personal health details here. You can share those with a therapist in session. | needs native-speaker review |
+| `enquiry.consent` | സ്വകാര്യതാ നയത്തിൽ വിശദീകരിച്ചിരിക്കുന്നത് പോലെ, എന്റെ സന്ദേശത്തിന് മറുപടി നൽകാൻ ഈ വിവരങ്ങൾ ഉപയോഗിക്കുന്നതിന് ഞാൻ സമ്മതിക്കുന്നു. | I agree that these details may be used to reply to my message, as explained in the Privacy Policy. | needs native-speaker review |
+| `enquiry.submitBusiness` | അന്വേഷണം അയക്കാം | Send enquiry | needs native-speaker review |
+| `enquiry.submitContact` | സന്ദേശം അയക്കാം | Send message | needs native-speaker review |
+| `enquiry.sending` | അയക്കുന്നു… | Sending… | needs native-speaker review |
+| `enquiry.success` | നന്ദി. നിങ്ങളുടെ സന്ദേശം ലഭിച്ചു, ഉടൻ ബന്ധപ്പെടും. | Thank you. We've received your message and will be in touch soon. | needs native-speaker review |
+| `enquiry.demo` | [ഡെമോ മോഡ്: ഇമെയിൽ സജ്ജീകരിച്ചിട്ടില്ല, അതിനാൽ ഈ സന്ദേശം എങ്ങോട്ടും അയച്ചിട്ടില്ല.] | [Demo mode: email isn't set up, so this message wasn't sent anywhere.] | needs native-speaker review |
+| `enquiry.errorServer` | എന്തോ പ്രശ്നമുണ്ടായി. വീണ്ടും ശ്രമിക്കൂ, അല്ലെങ്കിൽ ഞങ്ങൾക്ക് നേരിട്ട് ഇമെയിൽ അയക്കൂ. | Something went wrong. Please try again, or email us directly. | needs native-speaker review |
+| `enquiry.errorContact` | മറുപടി നൽകാനായി ഒരു ഇമെയിലോ ഫോൺ നമ്പറോ നൽകൂ. | Please give an email or a phone number so we can reply. | needs native-speaker review |
+| `contactPage.metaTitle` | ബന്ധപ്പെടാം | Contact | needs native-speaker review |
+| `contactPage.metaDescription` | വാട്സ്ആപ്പ്, ഇമെയിൽ, അല്ലെങ്കിൽ ഫോം വഴി ബന്ധപ്പെടാം. | Get in touch by WhatsApp, email or our contact form. | needs native-speaker review |
+| `contactPage.title` | നിങ്ങളിൽ നിന്ന് കേൾക്കാൻ ഞങ്ങൾക്ക് സന്തോഷം | We'd love to hear from you | needs native-speaker review |
+| `contactPage.lead` | ബുക്കിങ്ങിനെക്കുറിച്ചോ തെറാപ്പിയെക്കുറിച്ചോ ഞങ്ങളോടൊപ്പം പ്രവർത്തിക്കുന്നതിനെക്കുറിച്ചോ ചോദ്യങ്ങളുണ്ടോ? എളുപ്പമുള്ള ഏത് വഴിയിലും ബന്ധപ്പെടാം. | Questions about booking, therapy or working with us? Reach out whichever way is easiest. | needs native-speaker review |
+| `contactPage.formTitle` | ഒരു സന്ദേശം അയക്കൂ | Send us a message | needs native-speaker review |
+| `contactPage.directTitle` | ബന്ധപ്പെടാനുള്ള മറ്റ് വഴികൾ | Other ways to reach us | needs native-speaker review |
+| `contactPage.reply` | സാധാരണയായി [ഒരു പ്രവൃത്തി ദിവസത്തിനുള്ളിൽ] മറുപടി നൽകും. | We usually reply within [one working day]. | needs native-speaker review |
+| `communityPage.metaTitle` | വർക്ക്‌ഷോപ്പുകളും കൂട്ടായ്മയും | Workshops & community | needs native-speaker review |
+| `communityPage.metaDescription` | മലയാളത്തിലും ഇംഗ്ലീഷിലും ഓൺലൈൻ വർക്ക്‌ഷോപ്പുകളും ഗ്രൂപ്പ് സെഷനുകളും. | Online workshops and group sessions in Malayalam and English. | needs native-speaker review |
+| `communityPage.eyebrow` | കൂട്ടായ്മ | Community | needs native-speaker review |
+| `communityPage.title` | ഒരുമിച്ച്, പതുക്കെ വളരാം | Grow together, gently | needs native-speaker review |
+| `communityPage.lead` | ദൈനംദിന മാനസികാരോഗ്യത്തെക്കുറിച്ച് ചെറുതും സൗഹൃദപരവുമായ ഓൺലൈൻ വർക്ക്‌ഷോപ്പുകൾ. വേണമെങ്കിൽ ക്യാമറ ഓഫ് ചെയ്ത് ചേരാം. | Small, friendly online workshops on everyday wellbeing. Join with your camera off if you like. | needs native-speaker review |
+| `communityPage.upcoming` | വരാനിരിക്കുന്ന വർക്ക്‌ഷോപ്പുകൾ | Upcoming workshops | needs native-speaker review |
+| `communityPage.sampleNote` | [മാതൃകാ പരിപാടികൾ. src/data/workshops.ts-ൽ യഥാർത്ഥ സമയക്രമം ചേർക്കൂ.] | [Sample events. Replace them with your real schedule in src/data/workshops.ts.] | needs native-speaker review |
+| `communityPage.register` | താൽപര്യം അറിയിക്കാം | Register interest | needs native-speaker review |
+| `communityPage.online` | ഓൺലൈൻ | Online | needs native-speaker review |
+| `communityPage.free` | സൗജന്യം | Free | needs native-speaker review |
+| `communityPage.seats` | {n} സീറ്റുകൾ | {n} places | needs native-speaker review |
+| `communityPage.minutes` | {n} മിനിറ്റ് | {n} min | needs native-speaker review |
+| `communityPage.facilitator` | നയിക്കുന്നത്: {name} | With {name} | needs native-speaker review |
+| `communityPage.empty` | ഇപ്പോൾ വർക്ക്‌ഷോപ്പുകൾ ഒന്നും നിശ്ചയിച്ചിട്ടില്ല. പിന്നീട് നോക്കൂ, അല്ലെങ്കിൽ നിങ്ങളുടെ ഗ്രൂപ്പിനായി ഒന്ന് ആവശ്യപ്പെടൂ. | No workshops are scheduled right now. Check back soon, or ask us about one for your group. | needs native-speaker review |
+| `communityPage.groupTitle` | നിങ്ങളുടെ ഗ്രൂപ്പിനായി ഒരു വർക്ക്‌ഷോപ്പ് വേണോ? | Want a workshop for your group? | needs native-speaker review |
+| `communityPage.groupBody` | റസിഡന്റ്സ് അസോസിയേഷനുകൾ, രക്ഷിതാക്കളുടെ കൂട്ടായ്മകൾ, മത സമൂഹങ്ങൾ, വിദേശത്തെ മലയാളി അസോസിയേഷനുകൾ എന്നിവയ്ക്കായി ഞങ്ങൾക്ക് സെഷനുകൾ നടത്താനാകും. | We can run sessions for residents' associations, parent groups, faith communities and Malayali associations abroad. | needs native-speaker review |
+| `communityPage.groupCta` | ഒരു വർക്ക്‌ഷോപ്പിനെക്കുറിച്ച് ചോദിക്കാം | Ask about a workshop | needs native-speaker review |
+| `blogPage.metaTitle` | ലേഖനങ്ങൾ | Journal | needs native-speaker review |
+| `blogPage.metaDescription` | മാനസികാരോഗ്യം, ബന്ധങ്ങൾ, ദൈനംദിന ക്ഷേമം എന്നിവയെക്കുറിച്ച് ലളിതവും പ്രായോഗികവുമായ വായനകൾ. | Gentle, practical reads on mental health, relationships and everyday wellbeing. | needs native-speaker review |
+| `blogPage.eyebrow` | ലേഖനങ്ങൾ | Journal | needs native-speaker review |
+| `blogPage.title` | ശാന്തമായ മനസ്സിനായി വായനകൾ | Reads for a quieter mind | needs native-speaker review |
+| `blogPage.lead` | ഞങ്ങളുടെ ടീം എഴുതിയ ചെറിയ ലേഖനങ്ങൾ, മലയാളത്തിലും ഇംഗ്ലീഷിലും. അറിവ് പകരാനാണ്, രോഗനിർണയത്തിനല്ല. | Short articles by our team, in Malayalam and English. They're here to inform, not to diagnose. | needs native-speaker review |
+| `blogPage.minRead` | {n} മിനിറ്റ് വായന | {n} min read | needs native-speaker review |
+| `blogPage.by` | എഴുതിയത്: {author} | By {author} | needs native-speaker review |
+| `blogPage.back` | എല്ലാ ലേഖനങ്ങളും | All articles | needs native-speaker review |
+| `blogPage.disclaimer` | ഈ ലേഖനം പൊതുവായ അറിവിന് മാത്രമാണ്; പ്രൊഫഷണൽ ഉപദേശത്തിന് പകരമല്ല. | This article is general information and isn't a substitute for professional advice. | needs native-speaker review |
+| `blogPage.readNext` | തുടർന്ന് വായിക്കാം | Keep reading | needs native-speaker review |
+| `blogPage.published` | പ്രസിദ്ധീകരിച്ചത് | Published | needs native-speaker review |
+| `faqPage.metaTitle` | പതിവ് ചോദ്യങ്ങൾ | Frequently asked questions | needs native-speaker review |
+| `faqPage.metaDescription` | ബുക്കിങ്, സെഷനുകൾ, സ്വകാര്യത, പേയ്മെന്റ് എന്നിവയെക്കുറിച്ചുള്ള ഉത്തരങ്ങൾ. | Answers about booking, sessions, privacy and payments. | needs native-speaker review |
+| `faqPage.title` | ചോദ്യങ്ങൾക്ക് ലളിതമായ ഉത്തരങ്ങൾ | Questions, answered gently | needs native-speaker review |
+| `faqPage.lead` | അന്വേഷിക്കുന്നത് കണ്ടില്ലേ? ഞങ്ങളോട് ചോദിക്കൂ. | Can't find what you're looking for? Just ask us. | needs native-speaker review |
+| `faqPage.getting-started` | തുടക്കം | Getting started | needs native-speaker review |
+| `faqPage.sessions` | സെഷനുകൾ | Sessions | needs native-speaker review |
+| `faqPage.privacy` | സ്വകാര്യത | Privacy | needs native-speaker review |
+| `faqPage.payments` | പേയ്മെന്റ് | Payments | needs native-speaker review |
+| `faqPage.askTitle` | ഇനിയും ചോദ്യമുണ്ടോ? | Still have a question? | needs native-speaker review |
+| `faqPage.askBody` | ഒരു സന്ദേശം അയക്കൂ, ഞങ്ങൾ മറുപടി നൽകാം. | Send us a message and we'll get back to you. | needs native-speaker review |
+| `faqPage.ask` | ബന്ധപ്പെടാം | Contact us | needs native-speaker review |
+| `pricingPage.metaTitle` | നിരക്കുകൾ | Pricing | needs native-speaker review |
+| `pricingPage.metaDescription` | വ്യക്തിഗത, ദമ്പതി, കൗമാര, കുടുംബ തെറാപ്പി സെഷനുകളുടെ ഫീസ്. | Session fees for individual, couples, teen and family therapy. | needs native-speaker review |
+| `pricingPage.title` | വ്യക്തവും ലളിതവുമായ നിരക്കുകൾ | Clear, simple pricing | needs native-speaker review |
+| `pricingPage.lead` | ബുക്ക് ചെയ്യുന്നതിന് മുമ്പ് തന്നെ ഫീസ് കാണാം. | You'll always see the fee before you book. | needs native-speaker review |
+| `pricingPage.service` | സെഷൻ | Session | needs native-speaker review |
+| `pricingPage.duration` | ദൈർഘ്യം | Length | needs native-speaker review |
+| `pricingPage.fee` | ഫീസ് | Fee | needs native-speaker review |
+| `pricingPage.note` | തെറാപ്പിസ്റ്റിനനുസരിച്ച് ഫീസിൽ മാറ്റമുണ്ടാകാം. കൃത്യമായ ഫീസ് ഓരോ പ്രൊഫൈലിലും ബുക്ക് ചെയ്യുമ്പോഴും കാണാം. | Fees can vary by therapist. The exact fee is shown on each profile and when you book. | needs native-speaker review |
+| `pricingPage.international` | [ഇന്ത്യയ്ക്ക് പുറത്തുള്ളവർക്ക് വ്യത്യസ്ത നിരക്കുണ്ടെങ്കിൽ.] | [Pricing for clients outside India, if different.] | needs native-speaker review |
+| `pricingPage.included` | എല്ലാ സെഷനിലും ഉൾപ്പെടുന്നത് | Every session includes | needs native-speaker review |
+| `pricingPage.faqTitle` | പേയ്മെന്റ് ചോദ്യങ്ങൾ | Payment questions | needs native-speaker review |
+| `pricingPage.refundLink` | റീഫണ്ട് നയം വായിക്കാം | Read the Refund Policy | needs native-speaker review |
+| `legalPage.reviewBanner` | [NEEDS LEGAL REVIEW] ഇതൊരു കരട് മാതൃകയാണ്, നിയമോപദേശമല്ല. ലോഞ്ചിന് മുമ്പ് യോഗ്യതയുള്ള ഒരു അഭിഭാഷകൻ ഇത് പരിശോധിക്കണം. | [NEEDS LEGAL REVIEW] This is a draft template, not legal advice. A qualified lawyer must review it before launch. | needs native-speaker review |
+| `legalPage.updated` | അവസാനം പുതുക്കിയത്: {date} | Last updated: {date} | needs native-speaker review |
+| `legalPage.otherPolicies` | മറ്റ് നയങ്ങൾ | Other policies | needs native-speaker review |
+| `legalPage.versionNote` | ഈ നയം ഇംഗ്ലീഷിലും ലഭ്യമാണ്. രണ്ട് പതിപ്പുകളും തമ്മിൽ വ്യത്യാസമുണ്ടെങ്കിൽ, [ഇംഗ്ലീഷ് പതിപ്പാണ് ബാധകം — ഉറപ്പാക്കുക]. | This policy is also available in Malayalam. If the two versions differ, [the English version applies — confirm]. | needs native-speaker review |
 | `data/concerns:concerns[anxiety].name` | ഉത്കണ്ഠ | Anxiety | needs native-speaker review |
 | `data/concerns:concerns[anxiety].summary` | അമിതമായ ആധി, പരിഭ്രമം, നിൽക്കാത്ത ചിന്തകൾ. | Worry, panic and a mind that won't switch off. | needs native-speaker review |
 | `data/concerns:concerns[depression].name` | വിഷാദം | Depression | needs native-speaker review |
@@ -389,6 +523,18 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `data/faqs:faqs[someone-else].answer` | ചെയ്യാം, അവർ അറിയുകയും സമ്മതിക്കുകയും ചെയ്യുന്നുണ്ടെങ്കിൽ. ആ വ്യക്തി സ്വയം തിരഞ്ഞെടുക്കുമ്പോഴാണ് തെറാപ്പി ഏറ്റവും നന്നായി ഫലിക്കുക. 18 വയസ്സിന് താഴെയുള്ളവർക്ക്, മാതാപിതാക്കളോ രക്ഷിതാവോ ആണ് സമ്മതം നൽകേണ്ടത്. | Yes, as long as they know and agree. Therapy works best when the person has chosen it themselves. For anyone under 18, a parent or guardian completes the consent step. | needs native-speaker review |
 | `data/faqs:faqs[camera].question` | ക്യാമറ ഓൺ ചെയ്യണമെന്നുണ്ടോ? | Do I have to turn my camera on? | needs native-speaker review |
 | `data/faqs:faqs[camera].answer` | വേണ്ട. ബുക്ക് ചെയ്യുമ്പോൾ ഓഡിയോ മാത്രമുള്ള സെഷൻ തിരഞ്ഞെടുക്കാം. | No. You can choose an audio-only session when you book. | needs native-speaker review |
+| `data/faqs:faqs[what-you-need].question` | ഓൺലൈൻ സെഷന് എന്താണ് വേണ്ടത്? | What do I need for an online session? | needs native-speaker review |
+| `data/faqs:faqs[what-you-need].answer` | സ്ഥിരമായ ഇന്റർനെറ്റ് കണക്ഷനുള്ള ഫോണോ കമ്പ്യൂട്ടറോ, സ്വകാര്യവും ശാന്തവുമായ ഒരിടവും. ഹെഡ്‌ഫോൺ ഉപയോഗിക്കുന്നത് നല്ലതാണ്. | A phone or computer with a steady internet connection, and a private, quiet space. Headphones help. | needs native-speaker review |
+| `data/faqs:faqs[change-therapist].question` | തെറാപ്പിസ്റ്റിനെ മാറ്റാമോ? | Can I change my therapist? | needs native-speaker review |
+| `data/faqs:faqs[change-therapist].answer` | മാറ്റാം. തെറാപ്പിസ്റ്റിനോട് സൗകര്യം തോന്നുന്നത് പ്രധാനമാണ്. ഞങ്ങളോട് പറഞ്ഞാൽ മറ്റൊരാളെ കണ്ടെത്താൻ സഹായിക്കാം. | Yes. Feeling comfortable with your therapist matters. Just tell us and we'll help you find someone else. | needs native-speaker review |
+| `data/faqs:faqs[data-security].question` | എന്റെ വിവരങ്ങൾ എങ്ങനെയാണ് സുരക്ഷിതമായി സൂക്ഷിക്കുന്നത്? | How is my information kept safe? | needs native-speaker review |
+| `data/faqs:faqs[data-security].answer` | സെഷനുകൾ ക്രമീകരിക്കാൻ ആവശ്യമുള്ളത് മാത്രമേ ശേഖരിക്കൂ, ഒരിക്കലും വിൽക്കില്ല. [സംഭരണം, എൻക്രിപ്ഷൻ, ആക്സസ് നിയന്ത്രണം എന്നിവ വിവരിക്കുക.] | We collect only what's needed to arrange your sessions, and never sell it. [Describe storage, encryption and access controls.] | needs native-speaker review |
+| `data/faqs:faqs[how-to-pay].question` | എങ്ങനെയാണ് പണമടയ്ക്കേണ്ടത്? | How do I pay? | needs native-speaker review |
+| `data/faqs:faqs[how-to-pay].answer` | സെഷൻ ഉറപ്പായാൽ ഒരു സുരക്ഷിത പേയ്മെന്റ് ലിങ്ക് അയച്ചുതരും. [സ്വീകരിക്കുന്ന രീതികൾ, ഉദാ. UPI, കാർഡുകൾ, നെറ്റ് ബാങ്കിങ് — ഉറപ്പാക്കുക.] | Once your session is confirmed, we send a secure payment link. [Accepted methods, e.g. UPI, cards, net banking — confirm.] | needs native-speaker review |
+| `data/faqs:faqs[cancel].question` | റദ്ദാക്കാനോ സമയം മാറ്റാനോ ഉണ്ടെങ്കിലോ? | What if I need to cancel or reschedule? | needs native-speaker review |
+| `data/faqs:faqs[cancel].answer` | സെഷന് [24 മണിക്കൂർ] മുമ്പ് വരെ സമയം മാറ്റുകയോ റദ്ദാക്കുകയോ ചെയ്യാം. വിശദാംശങ്ങൾ റീഫണ്ട് നയത്തിലുണ്ട്. | You can reschedule or cancel up to [24 hours] before your session. The Refund Policy has the details. | needs native-speaker review |
+| `data/faqs:faqs[pay-from-abroad].question` | ഇന്ത്യയ്ക്ക് പുറത്ത് നിന്ന് പണമടയ്ക്കാമോ? | Can I pay from outside India? | needs native-speaker review |
+| `data/faqs:faqs[pay-from-abroad].answer` | [ഉറപ്പാക്കുക: Razorpay വഴി അന്താരാഷ്ട്ര കാർഡുകൾ സ്വീകരിക്കുമോ, ഏത് കറൻസിയിൽ.] | [Confirm: international cards accepted through Razorpay, and in which currency.] | needs native-speaker review |
 | `data/moods:moods[anxious].label` | ഉത്കണ്ഠ തോന്നുന്നു | Anxious | needs native-speaker review |
 | `data/moods:moods[anxious].response` | ഓടിക്കൊണ്ടിരിക്കുന്ന ചിന്തകളും നെഞ്ചിലെ ഭാരവും വല്ലാതെ തളർത്തും. ഇതൊക്കെ ഒറ്റയ്ക്ക് അഴിച്ചെടുക്കേണ്ടതില്ല. | Racing thoughts and a tight chest are exhausting. You don't have to untangle them alone. | needs native-speaker review |
 | `data/moods:moods[low].label` | മനസ്സിന് ഒരു ഭാരം | Feeling low | needs native-speaker review |
@@ -451,6 +597,18 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `data/therapists:therapists[therapist-6].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
 | `data/therapists:therapists[therapist-6].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
 | `data/therapists:therapists[therapist-6].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
+| `data/workshops:workshops[exam-stress-parents].title` | പരീക്ഷാ സമ്മർദ്ദം: മാതാപിതാക്കൾക്കായി | Exam stress: a session for parents | needs native-speaker review |
+| `data/workshops:workshops[exam-stress-parents].summary` | പരീക്ഷാ സമ്മർദ്ദം അമിതമാകുന്നത് എങ്ങനെ തിരിച്ചറിയാം, അത് കൂട്ടാതെ വീട്ടിൽ എങ്ങനെ സംസാരിക്കാം. | How to notice when exam pressure is becoming too much, and how to talk about it at home without adding to it. | needs native-speaker review |
+| `data/workshops:workshops[exam-stress-parents].audience` | വിദ്യാർത്ഥികളുടെ മാതാപിതാക്കൾ | Parents of students | needs native-speaker review |
+| `data/workshops:workshops[exam-stress-parents].facilitator` | [നയിക്കുന്നയാളുടെ പേര്] | [Facilitator name] | needs native-speaker review |
+| `data/workshops:workshops[sleep-busy-mind].title` | മനസ്സ് ശാന്തമാകാത്തപ്പോൾ നന്നായി ഉറങ്ങാൻ | Sleeping better when your mind won't settle | needs native-speaker review |
+| `data/workshops:workshops[sleep-busy-mind].summary` | ദിവസം ശാന്തമായി അവസാനിപ്പിക്കാനുള്ള ലളിതമായ ശീലങ്ങൾ, പുലർച്ചെ രണ്ട് മണിക്ക് ഉറക്കമില്ലാതെ കിടക്കുമ്പോൾ എന്ത് ചെയ്യാം. | Simple, practical habits for winding down, and what to do when you're lying awake at 2am. | needs native-speaker review |
+| `data/workshops:workshops[sleep-busy-mind].audience` | മുതിർന്നവർ | Adults | needs native-speaker review |
+| `data/workshops:workshops[sleep-busy-mind].facilitator` | [നയിക്കുന്നയാളുടെ പേര്] | [Facilitator name] | needs native-speaker review |
+| `data/workshops:workshops[life-abroad].title` | പ്രവാസ ജീവിതം: ദൂരെയായിരിക്കുമ്പോഴും ബന്ധം നിലനിർത്താൻ | Life abroad: staying connected while far from home | needs native-speaker review |
+| `data/workshops:workshops[life-abroad].summary` | കുടുംബത്തിൽ നിന്ന് അകലെ ജീവിക്കുന്ന മലയാളികൾക്ക്: ഒറ്റപ്പെടൽ, കുറ്റബോധം, അകലം, ബന്ധങ്ങൾ അടുപ്പത്തോടെ നിലനിർത്തൽ. | For Malayalis living away from family: loneliness, guilt, distance, and keeping relationships close. | needs native-speaker review |
+| `data/workshops:workshops[life-abroad].audience` | വിദേശത്ത് താമസിക്കുന്ന മലയാളികൾ | Malayalis living abroad | needs native-speaker review |
+| `data/workshops:workshops[life-abroad].facilitator` | [നയിക്കുന്നയാളുടെ പേര്] | [Facilitator name] | needs native-speaker review |
 
 ## Long-form content (MDX)
 
@@ -459,7 +617,14 @@ Mark it reviewed with the key `content:<path>` in `docs/ml-review.status.json`.
 
 | File | Status |
 |---|---|
+| `content/blog/ml/first-session.mdx` | needs native-speaker review |
+| `content/blog/ml/talking-to-family.mdx` | needs native-speaker review |
 | `content/concerns/ml/anxiety.mdx` | needs native-speaker review |
 | `content/concerns/ml/depression.mdx` | needs native-speaker review |
 | `content/concerns/ml/relationships.mdx` | needs native-speaker review |
 | `content/concerns/ml/work-stress.mdx` | needs native-speaker review |
+| `content/legal/ml/minor-protection.mdx` | needs native-speaker review |
+| `content/legal/ml/privacy.mdx` | needs native-speaker review |
+| `content/legal/ml/refunds.mdx` | needs native-speaker review |
+| `content/legal/ml/terms.mdx` | needs native-speaker review |
+| `content/legal/ml/therapy-agreement.mdx` | needs native-speaker review |

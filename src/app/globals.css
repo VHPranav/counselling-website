@@ -78,6 +78,9 @@ html:lang(ml) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip; /* safety net for decorative shapes; keeps sticky header working */
+    /* Long Malayalam compound words must wrap rather than overflow on phones.
+       Breaks fall between whole characters, so conjuncts stay intact. */
+    overflow-wrap: break-word;
   }
 
   :lang(ml) body,
@@ -97,6 +100,7 @@ html:lang(ml) {
     line-height: 1.08;
     letter-spacing: -0.015em;
     text-wrap: balance;
+    overflow-wrap: anywhere;
   }
 
   :lang(ml) :is(h1, h2, h3, h4, .font-display) {

@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { serviceBySlug } from "@/data/services";
 import { therapists } from "@/data/therapists";
 import type { BookingRequest } from "@/lib/booking/types";
+import type { EnquiryData } from "@/lib/enquiry/schema";
 
 /**
  * Booking notifications.
@@ -99,6 +100,40 @@ export async function notifyBooking(reference: string, booking: BookingRequest):
     return { sent: true };
   } catch (err) {
     console.error(`[booking] notification failed for ${reference}: ${(err as Error).message}`);
+    return { sent: false };
+  }
+}
+
+export async function notifyEnquiry(e: EnquiryData): Promise<NotifyResult> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.ENQUIRY_NOTIFY_TO ?? process.env.BOOKING_NOTIFY_TO;
+  const from = process.env.BOOKING_EMAIL_FROM ?? `Website <hello@${siteConfig.domain}>`;
+  if (!apiKey || !to) {
+    console.info(`[enquiry] demo ${e.kind} enquiry received; email not configured`);
+    return { sent: false };
+  }
+  const rows: Array<[string, string | undefined]> = [
+    ["Type", e.kind],
+    ["Name", e.name],
+    ["Email", e.email || "—"],
+    ["Phone", e.phone || "—"],
+    ["Organisation", e.organisation],
+    ["Role", e.role],
+    ["Organisation type", e.orgType],
+    ["Size", e.size],
+    ["Topic", e.topic],
+    ["Site language", e.locale],
+  ];
+  const html = `<h2>New ${esc(e.kind)} enquiry</h2><table cellpadding="6">${rows
+    .filter(([, v]) => v)
+    .map(([k, v]) => `<tr><td><strong>${esc(k)}</strong></td><td>${esc(v!)}</td></tr>`)
+    .join("")}</table><p style="white-space:pre-wrap">${esc(e.message)}</p>`;
+  try {
+    await send(to, `New ${e.kind} enquiry from ${e.name}`, html, apiKey, from);
+    console.info(`[enquiry] ${e.kind} enquiry notified`);
+    return { sent: true };
+  } catch (err) {
+    console.error(`[enquiry] notification failed: ${(err as Error).message}`);
     return { sent: false };
   }
 }

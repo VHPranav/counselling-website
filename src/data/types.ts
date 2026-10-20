@@ -65,3 +65,20 @@ export type Faq = {
   home?: boolean;
   category: "getting-started" | "sessions" | "privacy" | "payments";
 };
+
+export type Workshop = {
+  slug: string;
+  title: L;
+  summary: L;
+  /** Start time, ISO 8601 with offset. Past events are hidden automatically. */
+  start: string;
+  durationMinutes: number;
+  languages: LanguageCode[];
+  audience: L;
+  facilitator: L;
+  /** null = free */
+  priceInr: number | null;
+  seats: number;
+  /** Shows a "sample" marker until replaced with a real event. */
+  sample?: boolean;
+};

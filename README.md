@@ -28,7 +28,9 @@ The design system page is at `/ml/styleguide` or `/en/styleguide` (hidden from s
 | Header / footer links | `src/components/layout/navigation.ts` |
 | Therapists, services, prices, FAQs, concerns, moods | `src/data/*.ts` |
 | Concern guides | `content/concerns/{ml,en}/<slug>.mdx`, registered in `src/lib/content.ts` (see `content/concerns/README.md`) |
-| Blog posts, legal pages | `content/**/{ml,en}/*.mdx` (Phase 5) |
+| Journal posts | `content/blog/{ml,en}/<slug>.mdx`, registered in `src/lib/content.ts` |
+| Legal policies | `content/legal/{ml,en}/<slug>.mdx` (drafts, marked for legal review) |
+| Workshops | `src/data/workshops.ts` (past events hide automatically on the next deploy) |
 
 Anything written in `[square brackets]` is a placeholder. It shows on the page with a
 striped ochre highlight until you replace it.
@@ -90,6 +92,13 @@ To go live:
    `submitBooking` (or after a team member confirms).
 
 No component changes are needed.
+
+## Writing MDX content
+
+- Any `[text in square brackets]` in MDX paragraphs and lists is highlighted as a placeholder.
+- `<CrisisCallout>Lead-in sentence</CrisisCallout>` adds a dark box with tap-to-call helplines.
+- `<Helplines />` writes the helplines inline ("Tele-MANAS (14416) or DISHA (1056)").
+- Both read numbers from `src/config/safety.ts`; never type helpline numbers into content.
 
 ## Motion
 

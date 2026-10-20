@@ -32,7 +32,15 @@ are highlighted on the page so they can't slip through.
 - [ ] Guides still to write: grief, trauma, parenting, anger, OCD, sleep (they use the template until then)
 - [ ] Decide: offer a free short intro call? (common in this market; not on the site yet)
 - [ ] Photography, if any. The site uses illustrations only until then.
-- [ ] Legal review of all policy drafts marked `[NEEDS LEGAL REVIEW]` (Phase 5)
+- [ ] Legal review of all five policy drafts in `content/legal/{en,ml}/` (each is marked `[NEEDS LEGAL REVIEW]` and full of `[placeholders]`: entity name, address, Grievance Officer, retention periods, security measures, liability, jurisdiction, safeguarding lead)
+- [ ] After legal review: remove `noIndex: true` in `src/app/[locale]/legal/[slug]/page.tsx` and the review banner text in `messages/*.json` → `legalPage.reviewBanner`
+- [ ] Verify CHILDLINE 1098 is still in service (it has been merging into 112) — `content/legal/*/minor-protection.mdx`
+- [ ] Decide which language version of the policies is authoritative (`legalPage.versionNote`)
+- [ ] About page: founder story, team, therapist vetting process, memberships, supervision (`messages/*.json` → `aboutPage`)
+- [ ] For organisations: reply time, in-person availability, client logos/case studies (`businessPage`)
+- [ ] Real workshops in `src/data/workshops.ts` (three marked samples today); a real registration flow
+- [ ] Journal author names and credentials (`content/blog/*/*.mdx` → `author`)
+- [ ] Contact page reply time (`contactPage.reply`); optional separate `ENQUIRY_NOTIFY_TO` inbox
 
 ## Integrations (Phase 4 onwards)
 - [ ] Resend API key, a verified sender domain, and the inbox that receives booking requests (`.env.example`)

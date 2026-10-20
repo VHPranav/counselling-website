@@ -1,6 +1,14 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import { CrisisCallout } from "@/components/layout/CrisisCallout";
+import { Helplines } from "@/components/layout/Helplines";
+import { Ph } from "@/components/ui/Placeholder";
+import { Children, type ReactNode } from "react";
+
+/** Highlight [bracketed placeholders] inside plain-text MDX children. */
+function marks(children: ReactNode): ReactNode {
+  return Children.map(children, (child) => (typeof child === "string" && child.includes("[") ? <Ph>{child}</Ph> : child));
+}
 
 /**
  * Styling for long-form MDX content (concern guides, blog, legal pages).
@@ -8,16 +16,23 @@ import { CrisisCallout } from "@/components/layout/CrisisCallout";
  */
 const components: MDXComponents = {
   CrisisCallout,
+  Helplines,
   h2: (props) => <h2 className="mt-14 text-h3 first:mt-0" {...props} />,
   h3: (props) => <h3 className="mt-10 text-h4" {...props} />,
-  p: (props) => <p className="mt-4 text-cocoa-soft" {...props} />,
+  p: ({ children, ...props }) => (
+    <p className="mt-4 text-cocoa-soft" {...props}>
+      {marks(children)}
+    </p>
+  ),
   ul: (props) => <ul className="mt-4 space-y-2.5" {...props} />,
   ol: (props) => <ol className="mt-4 list-decimal space-y-2.5 pl-6 marker:text-clay-deep" {...props} />,
-  li: (props) => (
+  li: ({ children, ...props }) => (
     <li
       className="relative pl-6 text-cocoa-soft before:absolute before:left-0 before:top-[0.7em] before:size-2 before:rounded-full before:bg-ochre [ol_&]:pl-1 [ol_&]:before:hidden"
       {...props}
-    />
+    >
+      {marks(children)}
+    </li>
   ),
   strong: (props) => <strong className="font-semibold text-cocoa" {...props} />,
   a: ({ href = "", ...props }) =>
