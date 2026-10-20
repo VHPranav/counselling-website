@@ -6,8 +6,8 @@ type Variant = "primary" | "secondary" | "ghost" | "light";
 type Size = "md" | "lg" | "sm";
 
 const base =
-  "group/btn relative inline-flex items-center justify-center gap-2 rounded-full font-medium whitespace-nowrap " +
-  "transition-[background-color,color,box-shadow,transform] duration-300 ease-[var(--ease-soft)] " +
+  "group/btn relative inline-flex items-center justify-center gap-2 rounded-full font-medium text-center text-balance " +
+  "transition-[background-color,color,box-shadow,transform,translate] duration-300 ease-[var(--ease-soft)] " +
   "disabled:pointer-events-none disabled:opacity-50 select-none touch-manipulation";
 
 const variants: Record<Variant, string> = {
@@ -21,9 +21,9 @@ const variants: Record<Variant, string> = {
 
 // Min height 44px everywhere for touch targets; extra vertical room for Malayalam.
 const sizes: Record<Size, string> = {
-  sm: "min-h-11 px-4 text-sm",
-  md: "min-h-12 px-6 text-base",
-  lg: "min-h-14 px-8 text-lead",
+  sm: "min-h-11 px-4 py-1.5 text-sm",
+  md: "min-h-12 px-6 py-2 text-base",
+  lg: "min-h-14 px-7 py-2.5 text-lead sm:px-8",
 };
 
 type Common = {

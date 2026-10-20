@@ -7,7 +7,7 @@ in `content/**/ml/*.mdx` is listed separately at the bottom as it is added.
 To approve a string, add its key to `docs/ml-review.status.json` with the value `"approved"`
 (or `"changed"` if you edited the Malayalam), then re-run the script.
 
-**78 of 78 strings still need native-speaker review.**
+**245 of 245 strings still need native-speaker review.**
 
 | Key | Malayalam | English source | Status |
 |---|---|---|---|
@@ -18,6 +18,9 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `common.optional` | നിർബന്ധമില്ല | optional | needs native-speaker review |
 | `common.required` | നിർബന്ധം | required | needs native-speaker review |
 | `common.comingSoon` | ഈ പേജ് അടുത്ത ഘട്ടത്തിൽ വരും. | This page is coming in a later phase. | needs native-speaker review |
+| `common.languages` | ഭാഷകൾ | Languages | needs native-speaker review |
+| `common.ml` | മലയാളം | Malayalam | needs native-speaker review |
+| `common.en` | ഇംഗ്ലീഷ് | English | needs native-speaker review |
 | `header.home` | {brand} — ഹോം | {brand} — home | needs native-speaker review |
 | `header.primaryNav` | പ്രധാന മെനു | Main | needs native-speaker review |
 | `header.menu` | മെനു | Menu | needs native-speaker review |
@@ -54,13 +57,86 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `footer.hours` | സഹായ സമയം | Support hours | needs native-speaker review |
 | `footer.disclaimer` | ഞങ്ങൾ കൗൺസലിങ്ങും സൈക്കോതെറാപ്പിയുമാണ് നൽകുന്നത്. രോഗനിർണയം നടത്തുകയോ മരുന്ന് കുറിക്കുകയോ അടിയന്തര ചികിത്സ നൽകുകയോ ചെയ്യുന്നില്ല. | We offer counselling and psychotherapy. We do not diagnose, prescribe medication or provide emergency care. | needs native-speaker review |
 | `footer.rights` | © {year} {brand}. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം. | © {year} {brand}. All rights reserved. | needs native-speaker review |
-| `home.eyebrow` | ഓൺലൈൻ കൗൺസലിങ് · മലയാളം & ഇംഗ്ലീഷ് | Online counselling · Malayalam & English | needs native-speaker review |
-| `home.title` | മനസ്സിലാക്കുന്ന ഒരാളോട് സംസാരിക്കാം, നിങ്ങളുടെ സ്വന്തം ഭാഷയിൽ. | Talk to someone who understands, in the language you feel in. | needs native-speaker review |
-| `home.lead` | നിങ്ങളുടെ ഭാഷ സംസാരിക്കുന്ന കൗൺസലർമാരുമായി വീഡിയോ വഴിയോ ഓഡിയോ വഴിയോ സ്വകാര്യ സെഷനുകൾ — ലോകത്ത് എവിടെയായിരുന്നാലും. | Private sessions by video or audio, with counsellors who speak your language — wherever in the world you are. | needs native-speaker review |
-| `home.ctaPrimary` | സെഷൻ ബുക്ക് ചെയ്യാം | Book a session | needs native-speaker review |
-| `home.ctaSecondary` | തെറാപ്പിസ്റ്റിനെ കണ്ടെത്താം | Find a therapist | needs native-speaker review |
-| `home.phaseNote` | അടിത്തറയുടെ പ്രിവ്യൂ. പൂർണ്ണമായ ഹോം പേജ് രണ്ടാം ഘട്ടത്തിൽ. | Foundation preview. The full home page arrives in Phase 2. | needs native-speaker review |
-| `home.styleguideLink` | ഡിസൈൻ സിസ്റ്റം കാണാം | See the design system | needs native-speaker review |
+| `home.hero.eyebrow` | ഓൺലൈൻ കൗൺസലിങ് · മലയാളം & ഇംഗ്ലീഷ് | Online counselling · Malayalam & English | needs native-speaker review |
+| `home.hero.title` | മനസ്സിലാക്കുന്ന ഒരാളോട് സംസാരിക്കാം, നിങ്ങളുടെ സ്വന്തം ഭാഷയിൽ. | Talk to someone who understands, in the language you feel in. | needs native-speaker review |
+| `home.hero.lead` | നിങ്ങളുടെ ഭാഷ സംസാരിക്കുന്ന കൗൺസലർമാരുമായി വീഡിയോ വഴിയോ ഓഡിയോ വഴിയോ സ്വകാര്യ സെഷനുകൾ — ലോകത്ത് എവിടെയായിരുന്നാലും. | Private sessions by video or audio, with counsellors who speak your language — wherever in the world you are. | needs native-speaker review |
+| `home.hero.ctaPrimary` | സെഷൻ ബുക്ക് ചെയ്യാം | Book a session | needs native-speaker review |
+| `home.hero.ctaSecondary` | ഇന്ന് എങ്ങനെയുണ്ട്? | How are you feeling? | needs native-speaker review |
+| `home.hero.point1` | മലയാളം & ഇംഗ്ലീഷ് | Malayalam & English | needs native-speaker review |
+| `home.hero.point2` | വീഡിയോ അല്ലെങ്കിൽ ഓഡിയോ | Video or audio | needs native-speaker review |
+| `home.hero.point3` | സ്വകാര്യവും രഹസ്യാത്മകവും | Private and confidential | needs native-speaker review |
+| `home.mood.eyebrow` | പതുക്കെ തുടങ്ങാം | A gentle place to start | needs native-speaker review |
+| `home.mood.title` | ഇന്ന് മനസ്സിന് എങ്ങനെയുണ്ട്? | How are you feeling today? | needs native-speaker review |
+| `home.mood.lead` | ഏറ്റവും അടുത്ത് തോന്നുന്നത് തിരഞ്ഞെടുക്കൂ. ഇതിൽ തെറ്റായ ഉത്തരമില്ല. നിങ്ങൾ തിരഞ്ഞെടുക്കുന്നത് എവിടെയും സേവ് ചെയ്യുകയോ ആരുമായും പങ്കുവെക്കുകയോ ഇല്ല. | Choose whatever feels closest. There's no wrong answer, and nothing you pick here is saved or shared. | needs native-speaker review |
+| `home.mood.groupLabel` | ഒരു അനുഭവം തിരഞ്ഞെടുക്കൂ | Choose a feeling | needs native-speaker review |
+| `home.mood.prompt` | ഒന്ന് തിരഞ്ഞെടുക്കൂ, എവിടെ തുടങ്ങാമെന്ന് ഞങ്ങൾ കാണിച്ചുതരാം. | Pick one and we'll show you where you might begin. | needs native-speaker review |
+| `home.mood.concernsTitle` | സഹായിച്ചേക്കാവുന്ന വിഷയങ്ങൾ | Topics that may help | needs native-speaker review |
+| `home.mood.therapistsTitle` | ഇതിൽ പ്രവർത്തിക്കുന്ന തെറാപ്പിസ്റ്റുകൾ | Therapists who work with this | needs native-speaker review |
+| `home.mood.book` | ആദ്യ സെഷൻ ബുക്ക് ചെയ്യാം | Book a first session | needs native-speaker review |
+| `home.mood.match` | അല്ലെങ്കിൽ ഞങ്ങൾ യോജിച്ച ആളെ കണ്ടെത്താം | Or let us match you | needs native-speaker review |
+| `home.mood.reset` | മറ്റൊന്ന് തിരഞ്ഞെടുക്കാം | Choose something else | needs native-speaker review |
+| `home.services.eyebrow` | ഞങ്ങൾ എങ്ങനെ സഹായിക്കാം | Ways we can help | needs native-speaker review |
+| `home.services.title` | നിങ്ങൾക്കും നിങ്ങളുടെ പ്രിയപ്പെട്ടവർക്കും പിന്തുണ | Support for you, and the people around you | needs native-speaker review |
+| `home.services.viewAll` | എല്ലാ സേവനങ്ങളും കാണാം | See all services | needs native-speaker review |
+| `home.services.minutes` | {n} മിനിറ്റ് | {n} min | needs native-speaker review |
+| `home.services.price` | [നിരക്ക്] | [Price] | needs native-speaker review |
+| `home.services.video` | വീഡിയോ | Video | needs native-speaker review |
+| `home.services.audio` | ഓഡിയോ | Audio | needs native-speaker review |
+| `home.how.eyebrow` | ഇത് എങ്ങനെയാണ് | How it works | needs native-speaker review |
+| `home.how.title` | നിങ്ങളുടെ വേഗത്തിൽ, നാല് ചെറിയ ചുവടുകൾ | Four small steps, at your own pace | needs native-speaker review |
+| `home.how.stepLabel` | ഘട്ടം {n} / 4 | Step {n} of 4 | needs native-speaker review |
+| `home.how.step1Title` | തിരഞ്ഞെടുക്കാം | Choose | needs native-speaker review |
+| `home.how.step1Body` | ഒരു സേവനവും ഭാഷയും തിരഞ്ഞെടുക്കൂ. മലയാളമോ ഇംഗ്ലീഷോ രണ്ടും ചേർന്നതോ — നിങ്ങൾക്ക് സ്വാഭാവികമായി തോന്നുന്നത്. | Pick a service and a language. Malayalam, English, or a mix of both — whatever feels natural to you. | needs native-speaker review |
+| `home.how.step2Title` | യോജിച്ച ആളെ കണ്ടെത്താം | Match | needs native-speaker review |
+| `home.how.step2Body` | തെറാപ്പിസ്റ്റുകളെ നിങ്ങൾക്ക് തന്നെ നോക്കി തിരഞ്ഞെടുക്കാം, അല്ലെങ്കിൽ കുറച്ച് പറഞ്ഞാൽ യോജിച്ച ഒരാളെ ഞങ്ങൾ നിർദ്ദേശിക്കാം. | Browse therapists yourself, or tell us a little and we'll suggest someone suited to you. | needs native-speaker review |
+| `home.how.step3Title` | സംസാരിക്കാം | Talk | needs native-speaker review |
+| `home.how.step3Body` | സ്വകാര്യമായ ഒരിടത്തിരുന്ന് വീഡിയോ വഴിയോ ഓഡിയോ വഴിയോ സംസാരിക്കാം. ക്യാമറയിൽ വരാൻ താൽപര്യമില്ലെങ്കിൽ, വേണ്ട. | Meet by video or audio from somewhere private. If you'd rather not be on camera, you don't have to be. | needs native-speaker review |
+| `home.how.step4Title` | വളരാം | Grow | needs native-speaker review |
+| `home.how.step4Body` | നിങ്ങളുടെ വേഗത്തിൽ മുന്നോട്ട് പോകാം. തയ്യാറാകുമ്പോൾ തുടർ സെഷനുകൾ ബുക്ക് ചെയ്യാം. | Go at your own pace, and book follow-up sessions whenever you're ready. | needs native-speaker review |
+| `home.therapists.eyebrow` | ഞങ്ങളുടെ തെറാപ്പിസ്റ്റുകൾ | Our therapists | needs native-speaker review |
+| `home.therapists.title` | നിങ്ങളുടെ ഭാഷയിൽ കേൾക്കുന്നവർ | People who listen, in your language | needs native-speaker review |
+| `home.therapists.lead` | അനുഭവവും ഭാഷയും സമീപനവും നിങ്ങൾക്ക് യോജിക്കുന്ന ഒരാളെ കണ്ടെത്തൂ. | Find someone whose experience, language and approach feel right for you. | needs native-speaker review |
+| `home.therapists.credentialsNote` | [പരിശോധിച്ച യോഗ്യതകൾ — RCI രജിസ്ട്രേഷൻ, ബിരുദങ്ങൾ — ഓരോ പ്രൊഫൈലിലും ഉണ്ടാകും.] | [Verified credentials — RCI registration, qualifications — will appear on every profile.] | needs native-speaker review |
+| `home.therapists.viewAll` | എല്ലാ തെറാപ്പിസ്റ്റുകളെയും കാണാം | Meet all therapists | needs native-speaker review |
+| `home.therapists.viewProfile` | പ്രൊഫൈൽ കാണാം | View profile | needs native-speaker review |
+| `home.therapists.speaks` | ഭാഷകൾ | Speaks | needs native-speaker review |
+| `home.therapists.from` | {price} മുതൽ | From {price} | needs native-speaker review |
+| `home.therapists.next` | അടുത്ത ഒഴിവ് | Next available | needs native-speaker review |
+| `home.therapists.thisWeek` | ഈ ആഴ്ച | This week | needs native-speaker review |
+| `home.therapists.nextWeek` | അടുത്ത ആഴ്ച | Next week | needs native-speaker review |
+| `home.therapists.later` | കുറച്ച് ആഴ്ചകൾക്കുള്ളിൽ | In a few weeks | needs native-speaker review |
+| `home.breath.eyebrow` | ഒരു ചെറിയ ഇടവേള | A small pause | needs native-speaker review |
+| `home.breath.title` | ഞങ്ങളോടൊപ്പം ഒന്ന് ശ്വാസമെടുക്കൂ | Take a breath with us | needs native-speaker review |
+| `home.breath.lead` | വൃത്തം വലുതാകുമ്പോൾ ശ്വാസം ഉള്ളിലേക്കെടുക്കൂ, ചെറുതാകുമ്പോൾ പതുക്കെ പുറത്തേക്ക് വിടൂ. നാല് സെക്കൻഡ് ഉള്ളിലേക്ക്, ആറ് സെക്കൻഡ് പുറത്തേക്ക്. | Breathe in as the circle grows, and slowly out as it softens. Four seconds in, six seconds out. | needs native-speaker review |
+| `home.breath.in` | ശ്വാസമെടുക്കൂ | Breathe in | needs native-speaker review |
+| `home.breath.out` | പതുക്കെ വിടൂ | Breathe out | needs native-speaker review |
+| `home.breath.pause` | നിർത്താം | Pause | needs native-speaker review |
+| `home.breath.play` | തുടങ്ങാം | Start | needs native-speaker review |
+| `home.breath.still` | നാല് സെക്കൻഡ് ഉള്ളിലേക്ക്, ആറ് സെക്കൻഡ് പുറത്തേക്ക്. | In for four, out for six. | needs native-speaker review |
+| `home.testimonials.eyebrow` | അവരുടെ വാക്കുകളിൽ | In their words | needs native-speaker review |
+| `home.testimonials.title` | ആളുകൾ ഞങ്ങളോട് പറഞ്ഞത് | What people tell us | needs native-speaker review |
+| `home.testimonials.note` | ഇവ താൽക്കാലികമാണ്. യഥാർത്ഥ അഭിപ്രായങ്ങൾ രേഖാമൂലമുള്ള സമ്മതത്തോടെ മാത്രമേ പ്രസിദ്ധീകരിക്കൂ. | These are placeholders. Real testimonials will appear only with written consent. | needs native-speaker review |
+| `home.testimonials.pause` | നീക്കം നിർത്താം | Pause scrolling | needs native-speaker review |
+| `home.testimonials.play` | വീണ്ടും നീക്കാം | Resume scrolling | needs native-speaker review |
+| `home.testimonials.quote` | [അഭിപ്രായം {n} — യഥാർത്ഥവും സമ്മതത്തോടെയുമുള്ള ഒന്നിനായി കാത്തിരിക്കുന്നു] | [Testimonial {n} — awaiting a real, consented quote] | needs native-speaker review |
+| `home.testimonials.who` | [പേര്, നഗരം] | [First name, city] | needs native-speaker review |
+| `home.faq.eyebrow` | ചോദ്യങ്ങൾ | Questions | needs native-speaker review |
+| `home.faq.title` | പലരും ചോദിക്കുന്നത് | Things people often ask | needs native-speaker review |
+| `home.faq.viewAll` | എല്ലാ ചോദ്യങ്ങളും വായിക്കാം | Read all questions | needs native-speaker review |
+| `home.business.eyebrow` | സ്ഥാപനങ്ങൾക്ക് | For organisations | needs native-speaker review |
+| `home.business.title` | തൊഴിലിടങ്ങൾക്കും ക്യാമ്പസുകൾക്കുമായി മാനസികാരോഗ്യ പരിപാടികൾ | Wellbeing programmes for workplaces and campuses | needs native-speaker review |
+| `home.business.lead` | നിങ്ങളുടെ ജീവനക്കാർക്കോ വിദ്യാർത്ഥികൾക്കോ രഹസ്യാത്മക കൗൺസലിങ്ങും, മലയാളത്തിലും ഇംഗ്ലീഷിലും വർക്ക്‌ഷോപ്പുകളും — നിങ്ങളുടെ ആവശ്യത്തിനനുസരിച്ച്. | Confidential counselling for your people, plus workshops in Malayalam and English, shaped around your team or students. | needs native-speaker review |
+| `home.business.workTitle` | തൊഴിലിടങ്ങൾ | Workplaces | needs native-speaker review |
+| `home.business.workBody` | ജീവനക്കാർക്ക് കൗൺസലിങ്, മാനേജർമാർക്ക് പരിശീലനം, സമ്മർദ്ദവും തളർച്ചയും കൈകാര്യം ചെയ്യാനുള്ള വർക്ക്‌ഷോപ്പുകൾ. | Employee counselling, manager training and workshops on stress and burnout. | needs native-speaker review |
+| `home.business.campusTitle` | ക്യാമ്പസുകൾ | Campuses | needs native-speaker review |
+| `home.business.campusBody` | വിദ്യാർത്ഥികൾക്ക് കൗൺസലിങ്, പരീക്ഷാ സമ്മർദ്ദത്തെക്കുറിച്ചുള്ള സെഷനുകൾ, അധ്യാപകർക്ക് പിന്തുണ. | Student counselling, sessions on exam stress, and support for teaching staff. | needs native-speaker review |
+| `home.business.cta` | ഒരു പരിപാടിയെക്കുറിച്ച് സംസാരിക്കാം | Talk to us about a programme | needs native-speaker review |
+| `home.cta.title` | നിങ്ങൾ തയ്യാറാകുമ്പോൾ, ഞങ്ങൾ ഇവിടെയുണ്ട്. | Whenever you're ready, we're here. | needs native-speaker review |
+| `home.cta.lead` | ആദ്യ ചുവട് ചെറുതാകാം. ഒരു സെഷൻ ബുക്ക് ചെയ്യാം, അല്ലെങ്കിൽ ഇപ്പോൾ വെറുതെ ഒന്ന് നോക്കാം. | Your first step can be a small one. Book a session, or just look around for now. | needs native-speaker review |
+| `home.cta.primary` | സെഷൻ ബുക്ക് ചെയ്യാം | Book a session | needs native-speaker review |
+| `home.cta.secondary` | ഒരു ചോദ്യം ചോദിക്കാം | Ask us a question | needs native-speaker review |
+| `home.cta.whatsapp` | മെസ്സേജ് അയക്കാനാണോ ഇഷ്ടം? വാട്സ്ആപ്പിൽ ബന്ധപ്പെടാം | Prefer to message? Reach us on WhatsApp | needs native-speaker review |
+| `home.cta.someone` | പ്രിയപ്പെട്ട ഒരാൾക്ക് വേണ്ടി ബുക്ക് ചെയ്യുകയാണോ? അവരുടെ സമ്മതത്തോടെ, അവർക്ക് വേണ്ടി ബുക്ക് ചെയ്യാം. | Booking for someone you care about? You can book on their behalf, with their agreement. | needs native-speaker review |
 | `styleguide.title` | ഡിസൈൻ സിസ്റ്റം | Design system | needs native-speaker review |
 | `styleguide.intro` | സൈറ്റിൽ ഉപയോഗിക്കുന്ന എല്ലാ നിറങ്ങളും അക്ഷര വലുപ്പങ്ങളും ഘടകങ്ങളും. ഈ പേജ് ടീമിന് വേണ്ടിയുള്ളതാണ്, സെർച്ച് എഞ്ചിനുകളിൽ കാണില്ല. | Every colour, type size and component used across the site. This page is for the team and is hidden from search engines. | needs native-speaker review |
 | `styleguide.colours` | നിറങ്ങൾ | Colours | needs native-speaker review |
@@ -89,3 +165,94 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `styleguide.fieldNameError` | നിങ്ങളെ എന്ത് വിളിക്കണമെന്ന് അറിയാൻ ഒരു പേര് നൽകൂ. | Please enter a name, so we know what to call you. | needs native-speaker review |
 | `styleguide.fieldEmail` | ഇമെയിൽ | Email | needs native-speaker review |
 | `styleguide.marqueeItem` | [താൽക്കാലിക അഭിപ്രായം — യഥാർത്ഥവും സമ്മതത്തോടെയുമുള്ള ഒന്നിനായി കാത്തിരിക്കുന്നു] | [Placeholder testimonial — awaiting a real, consented quote] | needs native-speaker review |
+| `data/concerns:concerns[anxiety].name` | ഉത്കണ്ഠ | Anxiety | needs native-speaker review |
+| `data/concerns:concerns[anxiety].summary` | അമിതമായ ആധി, പരിഭ്രമം, നിൽക്കാത്ത ചിന്തകൾ. | Worry, panic and a mind that won't switch off. | needs native-speaker review |
+| `data/concerns:concerns[depression].name` | വിഷാദം | Depression | needs native-speaker review |
+| `data/concerns:concerns[depression].summary` | മനസ്സിന്റെ തളർച്ച, മരവിപ്പ്, മുമ്പ് ഇഷ്ടപ്പെട്ടിരുന്നവയോട് പോലും താൽപര്യമില്ലായ്മ. | Low mood, numbness, losing interest in things you used to enjoy. | needs native-speaker review |
+| `data/concerns:concerns[relationships].name` | ബന്ധങ്ങൾ | Relationships | needs native-speaker review |
+| `data/concerns:concerns[relationships].summary` | പങ്കാളി, കുടുംബം, സൗഹൃദങ്ങൾ — അവയ്ക്കിടയിൽ വളരുന്ന അകലങ്ങളും. | Partners, family and friendships, and the distance that can grow between. | needs native-speaker review |
+| `data/concerns:concerns[work-stress].name` | ജോലി സമ്മർദ്ദവും തളർച്ചയും | Work stress & burnout | needs native-speaker review |
+| `data/concerns:concerns[work-stress].summary` | സമ്മർദ്ദം, ക്ഷീണം, ജോലിയിൽ മുന്നോട്ട് പോകാനാവാത്ത തോന്നൽ. | Pressure, exhaustion, and feeling stuck at work. | needs native-speaker review |
+| `data/concerns:concerns[grief].name` | ദുഃഖവും നഷ്ടവും | Grief & loss | needs native-speaker review |
+| `data/concerns:concerns[grief].summary` | പ്രിയപ്പെട്ട ഒരാളെയോ ഒന്നിനെയോ നഷ്ടപ്പെടുമ്പോൾ. | Losing someone, or something, that mattered. | needs native-speaker review |
+| `data/concerns:concerns[trauma].name` | മാനസികാഘാതം (ട്രോമ) | Trauma | needs native-speaker review |
+| `data/concerns:concerns[trauma].summary` | ഇപ്പോഴും വിട്ടുമാറാത്ത വേദനിപ്പിക്കുന്ന അനുഭവങ്ങൾ. | Painful experiences that still feel close. | needs native-speaker review |
+| `data/concerns:concerns[parenting].name` | പാരന്റിങ് | Parenting | needs native-speaker review |
+| `data/concerns:concerns[parenting].summary` | തലമുറകൾക്കും സംസ്കാരങ്ങൾക്കും നാടുകൾക്കുമിടയിൽ കുട്ടികളെ വളർത്തുമ്പോൾ. | Raising children across generations, cultures and countries. | needs native-speaker review |
+| `data/concerns:concerns[anger].name` | ദേഷ്യം | Anger | needs native-speaker review |
+| `data/concerns:concerns[anger].summary` | നിയന്ത്രിക്കാൻ പ്രയാസം തോന്നുന്ന ദേഷ്യവും അസ്വസ്ഥതയും. | Frustration that feels hard to hold. | needs native-speaker review |
+| `data/concerns:concerns[ocd].name` | ഒസിഡി | OCD | needs native-speaker review |
+| `data/concerns:concerns[ocd].summary` | വീണ്ടും വീണ്ടും വരുന്ന അനാവശ്യ ചിന്തകളും പ്രേരണകളും. | Intrusive thoughts and urges that keep coming back. | needs native-speaker review |
+| `data/concerns:concerns[sleep].name` | ഉറക്കം | Sleep | needs native-speaker review |
+| `data/concerns:concerns[sleep].summary` | ഉറങ്ങാനോ ഉറക്കം നിലനിർത്താനോ ഉള്ള ബുദ്ധിമുട്ട്. | Trouble falling asleep, or staying asleep. | needs native-speaker review |
+| `data/faqs:faqs[confidential].question` | ഇത് ശരിക്കും രഹസ്യമായിരിക്കുമോ? | Is it really confidential? | needs native-speaker review |
+| `data/faqs:faqs[confidential].answer` | അതെ. നിങ്ങൾ പറയുന്നത് നിങ്ങൾക്കും തെറാപ്പിസ്റ്റിനും ഇടയിൽ മാത്രം. ആരുടെയെങ്കിലും സുരക്ഷ ഗുരുതരമായ അപകടത്തിലാകുന്ന അപൂർവ സാഹചര്യങ്ങളിലോ നിയമം ആവശ്യപ്പെടുമ്പോഴോ മാത്രമാണ് ഇതിന് ഒഴിവ്. ആദ്യ സെഷനിൽ തെറാപ്പിസ്റ്റ് ഇത് വിശദീകരിക്കും. | Yes. What you share stays between you and your therapist. The only exceptions are rare situations where someone's safety is at serious risk, or where the law requires it. Your therapist will explain these in your first session. | needs native-speaker review |
+| `data/faqs:faqs[need-a-reason].question` | തെറാപ്പിക്ക് വരാൻ എന്തെങ്കിലും 'പ്രശ്നം' വേണമെന്നുണ്ടോ? | Do I need to be 'unwell' to start therapy? | needs native-speaker review |
+| `data/faqs:faqs[need-a-reason].answer` | ഒട്ടുമില്ല. എന്തോ ഒരു ഭാരം തോന്നുന്നതുകൊണ്ടോ, സ്വയം കൂടുതൽ മനസ്സിലാക്കാനോ ആണ് പലരും വരുന്നത്. | Not at all. Many people come simply because something feels heavy, or because they want to understand themselves better. | needs native-speaker review |
+| `data/faqs:faqs[mixed-language].question` | മലയാളവും ഇംഗ്ലീഷും ഇടകലർത്തി സംസാരിക്കാമോ? | Can I mix Malayalam and English? | needs native-speaker review |
+| `data/faqs:faqs[mixed-language].answer` | തീർച്ചയായും. രണ്ടും ഇടകലർത്തി സംസാരിക്കുന്നത് തികച്ചും സ്വാഭാവികമാണ്. രണ്ട് ഭാഷയും സംസാരിക്കുന്ന ഒരു തെറാപ്പിസ്റ്റിനെ തിരഞ്ഞെടുക്കുകയും ചെയ്യാം. | Of course. Switching between the two is completely natural, and you can choose a therapist who speaks both. | needs native-speaker review |
+| `data/faqs:faqs[outside-india].question` | ഞാൻ ഇന്ത്യയ്ക്ക് പുറത്താണെങ്കിലോ? | What if I live outside India? | needs native-speaker review |
+| `data/faqs:faqs[outside-india].answer` | സെഷനുകൾ ഓൺലൈനാണ്, അതിനാൽ എവിടെ നിന്നും പങ്കെടുക്കാം. ബുക്ക് ചെയ്യുമ്പോൾ നിങ്ങളുടെ സമയമേഖലയ്ക്ക് യോജിച്ച സമയം തിരഞ്ഞെടുക്കാം. | Sessions are online, so you can join from anywhere. When you book, pick a time that suits your time zone. | needs native-speaker review |
+| `data/faqs:faqs[first-session].question` | ആദ്യ സെഷനിൽ എന്താണ് നടക്കുക? | What happens in the first session? | needs native-speaker review |
+| `data/faqs:faqs[first-session].answer` | നിങ്ങളെക്കുറിച്ചും എന്താണ് നിങ്ങളെ ഇവിടെ എത്തിച്ചതെന്നും തെറാപ്പിസ്റ്റ് മനസ്സിലാക്കാൻ ശ്രമിക്കും. എത്രത്തോളം പറയണമെന്ന് നിങ്ങൾക്ക് തീരുമാനിക്കാം. | Your therapist will get to know you and what brought you here. You decide how much or how little to share. | needs native-speaker review |
+| `data/faqs:faqs[someone-else].question` | മറ്റൊരാൾക്ക് വേണ്ടി സെഷൻ ബുക്ക് ചെയ്യാമോ? | Can I book a session for someone else? | needs native-speaker review |
+| `data/faqs:faqs[someone-else].answer` | ചെയ്യാം, അവർ അറിയുകയും സമ്മതിക്കുകയും ചെയ്യുന്നുണ്ടെങ്കിൽ. ആ വ്യക്തി സ്വയം തിരഞ്ഞെടുക്കുമ്പോഴാണ് തെറാപ്പി ഏറ്റവും നന്നായി ഫലിക്കുക. 18 വയസ്സിന് താഴെയുള്ളവർക്ക്, മാതാപിതാക്കളോ രക്ഷിതാവോ ആണ് സമ്മതം നൽകേണ്ടത്. | Yes, as long as they know and agree. Therapy works best when the person has chosen it themselves. For anyone under 18, a parent or guardian completes the consent step. | needs native-speaker review |
+| `data/faqs:faqs[camera].question` | ക്യാമറ ഓൺ ചെയ്യണമെന്നുണ്ടോ? | Do I have to turn my camera on? | needs native-speaker review |
+| `data/faqs:faqs[camera].answer` | വേണ്ട. ബുക്ക് ചെയ്യുമ്പോൾ ഓഡിയോ മാത്രമുള്ള സെഷൻ തിരഞ്ഞെടുക്കാം. | No. You can choose an audio-only session when you book. | needs native-speaker review |
+| `data/moods:moods[anxious].label` | ഉത്കണ്ഠ തോന്നുന്നു | Anxious | needs native-speaker review |
+| `data/moods:moods[anxious].response` | ഓടിക്കൊണ്ടിരിക്കുന്ന ചിന്തകളും നെഞ്ചിലെ ഭാരവും വല്ലാതെ തളർത്തും. ഇതൊക്കെ ഒറ്റയ്ക്ക് അഴിച്ചെടുക്കേണ്ടതില്ല. | Racing thoughts and a tight chest are exhausting. You don't have to untangle them alone. | needs native-speaker review |
+| `data/moods:moods[low].label` | മനസ്സിന് ഒരു ഭാരം | Feeling low | needs native-speaker review |
+| `data/moods:moods[low].response` | എല്ലാം ഭാരമായി തോന്നുമ്പോൾ ചെറിയ കാര്യങ്ങൾ പോലും പ്രയാസമാകും. സംസാരിക്കുന്നത് ഒരല്പം ആശ്വാസം നൽകിയേക്കാം. | When everything feels heavy, even small things take effort. Talking can make a little room to breathe. | needs native-speaker review |
+| `data/moods:moods[overwhelmed].label` | എല്ലാം കൂടി താങ്ങാനാവുന്നില്ല | Overwhelmed | needs native-speaker review |
+| `data/moods:moods[overwhelmed].response` | എല്ലാം ഒരുമിച്ച് വരുമ്പോൾ എവിടെ തുടങ്ങണമെന്ന് അറിയില്ല. നമുക്ക് ഒരു കാര്യത്തിൽ നിന്ന് തുടങ്ങാം. | When it all arrives at once, it's hard to know where to begin. We can start with just one thing. | needs native-speaker review |
+| `data/moods:moods[relationship].label` | ബന്ധങ്ങളിലെ സമ്മർദ്ദം | Relationship stress | needs native-speaker review |
+| `data/moods:moods[relationship].response` | പങ്കാളിയുമായോ മാതാപിതാക്കളുമായോ കുടുംബവുമായോ ആകട്ടെ, അടുത്തവരുമായുള്ള പിണക്കം വേദനിപ്പിക്കും. ഒറ്റയ്ക്കോ ഒരുമിച്ചോ വരാം. | With a partner, parents or family, conflict close to home hurts. You can come on your own or together. | needs native-speaker review |
+| `data/moods:moods[grief].label` | നഷ്ടത്തിന്റെ ദുഃഖം | Grief or loss | needs native-speaker review |
+| `data/moods:moods[grief].response` | ദുഃഖത്തിന് ഒരു സമയപരിധിയില്ല. നിങ്ങളുടെ വേഗത്തിൽ, ഒപ്പമിരിക്കാൻ ഒരു കൗൺസലറുണ്ട്. | Grief keeps no timetable. A counsellor can sit with you in it, at your pace. | needs native-speaker review |
+| `data/moods:moods[work].label` | ജോലിയിലെ സമ്മർദ്ദം | Work stress | needs native-speaker review |
+| `data/moods:moods[work].response` | നീണ്ട ജോലി സമയവും സമ്മർദ്ദവും മുന്നോട്ട് പോകാനാവാത്ത അവസ്ഥയും വീട്ടിലേക്കും കൂടെ വരും. എന്താണ് ഭാരമാകുന്നതെന്ന് നമുക്ക് നോക്കാം. | Long hours, pressure or feeling stuck can follow you home. Let's look at what's weighing on you. | needs native-speaker review |
+| `data/moods:moods[anger].label` | പെട്ടെന്ന് ദേഷ്യം വരുന്നു | On edge | needs native-speaker review |
+| `data/moods:moods[anger].response` | ദേഷ്യത്തിനടിയിൽ പലപ്പോഴും മറ്റെന്തെങ്കിലും ഒളിഞ്ഞിരിപ്പുണ്ടാകും. അത് മനസ്സിലാക്കുന്നത് നല്ലൊരു തുടക്കമാണ്. | Anger often protects something underneath. Understanding it is a good first step. | needs native-speaker review |
+| `data/moods:moods[sleep].label` | ഉറക്കം കിട്ടുന്നില്ല | Can't sleep | needs native-speaker review |
+| `data/moods:moods[sleep].response` | മനസ്സ് ശാന്തമാകാത്തപ്പോൾ രാത്രികൾക്ക് നീളം കൂടും. സഹായിക്കാൻ ലളിതവും പ്രായോഗികവുമായ വഴികളുണ്ട്. | Nights feel long when the mind won't settle. There are gentle, practical ways to help. | needs native-speaker review |
+| `data/moods:moods[talk].label` | ആരോടെങ്കിലും ഒന്ന് മിണ്ടണം | Just need to talk | needs native-speaker review |
+| `data/moods:moods[talk].response` | ഒരു കാരണമോ പേരോ വേണമെന്നില്ല. ചിലപ്പോൾ ആരെങ്കിലും കേൾക്കുന്നിടത്താണ് തുടക്കം. | You don't need a reason or a label. Sometimes being heard is where it starts. | needs native-speaker review |
+| `data/services:services[individual].name` | വ്യക്തിഗത തെറാപ്പി | Individual therapy | needs native-speaker review |
+| `data/services:services[individual].audience` | 18 വയസ്സിന് മുകളിലുള്ളവർക്ക് | Adults, 18+ | needs native-speaker review |
+| `data/services:services[individual].summary` | മനസ്സിലുള്ള എന്തിനെക്കുറിച്ചും, നിങ്ങളുടെ വേഗത്തിൽ, ഒരാളോട് മാത്രമായി സംസാരിക്കാം. | One-to-one sessions about whatever is on your mind, at your pace. | needs native-speaker review |
+| `data/services:services[couples].name` | ദമ്പതികൾക്കുള്ള തെറാപ്പി | Couples therapy | needs native-speaker review |
+| `data/services:services[couples].audience` | പങ്കാളികൾ ഒരുമിച്ച് | Partners, together | needs native-speaker review |
+| `data/services:services[couples].summary` | രണ്ടുപേർക്കും കേൾക്കപ്പെടാനും മുന്നോട്ടുള്ള വഴി കണ്ടെത്താനും ഒരിടം. | Room for both of you to be heard, and to find a way forward. | needs native-speaker review |
+| `data/services:services[teens].name` | കൗമാരക്കാർക്കുള്ള കൗൺസലിങ് | Teen counselling | needs native-speaker review |
+| `data/services:services[teens].audience` | 13–17 വയസ്സ്, രക്ഷിതാവിന്റെ സമ്മതത്തോടെ | Ages 13–17, with guardian consent | needs native-speaker review |
+| `data/services:services[teens].summary` | സ്വകാര്യതയെക്കുറിച്ച് വ്യക്തവും പരസ്പരം അംഗീകരിച്ചതുമായ നിയമങ്ങളോടെ, കൗമാരക്കാർക്ക് സുരക്ഷിതമായ ഒരിടം. | A safe space for teenagers, with clear, agreed rules on privacy. | needs native-speaker review |
+| `data/services:services[family].name` | കുടുംബ തെറാപ്പി | Family therapy | needs native-speaker review |
+| `data/services:services[family].audience` | രണ്ടോ അതിലധികമോ കുടുംബാംഗങ്ങൾ | Two or more family members | needs native-speaker review |
+| `data/services:services[family].summary` | തലമുറകൾക്കിടയിലെ പിരിമുറുക്കങ്ങളും മാറ്റങ്ങളും ഒരുമിച്ച് കൈകാര്യം ചെയ്യാം. | Work through tension and change together, across generations. | needs native-speaker review |
+| `data/services:services[follow-up].name` | തുടർ സെഷൻ | Follow-up session | needs native-speaker review |
+| `data/services:services[follow-up].audience` | നിലവിലുള്ള ക്ലയന്റുകൾക്ക് | For existing clients | needs native-speaker review |
+| `data/services:services[follow-up].summary` | നിങ്ങളുടെ തെറാപ്പിസ്റ്റുമായി തുടരാം. | Continue the work with your therapist. | needs native-speaker review |
+| `data/therapists:therapists[therapist-1].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 1] | [Therapist name 1] | needs native-speaker review |
+| `data/therapists:therapists[therapist-1].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
+| `data/therapists:therapists[therapist-1].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-1].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-2].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 2] | [Therapist name 2] | needs native-speaker review |
+| `data/therapists:therapists[therapist-2].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
+| `data/therapists:therapists[therapist-2].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-2].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-3].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 3] | [Therapist name 3] | needs native-speaker review |
+| `data/therapists:therapists[therapist-3].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
+| `data/therapists:therapists[therapist-3].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-3].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-4].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 4] | [Therapist name 4] | needs native-speaker review |
+| `data/therapists:therapists[therapist-4].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
+| `data/therapists:therapists[therapist-4].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-4].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-5].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 5] | [Therapist name 5] | needs native-speaker review |
+| `data/therapists:therapists[therapist-5].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
+| `data/therapists:therapists[therapist-5].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-5].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-6].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 6] | [Therapist name 6] | needs native-speaker review |
+| `data/therapists:therapists[therapist-6].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
+| `data/therapists:therapists[therapist-6].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
+| `data/therapists:therapists[therapist-6].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |

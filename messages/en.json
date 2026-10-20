@@ -8,7 +8,10 @@
     "readMore": "Read more",
     "optional": "optional",
     "required": "required",
-    "comingSoon": "This page is coming in a later phase."
+    "comingSoon": "This page is coming in a later phase.",
+    "languages": "Languages",
+    "ml": "Malayalam",
+    "en": "English"
   },
   "header": {
     "home": "{brand} — home",
@@ -55,13 +58,106 @@
     "rights": "© {year} {brand}. All rights reserved."
   },
   "home": {
-    "eyebrow": "Online counselling · Malayalam & English",
-    "title": "Talk to someone who understands, in the language you feel in.",
-    "lead": "Private sessions by video or audio, with counsellors who speak your language — wherever in the world you are.",
-    "ctaPrimary": "Book a session",
-    "ctaSecondary": "Find a therapist",
-    "phaseNote": "Foundation preview. The full home page arrives in Phase 2.",
-    "styleguideLink": "See the design system"
+    "hero": {
+      "eyebrow": "Online counselling · Malayalam & English",
+      "title": "Talk to someone who understands, in the language you feel in.",
+      "lead": "Private sessions by video or audio, with counsellors who speak your language — wherever in the world you are.",
+      "ctaPrimary": "Book a session",
+      "ctaSecondary": "How are you feeling?",
+      "point1": "Malayalam & English",
+      "point2": "Video or audio",
+      "point3": "Private and confidential"
+    },
+    "mood": {
+      "eyebrow": "A gentle place to start",
+      "title": "How are you feeling today?",
+      "lead": "Choose whatever feels closest. There's no wrong answer, and nothing you pick here is saved or shared.",
+      "groupLabel": "Choose a feeling",
+      "prompt": "Pick one and we'll show you where you might begin.",
+      "concernsTitle": "Topics that may help",
+      "therapistsTitle": "Therapists who work with this",
+      "book": "Book a first session",
+      "match": "Or let us match you",
+      "reset": "Choose something else"
+    },
+    "services": {
+      "eyebrow": "Ways we can help",
+      "title": "Support for you, and the people around you",
+      "viewAll": "See all services",
+      "minutes": "{n} min",
+      "price": "[Price]",
+      "video": "Video",
+      "audio": "Audio"
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Four small steps, at your own pace",
+      "stepLabel": "Step {n} of 4",
+      "step1Title": "Choose",
+      "step1Body": "Pick a service and a language. Malayalam, English, or a mix of both — whatever feels natural to you.",
+      "step2Title": "Match",
+      "step2Body": "Browse therapists yourself, or tell us a little and we'll suggest someone suited to you.",
+      "step3Title": "Talk",
+      "step3Body": "Meet by video or audio from somewhere private. If you'd rather not be on camera, you don't have to be.",
+      "step4Title": "Grow",
+      "step4Body": "Go at your own pace, and book follow-up sessions whenever you're ready."
+    },
+    "therapists": {
+      "eyebrow": "Our therapists",
+      "title": "People who listen, in your language",
+      "lead": "Find someone whose experience, language and approach feel right for you.",
+      "credentialsNote": "[Verified credentials — RCI registration, qualifications — will appear on every profile.]",
+      "viewAll": "Meet all therapists",
+      "viewProfile": "View profile",
+      "speaks": "Speaks",
+      "from": "From {price}",
+      "next": "Next available",
+      "thisWeek": "This week",
+      "nextWeek": "Next week",
+      "later": "In a few weeks"
+    },
+    "breath": {
+      "eyebrow": "A small pause",
+      "title": "Take a breath with us",
+      "lead": "Breathe in as the circle grows, and slowly out as it softens. Four seconds in, six seconds out.",
+      "in": "Breathe in",
+      "out": "Breathe out",
+      "pause": "Pause",
+      "play": "Start",
+      "still": "In for four, out for six."
+    },
+    "testimonials": {
+      "eyebrow": "In their words",
+      "title": "What people tell us",
+      "note": "These are placeholders. Real testimonials will appear only with written consent.",
+      "pause": "Pause scrolling",
+      "play": "Resume scrolling",
+      "quote": "[Testimonial {n} — awaiting a real, consented quote]",
+      "who": "[First name, city]"
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "Things people often ask",
+      "viewAll": "Read all questions"
+    },
+    "business": {
+      "eyebrow": "For organisations",
+      "title": "Wellbeing programmes for workplaces and campuses",
+      "lead": "Confidential counselling for your people, plus workshops in Malayalam and English, shaped around your team or students.",
+      "workTitle": "Workplaces",
+      "workBody": "Employee counselling, manager training and workshops on stress and burnout.",
+      "campusTitle": "Campuses",
+      "campusBody": "Student counselling, sessions on exam stress, and support for teaching staff.",
+      "cta": "Talk to us about a programme"
+    },
+    "cta": {
+      "title": "Whenever you're ready, we're here.",
+      "lead": "Your first step can be a small one. Book a session, or just look around for now.",
+      "primary": "Book a session",
+      "secondary": "Ask us a question",
+      "whatsapp": "Prefer to message? Reach us on WhatsApp",
+      "someone": "Booking for someone you care about? You can book on their behalf, with their agreement."
+    }
   },
   "styleguide": {
     "title": "Design system",

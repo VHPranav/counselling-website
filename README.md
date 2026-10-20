@@ -1,7 +1,8 @@
 # [BRAND NAME] — website
 
 Online counselling in Malayalam and English. Next.js 16 (App Router), TypeScript,
-Tailwind CSS v4, GSAP + Lenis for motion. Every page is pre-rendered as static HTML
+Tailwind CSS v4, Lenis for desktop smooth scroll; all other motion is CSS plus a few
+small scroll/pointer handlers (no animation library). Every page is pre-rendered as static HTML
 in both languages.
 
 ```bash
@@ -47,7 +48,9 @@ striped ochre highlight until you replace it.
 src/app/[locale]/        pages (one folder per route)
 src/components/ui/       Button, Card, Chip, Field, Marquee, Section, Heading, Placeholder
 src/components/layout/   Header, Footer, MobileMenu, LocaleToggle, CrisisNotice, SkipLink
-src/components/motion/   Reveal (more motion islands in Phase 2)
+src/components/motion/   Reveal, ParallaxScene, MotionBoot (Lenis, magnetic buttons, cursor)
+src/components/home/     home page sections (Hero, MoodSelector, HowItWorks, Breathing…)
+src/data/                moods, concerns, services, therapists (placeholders), FAQs
 src/components/shapes/   organic SVGs: Blob, Pebble, BananaLeaf, PalmFrond, Ripple, Arch
 src/config/              site + safety config
 src/i18n/                locale config and message loading
@@ -55,6 +58,14 @@ messages/                interface copy (ml, en)
 scripts/                 i18n-check
 docs/                    Malayalam review tracker
 ```
+
+## Motion
+
+- Every animation uses transform/opacity only and stops under `prefers-reduced-motion`.
+- Smooth scroll, magnetic buttons and the cursor ring load after the page is idle,
+  and only on desktop with a mouse (`MotionBoot.tsx`). Touch phones get native scrolling.
+- The breathing circle and testimonial marquee have pause buttons, and pause when off screen.
+- The "How it works" section pins with CSS `position: sticky` on desktop and is a plain list on mobile.
 
 ## Accessibility and contrast
 

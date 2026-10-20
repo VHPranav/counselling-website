@@ -25,7 +25,10 @@ are highlighted on the page so they can't slip through.
 
 ## Content and review
 - [ ] Malayalam proofreading. Every string is listed in `docs/ml-review.md`
-- [ ] Session prices and lengths (Phase 3, `src/data/services.ts`)
+- [ ] Session prices → `src/data/services.ts` (`priceInr`, currently `[Price]`)
+- [ ] Confirm session lengths: 50 min individual/teens/follow-up, 60 couples, 75 family are suggestions
+- [ ] Confirm FAQ answers match your policies (`src/data/faqs.ts`), especially confidentiality and booking for someone else
+- [ ] Decide: offer a free short intro call? (common in this market; not on the site yet)
 - [ ] Photography, if any. The site uses illustrations only until then.
 - [ ] Legal review of all policy drafts marked `[NEEDS LEGAL REVIEW]` (Phase 5)
 

@@ -3,14 +3,14 @@ import { DM_Sans, Fraunces, Noto_Sans_Malayalam, Noto_Serif_Malayalam } from "ne
 // Self-hosted at build time by next/font. Subsets keep downloads small.
 export const fraunces = Fraunces({
   subsets: ["latin"],
-  axes: ["SOFT", "opsz"],
+  // SOFT gives the warm, rounded feel. Optical sizing is skipped to halve the file size.
+  axes: ["SOFT"],
   display: "swap",
   variable: "--font-fraunces",
 });
 
 export const dmSans = DM_Sans({
   subsets: ["latin"],
-  axes: ["opsz"],
   display: "swap",
   variable: "--font-dm-sans",
 });

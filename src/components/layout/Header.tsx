@@ -38,7 +38,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
         </nav>
 
         <LocaleToggle current={locale} label={t.header.language} className="lg:ml-3" />
-        <Button href={href(locale, bookPath)} size="sm" magnetic className="max-sm:hidden">
+        <Button href={href(locale, bookPath)} size="sm" magnetic className="whitespace-nowrap max-sm:hidden">
           {t.nav.book}
         </Button>
         <MobileMenu

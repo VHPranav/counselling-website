@@ -8,6 +8,7 @@ import { getLocale, getMessages } from "@/i18n/dictionaries";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { MotionBoot } from "@/components/motion/MotionBoot";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -54,6 +55,7 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
           </main>
         </ViewTransition>
         <Footer locale={locale} t={t} />
+        <MotionBoot />
       </body>
     </html>
   );

@@ -21,6 +21,26 @@ const ml = new Map(flatten(read("messages/ml.json")));
 const statusPath = "docs/ml-review.status.json";
 const status = existsSync(resolve(root, statusPath)) ? read(statusPath) : {};
 
+// Bilingual { en, ml } strings inside src/data/*.ts (Node 24 runs TS directly).
+import { readdirSync } from "node:fs";
+import { pathToFileURL } from "node:url";
+const dataDir = resolve(root, "src/data");
+for (const file of readdirSync(dataDir).filter((f) => f.endsWith(".ts") && f !== "types.ts")) {
+  const mod = await import(pathToFileURL(resolve(dataDir, file)).href);
+  const walk = (value, path) => {
+    if (Array.isArray(value)) return value.forEach((v, i) => walk(v, `${path}[${v?.slug ?? v?.id ?? i}]`));
+    if (value && typeof value === "object") {
+      if (typeof value.en === "string" && typeof value.ml === "string") {
+        ml.set(path, value.ml);
+        en.set(path, value.en);
+        return;
+      }
+      for (const [k, v] of Object.entries(value)) walk(v, `${path}.${k}`);
+    }
+  };
+  for (const [name, value] of Object.entries(mod)) if (typeof value !== "function" && !name.endsWith("BySlug")) walk(value, `data/${file.replace(".ts", "")}:${name}`);
+}
+
 const missingInMl = [...en.keys()].filter((k) => !ml.has(k));
 const extraInMl = [...ml.keys()].filter((k) => !en.has(k));
 

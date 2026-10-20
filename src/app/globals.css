@@ -92,7 +92,7 @@ html:lang(ml) {
   .font-display {
     font-family: var(--font-display);
     font-optical-sizing: auto;
-    font-variation-settings: "SOFT" 100, "WONK" 0;
+    font-variation-settings: "SOFT" 100;
     font-weight: 420;
     line-height: 1.08;
     letter-spacing: -0.015em;
@@ -131,7 +131,8 @@ html:lang(ml) {
 }
 
 @layer components {
-  /* Paper grain. Tiny inline SVG, tiled, no blend modes (cheap on low-end phones). */
+  /* Paper grain: a 96px PNG noise tile (~12 KB), no blend modes or SVG filters,
+     so it costs almost nothing to draw on low-end phones. */
   .grain {
     position: relative;
     isolation: isolate;
@@ -142,13 +143,13 @@ html:lang(ml) {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    opacity: 0.09;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .23 0 0 0 0 .16 0 0 0 0 .13 0 0 0 1.4 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 160px 160px;
+    opacity: 0.08;
+    background-image: url("/textures/grain-dark.png");
+    background-size: 96px 96px;
   }
   .grain-light::after {
-    opacity: 0.14;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .96 0 0 0 0 .94 0 0 0 0 .9 0 0 0 1.4 -.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.1;
+    background-image: url("/textures/grain-light.png");
   }
 
   /* Placeholder marker — anything in [brackets] still to be supplied. */
@@ -205,6 +206,143 @@ html:lang(ml) {
       linear-gradient(var(--color-ochre), var(--color-ochre)) 0 100% / 100% 1px no-repeat;
     opacity: 0.55;
   }
+}
+
+/* Hero headline: word-by-word reveal (transform + opacity only). */
+.word-reveal > .w {
+  display: inline-block;
+  animation: word-in 0.9s var(--ease-soft) both;
+  animation-delay: calc(var(--i) * 70ms + 80ms);
+}
+/* Start at 0.01, not 0: browsers then count the headline as painted
+   immediately, which keeps Largest Contentful Paint fast. */
+@keyframes word-in {
+  from {
+    opacity: 0.01;
+    transform: translate3d(0, 0.45em, 0) rotate(1.5deg);
+  }
+}
+
+/* Soft fade-up used for mood results and other reveals. */
+@keyframes fade-up {
+  from {
+    opacity: 0.01;
+    transform: translate3d(0, 14px, 0);
+  }
+}
+.fade-up {
+  animation: fade-up 0.7s var(--ease-soft) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+/* Drifting warm glow behind the hero headline. */
+@keyframes glow-drift {
+  0% {
+    transform: translate3d(-4%, -2%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(5%, 3%, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(-2%, 4%, 0) scale(0.96);
+  }
+}
+.hero-glow {
+  background:
+    radial-gradient(closest-side, color-mix(in srgb, var(--color-ochre) 38%, transparent), transparent),
+    radial-gradient(closest-side at 70% 60%, color-mix(in srgb, var(--color-clay) 30%, transparent), transparent);
+  animation: glow-drift 16s var(--ease-breath) infinite alternate;
+  will-change: transform;
+}
+
+/* Breathing circle: 4s in, 6s out (10s cycle). */
+@keyframes breathe {
+  0% {
+    transform: scale(0.55);
+  }
+  40% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.55);
+  }
+}
+@keyframes breathe-in-label {
+  0%,
+  36% {
+    opacity: 1;
+  }
+  42%,
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes breathe-out-label {
+  0%,
+  36% {
+    opacity: 0;
+  }
+  42%,
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.breath-paused,
+.breath-paused * {
+  animation-play-state: paused !important;
+}
+
+/* Custom cursor (desktop only, added by JS). */
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 60;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 9999px;
+  border: 1.5px solid color-mix(in srgb, var(--color-clay-deep) 55%, transparent);
+  background: color-mix(in srgb, var(--color-ochre) 10%, transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    width 0.35s var(--ease-soft),
+    height 0.35s var(--ease-soft),
+    margin 0.35s var(--ease-soft),
+    background-color 0.35s;
+  will-change: transform;
+}
+.cursor-ring[data-visible="true"] {
+  opacity: 1;
+}
+.cursor-ring[data-hover="true"] {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  background: color-mix(in srgb, var(--color-ochre) 18%, transparent);
+}
+
+/* Lenis smooth scroll (desktop only). */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
 }
 
 /* Mobile menu */

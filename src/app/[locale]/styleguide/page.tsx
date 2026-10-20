@@ -187,7 +187,7 @@ export default async function StyleguidePage() {
       <Block title={s.malayalam} tone="sand">
         <p className="mb-8 max-w-2xl text-cocoa-soft">{s.malayalamNote}</p>
         <div lang="ml" className="space-y-6 rounded-pebble bg-cream p-6 sm:p-10">
-          <p className="font-display text-display leading-[1.3]">{ml.home.title}</p>
+          <p className="font-display text-display leading-[1.3]">{ml.home.hero.title}</p>
           <p className="font-display text-h2 leading-[1.4]">{ml.styleguide.sample}</p>
           <p className="text-base leading-[1.8]">{ml.styleguide.sample}</p>
           <div className="flex flex-wrap gap-3">

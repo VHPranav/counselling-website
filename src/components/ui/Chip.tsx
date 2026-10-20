@@ -16,7 +16,7 @@ export function Chip({
       type="button"
       aria-pressed={selected}
       className={cn(
-        "inline-flex min-h-11 items-center gap-2 rounded-full px-5 py-2 text-base leading-snug",
+        "inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 text-[0.9375rem] leading-snug sm:px-5 sm:text-base",
         "ring-1 ring-inset transition-[background-color,color,box-shadow,transform] duration-300 ease-[var(--ease-soft)]",
         "active:scale-[0.97] touch-manipulation",
         selected
