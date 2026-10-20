@@ -16,6 +16,19 @@ npm run i18n:check   # checks ml/en keys match, regenerates docs/ml-review.md
 
 The design system page is at `/ml/styleguide` or `/en/styleguide` (hidden from search).
 
+## Deploying (Vercel)
+
+1. Import the GitHub repo into Vercel (framework: Next.js, no build settings needed).
+2. Set environment variables from `.env.example`. At minimum `NEXT_PUBLIC_SITE_URL`
+   (e.g. `https://yourdomain.com`), which is used for canonical links, the sitemap and
+   social images.
+3. Add your domain. HTTPS is automatic; the site already sends HSTS and other
+   security headers (`next.config.ts`).
+4. Optional: `NEXT_PUBLIC_ANALYTICS=vercel` and enable Web Analytics in the Vercel
+   dashboard (cookieless; query strings and the booking confirmation page are never recorded).
+
+Run `npm run build` locally before pushing; it type-checks and pre-renders every page.
+
 ## Common changes
 
 | To change… | Edit |
@@ -59,8 +72,22 @@ src/config/              site + safety config
 src/i18n/                locale config and message loading
 messages/                interface copy (ml, en)
 scripts/                 i18n-check
-docs/                    Malayalam review tracker
+docs/                    Malayalam review tracker, audit report
+content/                 MDX: concern guides, journal, legal drafts
+assets/fonts/            font used only for the social share image
 ```
+
+## SEO
+
+- Every page has its own title, description, canonical URL and `hreflang` pair
+  (`src/lib/metadata.ts`).
+- `src/app/sitemap.ts` lists every public page in both languages; `src/app/robots.ts`
+  points to it. Legal drafts are left out and marked noindex until reviewed.
+- Structured data: Organization + WebSite (every page), FAQPage (FAQ page and concern
+  guides), Article (journal posts).
+- Social share image: `src/app/[locale]/opengraph-image.tsx` (English text only, because
+  the image renderer can't shape Malayalam).
+- Paths without a language (`/about`) redirect to Malayalam (`/ml/about`).
 
 ## Booking
 

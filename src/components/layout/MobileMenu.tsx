@@ -67,7 +67,7 @@ export function MobileMenu({
               <li key={link.href} className="border-b border-cocoa/10">
                 <Link
                   href={link.href}
-                  aria-current={pathname === link.href ? "page" : undefined}
+                  aria-current={pathname === link.href || pathname?.startsWith(`${link.href}/`) ? "page" : undefined}
                   className="flex min-h-16 items-center font-display text-h3 aria-[current=page]:text-clay-deep"
                 >
                   {link.label}

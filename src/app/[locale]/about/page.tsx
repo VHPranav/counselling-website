@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { abroadPlaces, keralaPlaces } from "@/data/places";
 import { href } from "@/i18n/config";
 import { format, getLocale, getMessages } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
@@ -87,6 +88,34 @@ export default async function AboutPage() {
             <p className="mt-4 rounded-soft bg-sand/60 p-5 text-sm">
               <Ph>{a.teamNote}</Ph>
             </p>
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="sage" grain spacing="tight">
+        <Container className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+          <div>
+            <Heading level={2} size={3}>
+              {a.whereTitle}
+            </Heading>
+            <p className="mt-4 text-cocoa-soft">{a.whereBody}</p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {[
+              { title: a.whereKerala, places: keralaPlaces },
+              { title: a.whereAbroad, places: abroadPlaces },
+            ].map((group) => (
+              <div key={group.title}>
+                <h3 className="font-sans text-sm font-semibold text-moss">{group.title}</h3>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {group.places.map((p) => (
+                    <li key={p.en} className="rounded-full bg-cream-soft px-3 py-1.5 text-sm">
+                      {p[locale]}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </Container>
       </Section>

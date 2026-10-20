@@ -7,7 +7,7 @@ in `content/**/ml/*.mdx` is listed separately at the bottom as it is added.
 To approve a string, add its key to `docs/ml-review.status.json` with the value `"approved"`
 (or `"changed"` if you edited the Malayalam), then re-run the script.
 
-**598 of 598 strings still need native-speaker review.**
+**624 of 624 strings still need native-speaker review.**
 
 | Key | Malayalam | English source | Status |
 |---|---|---|---|
@@ -379,6 +379,10 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `aboutPage.trust3` | [ക്ലിനിക്കൽ സൂപ്പർവിഷനും തുടർ പരിശീലനവും] | [Clinical supervision and ongoing training] | needs native-speaker review |
 | `aboutPage.teamTitle` | ടീം | The team | needs native-speaker review |
 | `aboutPage.teamNote` | [സ്ഥാപകരും ടീമും: പേരുകൾ, റോളുകൾ, ഫോട്ടോകൾ — അവരുടെ സമ്മതത്തോടെ.] | [Founders and team: names, roles and photos, with their consent.] | needs native-speaker review |
+| `aboutPage.whereTitle` | എവിടെയായിരുന്നാലും, ഓൺലൈനായി | Online, wherever you are | needs native-speaker review |
+| `aboutPage.whereBody` | സെഷനുകൾ ഓൺലൈനായതിനാൽ, തിരുവനന്തപുരം മുതൽ കാസർകോട് വരെ കേരളത്തിൽ എവിടെ നിന്നും, ജീവിതം നിങ്ങളെ കൊണ്ടുപോയ ഏത് നാട്ടിൽ നിന്നും ചേരാം. | Sessions are online, so you can join from anywhere in Kerala, from Thiruvananthapuram to Kasaragod, or from wherever life has taken you. | needs native-speaker review |
+| `aboutPage.whereKerala` | കേരളത്തിലുടനീളം | Across Kerala | needs native-speaker review |
+| `aboutPage.whereAbroad` | വിദേശത്തും | And abroad | needs native-speaker review |
 | `businessPage.metaTitle` | സ്ഥാപനങ്ങൾക്ക് | For organisations | needs native-speaker review |
 | `businessPage.metaDescription` | തൊഴിലിടങ്ങൾക്കും കോളേജുകൾക്കും സ്കൂളുകൾക്കുമായി മലയാളത്തിലും ഇംഗ്ലീഷിലും രഹസ്യാത്മക കൗൺസലിങ്ങും മാനസികാരോഗ്യ വർക്ക്‌ഷോപ്പുകളും. | Confidential counselling and wellbeing workshops in Malayalam and English for workplaces, colleges and schools. | needs native-speaker review |
 | `businessPage.programmesTitle` | പരിപാടികൾ | Programmes | needs native-speaker review |
@@ -553,6 +557,28 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `data/moods:moods[sleep].response` | മനസ്സ് ശാന്തമാകാത്തപ്പോൾ രാത്രികൾക്ക് നീളം കൂടും. സഹായിക്കാൻ ലളിതവും പ്രായോഗികവുമായ വഴികളുണ്ട്. | Nights feel long when the mind won't settle. There are gentle, practical ways to help. | needs native-speaker review |
 | `data/moods:moods[talk].label` | ആരോടെങ്കിലും ഒന്ന് മിണ്ടണം | Just need to talk | needs native-speaker review |
 | `data/moods:moods[talk].response` | ഒരു കാരണമോ പേരോ വേണമെന്നില്ല. ചിലപ്പോൾ ആരെങ്കിലും കേൾക്കുന്നിടത്താണ് തുടക്കം. | You don't need a reason or a label. Sometimes being heard is where it starts. | needs native-speaker review |
+| `data/places:abroadPlaces[0]` | യുഎഇ | UAE | needs native-speaker review |
+| `data/places:abroadPlaces[1]` | സൗദി അറേബ്യ | Saudi Arabia | needs native-speaker review |
+| `data/places:abroadPlaces[2]` | ഖത്തർ | Qatar | needs native-speaker review |
+| `data/places:abroadPlaces[3]` | ഒമാൻ | Oman | needs native-speaker review |
+| `data/places:abroadPlaces[4]` | കുവൈത്ത് | Kuwait | needs native-speaker review |
+| `data/places:abroadPlaces[5]` | ബഹ്റൈൻ | Bahrain | needs native-speaker review |
+| `data/places:abroadPlaces[6]` | യുകെ | UK | needs native-speaker review |
+| `data/places:abroadPlaces[7]` | യുഎസ്എ | USA | needs native-speaker review |
+| `data/places:abroadPlaces[8]` | കാനഡ | Canada | needs native-speaker review |
+| `data/places:abroadPlaces[9]` | ഓസ്ട്രേലിയ | Australia | needs native-speaker review |
+| `data/places:abroadPlaces[10]` | സിംഗപ്പൂർ | Singapore | needs native-speaker review |
+| `data/places:keralaPlaces[0]` | തിരുവനന്തപുരം | Thiruvananthapuram | needs native-speaker review |
+| `data/places:keralaPlaces[1]` | കൊല്ലം | Kollam | needs native-speaker review |
+| `data/places:keralaPlaces[2]` | ആലപ്പുഴ | Alappuzha | needs native-speaker review |
+| `data/places:keralaPlaces[3]` | കോട്ടയം | Kottayam | needs native-speaker review |
+| `data/places:keralaPlaces[4]` | കൊച്ചി | Kochi | needs native-speaker review |
+| `data/places:keralaPlaces[5]` | തൃശ്ശൂർ | Thrissur | needs native-speaker review |
+| `data/places:keralaPlaces[6]` | പാലക്കാട് | Palakkad | needs native-speaker review |
+| `data/places:keralaPlaces[7]` | മലപ്പുറം | Malappuram | needs native-speaker review |
+| `data/places:keralaPlaces[8]` | കോഴിക്കോട് | Kozhikode | needs native-speaker review |
+| `data/places:keralaPlaces[9]` | കണ്ണൂർ | Kannur | needs native-speaker review |
+| `data/places:keralaPlaces[10]` | കാസർകോട് | Kasaragod | needs native-speaker review |
 | `data/services:services[individual].name` | വ്യക്തിഗത തെറാപ്പി | Individual therapy | needs native-speaker review |
 | `data/services:services[individual].audience` | 18 വയസ്സിന് മുകളിലുള്ളവർക്ക് | Adults, 18+ | needs native-speaker review |
 | `data/services:services[individual].summary` | മനസ്സിലുള്ള എന്തിനെക്കുറിച്ചും, നിങ്ങളുടെ വേഗത്തിൽ, ഒരാളോട് മാത്രമായി സംസാരിക്കാം. | One-to-one sessions about whatever is on your mind, at your pace. | needs native-speaker review |

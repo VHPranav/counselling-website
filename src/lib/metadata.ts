@@ -33,6 +33,8 @@ export async function pageMetadata({
       siteName: siteConfig.brandName,
       url: `/${locale}${suffix}`,
       locale: localeTags[locale].replace("-", "_"),
+      // Page-level openGraph replaces the inherited one, so name the image explicitly.
+      images: [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630, alt: "Online counselling in Malayalam and English" }],
       ...(title ? { title: `${title} · ${siteConfig.brandName}` } : {}),
       ...(description ? { description } : {}),
     },

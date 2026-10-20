@@ -35,7 +35,7 @@ export default async function BusinessPage() {
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {programmes.map((p, i) => (
               <Reveal as="li" key={p.title} delay={(i % 3) * 90} className="rounded-pebble bg-cream-soft p-6 ring-1 ring-cocoa/[0.08] sm:p-8">
-                <span aria-hidden className="font-display text-h3 text-clay">
+                <span aria-hidden className="font-display text-h3 text-clay-deep">
                   0{i + 1}
                 </span>
                 <h3 className="mt-3 text-h4">{p.title}</h3>

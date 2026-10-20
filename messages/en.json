@@ -413,7 +413,11 @@
     "trust2": "[Professional memberships and affiliations]",
     "trust3": "[Clinical supervision and ongoing training]",
     "teamTitle": "The team",
-    "teamNote": "[Founders and team: names, roles and photos, with their consent.]"
+    "teamNote": "[Founders and team: names, roles and photos, with their consent.]",
+    "whereTitle": "Online, wherever you are",
+    "whereBody": "Sessions are online, so you can join from anywhere in Kerala, from Thiruvananthapuram to Kasaragod, or from wherever life has taken you.",
+    "whereKerala": "Across Kerala",
+    "whereAbroad": "And abroad"
   },
   "businessPage": {
     "metaTitle": "For organisations",
