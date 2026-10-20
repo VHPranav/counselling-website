@@ -28,6 +28,8 @@ are highlighted on the page so they can't slip through.
 - [ ] Session prices → `src/data/services.ts` (`priceInr`, currently `[Price]`)
 - [ ] Confirm session lengths: 50 min individual/teens/follow-up, 60 couples, 75 family are suggestions
 - [ ] Confirm FAQ answers match your policies (`src/data/faqs.ts`), especially confidentiality and booking for someone else
+- [ ] Reschedule window shown on Services (`[24 hours]` in `messages/*.json` → `servicesPage.every4Body`)
+- [ ] Guides still to write: grief, trauma, parenting, anger, OCD, sleep (they use the template until then)
 - [ ] Decide: offer a free short intro call? (common in this market; not on the site yet)
 - [ ] Photography, if any. The site uses illustrations only until then.
 - [ ] Legal review of all policy drafts marked `[NEEDS LEGAL REVIEW]` (Phase 5)

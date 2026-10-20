@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
@@ -20,4 +21,7 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// MDX for long-form content in /content (concern guides, blog, legal).
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

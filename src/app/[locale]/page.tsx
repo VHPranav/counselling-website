@@ -8,9 +8,11 @@ import { matchTherapists, therapists } from "@/data/therapists";
 import { href, type Locale } from "@/i18n/config";
 import { format, getLocale, getMessages, type Messages } from "@/i18n/dictionaries";
 import { cardLabels, formatInr, toCardData } from "@/lib/therapists";
+import { pageMetadata } from "@/lib/metadata";
 import { ArrowIcon, Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Marquee } from "@/components/ui/Marquee";
+import { FaqList } from "@/components/ui/PageParts";
 import { Ph } from "@/components/ui/Placeholder";
 import { Container, Eyebrow, Heading, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
@@ -21,6 +23,10 @@ import { HowItWorks } from "@/components/home/HowItWorks";
 import { MoodSelector, type MoodOption } from "@/components/home/MoodSelector";
 import { ServiceGlyph } from "@/components/home/ServiceGlyph";
 import { TherapistCard } from "@/components/therapists/TherapistCard";
+
+export function generateMetadata() {
+  return pageMetadata({ path: "/" });
+}
 
 export default async function HomePage() {
   const locale = await getLocale();
@@ -215,22 +221,7 @@ function FaqSection({ locale, t }: { locale: Locale; t: Messages }) {
             {f.viewAll}
           </Link>
         </div>
-        <div className="divide-y divide-cocoa/15 border-y border-cocoa/15">
-          {faqs
-            .filter((q) => q.home)
-            .map((q) => (
-              <details key={q.id} className="group py-1">
-                <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-6 py-4 text-h4 font-display leading-snug [&::-webkit-details-marker]:hidden">
-                  {q.question[locale]}
-                  <span aria-hidden className="relative size-5 shrink-0">
-                    <span className="absolute left-0 top-1/2 h-px w-5 bg-current" />
-                    <span className="absolute left-0 top-1/2 h-px w-5 rotate-90 bg-current transition-transform duration-300 group-open:rotate-0" />
-                  </span>
-                </summary>
-                <p className="max-w-2xl pb-6 text-cocoa-soft">{q.answer[locale]}</p>
-              </details>
-            ))}
-        </div>
+        <FaqList items={faqs.filter((q) => q.home).map((q) => ({ q: q.question[locale], a: q.answer[locale] }))} />
       </Container>
     </Section>
   );

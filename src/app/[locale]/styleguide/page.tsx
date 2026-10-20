@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import ml from "../../../../messages/ml.json";
 import { getMessages } from "@/i18n/dictionaries";
+import { pageMetadata } from "@/lib/metadata";
 import { ArrowIcon, Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Field } from "@/components/ui/Field";
@@ -14,7 +15,7 @@ import { ChipDemo } from "./ChipDemo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getMessages();
-  return { title: t.styleguide.title, robots: { index: false, follow: false } };
+  return pageMetadata({ path: "/styleguide", title: t.styleguide.title, noIndex: true });
 }
 
 const swatches = [

@@ -41,6 +41,19 @@ for (const file of readdirSync(dataDir).filter((f) => f.endsWith(".ts") && f !==
   for (const [name, value] of Object.entries(mod)) if (typeof value !== "function" && !name.endsWith("BySlug")) walk(value, `data/${file.replace(".ts", "")}:${name}`);
 }
 
+// Long-form Malayalam MDX files (one review entry per file).
+const mdxFiles = [];
+const walkDir = (dir) => {
+  if (!existsSync(dir)) return;
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = resolve(dir, entry.name);
+    if (entry.isDirectory()) walkDir(full);
+    else if (entry.name.endsWith(".mdx") && full.includes("/ml/")) mdxFiles.push(full.slice(root.length + 1));
+  }
+};
+walkDir(resolve(root, "content"));
+const missingMdx = mdxFiles.filter((f) => !existsSync(resolve(root, f.replace("/ml/", "/en/"))));
+
 const missingInMl = [...en.keys()].filter((k) => !ml.has(k));
 const extraInMl = [...ml.keys()].filter((k) => !en.has(k));
 
@@ -67,12 +80,25 @@ To approve a string, add its key to \`${statusPath}\` with the value \`"approved
 | Key | Malayalam | English source | Status |
 |---|---|---|---|
 ${rows.join("\n")}
+
+## Long-form content (MDX)
+
+Review each whole file against its English twin (same path with \`/en/\`).
+Mark it reviewed with the key \`content:<path>\` in \`${statusPath}\`.
+
+| File | Status |
+|---|---|
+${mdxFiles.map((f) => `| \`${f}\` | ${status[`content:${f}`] ?? "needs native-speaker review"} |`).join("\n")}
 `,
 );
 
+if (missingMdx.length) {
+  console.error("Malayalam MDX without an English version:", missingMdx);
+  process.exit(1);
+}
 if (missingInMl.length || extraInMl.length) {
   if (missingInMl.length) console.error("Missing in ml.json:", missingInMl);
   if (extraInMl.length) console.error("Not in en.json:", extraInMl);
   process.exit(1);
 }
-console.log(`i18n OK — ${ml.size} keys in both languages, ${pending} awaiting review.`);
+console.log(`i18n OK — ${ml.size} keys and ${mdxFiles.length} MDX files in both languages, ${pending} keys awaiting review.`);

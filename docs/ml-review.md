@@ -7,7 +7,7 @@ in `content/**/ml/*.mdx` is listed separately at the bottom as it is added.
 To approve a string, add its key to `docs/ml-review.status.json` with the value `"approved"`
 (or `"changed"` if you edited the Malayalam), then re-run the script.
 
-**245 of 245 strings still need native-speaker review.**
+**333 of 333 strings still need native-speaker review.**
 
 | Key | Malayalam | English source | Status |
 |---|---|---|---|
@@ -21,6 +21,11 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `common.languages` | ഭാഷകൾ | Languages | needs native-speaker review |
 | `common.ml` | മലയാളം | Malayalam | needs native-speaker review |
 | `common.en` | ഇംഗ്ലീഷ് | English | needs native-speaker review |
+| `common.home` | ഹോം | Home | needs native-speaker review |
+| `common.breadcrumb` | പേജ് പാത | Breadcrumb | needs native-speaker review |
+| `common.notFoundTitle` | ആ പേജ് കണ്ടെത്താനായില്ല | We couldn't find that page | needs native-speaker review |
+| `common.notFoundBody` | അത് മാറ്റിയിരിക്കാം, അല്ലെങ്കിൽ ലിങ്ക് പഴയതായിരിക്കാം. | It may have moved, or the link may be out of date. | needs native-speaker review |
+| `common.notFoundHome` | ഹോം പേജിലേക്ക് പോകാം | Go to the home page | needs native-speaker review |
 | `header.home` | {brand} — ഹോം | {brand} — home | needs native-speaker review |
 | `header.primaryNav` | പ്രധാന മെനു | Main | needs native-speaker review |
 | `header.menu` | മെനു | Menu | needs native-speaker review |
@@ -165,6 +170,84 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `styleguide.fieldNameError` | നിങ്ങളെ എന്ത് വിളിക്കണമെന്ന് അറിയാൻ ഒരു പേര് നൽകൂ. | Please enter a name, so we know what to call you. | needs native-speaker review |
 | `styleguide.fieldEmail` | ഇമെയിൽ | Email | needs native-speaker review |
 | `styleguide.marqueeItem` | [താൽക്കാലിക അഭിപ്രായം — യഥാർത്ഥവും സമ്മതത്തോടെയുമുള്ള ഒന്നിനായി കാത്തിരിക്കുന്നു] | [Placeholder testimonial — awaiting a real, consented quote] | needs native-speaker review |
+| `servicesPage.metaTitle` | സേവനങ്ങൾ | Services | needs native-speaker review |
+| `servicesPage.metaDescription` | മലയാളത്തിലും ഇംഗ്ലീഷിലും ഓൺലൈനായി വ്യക്തിഗത, ദമ്പതി, കൗമാര, കുടുംബ തെറാപ്പി. | Individual, couples, teen and family therapy online, in Malayalam and English. | needs native-speaker review |
+| `servicesPage.eyebrow` | സേവനങ്ങൾ | Services | needs native-speaker review |
+| `servicesPage.title` | നിങ്ങൾക്ക് യോജിക്കുന്ന പിന്തുണ കണ്ടെത്താം | Find the kind of support that fits | needs native-speaker review |
+| `servicesPage.lead` | എല്ലാ സെഷനുകളും ഓൺലൈനാണ്, സ്വകാര്യമാണ്, നിങ്ങൾക്ക് ഏറ്റവും സൗകര്യമുള്ള ഭാഷയിലുമാണ്. | Every session is online, private, and in the language you're most comfortable in. | needs native-speaker review |
+| `servicesPage.duration` | സെഷൻ ദൈർഘ്യം | Session length | needs native-speaker review |
+| `servicesPage.fee` | ഫീസ് | Fee | needs native-speaker review |
+| `servicesPage.perSession` | ഒരു സെഷന് | per session | needs native-speaker review |
+| `servicesPage.format` | രീതി | Format | needs native-speaker review |
+| `servicesPage.for` | ആർക്കുവേണ്ടി | Who it's for | needs native-speaker review |
+| `servicesPage.book` | ഈ സെഷൻ ബുക്ക് ചെയ്യാം | Book this session | needs native-speaker review |
+| `servicesPage.teensTitle` | കൗമാരക്കാരുടെ സെഷനുകൾ എങ്ങനെ | How teen sessions work | needs native-speaker review |
+| `servicesPage.teens1` | ബുക്ക് ചെയ്യുമ്പോൾ മാതാപിതാക്കളോ രക്ഷിതാവോ സമ്മതം നൽകും. | A parent or guardian gives consent when booking. | needs native-speaker review |
+| `servicesPage.teens2` | ആദ്യ സെഷനിൽ, എന്താണ് സ്വകാര്യമായിരിക്കുക, എന്താണ് പങ്കുവെച്ചേക്കാവുന്നത് എന്ന് തെറാപ്പിസ്റ്റ് നിങ്ങൾ രണ്ടുപേരുമായും ചേർന്ന് തീരുമാനിക്കും. | In the first session, the therapist agrees with you both what stays private and what may be shared. | needs native-speaker review |
+| `servicesPage.teens3` | സുരക്ഷയെക്കുറിച്ച് ഗുരുതരമായ ആശങ്കയുണ്ടെങ്കിൽ രക്ഷിതാക്കളെ അറിയിക്കും. ഇത് തുടക്കത്തിൽ തന്നെ വിശദീകരിക്കും. | If there's a serious safety concern, guardians will be told. This is explained at the very start. | needs native-speaker review |
+| `servicesPage.teensLink` | കുട്ടികളുടെ സംരക്ഷണ നയം വായിക്കാം | Read our Minor Protection Policy | needs native-speaker review |
+| `servicesPage.everyTitle` | എല്ലാ സെഷനുകളിലും | In every session | needs native-speaker review |
+| `servicesPage.every1Title` | നിങ്ങളുടെ ഭാഷ | Your language | needs native-speaker review |
+| `servicesPage.every1Body` | മലയാളം, ഇംഗ്ലീഷ്, അല്ലെങ്കിൽ രണ്ടും. | Malayalam, English, or both. | needs native-speaker review |
+| `servicesPage.every2Title` | വീഡിയോ അല്ലെങ്കിൽ ഓഡിയോ | Video or audio | needs native-speaker review |
+| `servicesPage.every2Body` | വേണമെങ്കിൽ ക്യാമറ ഇല്ലാതെ. | Stay off camera if you prefer. | needs native-speaker review |
+| `servicesPage.every3Title` | സ്വകാര്യം | Private | needs native-speaker review |
+| `servicesPage.every3Body` | രഹസ്യാത്മകം, നിങ്ങൾക്ക് സുരക്ഷിതമെന്ന് തോന്നുന്ന എവിടെ നിന്നും. | Confidential, from anywhere you feel safe. | needs native-speaker review |
+| `servicesPage.every4Title` | സൗകര്യപ്രദം | Flexible | needs native-speaker review |
+| `servicesPage.every4Body` | [24 മണിക്കൂർ] മുമ്പ് വരെ സമയം മാറ്റാം. | Reschedule up to [24 hours] before. | needs native-speaker review |
+| `servicesPage.notSure` | ഏത് തിരഞ്ഞെടുക്കണമെന്ന് ഉറപ്പില്ലേ? | Not sure which to choose? | needs native-speaker review |
+| `servicesPage.notSureBody` | ഒരു വ്യക്തിഗത സെഷനിൽ നിന്ന് തുടങ്ങാം. ദമ്പതി അല്ലെങ്കിൽ കുടുംബ സെഷനുകൾ സഹായകമാകുമെങ്കിൽ, പിന്നീട് തെറാപ്പിസ്റ്റ് നിർദ്ദേശിക്കും. | Start with an individual session. If couples or family sessions would help, your therapist can suggest them later. | needs native-speaker review |
+| `servicesPage.seePricing` | നിരക്കുകൾ കാണാം | See pricing | needs native-speaker review |
+| `servicesPage.matchMe` | ഞങ്ങൾ യോജിച്ച ആളെ കണ്ടെത്താം | Let us match you | needs native-speaker review |
+| `concernsPage.metaTitle` | ഞങ്ങൾ സഹായിക്കുന്ന വിഷയങ്ങൾ | What we can help with | needs native-speaker review |
+| `concernsPage.metaDescription` | ഉത്കണ്ഠ, വിഷാദം, ബന്ധങ്ങൾ, ജോലി സമ്മർദ്ദം തുടങ്ങിയവയെക്കുറിച്ചും തെറാപ്പി എങ്ങനെ സഹായിക്കുമെന്നതിനെക്കുറിച്ചും ലളിതമായ വിവരണങ്ങൾ. | Plain-language guides to anxiety, depression, relationships, burnout and more, and how therapy can help. | needs native-speaker review |
+| `concernsPage.eyebrow` | വിഷയങ്ങൾ | Concerns | needs native-speaker review |
+| `concernsPage.title` | മനസ്സിലെന്താണ്? | What's on your mind? | needs native-speaker review |
+| `concernsPage.lead` | സാധാരണ ബുദ്ധിമുട്ടുകളെക്കുറിച്ചുള്ള ചെറുതും ലളിതവുമായ വിവരണങ്ങൾ. നിങ്ങളുടെ വേഗത്തിൽ വായിക്കാം. ബന്ധപ്പെടുന്നതിന് മുമ്പ് ഒരു പേര് കണ്ടെത്തണമെന്നില്ല. | Short, plain-language guides to common struggles. Read at your own pace. You don't need a label before you reach out. | needs native-speaker review |
+| `concernsPage.notListed` | നിങ്ങൾ അനുഭവിക്കുന്നത് ഇവിടെ കാണുന്നില്ലേ? | Don't see what you're going through? | needs native-speaker review |
+| `concernsPage.notListedBody` | സാരമില്ല. മറ്റ് പല വിഷയങ്ങളിലും തെറാപ്പിസ്റ്റുകൾക്ക് സഹായിക്കാനാകും. ഒരു സെഷൻ ബുക്ക് ചെയ്ത് നിങ്ങളുടെ സ്വന്തം വാക്കുകളിൽ പറയൂ. | That's okay. Therapists can support you with many other concerns too. Book a session and explain in your own words. | needs native-speaker review |
+| `concernsPage.signsTitle` | ശ്രദ്ധിച്ചേക്കാവുന്ന ലക്ഷണങ്ങൾ | Signs you might notice | needs native-speaker review |
+| `concernsPage.signsNote` | ഓരോരുത്തരുടെയും അനുഭവം വ്യത്യസ്തമാണ്. ഇത് രോഗനിർണയത്തിനുള്ള ഒരു പട്ടികയല്ല. | Everyone's experience is different. This isn't a checklist for diagnosis. | needs native-speaker review |
+| `concernsPage.faqTitle` | പതിവ് ചോദ്യങ്ങൾ | Common questions | needs native-speaker review |
+| `concernsPage.therapistsTitle` | ഈ വിഷയത്തിൽ പ്രവർത്തിക്കുന്ന തെറാപ്പിസ്റ്റുകൾ | Therapists who work with this | needs native-speaker review |
+| `concernsPage.ctaTitle` | സംസാരിക്കാൻ തയ്യാറാണോ? | Ready to talk? | needs native-speaker review |
+| `concernsPage.ctaBody` | എല്ലാം മനസ്സിലാക്കിയിട്ട് വരണമെന്നില്ല. ആദ്യ സെഷൻ ഒരു തുടക്കം മാത്രമാണ്. | You don't need to have it all figured out. A first session is simply a place to start. | needs native-speaker review |
+| `concernsPage.book` | സെഷൻ ബുക്ക് ചെയ്യാം | Book a session | needs native-speaker review |
+| `concernsPage.match` | ഞങ്ങൾ യോജിച്ച ആളെ കണ്ടെത്താം | Let us match you | needs native-speaker review |
+| `concernsPage.related` | മറ്റ് വിഷയങ്ങൾ | Other topics | needs native-speaker review |
+| `concernsPage.scaffoldNote` | [പൂർണ്ണമായ വിവരണം എഴുതാനുണ്ട്. അതുവരെ ഈ പേജ് സാധാരണ ടെംപ്ലേറ്റ് ഉപയോഗിക്കുന്നു.] | [Full guide still to be written. This page uses the standard template until then.] | needs native-speaker review |
+| `concernsPage.genericHelpTitle` | തെറാപ്പി എങ്ങനെ സഹായിക്കും | How therapy can help | needs native-speaker review |
+| `concernsPage.genericHelp` | നിങ്ങൾ അനുഭവിക്കുന്നതിനെക്കുറിച്ച് സംസാരിക്കാനും അത് കൂടുതൽ മനസ്സിലാക്കാനും, നിങ്ങളുടെ വേഗത്തിൽ മുന്നോട്ടുള്ള പ്രായോഗിക വഴികൾ കണ്ടെത്താനും, വിധിക്കപ്പെടാത്ത ഒരു സ്വകാര്യ ഇടം തെറാപ്പിസ്റ്റ് നൽകുന്നു. | A therapist offers a private, non-judgemental space to talk about what you're going through, understand it better, and find practical ways forward, at your own pace. | needs native-speaker review |
+| `concernsPage.readGuide` | വിവരണം വായിക്കാം | Read the guide | needs native-speaker review |
+| `therapistsPage.metaTitle` | തെറാപ്പിസ്റ്റിനെ കണ്ടെത്താം | Find a therapist | needs native-speaker review |
+| `therapistsPage.metaDescription` | മലയാളവും ഇംഗ്ലീഷും സംസാരിക്കുന്ന കൗൺസലർമാരെയും തെറാപ്പിസ്റ്റുകളെയും കാണാം. ഭാഷ, വിഷയം, സെഷൻ തരം, ലഭ്യത എന്നിവ അനുസരിച്ച് തിരയാം. | Browse counsellors and therapists who speak Malayalam and English. Filter by language, concern, session type and availability. | needs native-speaker review |
+| `therapistsPage.eyebrow` | തെറാപ്പിസ്റ്റുകൾ | Therapists | needs native-speaker review |
+| `therapistsPage.title` | നിങ്ങൾക്ക് സൗകര്യം തോന്നുന്ന ഒരാളെ കണ്ടെത്താം | Find someone you feel at ease with | needs native-speaker review |
+| `therapistsPage.lead` | ഫിൽട്ടറുകൾ ഉപയോഗിക്കാം, അല്ലെങ്കിൽ ഞങ്ങൾ ഒരാളെ നിർദ്ദേശിക്കാം. ഇവിടെ നിങ്ങൾ തിരഞ്ഞെടുക്കുന്നത് എവിടെയും സേവ് ചെയ്യുകയോ വെബ് വിലാസത്തിൽ ചേർക്കുകയോ ഇല്ല. | Use the filters, or let us suggest someone. Nothing you choose here is saved or added to the web address. | needs native-speaker review |
+| `therapistsPage.placeholderNote` | [ഇവ താൽക്കാലിക പ്രൊഫൈലുകളാണ്. ലോഞ്ചിന് മുമ്പ് യഥാർത്ഥ തെറാപ്പിസ്റ്റുകളെ ചേർക്കും.] | [These are placeholder profiles. Real therapists will be added before launch.] | needs native-speaker review |
+| `therapistsPage.filters` | ഫിൽട്ടറുകൾ | Filters | needs native-speaker review |
+| `therapistsPage.language` | ഭാഷ | Language | needs native-speaker review |
+| `therapistsPage.concern` | വിഷയം | Concern | needs native-speaker review |
+| `therapistsPage.service` | സെഷൻ തരം | Session type | needs native-speaker review |
+| `therapistsPage.availability` | ലഭ്യത | Availability | needs native-speaker review |
+| `therapistsPage.any` | ഏതും | Any | needs native-speaker review |
+| `therapistsPage.availThisWeek` | ഈ ആഴ്ച | This week | needs native-speaker review |
+| `therapistsPage.availSoon` | രണ്ടാഴ്ചയ്ക്കുള്ളിൽ | Within two weeks | needs native-speaker review |
+| `therapistsPage.clear` | ഫിൽട്ടറുകൾ മാറ്റാം | Clear filters | needs native-speaker review |
+| `therapistsPage.results` | {n} തെറാപ്പിസ്റ്റുകൾ | {n} therapists | needs native-speaker review |
+| `therapistsPage.resultsOne` | 1 തെറാപ്പിസ്റ്റ് | 1 therapist | needs native-speaker review |
+| `therapistsPage.empty` | ഇവയെല്ലാം യോജിക്കുന്ന ആരും ഇപ്പോഴില്ല. ഒരു ഫിൽട്ടർ മാറ്റിനോക്കൂ, അല്ലെങ്കിൽ ഞങ്ങൾ യോജിച്ച ആളെ കണ്ടെത്താം. | No one matches all of these yet. Try removing a filter, or let us match you. | needs native-speaker review |
+| `therapistsPage.match` | ഞങ്ങൾ യോജിച്ച ആളെ കണ്ടെത്താം | Let us match you | needs native-speaker review |
+| `therapistsPage.back` | എല്ലാ തെറാപ്പിസ്റ്റുകളും | All therapists | needs native-speaker review |
+| `therapistsPage.about` | പരിചയം | About | needs native-speaker review |
+| `therapistsPage.focus` | പ്രവർത്തന മേഖലകൾ | Areas of focus | needs native-speaker review |
+| `therapistsPage.sessionTypes` | സെഷൻ തരങ്ങൾ | Session types | needs native-speaker review |
+| `therapistsPage.formats` | രീതികൾ | Formats | needs native-speaker review |
+| `therapistsPage.fee` | സെഷൻ ഫീസ് | Session fee | needs native-speaker review |
+| `therapistsPage.book` | ഈ തെറാപ്പിസ്റ്റുമായി ബുക്ക് ചെയ്യാം | Book with this therapist | needs native-speaker review |
+| `therapistsPage.credentialsTitle` | യോഗ്യതയും രജിസ്ട്രേഷനും | Qualifications and registration | needs native-speaker review |
+| `therapistsPage.credentialsBody` | [ബിരുദങ്ങൾ, RCI രജിസ്ട്രേഷൻ നമ്പർ, പ്രൊഫഷണൽ അംഗത്വങ്ങൾ — നൽകി പരിശോധിക്കാനുണ്ട്.] | [Degrees, RCI registration number and professional memberships, to be supplied and verified.] | needs native-speaker review |
+| `therapistsPage.other` | മറ്റ് തെറാപ്പിസ്റ്റുകൾ | Other therapists | needs native-speaker review |
 | `data/concerns:concerns[anxiety].name` | ഉത്കണ്ഠ | Anxiety | needs native-speaker review |
 | `data/concerns:concerns[anxiety].summary` | അമിതമായ ആധി, പരിഭ്രമം, നിൽക്കാത്ത ചിന്തകൾ. | Worry, panic and a mind that won't switch off. | needs native-speaker review |
 | `data/concerns:concerns[depression].name` | വിഷാദം | Depression | needs native-speaker review |
@@ -220,18 +303,23 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `data/services:services[individual].name` | വ്യക്തിഗത തെറാപ്പി | Individual therapy | needs native-speaker review |
 | `data/services:services[individual].audience` | 18 വയസ്സിന് മുകളിലുള്ളവർക്ക് | Adults, 18+ | needs native-speaker review |
 | `data/services:services[individual].summary` | മനസ്സിലുള്ള എന്തിനെക്കുറിച്ചും, നിങ്ങളുടെ വേഗത്തിൽ, ഒരാളോട് മാത്രമായി സംസാരിക്കാം. | One-to-one sessions about whatever is on your mind, at your pace. | needs native-speaker review |
+| `data/services:services[individual].details` | വിധിക്കാതെ, ശ്രദ്ധയോടെ കേൾക്കുന്ന ഒരു തെറാപ്പിസ്റ്റുമായി മനസ്സിലുള്ളത് സംസാരിക്കാം. ഒരു പ്രത്യേക പ്രശ്നം, ജീവിതത്തിലെ ഒരു മാറ്റം, അല്ലെങ്കിൽ സ്വയം കൂടുതൽ മനസ്സിലാക്കൽ — എന്തിനെക്കുറിച്ചുമാകാം സെഷനുകൾ. | Talk through what's on your mind with a therapist who listens closely and doesn't judge. Sessions can focus on a specific concern, a life change, or simply understanding yourself better. | needs native-speaker review |
 | `data/services:services[couples].name` | ദമ്പതികൾക്കുള്ള തെറാപ്പി | Couples therapy | needs native-speaker review |
 | `data/services:services[couples].audience` | പങ്കാളികൾ ഒരുമിച്ച് | Partners, together | needs native-speaker review |
 | `data/services:services[couples].summary` | രണ്ടുപേർക്കും കേൾക്കപ്പെടാനും മുന്നോട്ടുള്ള വഴി കണ്ടെത്താനും ഒരിടം. | Room for both of you to be heard, and to find a way forward. | needs native-speaker review |
+| `data/services:services[couples].details` | നന്നായി ആശയവിനിമയം ചെയ്യാനും, പിണക്കങ്ങൾ പരിഹരിക്കാനും, വിശ്വാസം വീണ്ടെടുക്കാനും, ഒരുമിച്ച് വലിയ തീരുമാനമെടുക്കാനും ആഗ്രഹിക്കുന്ന പങ്കാളികൾക്ക്. രണ്ടുപേർക്കും സംസാരിക്കാൻ ഇടമുണ്ടാകും; തെറാപ്പിസ്റ്റ് ആരുടെയും പക്ഷം പിടിക്കില്ല. | For partners who want to communicate better, work through conflict, rebuild trust or make a big decision together. You both get space to speak, and your therapist won't take sides. | needs native-speaker review |
 | `data/services:services[teens].name` | കൗമാരക്കാർക്കുള്ള കൗൺസലിങ് | Teen counselling | needs native-speaker review |
 | `data/services:services[teens].audience` | 13–17 വയസ്സ്, രക്ഷിതാവിന്റെ സമ്മതത്തോടെ | Ages 13–17, with guardian consent | needs native-speaker review |
 | `data/services:services[teens].summary` | സ്വകാര്യതയെക്കുറിച്ച് വ്യക്തവും പരസ്പരം അംഗീകരിച്ചതുമായ നിയമങ്ങളോടെ, കൗമാരക്കാർക്ക് സുരക്ഷിതമായ ഒരിടം. | A safe space for teenagers, with clear, agreed rules on privacy. | needs native-speaker review |
+| `data/services:services[teens].details` | പരീക്ഷ, സൗഹൃദങ്ങൾ, കുടുംബം, സ്വത്വം, മൂഡ് — മനസ്സിലുള്ള എന്തിനെക്കുറിച്ചും 13 മുതൽ 17 വരെ പ്രായമുള്ളവർക്ക് പിന്തുണ. ബുക്ക് ചെയ്യുമ്പോൾ മാതാപിതാക്കളോ രക്ഷിതാവോ സമ്മതം നൽകും. സ്വകാര്യതയെക്കുറിച്ചുള്ള നിയമങ്ങൾ തുടക്കത്തിൽ തന്നെ തെറാപ്പിസ്റ്റ് നിങ്ങൾ രണ്ടുപേരുമായും ചേർന്ന് തീരുമാനിക്കും. | Support for 13 to 17 year olds with exams, friendships, family, identity, mood or anything else on their mind. A parent or guardian gives consent at booking, and the therapist agrees privacy rules with both of you at the start. | needs native-speaker review |
 | `data/services:services[family].name` | കുടുംബ തെറാപ്പി | Family therapy | needs native-speaker review |
 | `data/services:services[family].audience` | രണ്ടോ അതിലധികമോ കുടുംബാംഗങ്ങൾ | Two or more family members | needs native-speaker review |
 | `data/services:services[family].summary` | തലമുറകൾക്കിടയിലെ പിരിമുറുക്കങ്ങളും മാറ്റങ്ങളും ഒരുമിച്ച് കൈകാര്യം ചെയ്യാം. | Work through tension and change together, across generations. | needs native-speaker review |
+| `data/services:services[family].details` | മാറ്റങ്ങളിലൂടെയോ പിണക്കങ്ങളിലൂടെയോ നഷ്ടങ്ങളിലൂടെയോ ഒരുമിച്ച് കടന്നുപോകുന്ന കുടുംബങ്ങൾക്ക്. മാതാപിതാക്കൾ, കുട്ടികൾ (സമ്മതത്തോടെ), സഹോദരങ്ങൾ, മുതിർന്നവർ — ഒരിടത്ത് നിന്നോ പല സ്ഥലങ്ങളിൽ നിന്നോ പങ്കെടുക്കാം. | For families going through change, conflict or loss together. Sessions can include parents, children (with consent), siblings or elders, joining from one place or several. | needs native-speaker review |
 | `data/services:services[follow-up].name` | തുടർ സെഷൻ | Follow-up session | needs native-speaker review |
 | `data/services:services[follow-up].audience` | നിലവിലുള്ള ക്ലയന്റുകൾക്ക് | For existing clients | needs native-speaker review |
 | `data/services:services[follow-up].summary` | നിങ്ങളുടെ തെറാപ്പിസ്റ്റുമായി തുടരാം. | Continue the work with your therapist. | needs native-speaker review |
+| `data/services:services[follow-up].details` | അതേ തെറാപ്പിസ്റ്റുമായി തുടരാം. തയ്യാറാകുമ്പോൾ അടുത്ത സെഷൻ ബുക്ക് ചെയ്യാം. | Continue with the same therapist. Book your next session whenever you're ready. | needs native-speaker review |
 | `data/therapists:therapists[therapist-1].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 1] | [Therapist name 1] | needs native-speaker review |
 | `data/therapists:therapists[therapist-1].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
 | `data/therapists:therapists[therapist-1].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
@@ -256,3 +344,15 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `data/therapists:therapists[therapist-6].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
 | `data/therapists:therapists[therapist-6].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
 | `data/therapists:therapists[therapist-6].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
+
+## Long-form content (MDX)
+
+Review each whole file against its English twin (same path with `/en/`).
+Mark it reviewed with the key `content:<path>` in `docs/ml-review.status.json`.
+
+| File | Status |
+|---|---|
+| `content/concerns/ml/anxiety.mdx` | needs native-speaker review |
+| `content/concerns/ml/depression.mdx` | needs native-speaker review |
+| `content/concerns/ml/relationships.mdx` | needs native-speaker review |
+| `content/concerns/ml/work-stress.mdx` | needs native-speaker review |

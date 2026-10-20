@@ -26,8 +26,9 @@ The design system page is at `/ml/styleguide` or `/en/styleguide` (hidden from s
 | Fonts | `src/app/fonts.ts` |
 | Any interface text | `messages/en.json` and `messages/ml.json` (same keys in both) |
 | Header / footer links | `src/components/layout/navigation.ts` |
-| Therapists, services, prices, FAQs, concerns | `src/data/*` (added in Phase 3) |
-| Blog posts, concern pages, legal pages | `content/**/{ml,en}/*.mdx` (added in Phases 3–5) |
+| Therapists, services, prices, FAQs, concerns, moods | `src/data/*.ts` |
+| Concern guides | `content/concerns/{ml,en}/<slug>.mdx`, registered in `src/lib/content.ts` (see `content/concerns/README.md`) |
+| Blog posts, legal pages | `content/**/{ml,en}/*.mdx` (Phase 5) |
 
 Anything written in `[square brackets]` is a placeholder. It shows on the page with a
 striped ochre highlight until you replace it.

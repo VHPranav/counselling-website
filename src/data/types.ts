@@ -26,6 +26,8 @@ export type Service = {
   name: L;
   audience: L;
   summary: L;
+  /** Longer description for the Services page. */
+  details: L;
   durationMinutes: number;
   /** Price in INR. null shows a [Price] placeholder. */
   priceInr: number | null;
