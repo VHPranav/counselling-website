@@ -17,7 +17,9 @@ const nextConfig: NextConfig = {
     globalNotFound: true,
   },
   images: {
-    formats: ["image/avif", "image/webp"],
+    // Serve image files as-is: no Vercel Image Optimization (avoids its usage limits).
+    // Source photos are pre-sized to 1920px wide max.
+    unoptimized: true,
   },
   async headers() {
     // Privacy and security headers for every response.
