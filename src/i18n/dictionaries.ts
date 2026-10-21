@@ -9,13 +9,11 @@ export type Messages = typeof en;
 
 const base: Record<Locale, () => Promise<Messages>> = {
   en: () => import("../../messages/en.json").then((m) => m.default),
-  ml: () => import("../../messages/ml.json").then((m) => m.default),
 };
 
 /** Demo mode: sample text that fills in placeholders (messages/demo.*.json). */
 const demo: Record<Locale, () => Promise<Record<string, unknown>>> = {
   en: () => import("../../messages/demo.en.json").then((m) => m.default),
-  ml: () => import("../../messages/demo.ml.json").then((m) => m.default),
 };
 
 function deepMerge<T>(target: T, extra: Record<string, unknown>): T {
@@ -28,7 +26,6 @@ function deepMerge<T>(target: T, extra: Record<string, unknown>): T {
 
 const dictionaries: Record<Locale, () => Promise<Messages>> = {
   en: async () => (siteConfig.demoMode ? deepMerge(await base.en(), await demo.en()) : base.en()),
-  ml: async () => (siteConfig.demoMode ? deepMerge(await base.ml(), await demo.ml()) : base.ml()),
 };
 
 /** Current locale from the URL. Server Components only. */

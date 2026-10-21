@@ -32,7 +32,7 @@ export default async function FaqPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <PageHero
+      <PageHero image="faq"
         title={f.title}
         lead={f.lead}
         crumbLabel={t.common.breadcrumb}

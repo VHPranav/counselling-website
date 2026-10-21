@@ -20,7 +20,7 @@ export default async function ConcernsPage() {
   const c = t.concernsPage;
   return (
     <>
-      <PageHero
+      <PageHero image="concerns"
         eyebrow={c.eyebrow}
         title={c.title}
         lead={c.lead}

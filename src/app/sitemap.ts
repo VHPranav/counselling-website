@@ -6,7 +6,7 @@ import { localeTags, locales } from "@/i18n/config";
 import { postSlugs } from "@/lib/content";
 
 /**
- * Every public page in both languages, each listing its other-language twin.
+ * Every public page, listed with its canonical URL.
  * Left out on purpose: legal drafts (noindex until reviewed), the booking
  * confirmation page and the styleguide.
  */

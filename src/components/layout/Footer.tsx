@@ -5,7 +5,7 @@ import { format, type Messages } from "@/i18n/dictionaries";
 import { Container } from "@/components/ui/Section";
 import { Ph } from "@/components/ui/Placeholder";
 import { BananaLeaf, BrandMark, Ripple } from "@/components/shapes/Shapes";
-import { CrisisNotice } from "./CrisisNotice";
+
 import { footerExplore, footerHelp, legalNav } from "./navigation";
 
 export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
@@ -14,10 +14,9 @@ export function Footer({ locale, t }: { locale: Locale; t: Messages }) {
     <footer className="on-dark grain grain-light relative overflow-hidden bg-forest text-cream">
       <BananaLeaf className="pointer-events-none absolute -right-16 -top-10 hidden w-64 rotate-[18deg] text-moss/40 md:block" />
       <Ripple className="pointer-events-none absolute -bottom-6 -left-24 w-[34rem] text-sage/20" />
-      <Container size="wide" className="relative py-16 sm:py-20">
-        <CrisisNotice locale={locale} t={t} tone="dark" />
 
-        <div className="mt-16 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <Container size="wide" className="relative py-16 sm:py-20">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
               <BrandMark className="size-9" />

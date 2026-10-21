@@ -21,12 +21,12 @@ export default async function CommunityPage() {
   const locale = await getLocale();
   const t = await getMessages();
   const c = t.communityPage;
-  const intl = locale === "ml" ? "ml-IN" : "en-IN";
+  const intl = "en-IN";
   const upcoming = workshops.filter((w) => Date.parse(w.start) > BUILD_TIME).sort((a, b) => a.start.localeCompare(b.start));
 
   return (
     <>
-      <PageHero
+      <PageHero image="community"
         eyebrow={c.eyebrow}
         title={c.title}
         lead={c.lead}

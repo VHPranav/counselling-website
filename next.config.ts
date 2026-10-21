@@ -39,14 +39,16 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    // Malayalam is the default language.
-    // Any path without a language prefix goes to the Malayalam version:
-    // /about → /ml/about. Unknown paths then get the styled 404 with a 404 status.
+    // English is the only language.
+    // Any path without a language prefix goes to the English version:
+    // /about → /en/about. Any legacy /ml paths redirect to /en.
     // Excludes framework files, public assets and root metadata files.
-    const skip = "ml|en|_next|textures|icon\\.svg|robots\\.txt|sitemap\\.xml|favicon\\.ico|\\.well-known";
+    const skip = "en|_next|textures|icon\\.svg|robots\\.txt|sitemap\\.xml|favicon\\.ico|\\.well-known";
     return [
-      { source: "/", destination: "/ml", permanent: false },
-      { source: `/:first((?!(?:${skip})(?:/|$))[^/]+)/:rest*`, destination: "/ml/:first/:rest*", permanent: false },
+      { source: "/", destination: "/en", permanent: false },
+      { source: "/ml", destination: "/en", permanent: true },
+      { source: "/ml/:path*", destination: "/en/:path*", permanent: true },
+      { source: `/:first((?!(?:${skip})(?:/|$))[^/]+)/:rest*`, destination: "/en/:first/:rest*", permanent: false },
     ];
   },
 };

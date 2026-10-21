@@ -24,7 +24,7 @@ export default async function PricingPage() {
 
   return (
     <>
-      <PageHero
+      <PageHero image="pricing"
         title={p.title}
         lead={p.lead}
         crumbLabel={t.common.breadcrumb}

@@ -25,7 +25,7 @@ export default async function ServicesPage() {
 
   return (
     <>
-      <PageHero
+      <PageHero image="services"
         eyebrow={s.eyebrow}
         title={s.title}
         lead={s.lead}

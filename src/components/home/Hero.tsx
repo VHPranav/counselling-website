@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 import { href, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/dictionaries";
 import { ArrowIcon, Button } from "@/components/ui/Button";
-import { Container, Eyebrow } from "@/components/ui/Section";
+import { Container } from "@/components/ui/Section";
 import { ParallaxScene } from "@/components/motion/ParallaxScene";
 import { Blob } from "@/components/shapes/Shapes";
 import Link from "next/link";
@@ -38,7 +38,7 @@ export function Hero({ locale, t, team = [] }: { locale: Locale; t: Messages["ho
   // Demo mode shows an AI-generated portrait; launch mode keeps the people-free room photo.
   const photo = siteConfig.demoMode ? heroPortrait : heroRoom;
   const position = siteConfig.demoMode
-    ? "object-[82%_30%] sm:object-[100%_30%] lg:object-[78%_35%]"
+    ? "object-[96%_30%] sm:object-[100%_30%] lg:object-[70%_40%]"
     : "object-[72%_50%] lg:object-[100%_50%]";
   const frame = siteConfig.demoMode ? "aspect-[5/6] sm:aspect-[16/10]" : "aspect-[4/3] sm:aspect-[16/10]";
   return (
@@ -55,7 +55,7 @@ export function Hero({ locale, t, team = [] }: { locale: Locale; t: Messages["ho
 
       <Container size="wide" className="relative z-10">
         <div className="lg:max-w-[54%] xl:max-w-[50%]">
-          <Eyebrow className="fade-up">{t.eyebrow}</Eyebrow>
+
           <div className="relative mt-6">
             <div aria-hidden className="hero-glow pointer-events-none absolute -inset-x-16 -inset-y-10 -z-10 rounded-full opacity-70 lg:opacity-40" />
             <h1 className="text-display">

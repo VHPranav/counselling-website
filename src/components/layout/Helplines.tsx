@@ -7,7 +7,7 @@ import { getLocale } from "@/i18n/dictionaries";
  */
 export async function Helplines() {
   const locale = await getLocale();
-  const joiner = locale === "ml" ? " അല്ലെങ്കിൽ " : " or ";
+  const joiner = " or ";
   return (
     <>
       {crisisLines.map((line, i) => (

@@ -21,7 +21,7 @@ export default async function BusinessPage() {
 
   return (
     <>
-      <PageHero
+      <PageHero image="business"
         eyebrow={t.home.business.eyebrow}
         title={t.home.business.title}
         lead={t.home.business.lead}

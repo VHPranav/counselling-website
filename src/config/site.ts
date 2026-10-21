@@ -13,9 +13,9 @@ export const siteConfig = {
    * Set to false before launch (see TODO.md).
    */
   demoMode: true,
-  brandName: "[BRAND NAME]",
+  brandName: "Thanal",
   /** Short form for tight spaces (mobile header, favicon title). */
-  brandShort: "[BRAND]",
+  brandShort: "Thanal",
   domain: "[DOMAIN]",
   /** Used for canonical URLs, sitemap and OpenGraph. No trailing slash. */
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",

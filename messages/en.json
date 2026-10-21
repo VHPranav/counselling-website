@@ -84,7 +84,10 @@
       "therapistsTitle": "Therapists who work with this",
       "book": "Book a first session",
       "match": "Or let us match you",
-      "reset": "Choose something else"
+      "reset": "Choose something else",
+      "readyTitle": "Whenever you're ready",
+      "readyBody": "A first session is 50 minutes, by video or audio, in Malayalam or English.",
+      "crisis": "Feeling unsafe right now? Please call {name}, free and 24×7:"
     },
     "services": {
       "eyebrow": "Ways we can help",
@@ -93,7 +96,8 @@
       "minutes": "{n} min",
       "price": "[Price]",
       "video": "Video",
-      "audio": "Audio"
+      "audio": "Audio",
+      "photoCaption": "Sessions by video or audio, from wherever you are."
     },
     "how": {
       "eyebrow": "How it works",

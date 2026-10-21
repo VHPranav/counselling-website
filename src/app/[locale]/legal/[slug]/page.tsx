@@ -39,7 +39,7 @@ export default async function LegalPage({ params }: PageProps<"/[locale]/legal/[
   const l = t.legalPage;
   const { Content, meta } = await loadLegal(locale, slug);
   const title = t.footer[titleKey[slug]];
-  const updated = new Intl.DateTimeFormat(locale === "ml" ? "ml-IN" : "en-IN", { dateStyle: "long" }).format(new Date(meta.updated));
+  const updated = new Intl.DateTimeFormat("en-IN", { dateStyle: "long" }).format(new Date(meta.updated));
 
   return (
     <Section grain spacing="none" className="pb-20 pt-8 sm:pt-12">

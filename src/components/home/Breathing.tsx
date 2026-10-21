@@ -8,9 +8,8 @@ import { cn } from "@/lib/cn";
  * - Has a pause control (WCAG 2.2.2) and pauses itself when off screen.
  * - With reduced motion it stays still and shows the rhythm as text instead.
  */
-export function Breathing({ labels }: { labels: { in: string; out: string; pause: string; play: string; still: string } }) {
+export function Breathing({ labels }: { labels: { in: string; out: string; pause?: string; play?: string; still: string } }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [userPaused, setUserPaused] = useState(false);
   const [offscreen, setOffscreen] = useState(true);
   const [reduced, setReduced] = useState(false);
 
@@ -27,7 +26,7 @@ export function Breathing({ labels }: { labels: { in: string; out: string; pause
     };
   }, []);
 
-  const paused = userPaused || offscreen || reduced;
+  const paused = offscreen || reduced;
 
   return (
     <div ref={ref} className="flex flex-col items-center">
@@ -50,21 +49,7 @@ export function Breathing({ labels }: { labels: { in: string; out: string; pause
         </div>
       </div>
 
-      {reduced ? (
-        <p className="mt-8 text-lead">{labels.still}</p>
-      ) : (
-        <button
-          type="button"
-          onClick={() => setUserPaused((p) => !p)}
-          aria-pressed={userPaused}
-          className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-full px-5 text-sm ring-1 ring-inset ring-cocoa/25 transition-colors hover:bg-cream/60"
-        >
-          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden>
-            {userPaused ? <path d="M4 2.5v11l9-5.5-9-5.5Z" fill="currentColor" /> : <path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor" />}
-          </svg>
-          {userPaused ? labels.play : labels.pause}
-        </button>
-      )}
+      {reduced ? <p className="mt-8 text-lead">{labels.still}</p> : null}
     </div>
   );
 }

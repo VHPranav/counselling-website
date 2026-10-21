@@ -23,7 +23,7 @@ export default async function ContactPage() {
 
   return (
     <>
-      <PageHero
+      <PageHero image="contact"
         title={c.title}
         lead={c.lead}
         crumbLabel={t.common.breadcrumb}

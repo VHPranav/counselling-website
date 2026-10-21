@@ -1,11 +1,11 @@
 import { concernBySlug } from "@/data/concerns";
 import type { Therapist } from "@/data/types";
-import { href, type Locale } from "@/i18n/config";
+import { href, localeTags, type Locale } from "@/i18n/config";
 import { format, type Messages } from "@/i18n/dictionaries";
 import type { TherapistCardData, TherapistCardLabels } from "@/components/therapists/TherapistCard";
 
 export function formatInr(amount: number, locale: Locale): string {
-  return new Intl.NumberFormat(locale === "ml" ? "ml-IN" : "en-IN", {
+  return new Intl.NumberFormat(localeTags[locale] ?? "en-IN", {
     style: "currency",
     currency: "INR",
     maximumFractionDigits: 0,

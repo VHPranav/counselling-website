@@ -31,7 +31,7 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
   if (!post) notFound();
   const t = await getMessages();
   const b = t.blogPage;
-  const intl = locale === "ml" ? "ml-IN" : "en-IN";
+  const intl = "en-IN";
   const others = (await listPosts(locale)).filter((p) => p.slug !== slug).slice(0, 2);
 
   const jsonLd = {

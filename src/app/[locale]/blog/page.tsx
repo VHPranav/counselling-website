@@ -21,11 +21,11 @@ export default async function BlogPage() {
   const t = await getMessages();
   const b = t.blogPage;
   const posts = await listPosts(locale);
-  const intl = locale === "ml" ? "ml-IN" : "en-IN";
+  const intl = "en-IN";
 
   return (
     <>
-      <PageHero eyebrow={b.eyebrow} title={b.title} lead={b.lead} crumbLabel={t.common.breadcrumb} crumbs={[{ label: t.common.home, href: href(locale) }, { label: t.nav.blog }]} />
+      <PageHero image="blog" eyebrow={b.eyebrow} title={b.title} lead={b.lead} crumbLabel={t.common.breadcrumb} crumbs={[{ label: t.common.home, href: href(locale) }, { label: t.nav.blog }]} />
       <Section spacing="tight">
         <Container>
           <ul className="grid gap-6 md:grid-cols-2">

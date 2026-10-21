@@ -20,12 +20,6 @@ const concernGuides: Record<Locale, Record<string, Loader>> = {
     relationships: () => import("@content/concerns/en/relationships.mdx"),
     "work-stress": () => import("@content/concerns/en/work-stress.mdx"),
   },
-  ml: {
-    anxiety: () => import("@content/concerns/ml/anxiety.mdx"),
-    depression: () => import("@content/concerns/ml/depression.mdx"),
-    relationships: () => import("@content/concerns/ml/relationships.mdx"),
-    "work-stress": () => import("@content/concerns/ml/work-stress.mdx"),
-  },
 };
 
 export function hasConcernGuide(locale: Locale, slug: string): boolean {
@@ -49,10 +43,6 @@ const posts: Record<Locale, Record<string, Loader>> = {
   en: {
     "first-session": () => import("@content/blog/en/first-session.mdx"),
     "talking-to-family": () => import("@content/blog/en/talking-to-family.mdx"),
-  },
-  ml: {
-    "first-session": () => import("@content/blog/ml/first-session.mdx"),
-    "talking-to-family": () => import("@content/blog/ml/talking-to-family.mdx"),
   },
 };
 
@@ -83,13 +73,6 @@ const legal: Record<Locale, Record<LegalSlug, Loader>> = {
     refunds: () => import("@content/legal/en/refunds.mdx"),
     "therapy-agreement": () => import("@content/legal/en/therapy-agreement.mdx"),
     "minor-protection": () => import("@content/legal/en/minor-protection.mdx"),
-  },
-  ml: {
-    privacy: () => import("@content/legal/ml/privacy.mdx"),
-    terms: () => import("@content/legal/ml/terms.mdx"),
-    refunds: () => import("@content/legal/ml/refunds.mdx"),
-    "therapy-agreement": () => import("@content/legal/ml/therapy-agreement.mdx"),
-    "minor-protection": () => import("@content/legal/ml/minor-protection.mdx"),
   },
 };
 

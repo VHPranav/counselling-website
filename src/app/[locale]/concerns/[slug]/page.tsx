@@ -62,7 +62,7 @@ export default async function ConcernPage({ params }: PageProps<"/[locale]/conce
       {jsonLd ? (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       ) : null}
-      <PageHero
+      <PageHero image="concerns"
         eyebrow={t.nav.concerns}
         title={name}
         lead={guide?.meta.intro ?? concern.summary[locale]}

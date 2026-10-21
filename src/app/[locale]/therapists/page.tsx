@@ -21,7 +21,7 @@ export default async function TherapistsPage() {
   const p = t.therapistsPage;
   return (
     <>
-      <PageHero
+      <PageHero image="therapists"
         eyebrow={p.eyebrow}
         title={p.title}
         lead={p.lead}

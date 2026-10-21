@@ -1,3 +1,6 @@
+import beachWalk from "@/assets/images/beach-walk.jpg";
+import officeImg from "@/assets/pages/business.jpg";
+import { crisisLines } from "@/config/safety";
 import Image from "next/image";
 import Link from "next/link";
 import backwatersDawn from "@/assets/images/backwaters-dawn.jpg";
@@ -43,7 +46,6 @@ export default async function HomePage() {
       <MoodSection locale={locale} t={t} />
       <ServicesSection locale={locale} t={t} />
       <HowItWorks
-        eyebrow={h.how.eyebrow}
         title={h.how.title}
         steps={([1, 2, 3, 4] as const).map((n) => ({
           title: h.how[`step${n}Title`],
@@ -61,10 +63,9 @@ export default async function HomePage() {
   );
 }
 
-function SectionHeader({ eyebrow, title, lead, className }: { eyebrow: string; title: string; lead?: string; className?: string }) {
+function SectionHeader({ title, lead, className }: { title: string; lead?: string; className?: string }) {
   return (
     <Reveal className={className}>
-      <Eyebrow>{eyebrow}</Eyebrow>
       <Heading level={2} className="mt-4 max-w-3xl">
         {title}
       </Heading>
@@ -85,20 +86,27 @@ function MoodSection({ locale, t }: { locale: Locale; t: Messages }) {
       .map((c) => ({ slug: c.slug, name: c.name[locale], summary: c.summary[locale], href: href(locale, `/concerns/${c.slug}`) })),
     therapists: matchTherapists(mood.concerns, 2).map((th) => toCardData(th, locale, t)),
   }));
+  const line = crisisLines[0];
   return (
-    <Section id="mood" tone="sand" grain className="scroll-mt-16 overflow-hidden">
+    <Section id="mood" tone="sand" grain className="scroll-mt-16 overflow-clip">
       <Ripple className="pointer-events-none absolute -right-20 top-10 w-[28rem] text-cream/70" />
-      <Container className="relative">
-        <SectionHeader eyebrow={m.eyebrow} title={m.title} lead={m.lead} />
-        <div className="mt-10">
-          <MoodSelector
-            moods={options}
-            labels={m}
-            cardLabels={cardLabels(t)}
-            bookHref={href(locale, "/book")}
-            matchHref={href(locale, "/book?match=1")}
-          />
-        </div>
+      <Container>
+        <MoodSelector
+          moods={options}
+          labels={m}
+          cardLabels={cardLabels(t)}
+          bookHref={href(locale, "/book")}
+          matchHref={href(locale, "/book?match=1")}
+          crisis={{ text: format(m.crisis, { name: line.name[locale] }), tel: line.tel, number: line.number }}
+          heading={
+            <Reveal>
+              <Eyebrow>{m.eyebrow}</Eyebrow>
+              <Heading level={2} className="mt-4">
+                {m.title}
+              </Heading>
+            </Reveal>
+          }
+        />
       </Container>
     </Section>
   );
@@ -106,20 +114,23 @@ function MoodSection({ locale, t }: { locale: Locale; t: Messages }) {
 
 function ServicesSection({ locale, t }: { locale: Locale; t: Messages }) {
   const s = t.home.services;
-  // Bento layout: two wide cards, then three.
-  const spans = ["lg:col-span-3", "lg:col-span-3", "lg:col-span-2", "lg:col-span-2", "lg:col-span-2"];
   return (
     <Section>
       <Container>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <SectionHeader eyebrow={s.eyebrow} title={s.title} />
+          <SectionHeader title={s.title} />
           <Link href={href(locale, "/services")} className="text-link shrink-0 font-medium">
             {s.viewAll}
           </Link>
         </div>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:gap-5">
+        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          <Reveal as="li" className="relative min-h-72 overflow-hidden rounded-pebble sm:row-span-1">
+            <Image src={beachWalk} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 26rem, (min-width: 640px) 50vw, 100vw" className="object-cover object-[50%_60%]" />
+            <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/10 to-transparent" />
+            <p className="absolute inset-x-0 bottom-0 p-6 font-display text-h4 leading-snug text-cream">{s.photoCaption}</p>
+          </Reveal>
           {services.map((svc, i) => (
-            <Reveal as="li" key={svc.slug} delay={(i % 3) * 90} className={spans[i]}>
+            <Reveal as="li" key={svc.slug} delay={((i + 1) % 3) * 90}>
               <Card href={href(locale, `/services#${svc.slug}`)} tone={i < 2 ? "sand" : "cream"} className="group flex h-full flex-col">
                 <div className="flex items-start justify-between gap-4">
                   <ServiceGlyph slug={svc.slug} className="size-12 sm:size-14" />
@@ -154,7 +165,7 @@ function TherapistsSection({ locale, t }: { locale: Locale; t: Messages }) {
       <BananaLeaf className="pointer-events-none absolute -left-10 bottom-0 w-36 rotate-[20deg] text-moss/15 lg:w-52" />
       <Container className="relative">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <SectionHeader eyebrow={tt.eyebrow} title={tt.title} lead={tt.lead} />
+          <SectionHeader title={tt.title} lead={tt.lead} />
           <Button href={href(locale, "/therapists")} variant="secondary" className="shrink-0 self-start md:self-auto">
             {tt.viewAll}
           </Button>
@@ -190,7 +201,7 @@ function BreathSection({ t }: { t: Messages["home"]["breath"] }) {
       />
       <div aria-hidden className="absolute inset-0 bg-cream/70 md:bg-transparent md:bg-gradient-to-r md:from-cream/85 md:via-cream/45 md:to-cream/10" />
       <Container className="relative grid items-center gap-12 md:grid-cols-2">
-        <SectionHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
+        <SectionHeader title={t.title} lead={t.lead} />
         <Breathing labels={t} />
       </Container>
     </Section>
@@ -205,10 +216,10 @@ function TestimonialsSection({ locale, t }: { locale: Locale; t: Messages["home"
   return (
     <Section className="overflow-hidden">
       <Container>
-        <SectionHeader eyebrow={t.eyebrow} title={t.title} />
+        <SectionHeader title={t.title} />
         {t.note ? <p className="mt-3 text-sm text-cocoa-soft">{t.note}</p> : null}
       </Container>
-      <Marquee className="mt-10" label={t.title} seconds={80} pauseLabel={t.pause} playLabel={t.play}>
+      <Marquee className="mt-10" label={t.title} seconds={80}>
         {items.map((item, i) => (
           <figure key={i} className="flex w-[17rem] shrink-0 flex-col justify-between rounded-pebble bg-sand p-6 sm:w-[21rem]">
             <svg viewBox="0 0 32 24" width="24" height="18" aria-hidden className="text-clay">
@@ -233,7 +244,7 @@ function FaqSection({ locale, t }: { locale: Locale; t: Messages }) {
     <Section tone="sand">
       <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
         <div>
-          <SectionHeader eyebrow={f.eyebrow} title={f.title} />
+          <SectionHeader title={f.title} />
           <Link href={href(locale, "/faq")} className="text-link mt-6 inline-block font-medium">
             {f.viewAll}
           </Link>
@@ -253,13 +264,17 @@ function BusinessSection({ locale, t }: { locale: Locale; t: Messages["home"]["b
     <Section tone="forest" className="overflow-hidden">
       <Ripple className="pointer-events-none absolute -right-24 -top-10 w-[36rem] text-sage/20" />
       <BananaLeaf className="pointer-events-none absolute -bottom-16 left-[8%] w-32 rotate-[-18deg] text-moss/35" />
-      <Container className="relative grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-end">
+      <Container className="relative grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
         <div className="min-w-0">
-          <SectionHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
+          <SectionHeader title={t.title} lead={t.lead} />
           <Button href={href(locale, "/business")} variant="light" className="mt-8" icon={<ArrowIcon />}>
             {t.cta}
           </Button>
         </div>
+        <div className="grid gap-4">
+          <Reveal className="relative aspect-[16/9] overflow-hidden rounded-pebble">
+            <Image src={officeImg} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 36rem, 100vw" className="object-cover object-[50%_45%]" />
+          </Reveal>
         <ul className="grid gap-4 sm:grid-cols-2">
           {items.map((it, i) => (
             <Reveal as="li" key={it.title} delay={i * 120}>
@@ -270,6 +285,7 @@ function BusinessSection({ locale, t }: { locale: Locale; t: Messages["home"]["b
             </Reveal>
           ))}
         </ul>
+        </div>
       </Container>
     </Section>
   );

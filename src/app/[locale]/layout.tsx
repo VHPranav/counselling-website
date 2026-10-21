@@ -26,7 +26,6 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       siteName: siteConfig.brandName,
       locale: localeTags[locale].replace("-", "_"),
-      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeTags[l].replace("-", "_")),
     },
     formatDetection: { telephone: false },
     // Demo content must never be indexed.
@@ -54,7 +53,7 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
         url: siteConfig.siteUrl,
         logo: `${siteConfig.siteUrl}/icon.svg`,
         description: t.meta.description,
-        knowsLanguage: ["ml", "en"],
+        knowsLanguage: ["en"],
         areaServed: [
           { "@type": "State", name: "Kerala" },
           ...keralaPlaces.map((p) => ({ "@type": "City", name: p.en })),

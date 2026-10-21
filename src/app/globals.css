@@ -34,7 +34,7 @@
   --text-h3: clamp(1.1875rem, 1.1rem + 0.36vw, 1.4375rem);
   --text-h2: clamp(1.625rem, 1.4rem + 0.9vw, 2.25rem);
   --text-h1: clamp(1.875rem, 1.6rem + 1.2vw, 2.75rem);
-  --text-display: clamp(2.125rem, 1.75rem + 1.7vw, 3.5rem);
+  --text-display: clamp(1.875rem, 1.55rem + 1.4vw, 2.75rem);
 
   --radius-pebble: 1.5rem;
   --radius-soft: 1rem;
@@ -56,7 +56,7 @@
 
 /* Malayalam needs more room: long words, tall conjuncts, no negative tracking. */
 html:lang(ml) {
-  --text-display: clamp(1.75rem, 1.45rem + 1.35vw, 2.75rem);
+  --text-display: clamp(1.5rem, 1.25rem + 1.1vw, 2.25rem);
   --text-h1: clamp(1.625rem, 1.4rem + 0.95vw, 2.25rem);
   --text-h2: clamp(1.375rem, 1.22rem + 0.65vw, 1.875rem);
   --text-h3: clamp(1.0625rem, 1rem + 0.3vw, 1.3125rem);
@@ -214,18 +214,30 @@ html:lang(ml) {
   }
 }
 
-/* Hero headline: word-by-word reveal (transform + opacity only). */
+/* Hero headline: word-by-word blur-in-up reveal.
+   Each word rises from below, deblurring as it settles — a soft,
+   editorial entrance that matches the warm wellness aesthetic.
+   Uses transform + filter + opacity (all GPU-composited). */
 .word-reveal > .w {
   display: inline-block;
-  animation: word-in 0.9s var(--ease-soft) both;
-  animation-delay: calc(var(--i) * 70ms + 80ms);
+  animation: word-blur-in 0.8s var(--ease-soft) both;
+  animation-delay: calc(var(--i) * 80ms + 120ms);
 }
 /* Start at 0.01, not 0: browsers then count the headline as painted
    immediately, which keeps Largest Contentful Paint fast. */
-@keyframes word-in {
+@keyframes word-blur-in {
   from {
     opacity: 0.01;
-    transform: translate3d(0, 0.45em, 0) rotate(1.5deg);
+    filter: blur(10px);
+    transform: translate3d(0, 0.5em, 0);
+  }
+  60% {
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -239,16 +251,22 @@ html:lang(ml) {
   animation: hero-photo-in 2.4s var(--ease-soft) both;
 }
 
-/* Soft fade-up used for mood results and other reveals. */
+/* Soft blur-fade-up used for lead text, CTAs and other hero elements. */
 @keyframes fade-up {
   from {
     opacity: 0.01;
-    transform: translate3d(0, 14px, 0);
+    filter: blur(6px);
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 .fade-up {
-  animation: fade-up 0.7s var(--ease-soft) both;
-  animation-delay: calc(var(--i, 0) * 80ms);
+  animation: fade-up 0.8s var(--ease-soft) both;
+  animation-delay: calc(var(--i, 0) * 90ms);
 }
 
 /* Drifting warm glow behind the hero headline. */

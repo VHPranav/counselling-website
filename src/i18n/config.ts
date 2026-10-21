@@ -1,15 +1,13 @@
-export const locales = ["ml", "en"] as const;
+export const locales = ["en"] as const;
 export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = "ml";
+export const defaultLocale: Locale = "en";
 
 export const localeNames: Record<Locale, string> = {
-  ml: "മലയാളം",
   en: "English",
 };
 
 /** BCP 47 tags for hreflang / OpenGraph. */
 export const localeTags: Record<Locale, string> = {
-  ml: "ml-IN",
   en: "en-IN",
 };
 

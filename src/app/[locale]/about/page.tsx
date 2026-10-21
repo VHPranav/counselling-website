@@ -1,3 +1,5 @@
+import Image from "next/image";
+import heldHands from "@/assets/images/held-hands.jpg";
 import { siteConfig } from "@/config/site";
 import { abroadPlaces, keralaPlaces } from "@/data/places";
 import { href } from "@/i18n/config";
@@ -7,7 +9,7 @@ import { CtaBand, PageHero } from "@/components/ui/PageParts";
 import { Ph } from "@/components/ui/Placeholder";
 import { Container, Heading, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
-import { Arch, BananaLeaf, Blob } from "@/components/shapes/Shapes";
+import { BananaLeaf, Blob } from "@/components/shapes/Shapes";
 
 export async function generateMetadata() {
   const t = await getMessages();
@@ -23,7 +25,7 @@ export default async function AboutPage() {
 
   return (
     <>
-      <PageHero
+      <PageHero image="about"
         eyebrow={a.eyebrow}
         title={a.title}
         lead={<Ph>{format(a.lead, { brand: siteConfig.brandName })}</Ph>}
@@ -40,11 +42,12 @@ export default async function AboutPage() {
               <Ph>{a.story2}</Ph>
             </p>
           </div>
-          <div aria-hidden className="relative mx-auto aspect-[4/5] w-full max-w-xs">
-            <Arch className="absolute inset-0 h-full w-full text-sand" />
-            <div className="absolute left-1/2 top-[18%] size-24 -translate-x-1/2 rounded-full bg-ochre/70" />
-            <Blob variant={2} className="absolute -bottom-6 -left-8 w-3/4 text-sage/70" />
-            <BananaLeaf className="absolute -right-4 bottom-0 w-1/3 rotate-[18deg] text-moss" />
+          <div className="relative mx-auto w-full max-w-sm">
+            <Blob variant={2} aria-hidden className="absolute -bottom-8 -left-10 w-3/4 text-sage/50" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-pebble shadow-warm-lg">
+              <Image src={heldHands} alt="" fill placeholder="blur" sizes="(min-width: 768px) 24rem, calc(100vw - 2rem)" className="object-cover" />
+            </div>
+            <BananaLeaf aria-hidden className="absolute -right-6 -bottom-4 w-1/4 rotate-[18deg] text-moss" />
           </div>
         </Container>
       </Section>

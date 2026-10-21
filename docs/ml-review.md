@@ -7,7 +7,7 @@ in `content/**/ml/*.mdx` is listed separately at the bottom as it is added.
 To approve a string, add its key to `docs/ml-review.status.json` with the value `"approved"`
 (or `"changed"` if you edited the Malayalam), then re-run the script.
 
-**666 of 666 strings still need native-speaker review.**
+**670 of 670 strings still need native-speaker review.**
 
 | Key | Malayalam | English source | Status |
 |---|---|---|---|
@@ -81,6 +81,9 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `home.mood.book` | ആദ്യ സെഷൻ ബുക്ക് ചെയ്യാം | Book a first session | needs native-speaker review |
 | `home.mood.match` | അല്ലെങ്കിൽ ഞങ്ങൾ യോജിച്ച ആളെ കണ്ടെത്താം | Or let us match you | needs native-speaker review |
 | `home.mood.reset` | മറ്റൊന്ന് തിരഞ്ഞെടുക്കാം | Choose something else | needs native-speaker review |
+| `home.mood.readyTitle` | തയ്യാറാകുമ്പോൾ ഞങ്ങൾ ഇവിടെയുണ്ട് | Whenever you're ready | needs native-speaker review |
+| `home.mood.readyBody` | ആദ്യ സെഷൻ 50 മിനിറ്റ്, വീഡിയോയിലോ ഓഡിയോയിലോ, മലയാളത്തിലോ ഇംഗ്ലീഷിലോ. | A first session is 50 minutes, by video or audio, in Malayalam or English. | needs native-speaker review |
+| `home.mood.crisis` | ഇപ്പോൾ സുരക്ഷിതമല്ലെന്ന് തോന്നുന്നുണ്ടോ? ദയവായി {name}-ൽ വിളിക്കൂ, സൗജന്യം, 24 മണിക്കൂറും: | Feeling unsafe right now? Please call {name}, free and 24×7: | needs native-speaker review |
 | `home.services.eyebrow` | ഞങ്ങൾ എങ്ങനെ സഹായിക്കാം | Ways we can help | needs native-speaker review |
 | `home.services.title` | നിങ്ങൾക്കും നിങ്ങളുടെ പ്രിയപ്പെട്ടവർക്കും പിന്തുണ | Support for you, and the people around you | needs native-speaker review |
 | `home.services.viewAll` | എല്ലാ സേവനങ്ങളും കാണാം | See all services | needs native-speaker review |
@@ -88,6 +91,7 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `home.services.price` | [നിരക്ക്] | [Price] | needs native-speaker review |
 | `home.services.video` | വീഡിയോ | Video | needs native-speaker review |
 | `home.services.audio` | ഓഡിയോ | Audio | needs native-speaker review |
+| `home.services.photoCaption` | വീഡിയോയിലോ ഓഡിയോയിലോ, നിങ്ങൾ എവിടെയായാലും. | Sessions by video or audio, from wherever you are. | needs native-speaker review |
 | `home.how.eyebrow` | ഇത് എങ്ങനെയാണ് | How it works | needs native-speaker review |
 | `home.how.title` | നിങ്ങളുടെ വേഗത്തിൽ, നാല് ചെറിയ ചുവടുകൾ | Four small steps, at your own pace | needs native-speaker review |
 | `home.how.stepLabel` | ഘട്ടം {n} / 4 | Step {n} of 4 | needs native-speaker review |

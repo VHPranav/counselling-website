@@ -5,7 +5,7 @@ import { format, type Messages } from "@/i18n/dictionaries";
 import { Button } from "@/components/ui/Button";
 import { Ph } from "@/components/ui/Placeholder";
 import { BrandMark } from "@/components/shapes/Shapes";
-import { LocaleToggle } from "./LocaleToggle";
+
 import { MobileMenu } from "./MobileMenu";
 import { NavLinks } from "./NavLinks";
 import { bookPath, primaryNav } from "./navigation";
@@ -28,7 +28,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
 
         <NavLinks links={links} label={t.header.primaryNav} />
 
-        <LocaleToggle current={locale} label={t.header.language} className="lg:ml-3" />
+
         <Button href={href(locale, bookPath)} size="sm" magnetic className="whitespace-nowrap max-sm:hidden">
           {t.nav.book}
         </Button>

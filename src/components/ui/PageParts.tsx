@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { pageImages, type PageImageKey } from "@/lib/page-images";
+import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { ArrowIcon, Button } from "./Button";
 import { Container, Eyebrow, Heading, Section } from "./Section";
@@ -31,7 +33,11 @@ export function Breadcrumbs({ items, label }: { items: Crumb[]; label: string })
   );
 }
 
-/** Standard top-of-page header used by inner pages. */
+/**
+ * Standard top-of-page header used by inner pages. With an image it matches the
+ * home hero: a full-screen photo with the text on a soft cream wash on the left
+ * (desktop), or an arched photo under the text (mobile).
+ */
 export function PageHero({
   eyebrow,
   title,
@@ -40,6 +46,8 @@ export function PageHero({
   crumbLabel,
   children,
   tone = "cream",
+  image,
+  imagePosition = "100% 35%",
 }: {
   eyebrow?: string;
   title: ReactNode;
@@ -48,21 +56,69 @@ export function PageHero({
   crumbLabel?: string;
   children?: ReactNode;
   tone?: "cream" | "sand";
+  image?: PageImageKey;
+  /** CSS object-position for the photo, e.g. "70% 40%". */
+  imagePosition?: string;
 }) {
+  const photo = image ? pageImages[image] : null;
+
+  if (!photo) {
+    return (
+      <Section tone={tone} grain spacing="none" className="overflow-hidden pb-14 pt-8 sm:pb-20 sm:pt-12">
+        <Blob variant={0} className="pointer-events-none absolute -right-48 -top-40 w-[34rem] text-sand/80 sm:w-[44rem] [.bg-sand_&]:text-cream/50" />
+        <Ripple className="pointer-events-none absolute -bottom-10 right-[6%] hidden w-80 text-clay/25 md:block" />
+        <Container className="relative">
+          {crumbs && crumbLabel ? <Breadcrumbs items={crumbs} label={crumbLabel} /> : null}
+          {eyebrow ? <Eyebrow className="mt-8">{eyebrow}</Eyebrow> : null}
+          <Heading level={1} size={1} className={cn("max-w-4xl", eyebrow ? "mt-4" : "mt-8")}>
+            {title}
+          </Heading>
+          {lead ? <p className="mt-5 max-w-2xl text-lead text-cocoa-soft">{lead}</p> : null}
+          {children}
+        </Container>
+      </Section>
+    );
+  }
+
   return (
-    <Section tone={tone} grain spacing="none" className="overflow-hidden pb-14 pt-8 sm:pb-20 sm:pt-12">
-      <Blob variant={0} className="pointer-events-none absolute -right-48 -top-40 w-[34rem] text-sand/80 sm:w-[44rem] [.bg-sand_&]:text-cream/50" />
-      <Ripple className="pointer-events-none absolute -bottom-10 right-[6%] hidden w-80 text-clay/25 md:block" />
-      <Container className="relative">
+    <section className="grain relative overflow-hidden bg-cream pb-14 pt-8 sm:pb-20 sm:pt-10 lg:flex lg:min-h-[calc(100dvh-4.5rem)] lg:flex-col lg:py-10">
+      <Container size="wide" className="relative z-10 lg:flex lg:flex-1 lg:flex-col">
         {crumbs && crumbLabel ? <Breadcrumbs items={crumbs} label={crumbLabel} /> : null}
-        {eyebrow ? <Eyebrow className="mt-8">{eyebrow}</Eyebrow> : null}
-        <Heading level={1} size={1} className={cn("max-w-4xl", eyebrow ? "mt-4" : "mt-8")}>
-          {title}
-        </Heading>
-        {lead ? <p className="mt-5 max-w-2xl text-lead text-cocoa-soft">{lead}</p> : null}
-        {children}
+        <div className="lg:my-auto lg:max-w-[52%] lg:py-12 xl:max-w-[46%]">
+          {eyebrow ? <Eyebrow className="fade-up mt-8 lg:mt-0">{eyebrow}</Eyebrow> : null}
+          <Heading level={1} size="display" className={cn("fade-up", eyebrow ? "mt-5" : "mt-8 lg:mt-0")} style={{ "--i": 1 } as CSSProperties}>
+            {title}
+          </Heading>
+          {lead ? (
+            <p className="fade-up mt-6 max-w-xl text-lead text-cocoa-soft" style={{ "--i": 3 } as CSSProperties}>
+              {lead}
+            </p>
+          ) : null}
+          {children ? (
+            <div className="fade-up" style={{ "--i": 5 } as CSSProperties}>
+              {children}
+            </div>
+          ) : null}
+        </div>
       </Container>
-    </Section>
+
+      {/* Mobile: arched photo under the text. Desktop: full-bleed behind it. */}
+      <div className="relative mx-4 mt-10 aspect-[4/3] overflow-hidden rounded-t-[999px] rounded-b-pebble sm:mx-6 sm:aspect-[16/10] lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none">
+        <Image
+          src={photo}
+          alt=""
+          fill
+          preload
+          fetchPriority="high"
+          placeholder="blur"
+          sizes="(min-width: 1024px) 100vw, calc(100vw - 2rem)"
+          className="hero-photo object-cover"
+          style={{ objectPosition: imagePosition }}
+        />
+        <div aria-hidden className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgb(246_240_230/0.95)_0%,rgb(246_240_230/0.86)_36%,rgb(246_240_230/0.3)_60%,transparent_76%)] lg:block" />
+        <div aria-hidden className="absolute inset-x-0 bottom-0 hidden h-32 bg-gradient-to-t from-cream/60 to-transparent lg:block" />
+      </div>
+    </section>
   );
 }
 
