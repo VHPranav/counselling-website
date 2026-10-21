@@ -1,4 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
+import backwatersDawn from "@/assets/images/backwaters-dawn.jpg";
+import monsoonWindow from "@/assets/images/monsoon-window.jpg";
 import { siteConfig } from "@/config/site";
 import { concernBySlug } from "@/data/concerns";
 import { faqs } from "@/data/faqs";
@@ -16,7 +19,7 @@ import { FaqList } from "@/components/ui/PageParts";
 import { Ph } from "@/components/ui/Placeholder";
 import { Container, Eyebrow, Heading, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
-import { Arch, BananaLeaf, Blob, PalmFrond, Pebble, Ripple } from "@/components/shapes/Shapes";
+import { BananaLeaf, Ripple } from "@/components/shapes/Shapes";
 import { Breathing } from "@/components/home/Breathing";
 import { Hero } from "@/components/home/Hero";
 import { HowItWorks } from "@/components/home/HowItWorks";
@@ -173,9 +176,18 @@ function TherapistsSection({ locale, t }: { locale: Locale; t: Messages }) {
 
 function BreathSection({ t }: { t: Messages["home"]["breath"] }) {
   return (
-    <Section tone="sage" grain className="overflow-hidden">
-      <Blob variant={1} className="pointer-events-none absolute -left-32 top-1/2 w-[30rem] -translate-y-1/2 text-cream/30" />
-      <PalmFrond className="pointer-events-none absolute -right-10 bottom-6 hidden w-96 text-moss/25 md:block" />
+    <Section id="breathe" tone="sage" className="scroll-mt-16 overflow-hidden">
+      {/* Dawn on the backwaters (generated in Google Flow). The open water on the
+          left sits under the text; the canoe and palms frame the breathing circle. */}
+      <Image
+        src={backwatersDawn}
+        alt=""
+        fill
+        placeholder="blur"
+        sizes="100vw"
+        className="object-cover object-[70%_50%]"
+      />
+      <div aria-hidden className="absolute inset-0 bg-cream/70 md:bg-transparent md:bg-gradient-to-r md:from-cream/85 md:via-cream/45 md:to-cream/10" />
       <Container className="relative grid items-center gap-12 md:grid-cols-2">
         <SectionHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
         <Breathing labels={t} />
@@ -262,23 +274,18 @@ function FinalCta({ locale, t }: { locale: Locale; t: Messages }) {
   const c = t.home.cta;
   const hasWhatsApp = /^\d+$/.test(siteConfig.contact.whatsapp);
   return (
-    <Section className="overflow-hidden text-center">
-      <div aria-hidden className="pointer-events-none absolute left-1/2 top-12 w-[min(42rem,120%)] -translate-x-1/2">
-        <Arch className="w-full text-sand/70" />
-      </div>
-      <Pebble className="pointer-events-none absolute bottom-20 left-[12%] hidden w-20 text-clay/60 md:block" />
-      <Pebble className="pointer-events-none absolute bottom-32 right-[14%] hidden w-12 rotate-12 text-moss/50 md:block" />
-      <Container size="narrow" className="relative py-8">
-        <Reveal>
+    <Section id="get-started" spacing="none" className="scroll-mt-16 overflow-hidden pt-20 sm:pt-28 lg:flex lg:min-h-[44rem] lg:items-center lg:py-28">
+      <Container size="wide" className="relative z-10">
+        <Reveal className="lg:max-w-[46%]">
           <Heading level={2} size={1}>
             {c.title}
           </Heading>
-          <p className="mx-auto mt-5 max-w-xl text-lead text-cocoa-soft">{c.lead}</p>
-          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+          <p className="mt-5 max-w-xl text-lead text-cocoa-soft">{c.lead}</p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button href={href(locale, "/book")} size="lg" magnetic icon={<ArrowIcon />}>
               {c.primary}
             </Button>
-            <Button href={href(locale, "/contact")} size="lg" variant="secondary">
+            <Button href={href(locale, "/contact")} size="lg" variant="secondary" className="bg-cream/60 backdrop-blur-sm">
               {c.secondary}
             </Button>
           </div>
@@ -293,9 +300,22 @@ function FinalCta({ locale, t }: { locale: Locale; t: Messages }) {
               </>
             )}
           </p>
-          <p className="mx-auto mt-3 max-w-md text-sm text-cocoa-soft">{c.someone}</p>
+          <p className="mt-3 max-w-md text-sm text-cocoa-soft">{c.someone}</p>
         </Reveal>
       </Container>
+      {/* Monsoon window with chai (generated in Google Flow). Mobile: a rounded
+          photo under the text. Desktop: full-bleed, plain wall under the text. */}
+      <div className="relative mx-4 mb-20 mt-12 aspect-[4/3] overflow-hidden rounded-pebble sm:mx-6 sm:mb-28 lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none">
+        <Image
+          src={monsoonWindow}
+          alt=""
+          fill
+          placeholder="blur"
+          sizes="(min-width: 1024px) 100vw, calc(100vw - 2rem)"
+          className="object-cover object-[70%_70%] lg:object-[100%_85%]"
+        />
+        <div aria-hidden className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgb(246_240_230/0.94)_0%,rgb(246_240_230/0.8)_40%,rgb(246_240_230/0.2)_62%,transparent_80%)] lg:block" />
+      </div>
     </Section>
   );
 }

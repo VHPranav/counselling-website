@@ -61,7 +61,7 @@ through. Search the code for `[` to find any stragglers.
 
 ## 3. Decisions
 - [ ] Offer a free short intro call? (common in this market; not on the site)
-- [ ] Photography? The site uses illustrations only until real, consented photos are supplied
+- [ ] Photography: the home page uses three AI-generated scenes (Google Flow, no people). Keep them, or replace with real photography (README → Photos). Decide whether to mention AI-generated imagery anywhere (e.g. in the footer or terms).
 - [ ] Separate inbox for business/contact enquiries (`ENQUIRY_NOTIFY_TO`)
 
 ## Done

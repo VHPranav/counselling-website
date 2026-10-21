@@ -227,6 +227,16 @@ html:lang(ml) {
   }
 }
 
+/* Hero photo settles in with a slow, gentle zoom (transform only). */
+@keyframes hero-photo-in {
+  from {
+    transform: scale(1.06);
+  }
+}
+.hero-photo {
+  animation: hero-photo-in 2.4s var(--ease-soft) both;
+}
+
 /* Soft fade-up used for mood results and other reveals. */
 @keyframes fade-up {
   from {

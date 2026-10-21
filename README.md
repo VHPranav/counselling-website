@@ -44,6 +44,7 @@ Run `npm run build` locally before pushing; it type-checks and pre-renders every
 | Journal posts | `content/blog/{ml,en}/<slug>.mdx`, registered in `src/lib/content.ts` |
 | Legal policies | `content/legal/{ml,en}/<slug>.mdx` (drafts, marked for legal review) |
 | Workshops | `src/data/workshops.ts` (past events hide automatically on the next deploy) |
+| Home page photos | `src/assets/images/` (hero, backwaters, monsoon window), see "Photos" below |
 
 Anything written in `[square brackets]` is a placeholder. It shows on the page with a
 striped ochre highlight until you replace it.
@@ -76,6 +77,16 @@ docs/                    Malayalam review tracker, audit report
 content/                 MDX: concern guides, journal, legal drafts
 assets/fonts/            font used only for the social share image
 ```
+
+## Photos
+
+The three home-page photos were generated in Google Flow (Nano Banana) and contain no
+people: a sunlit Kerala room (hero), dawn on the backwaters (breathing section) and a
+monsoon window with chai (final call to action). To replace one, drop a new JPG into
+`src/assets/images/` with the same file name (landscape, about 2500px wide, with calm
+empty space on the left for text). Next.js serves resized AVIF/WebP automatically.
+The originals were cropped slightly at the bottom-right to remove Gemini's visible
+sparkle mark.
 
 ## SEO
 

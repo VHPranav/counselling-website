@@ -1,10 +1,12 @@
+import Image from "next/image";
 import { Fragment, type CSSProperties } from "react";
+import heroRoom from "@/assets/images/hero-kerala-room.jpg";
 import { href, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/dictionaries";
 import { ArrowIcon, Button } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/Section";
 import { ParallaxScene } from "@/components/motion/ParallaxScene";
-import { Arch, BananaLeaf, Blob, PalmFrond, Pebble, Ripple } from "@/components/shapes/Shapes";
+import { Blob } from "@/components/shapes/Shapes";
 
 /** Splits a headline into word spans for the CSS word-by-word reveal. */
 function RevealWords({ text }: { text: string }) {
@@ -27,55 +29,27 @@ function RevealWords({ text }: { text: string }) {
 export function Hero({ locale, t }: { locale: Locale; t: Messages["home"]["hero"] }) {
   const points = [t.point1, t.point2, t.point3];
   return (
-    <section className="grain relative overflow-hidden bg-cream pb-16 pt-10 sm:pb-24 sm:pt-16 lg:min-h-[calc(100dvh-5rem)] lg:pb-28 lg:pt-20">
-      {/* Background layers */}
-      <ParallaxScene className="pointer-events-none absolute inset-0 -z-0">
-        <div data-depth="0.08" className="absolute -right-40 -top-32 w-[30rem] sm:w-[40rem] lg:hidden">
+    <section className="grain relative overflow-hidden bg-cream pb-16 pt-10 sm:pb-20 sm:pt-16 lg:flex lg:min-h-[calc(100dvh-5rem)] lg:items-center lg:py-14">
+      {/* Mobile-only organic accents (the photo carries the desktop composition) */}
+      <ParallaxScene className="pointer-events-none absolute inset-0 -z-0 lg:hidden">
+        <div data-depth="0.08" className="absolute -right-40 -top-32 w-[30rem] sm:w-[40rem]">
           <Blob variant={0} className="w-full text-sand" />
         </div>
-        <div data-depth="0.25" className="absolute -bottom-16 -right-10 w-28 sm:w-40 lg:hidden">
-          <BananaLeaf className="w-full rotate-[-28deg] text-moss/25" />
-        </div>
-        <div data-depth="0.05" className="absolute -bottom-48 -left-40 w-[26rem] lg:w-[34rem]">
+        <div data-depth="0.05" className="absolute -left-40 top-[30%] w-[26rem]">
           <Blob variant={2} className="w-full text-sage/25" />
-        </div>
-
-        {/* Desktop composition: an arch "window" onto the backwaters at dusk */}
-        <div className="absolute inset-y-0 right-0 hidden w-[44%] lg:block">
-          <div data-depth="0.12" className="absolute right-[10%] top-[8%] w-[70%] max-w-[30rem]">
-            <Arch className="w-full text-sand" />
-          </div>
-          <div data-depth="0.3" className="absolute right-[34%] top-[20%] w-[22%] max-w-36">
-            <div className="aspect-square rounded-full bg-ochre/70" />
-          </div>
-          <div data-depth="0.18" className="absolute right-[14%] top-[54%] w-[62%] max-w-[26rem]">
-            <Ripple className="w-full text-clay-deep/40" />
-          </div>
-          <div data-depth="0.45" className="absolute right-[4%] top-[2%] w-[52%] max-w-[22rem]">
-            <PalmFrond className="w-full -scale-x-100 text-moss/55" />
-          </div>
-          <div data-depth="0.65" className="absolute bottom-[6%] right-[56%] w-[24%] max-w-40">
-            <BananaLeaf className="w-full rotate-[-32deg] text-moss" />
-          </div>
-          <div data-depth="0.8" className="absolute bottom-[12%] right-[22%] w-[14%] max-w-24">
-            <Pebble className="w-full text-clay" />
-          </div>
-          <div data-depth="0.95" className="absolute bottom-[8%] right-[12%] w-[8%] max-w-14">
-            <Pebble className="w-full rotate-12 text-cocoa/70" />
-          </div>
         </div>
       </ParallaxScene>
 
-      <Container size="wide" className="relative">
-        <div className="lg:max-w-[58%]">
+      <Container size="wide" className="relative z-10">
+        <div className="lg:max-w-[54%] xl:max-w-[50%]">
           <Eyebrow className="fade-up">{t.eyebrow}</Eyebrow>
           <div className="relative mt-6">
-            <div aria-hidden className="hero-glow pointer-events-none absolute -inset-x-16 -inset-y-10 -z-10 rounded-full opacity-70" />
-            <h1 className="text-display">
+            <div aria-hidden className="hero-glow pointer-events-none absolute -inset-x-16 -inset-y-10 -z-10 rounded-full opacity-70 lg:opacity-40" />
+            <h1 className="text-display lg:text-[min(var(--text-display),4.5rem)] lg:[:lang(ml)_&]:text-[3.4rem]">
               <RevealWords text={t.title} />
             </h1>
           </div>
-          <p className="fade-up mt-6 max-w-xl text-lead text-cocoa-soft" style={{ "--i": 6 } as CSSProperties}>
+          <p className="fade-up mt-6 max-w-xl text-lead text-cocoa-soft lg:[:lang(ml)_&]:text-base" style={{ "--i": 6 } as CSSProperties}>
             {t.lead}
           </p>
           <div className="fade-up mt-9 flex flex-col gap-3 sm:flex-row" style={{ "--i": 8 } as CSSProperties}>
@@ -98,6 +72,27 @@ export function Hero({ locale, t }: { locale: Locale; t: Messages["home"]["hero"
           </ul>
         </div>
       </Container>
+
+      {/*
+        Hero photo (generated in Google Flow; no people, see TODO.md).
+        Mobile: an arch-topped photo under the text. Desktop: full-bleed behind it,
+        with the plain sunlit wall on the left sitting under the headline.
+      */}
+      <div className="relative mx-4 mt-12 aspect-[4/3] overflow-hidden rounded-t-[999px] rounded-b-pebble sm:mx-6 sm:aspect-[16/10] lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none">
+        <Image
+          src={heroRoom}
+          alt=""
+          fill
+          preload
+          fetchPriority="high"
+          placeholder="blur"
+          sizes="(min-width: 1024px) 100vw, calc(100vw - 2rem)"
+          className="hero-photo object-cover object-[72%_50%] lg:object-[100%_50%]"
+        />
+        {/* Soft cream wash so the headline always reads on desktop */}
+        <div aria-hidden className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgb(246_240_230/0.94)_0%,rgb(246_240_230/0.82)_38%,rgb(246_240_230/0.25)_62%,transparent_78%)] lg:block" />
+        <div aria-hidden className="absolute inset-x-0 bottom-0 hidden h-32 bg-gradient-to-t from-cream/60 to-transparent lg:block" />
+      </div>
     </section>
   );
 }
