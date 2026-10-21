@@ -6,6 +6,13 @@
  * page until it is replaced.
  */
 export const siteConfig = {
+  /**
+   * DEMO MODE: shows fictional sample therapists (with AI-generated photos),
+   * prices, testimonials and filled-in placeholder text for client
+   * presentations. While it's on, every page is marked noindex.
+   * Set to false before launch (see TODO.md).
+   */
+  demoMode: true,
   brandName: "[BRAND NAME]",
   /** Short form for tight spaces (mobile header, favicon title). */
   brandShort: "[BRAND]",

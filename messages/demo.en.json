@@ -1,0 +1,50 @@
+{
+  "home": {
+    "therapists": {
+      "credentialsNote": "Every therapist holds a postgraduate degree in psychology and is interviewed by our clinical team before joining."
+    },
+    "testimonials": {
+      "note": "Shared with permission. Names changed for privacy."
+    }
+  },
+  "servicesPage": {
+    "every4Body": "Reschedule up to 24 hours before."
+  },
+  "confirmed": {
+    "next1": "We'll confirm your session by email or WhatsApp within 12 hours.",
+    "demoNote": ""
+  },
+  "contactPage": {
+    "reply": "We usually reply within one working day."
+  },
+  "businessPage": {
+    "formLead": "We'll reply within 2 working days.",
+    "p2Body": "Interactive sessions on stress, burnout, sleep, conflict and more, online or in person.",
+    "clientsNote": ""
+  },
+  "aboutPage": {
+    "story2": "We're a small team of Malayali psychologists who kept meeting the same people: those who had waited years to ask for help, then struggled to explain themselves in English. This platform is our answer.",
+    "trustLead": "Every therapist is a qualified mental health professional, and is interviewed by our clinical team before joining.",
+    "trust1": "Postgraduate qualification in counselling or clinical psychology",
+    "trust2": "Verified qualifications and professional references",
+    "trust3": "Regular clinical supervision and ongoing training",
+    "teamNote": "Meet the people you'll be talking to on our therapists page."
+  },
+  "pricingPage": {
+    "international": "Living abroad? Fees are charged in INR, and your bank converts the amount automatically."
+  },
+  "therapistsPage": {
+    "placeholderNote": "",
+    "credentialsBody": "Qualifications verified by our clinical team."
+  },
+  "booking": {
+    "mockNote": "",
+    "payNote": "Secure online payment by UPI, card or net banking once your session is confirmed."
+  },
+  "communityPage": {
+    "sampleNote": ""
+  },
+  "concernsPage": {
+    "scaffoldNote": ""
+  }
+}

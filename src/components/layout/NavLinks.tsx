@@ -16,7 +16,7 @@ export function NavLinks({ links, label }: { links: Array<{ href: string; label:
               <Link
                 href={link.href}
                 aria-current={current ? "page" : undefined}
-                className="link-underline mx-2.5 inline-block py-2 text-[0.9375rem] aria-[current=page]:text-clay-deeper"
+                className="link-underline mx-2 inline-block py-2 text-sm aria-[current=page]:text-clay-deeper"
               >
                 {link.label}
               </Link>

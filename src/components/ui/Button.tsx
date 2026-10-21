@@ -21,9 +21,9 @@ const variants: Record<Variant, string> = {
 
 // Min height 44px everywhere for touch targets; extra vertical room for Malayalam.
 const sizes: Record<Size, string> = {
-  sm: "min-h-11 px-4 py-1.5 text-sm",
-  md: "min-h-12 px-6 py-2 text-base",
-  lg: "min-h-14 px-7 py-2.5 text-lead sm:px-8",
+  sm: "min-h-10 px-4 py-1.5 text-[0.8125rem]",
+  md: "min-h-11 px-5 py-2 text-sm",
+  lg: "min-h-12 px-6 py-2.5 text-[0.9375rem] sm:px-7",
 };
 
 type Common = {

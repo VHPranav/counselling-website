@@ -15,7 +15,7 @@ export function Container({
   size = "default",
   ...props
 }: ComponentProps<"div"> & { size?: "default" | "narrow" | "wide" }) {
-  const widths = { narrow: "max-w-3xl", default: "max-w-6xl", wide: "max-w-[90rem]" };
+  const widths = { narrow: "max-w-3xl", default: "max-w-7xl", wide: "max-w-7xl" };
   return <div className={cn("mx-auto w-full px-4 sm:px-6 lg:px-10", widths[size], className)} {...props} />;
 }
 
@@ -35,7 +35,7 @@ export function Section({
   className?: string;
   children: ReactNode;
 } & Omit<ComponentProps<"section">, "className" | "children">) {
-  const pad = { default: "py-20 sm:py-28 lg:py-32", tight: "py-12 sm:py-16", none: "" };
+  const pad = { default: "py-16 sm:py-20 lg:py-24", tight: "py-10 sm:py-14", none: "" };
   return (
     <Tag className={cn("relative", tones[tone], grain && "grain", pad[spacing], className)} {...props}>
       {children}
@@ -47,7 +47,7 @@ export function Eyebrow({ className, ...props }: ComponentProps<"p">) {
   return (
     <p
       className={cn(
-        "inline-flex items-center gap-2.5 text-sm font-medium tracking-wide text-moss [.on-dark_&]:text-sage",
+        "inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-moss [.on-dark_&]:text-sage [:lang(ml)_&]:normal-case [:lang(ml)_&]:tracking-normal [:lang(ml)_&]:text-sm",
         "before:h-px before:w-6 before:bg-current before:opacity-60",
         className,
       )}

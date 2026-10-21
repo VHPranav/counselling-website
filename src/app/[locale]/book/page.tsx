@@ -39,6 +39,7 @@ export default async function BookPage() {
     services: th.services,
     modes: th.modes,
     tone: th.tone,
+    photo: th.photo,
     price: th.priceFromInr == null ? t.home.services.price : formatInr(th.priceFromInr, locale),
   }));
 

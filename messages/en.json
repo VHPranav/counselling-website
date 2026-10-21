@@ -71,7 +71,8 @@
       "ctaSecondary": "How are you feeling?",
       "point1": "Malayalam & English",
       "point2": "Video or audio",
-      "point3": "Private and confidential"
+      "point3": "Private and confidential",
+      "team": "Meet our {n} therapists"
     },
     "mood": {
       "eyebrow": "A gentle place to start",

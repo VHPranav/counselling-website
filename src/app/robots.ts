@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
+  // Demo mode: keep every crawler out.
+  if (siteConfig.demoMode) return { rules: [{ userAgent: "*", disallow: "/" }] };
   return {
     rules: [
       {

@@ -7,7 +7,7 @@ in `content/**/ml/*.mdx` is listed separately at the bottom as it is added.
 To approve a string, add its key to `docs/ml-review.status.json` with the value `"approved"`
 (or `"changed"` if you edited the Malayalam), then re-run the script.
 
-**624 of 624 strings still need native-speaker review.**
+**666 of 666 strings still need native-speaker review.**
 
 | Key | Malayalam | English source | Status |
 |---|---|---|---|
@@ -70,6 +70,7 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `home.hero.point1` | മലയാളം & ഇംഗ്ലീഷ് | Malayalam & English | needs native-speaker review |
 | `home.hero.point2` | വീഡിയോ അല്ലെങ്കിൽ ഓഡിയോ | Video or audio | needs native-speaker review |
 | `home.hero.point3` | സ്വകാര്യവും രഹസ്യാത്മകവും | Private and confidential | needs native-speaker review |
+| `home.hero.team` | ഞങ്ങളുടെ {n} തെറാപ്പിസ്റ്റുകളെ പരിചയപ്പെടാം | Meet our {n} therapists | needs native-speaker review |
 | `home.mood.eyebrow` | പതുക്കെ തുടങ്ങാം | A gentle place to start | needs native-speaker review |
 | `home.mood.title` | ഇന്ന് മനസ്സിന് എങ്ങനെയുണ്ട്? | How are you feeling today? | needs native-speaker review |
 | `home.mood.lead` | ഏറ്റവും അടുത്ത് തോന്നുന്നത് തിരഞ്ഞെടുക്കൂ. ഇതിൽ തെറ്റായ ഉത്തരമില്ല. നിങ്ങൾ തിരഞ്ഞെടുക്കുന്നത് എവിടെയും സേവ് ചെയ്യുകയോ ആരുമായും പങ്കുവെക്കുകയോ ഇല്ല. | Choose whatever feels closest. There's no wrong answer, and nothing you pick here is saved or shared. | needs native-speaker review |
@@ -513,6 +514,47 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `data/concerns:concerns[ocd].summary` | വീണ്ടും വീണ്ടും വരുന്ന അനാവശ്യ ചിന്തകളും പ്രേരണകളും. | Intrusive thoughts and urges that keep coming back. | needs native-speaker review |
 | `data/concerns:concerns[sleep].name` | ഉറക്കം | Sleep | needs native-speaker review |
 | `data/concerns:concerns[sleep].summary` | ഉറങ്ങാനോ ഉറക്കം നിലനിർത്താനോ ഉള്ള ബുദ്ധിമുട്ട്. | Trouble falling asleep, or staying asleep. | needs native-speaker review |
+| `data/demo:demoFacilitators.exam-stress-parents` | ഫാത്തിമ റഹ്മാൻ | Fathima Rahman | needs native-speaker review |
+| `data/demo:demoFacilitators.sleep-busy-mind` | അഞ്ജലി മേനോൻ | Anjali Menon | needs native-speaker review |
+| `data/demo:demoFacilitators.life-abroad` | സ്നേഹ തോമസ് | Sneha Thomas | needs native-speaker review |
+| `data/demo:demoFaqAnswers.data-security` | സെഷനുകൾ ക്രമീകരിക്കാൻ ആവശ്യമുള്ളത് മാത്രമേ ശേഖരിക്കൂ, ഒരിക്കലും വിൽക്കില്ല. വിവരങ്ങൾ എൻക്രിപ്റ്റ് ചെയ്താണ് സൂക്ഷിക്കുന്നത്; നിങ്ങളുടെ തെറാപ്പിസ്റ്റിനും ഞങ്ങളുടെ ചെറിയ കെയർ ടീമിനും മാത്രമേ ബുക്കിങ് വിവരങ്ങൾ കാണാനാകൂ. | We collect only what's needed to arrange your sessions and never sell it. Data is encrypted, and only your therapist and our small care team can see your booking details. | needs native-speaker review |
+| `data/demo:demoFaqAnswers.how-to-pay` | സെഷൻ ഉറപ്പായാൽ ഒരു സുരക്ഷിത പേയ്മെന്റ് ലിങ്ക് അയച്ചുതരും. UPI, ഡെബിറ്റ് / ക്രെഡിറ്റ് കാർഡ്, നെറ്റ് ബാങ്കിങ് എന്നിവയിലൂടെ പണമടയ്ക്കാം. | Once your session is confirmed, we send a secure payment link. You can pay by UPI, debit or credit card, or net banking. | needs native-speaker review |
+| `data/demo:demoFaqAnswers.cancel` | സെഷന് 24 മണിക്കൂർ മുമ്പ് വരെ സമയം മാറ്റുകയോ റദ്ദാക്കുകയോ ചെയ്യാം. വിശദാംശങ്ങൾ റീഫണ്ട് നയത്തിലുണ്ട്. | You can reschedule or cancel up to 24 hours before your session. The Refund Policy has the details. | needs native-speaker review |
+| `data/demo:demoFaqAnswers.pay-from-abroad` | പണമടയ്ക്കാം. അന്താരാഷ്ട്ര കാർഡുകൾ സ്വീകരിക്കും. ഫീസ് ഇന്ത്യൻ രൂപയിലാണ്; നിങ്ങളുടെ ബാങ്ക് തുക മാറ്റിക്കൊള്ളും. | Yes. International cards are accepted. Fees are charged in INR and your bank converts the amount. | needs native-speaker review |
+| `data/demo:demoTestimonials[0].quote` | മലയാളത്തിൽ സംസാരിക്കാൻ കഴിഞ്ഞത് വളരെ എളുപ്പമാക്കി. എന്റെ വികാരങ്ങൾ വിവർത്തനം ചെയ്യേണ്ടി വന്നില്ല. | Being able to talk in Malayalam made it so much easier. I didn't have to translate my feelings. | needs native-speaker review |
+| `data/demo:demoTestimonials[0].who` | അമ്മു, കൊച്ചി | Ammu, Kochi | needs native-speaker review |
+| `data/demo:demoTestimonials[1].quote` | ഞാൻ ദുബായിലാണ്, ജോലി സമയം നീണ്ടതാണ്. ഫോണിൽ വൈകുന്നേരത്തെ സെഷനുകൾ ആരും അറിയാതെ ഒതുങ്ങി. | I'm in Dubai and work long hours. Evening sessions on my phone fitted in without anyone knowing. | needs native-speaker review |
+| `data/demo:demoTestimonials[1].who` | ഷിബു, ദുബായ് | Shibu, Dubai | needs native-speaker review |
+| `data/demo:demoTestimonials[2].quote` | പരസ്പരം മിണ്ടാതെയാണ് ഞങ്ങൾ വന്നത്. ആറ് സെഷനുകൾക്ക് ശേഷം, ഒച്ചയെടുക്കാതെ അഭിപ്രായവ്യത്യാസം പറയാൻ ഇപ്പോൾ കഴിയുന്നുണ്ട്. | We came in barely speaking to each other. Six sessions later we can actually disagree without shouting. | needs native-speaker review |
+| `data/demo:demoTestimonials[2].who` | നീതു & വിവേക്, തൃശ്ശൂർ | Neethu & Vivek, Thrissur | needs native-speaker review |
+| `data/demo:demoTestimonials[3].quote` | മകൾ ഇപ്പോൾ അവളുടെ സെഷനുകൾക്കായി കാത്തിരിക്കുന്നു. സ്വകാര്യതയുടെ നിയമങ്ങൾ തുടക്കത്തിൽ തന്നെ കൗൺസലർ ഞങ്ങൾ രണ്ടുപേർക്കും വിശദീകരിച്ചു. | My daughter actually looks forward to her sessions. The counsellor explained the privacy rules to both of us at the start. | needs native-speaker review |
+| `data/demo:demoTestimonials[3].who` | 15 വയസ്സുകാരിയുടെ രക്ഷിതാവ്, കോഴിക്കോട് | Parent of a 15-year-old, Kozhikode | needs native-speaker review |
+| `data/demo:demoTestimonials[4].quote` | അച്ഛൻ മരിച്ചതിന് ശേഷം ആരോട് സംസാരിക്കണമെന്ന് അറിയില്ലായിരുന്നു. ക്ഷമയോടെ കേൾക്കുന്ന ഒരാൾ ഉണ്ടായത് വലിയ വ്യത്യാസമുണ്ടാക്കി. | After my father passed, I didn't know who to talk to. Having someone patient made a real difference. | needs native-speaker review |
+| `data/demo:demoTestimonials[4].who` | അനൂപ്, തിരുവനന്തപുരം | Anoop, Thiruvananthapuram | needs native-speaker review |
+| `data/demo:demoTherapists[anjali-menon].name` | അഞ്ജലി മേനോൻ | Anjali Menon | needs native-speaker review |
+| `data/demo:demoTherapists[anjali-menon].role` | കൗൺസലിങ് സൈക്കോളജിസ്റ്റ് | Counselling Psychologist | needs native-speaker review |
+| `data/demo:demoTherapists[anjali-menon].credential` | എം.എസ്‌സി. കൗൺസലിങ് സൈക്കോളജി · 7 വർഷത്തെ പരിചയം | M.Sc. Counselling Psychology · 7 years' experience | needs native-speaker review |
+| `data/demo:demoTherapists[anjali-menon].bio` | ഉത്കണ്ഠ, മനസ്സിന്റെ തളർച്ച, ജോലി സമ്മർദ്ദം എന്നിവ അനുഭവിക്കുന്ന യുവാക്കളോടും ജോലിക്കാരോടുമൊപ്പമാണ് ഞാൻ പ്രവർത്തിക്കുന്നത്. എന്താണ് സംഭവിക്കുന്നതെന്ന് ഒരുമിച്ച് മനസ്സിലാക്കി, ചെറുതും ചെയ്യാവുന്നതുമായ ചുവടുകൾ കണ്ടെത്താം. | I work with young adults and working professionals facing anxiety, low mood and burnout. My sessions are warm and practical: we make sense of what's happening, then find small, doable steps forward. | needs native-speaker review |
+| `data/demo:demoTherapists[arjun-nair].name` | അർജുൻ നായർ | Arjun Nair | needs native-speaker review |
+| `data/demo:demoTherapists[arjun-nair].role` | ക്ലിനിക്കൽ സൈക്കോളജിസ്റ്റ് | Clinical Psychologist | needs native-speaker review |
+| `data/demo:demoTherapists[arjun-nair].credential` | എം.ഫിൽ. ക്ലിനിക്കൽ സൈക്കോളജി · 9 വർഷത്തെ പരിചയം | M.Phil. Clinical Psychology · 9 years' experience | needs native-speaker review |
+| `data/demo:demoTherapists[arjun-nair].bio` | സംസാരങ്ങൾ വഴക്കുകളിലേക്ക് മാറുമ്പോഴാണ് പല ദമ്പതികളും കുടുംബങ്ങളും എന്റെ അടുത്ത് വരുന്നത്. ഓരോരുത്തരും കേൾക്കപ്പെടാൻ ഞാൻ സഹായിക്കും; കുറ്റപ്പെടുത്തലല്ല, ആവർത്തിക്കുന്ന രീതികളാണ് നമ്മൾ മാറ്റാൻ ശ്രമിക്കുക. | Couples and families often come to me when conversations keep turning into arguments. I help each person feel heard, and we work on patterns rather than blame. | needs native-speaker review |
+| `data/demo:demoTherapists[lakshmi-pillai].name` | ഡോ. ലക്ഷ്മി പിള്ള | Dr. Lakshmi Pillai | needs native-speaker review |
+| `data/demo:demoTherapists[lakshmi-pillai].role` | സീനിയർ ക്ലിനിക്കൽ സൈക്കോളജിസ്റ്റ് | Senior Clinical Psychologist | needs native-speaker review |
+| `data/demo:demoTherapists[lakshmi-pillai].credential` | പിഎച്ച്.ഡി. ക്ലിനിക്കൽ സൈക്കോളജി · 18 വർഷത്തെ പരിചയം | Ph.D. Clinical Psychology · 18 years' experience | needs native-speaker review |
+| `data/demo:demoTherapists[lakshmi-pillai].bio` | ദുഃഖം, നഷ്ടം, ജീവിതത്തിലെ പ്രയാസമുള്ള സംഭവങ്ങൾ എന്നിവയിലൂടെ കടന്നുപോകുന്നവരെ പിന്തുണയ്ക്കാനാണ് ഞാൻ എന്റെ കരിയറിന്റെ ഏറിയ പങ്കും ചെലവഴിച്ചത്. എന്റെ സെഷനുകളിൽ ധൃതിയില്ല; നിങ്ങൾക്ക് സുരക്ഷിതമെന്ന് തോന്നുന്ന വേഗത്തിൽ നമുക്ക് പോകാം. | I've spent most of my career supporting people through grief, loss and difficult life events. There's no rush in my sessions; we go at the pace that feels safe for you. | needs native-speaker review |
+| `data/demo:demoTherapists[fathima-rahman].name` | ഫാത്തിമ റഹ്മാൻ | Fathima Rahman | needs native-speaker review |
+| `data/demo:demoTherapists[fathima-rahman].role` | കുട്ടികൾക്കും കൗമാരക്കാർക്കുമുള്ള കൗൺസലർ | Child & Adolescent Counsellor | needs native-speaker review |
+| `data/demo:demoTherapists[fathima-rahman].credential` | എം.എസ്‌സി. സൈക്കോളജി · 6 വർഷത്തെ പരിചയം | M.Sc. Psychology · 6 years' experience | needs native-speaker review |
+| `data/demo:demoTherapists[fathima-rahman].bio` | പരീക്ഷാ സമ്മർദ്ദം, ഉത്കണ്ഠ, സൗഹൃദങ്ങൾ, വളർന്നുവരുമ്പോഴുള്ള വലിയ വികാരങ്ങൾ എന്നിവയിൽ കൗമാരക്കാരോടൊപ്പം ഞാൻ പ്രവർത്തിക്കുന്നു. വേഗം തീരുമാനിക്കുന്നത് കുട്ടികളാണ്; ഒരുമിച്ച് തീരുമാനിക്കുന്ന രീതിയിൽ മാതാപിതാക്കളെയും ഉൾപ്പെടുത്തും. | I work with teenagers on exam stress, anxiety, friendships and the big feelings of growing up. Teens set the pace, and parents are kept involved in the ways we agree together. | needs native-speaker review |
+| `data/demo:demoTherapists[sneha-thomas].name` | സ്നേഹ തോമസ് | Sneha Thomas | needs native-speaker review |
+| `data/demo:demoTherapists[sneha-thomas].role` | ഫാമിലി തെറാപ്പിസ്റ്റ് | Family Therapist | needs native-speaker review |
+| `data/demo:demoTherapists[sneha-thomas].credential` | എം.എ. സൈക്കോളജി, ഫാമിലി തെറാപ്പിയിൽ പിജി ഡിപ്ലോമ · 8 വർഷത്തെ പരിചയം | M.A. Psychology, PG Diploma in Family Therapy · 8 years' experience | needs native-speaker review |
+| `data/demo:demoTherapists[sneha-thomas].bio` | ഞാൻ കാണുന്ന പല കുടുംബങ്ങളും കേരളത്തിനും വിദേശത്തിനുമിടയിലാണ് ജീവിക്കുന്നത്. തലമുറകൾക്കിടയിൽ സംസാരിക്കാനും എല്ലാവർക്കും യോജിക്കുന്ന ഒരു താളം കണ്ടെത്താനും ഞാൻ മാതാപിതാക്കളെയും കുട്ടികളെയും സഹായിക്കുന്നു. | Many of the families I see are living between Kerala and abroad. I help parents and children talk across generations, and find a rhythm that works for everyone. | needs native-speaker review |
+| `data/demo:demoTherapists[rahul-varghese].name` | രാഹുൽ വർഗീസ് | Rahul Varghese | needs native-speaker review |
+| `data/demo:demoTherapists[rahul-varghese].role` | കൗൺസലിങ് സൈക്കോളജിസ്റ്റ് | Counselling Psychologist | needs native-speaker review |
+| `data/demo:demoTherapists[rahul-varghese].credential` | എം.എ. അപ്ലൈഡ് സൈക്കോളജി · 5 വർഷത്തെ പരിചയം | M.A. Applied Psychology · 5 years' experience | needs native-speaker review |
+| `data/demo:demoTherapists[rahul-varghese].bio` | സമ്മർദ്ദം, ദേഷ്യം, മനസ്സിന്റെ തളർച്ച എന്നിവയെക്കുറിച്ച് സംസാരിക്കാൻ ബുദ്ധിമുട്ടുള്ള പുരുഷന്മാരോടൊപ്പമാണ് ഞാൻ കൂടുതലും പ്രവർത്തിക്കുന്നത്. സെഷനുകൾ ലളിതവും വിധിക്കാത്തതുമാണ്; മലയാളത്തിലോ ഇംഗ്ലീഷിലോ രണ്ടിലുമോ. | I mostly work with men who find it hard to talk about stress, anger or low mood. Sessions are straightforward and judgement-free, in Malayalam, English or both. | needs native-speaker review |
 | `data/faqs:faqs[confidential].question` | ഇത് ശരിക്കും രഹസ്യമായിരിക്കുമോ? | Is it really confidential? | needs native-speaker review |
 | `data/faqs:faqs[confidential].answer` | അതെ. നിങ്ങൾ പറയുന്നത് നിങ്ങൾക്കും തെറാപ്പിസ്റ്റിനും ഇടയിൽ മാത്രം. ആരുടെയെങ്കിലും സുരക്ഷ ഗുരുതരമായ അപകടത്തിലാകുന്ന അപൂർവ സാഹചര്യങ്ങളിലോ നിയമം ആവശ്യപ്പെടുമ്പോഴോ മാത്രമാണ് ഇതിന് ഒഴിവ്. ആദ്യ സെഷനിൽ തെറാപ്പിസ്റ്റ് ഇത് വിശദീകരിക്കും. | Yes. What you share stays between you and your therapist. The only exceptions are rare situations where someone's safety is at serious risk, or where the law requires it. Your therapist will explain these in your first session. | needs native-speaker review |
 | `data/faqs:faqs[need-a-reason].question` | തെറാപ്പിക്ക് വരാൻ എന്തെങ്കിലും 'പ്രശ്നം' വേണമെന്നുണ്ടോ? | Do I need to be 'unwell' to start therapy? | needs native-speaker review |
@@ -532,13 +574,13 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `data/faqs:faqs[change-therapist].question` | തെറാപ്പിസ്റ്റിനെ മാറ്റാമോ? | Can I change my therapist? | needs native-speaker review |
 | `data/faqs:faqs[change-therapist].answer` | മാറ്റാം. തെറാപ്പിസ്റ്റിനോട് സൗകര്യം തോന്നുന്നത് പ്രധാനമാണ്. ഞങ്ങളോട് പറഞ്ഞാൽ മറ്റൊരാളെ കണ്ടെത്താൻ സഹായിക്കാം. | Yes. Feeling comfortable with your therapist matters. Just tell us and we'll help you find someone else. | needs native-speaker review |
 | `data/faqs:faqs[data-security].question` | എന്റെ വിവരങ്ങൾ എങ്ങനെയാണ് സുരക്ഷിതമായി സൂക്ഷിക്കുന്നത്? | How is my information kept safe? | needs native-speaker review |
-| `data/faqs:faqs[data-security].answer` | സെഷനുകൾ ക്രമീകരിക്കാൻ ആവശ്യമുള്ളത് മാത്രമേ ശേഖരിക്കൂ, ഒരിക്കലും വിൽക്കില്ല. [സംഭരണം, എൻക്രിപ്ഷൻ, ആക്സസ് നിയന്ത്രണം എന്നിവ വിവരിക്കുക.] | We collect only what's needed to arrange your sessions, and never sell it. [Describe storage, encryption and access controls.] | needs native-speaker review |
+| `data/faqs:faqs[data-security].answer` | സെഷനുകൾ ക്രമീകരിക്കാൻ ആവശ്യമുള്ളത് മാത്രമേ ശേഖരിക്കൂ, ഒരിക്കലും വിൽക്കില്ല. വിവരങ്ങൾ എൻക്രിപ്റ്റ് ചെയ്താണ് സൂക്ഷിക്കുന്നത്; നിങ്ങളുടെ തെറാപ്പിസ്റ്റിനും ഞങ്ങളുടെ ചെറിയ കെയർ ടീമിനും മാത്രമേ ബുക്കിങ് വിവരങ്ങൾ കാണാനാകൂ. | We collect only what's needed to arrange your sessions and never sell it. Data is encrypted, and only your therapist and our small care team can see your booking details. | needs native-speaker review |
 | `data/faqs:faqs[how-to-pay].question` | എങ്ങനെയാണ് പണമടയ്ക്കേണ്ടത്? | How do I pay? | needs native-speaker review |
-| `data/faqs:faqs[how-to-pay].answer` | സെഷൻ ഉറപ്പായാൽ ഒരു സുരക്ഷിത പേയ്മെന്റ് ലിങ്ക് അയച്ചുതരും. [സ്വീകരിക്കുന്ന രീതികൾ, ഉദാ. UPI, കാർഡുകൾ, നെറ്റ് ബാങ്കിങ് — ഉറപ്പാക്കുക.] | Once your session is confirmed, we send a secure payment link. [Accepted methods, e.g. UPI, cards, net banking — confirm.] | needs native-speaker review |
+| `data/faqs:faqs[how-to-pay].answer` | സെഷൻ ഉറപ്പായാൽ ഒരു സുരക്ഷിത പേയ്മെന്റ് ലിങ്ക് അയച്ചുതരും. UPI, ഡെബിറ്റ് / ക്രെഡിറ്റ് കാർഡ്, നെറ്റ് ബാങ്കിങ് എന്നിവയിലൂടെ പണമടയ്ക്കാം. | Once your session is confirmed, we send a secure payment link. You can pay by UPI, debit or credit card, or net banking. | needs native-speaker review |
 | `data/faqs:faqs[cancel].question` | റദ്ദാക്കാനോ സമയം മാറ്റാനോ ഉണ്ടെങ്കിലോ? | What if I need to cancel or reschedule? | needs native-speaker review |
-| `data/faqs:faqs[cancel].answer` | സെഷന് [24 മണിക്കൂർ] മുമ്പ് വരെ സമയം മാറ്റുകയോ റദ്ദാക്കുകയോ ചെയ്യാം. വിശദാംശങ്ങൾ റീഫണ്ട് നയത്തിലുണ്ട്. | You can reschedule or cancel up to [24 hours] before your session. The Refund Policy has the details. | needs native-speaker review |
+| `data/faqs:faqs[cancel].answer` | സെഷന് 24 മണിക്കൂർ മുമ്പ് വരെ സമയം മാറ്റുകയോ റദ്ദാക്കുകയോ ചെയ്യാം. വിശദാംശങ്ങൾ റീഫണ്ട് നയത്തിലുണ്ട്. | You can reschedule or cancel up to 24 hours before your session. The Refund Policy has the details. | needs native-speaker review |
 | `data/faqs:faqs[pay-from-abroad].question` | ഇന്ത്യയ്ക്ക് പുറത്ത് നിന്ന് പണമടയ്ക്കാമോ? | Can I pay from outside India? | needs native-speaker review |
-| `data/faqs:faqs[pay-from-abroad].answer` | [ഉറപ്പാക്കുക: Razorpay വഴി അന്താരാഷ്ട്ര കാർഡുകൾ സ്വീകരിക്കുമോ, ഏത് കറൻസിയിൽ.] | [Confirm: international cards accepted through Razorpay, and in which currency.] | needs native-speaker review |
+| `data/faqs:faqs[pay-from-abroad].answer` | പണമടയ്ക്കാം. അന്താരാഷ്ട്ര കാർഡുകൾ സ്വീകരിക്കും. ഫീസ് ഇന്ത്യൻ രൂപയിലാണ്; നിങ്ങളുടെ ബാങ്ക് തുക മാറ്റിക്കൊള്ളും. | Yes. International cards are accepted. Fees are charged in INR and your bank converts the amount. | needs native-speaker review |
 | `data/moods:moods[anxious].label` | ഉത്കണ്ഠ തോന്നുന്നു | Anxious | needs native-speaker review |
 | `data/moods:moods[anxious].response` | ഓടിക്കൊണ്ടിരിക്കുന്ന ചിന്തകളും നെഞ്ചിലെ ഭാരവും വല്ലാതെ തളർത്തും. ഇതൊക്കെ ഒറ്റയ്ക്ക് അഴിച്ചെടുക്കേണ്ടതില്ല. | Racing thoughts and a tight chest are exhausting. You don't have to untangle them alone. | needs native-speaker review |
 | `data/moods:moods[low].label` | മനസ്സിന് ഒരു ഭാരം | Feeling low | needs native-speaker review |
@@ -599,42 +641,42 @@ To approve a string, add its key to `docs/ml-review.status.json` with the value 
 | `data/services:services[follow-up].audience` | നിലവിലുള്ള ക്ലയന്റുകൾക്ക് | For existing clients | needs native-speaker review |
 | `data/services:services[follow-up].summary` | നിങ്ങളുടെ തെറാപ്പിസ്റ്റുമായി തുടരാം. | Continue the work with your therapist. | needs native-speaker review |
 | `data/services:services[follow-up].details` | അതേ തെറാപ്പിസ്റ്റുമായി തുടരാം. തയ്യാറാകുമ്പോൾ അടുത്ത സെഷൻ ബുക്ക് ചെയ്യാം. | Continue with the same therapist. Book your next session whenever you're ready. | needs native-speaker review |
-| `data/therapists:therapists[therapist-1].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 1] | [Therapist name 1] | needs native-speaker review |
-| `data/therapists:therapists[therapist-1].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
-| `data/therapists:therapists[therapist-1].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-1].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-2].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 2] | [Therapist name 2] | needs native-speaker review |
-| `data/therapists:therapists[therapist-2].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
-| `data/therapists:therapists[therapist-2].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-2].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-3].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 3] | [Therapist name 3] | needs native-speaker review |
-| `data/therapists:therapists[therapist-3].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
-| `data/therapists:therapists[therapist-3].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-3].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-4].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 4] | [Therapist name 4] | needs native-speaker review |
-| `data/therapists:therapists[therapist-4].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
-| `data/therapists:therapists[therapist-4].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-4].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-5].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 5] | [Therapist name 5] | needs native-speaker review |
-| `data/therapists:therapists[therapist-5].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
-| `data/therapists:therapists[therapist-5].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-5].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-6].name` | [തെറാപ്പിസ്റ്റിന്റെ പേര് 6] | [Therapist name 6] | needs native-speaker review |
-| `data/therapists:therapists[therapist-6].role` | [പദവി, ഉദാ. കൗൺസലിങ് സൈക്കോളജിസ്റ്റ്] | [Role, e.g. Counselling Psychologist] | needs native-speaker review |
-| `data/therapists:therapists[therapist-6].credential` | [യോഗ്യത · RCI രജി. നമ്പർ] | [Qualification · RCI reg. no.] | needs native-speaker review |
-| `data/therapists:therapists[therapist-6].bio` | [തെറാപ്പിസ്റ്റിന്റെ സ്വന്തം വാക്കുകളിൽ ചെറിയ വിവരണം: സമീപനം, ആരോടൊപ്പം പ്രവർത്തിക്കുന്നു, ആദ്യ സെഷൻ എങ്ങനെയായിരിക്കും.] | [Short bio in the therapist's own words: their approach, who they work with, and what a first session is like.] | needs native-speaker review |
+| `data/therapists:therapists[anjali-menon].name` | അഞ്ജലി മേനോൻ | Anjali Menon | needs native-speaker review |
+| `data/therapists:therapists[anjali-menon].role` | കൗൺസലിങ് സൈക്കോളജിസ്റ്റ് | Counselling Psychologist | needs native-speaker review |
+| `data/therapists:therapists[anjali-menon].credential` | എം.എസ്‌സി. കൗൺസലിങ് സൈക്കോളജി · 7 വർഷത്തെ പരിചയം | M.Sc. Counselling Psychology · 7 years' experience | needs native-speaker review |
+| `data/therapists:therapists[anjali-menon].bio` | ഉത്കണ്ഠ, മനസ്സിന്റെ തളർച്ച, ജോലി സമ്മർദ്ദം എന്നിവ അനുഭവിക്കുന്ന യുവാക്കളോടും ജോലിക്കാരോടുമൊപ്പമാണ് ഞാൻ പ്രവർത്തിക്കുന്നത്. എന്താണ് സംഭവിക്കുന്നതെന്ന് ഒരുമിച്ച് മനസ്സിലാക്കി, ചെറുതും ചെയ്യാവുന്നതുമായ ചുവടുകൾ കണ്ടെത്താം. | I work with young adults and working professionals facing anxiety, low mood and burnout. My sessions are warm and practical: we make sense of what's happening, then find small, doable steps forward. | needs native-speaker review |
+| `data/therapists:therapists[arjun-nair].name` | അർജുൻ നായർ | Arjun Nair | needs native-speaker review |
+| `data/therapists:therapists[arjun-nair].role` | ക്ലിനിക്കൽ സൈക്കോളജിസ്റ്റ് | Clinical Psychologist | needs native-speaker review |
+| `data/therapists:therapists[arjun-nair].credential` | എം.ഫിൽ. ക്ലിനിക്കൽ സൈക്കോളജി · 9 വർഷത്തെ പരിചയം | M.Phil. Clinical Psychology · 9 years' experience | needs native-speaker review |
+| `data/therapists:therapists[arjun-nair].bio` | സംസാരങ്ങൾ വഴക്കുകളിലേക്ക് മാറുമ്പോഴാണ് പല ദമ്പതികളും കുടുംബങ്ങളും എന്റെ അടുത്ത് വരുന്നത്. ഓരോരുത്തരും കേൾക്കപ്പെടാൻ ഞാൻ സഹായിക്കും; കുറ്റപ്പെടുത്തലല്ല, ആവർത്തിക്കുന്ന രീതികളാണ് നമ്മൾ മാറ്റാൻ ശ്രമിക്കുക. | Couples and families often come to me when conversations keep turning into arguments. I help each person feel heard, and we work on patterns rather than blame. | needs native-speaker review |
+| `data/therapists:therapists[lakshmi-pillai].name` | ഡോ. ലക്ഷ്മി പിള്ള | Dr. Lakshmi Pillai | needs native-speaker review |
+| `data/therapists:therapists[lakshmi-pillai].role` | സീനിയർ ക്ലിനിക്കൽ സൈക്കോളജിസ്റ്റ് | Senior Clinical Psychologist | needs native-speaker review |
+| `data/therapists:therapists[lakshmi-pillai].credential` | പിഎച്ച്.ഡി. ക്ലിനിക്കൽ സൈക്കോളജി · 18 വർഷത്തെ പരിചയം | Ph.D. Clinical Psychology · 18 years' experience | needs native-speaker review |
+| `data/therapists:therapists[lakshmi-pillai].bio` | ദുഃഖം, നഷ്ടം, ജീവിതത്തിലെ പ്രയാസമുള്ള സംഭവങ്ങൾ എന്നിവയിലൂടെ കടന്നുപോകുന്നവരെ പിന്തുണയ്ക്കാനാണ് ഞാൻ എന്റെ കരിയറിന്റെ ഏറിയ പങ്കും ചെലവഴിച്ചത്. എന്റെ സെഷനുകളിൽ ധൃതിയില്ല; നിങ്ങൾക്ക് സുരക്ഷിതമെന്ന് തോന്നുന്ന വേഗത്തിൽ നമുക്ക് പോകാം. | I've spent most of my career supporting people through grief, loss and difficult life events. There's no rush in my sessions; we go at the pace that feels safe for you. | needs native-speaker review |
+| `data/therapists:therapists[fathima-rahman].name` | ഫാത്തിമ റഹ്മാൻ | Fathima Rahman | needs native-speaker review |
+| `data/therapists:therapists[fathima-rahman].role` | കുട്ടികൾക്കും കൗമാരക്കാർക്കുമുള്ള കൗൺസലർ | Child & Adolescent Counsellor | needs native-speaker review |
+| `data/therapists:therapists[fathima-rahman].credential` | എം.എസ്‌സി. സൈക്കോളജി · 6 വർഷത്തെ പരിചയം | M.Sc. Psychology · 6 years' experience | needs native-speaker review |
+| `data/therapists:therapists[fathima-rahman].bio` | പരീക്ഷാ സമ്മർദ്ദം, ഉത്കണ്ഠ, സൗഹൃദങ്ങൾ, വളർന്നുവരുമ്പോഴുള്ള വലിയ വികാരങ്ങൾ എന്നിവയിൽ കൗമാരക്കാരോടൊപ്പം ഞാൻ പ്രവർത്തിക്കുന്നു. വേഗം തീരുമാനിക്കുന്നത് കുട്ടികളാണ്; ഒരുമിച്ച് തീരുമാനിക്കുന്ന രീതിയിൽ മാതാപിതാക്കളെയും ഉൾപ്പെടുത്തും. | I work with teenagers on exam stress, anxiety, friendships and the big feelings of growing up. Teens set the pace, and parents are kept involved in the ways we agree together. | needs native-speaker review |
+| `data/therapists:therapists[sneha-thomas].name` | സ്നേഹ തോമസ് | Sneha Thomas | needs native-speaker review |
+| `data/therapists:therapists[sneha-thomas].role` | ഫാമിലി തെറാപ്പിസ്റ്റ് | Family Therapist | needs native-speaker review |
+| `data/therapists:therapists[sneha-thomas].credential` | എം.എ. സൈക്കോളജി, ഫാമിലി തെറാപ്പിയിൽ പിജി ഡിപ്ലോമ · 8 വർഷത്തെ പരിചയം | M.A. Psychology, PG Diploma in Family Therapy · 8 years' experience | needs native-speaker review |
+| `data/therapists:therapists[sneha-thomas].bio` | ഞാൻ കാണുന്ന പല കുടുംബങ്ങളും കേരളത്തിനും വിദേശത്തിനുമിടയിലാണ് ജീവിക്കുന്നത്. തലമുറകൾക്കിടയിൽ സംസാരിക്കാനും എല്ലാവർക്കും യോജിക്കുന്ന ഒരു താളം കണ്ടെത്താനും ഞാൻ മാതാപിതാക്കളെയും കുട്ടികളെയും സഹായിക്കുന്നു. | Many of the families I see are living between Kerala and abroad. I help parents and children talk across generations, and find a rhythm that works for everyone. | needs native-speaker review |
+| `data/therapists:therapists[rahul-varghese].name` | രാഹുൽ വർഗീസ് | Rahul Varghese | needs native-speaker review |
+| `data/therapists:therapists[rahul-varghese].role` | കൗൺസലിങ് സൈക്കോളജിസ്റ്റ് | Counselling Psychologist | needs native-speaker review |
+| `data/therapists:therapists[rahul-varghese].credential` | എം.എ. അപ്ലൈഡ് സൈക്കോളജി · 5 വർഷത്തെ പരിചയം | M.A. Applied Psychology · 5 years' experience | needs native-speaker review |
+| `data/therapists:therapists[rahul-varghese].bio` | സമ്മർദ്ദം, ദേഷ്യം, മനസ്സിന്റെ തളർച്ച എന്നിവയെക്കുറിച്ച് സംസാരിക്കാൻ ബുദ്ധിമുട്ടുള്ള പുരുഷന്മാരോടൊപ്പമാണ് ഞാൻ കൂടുതലും പ്രവർത്തിക്കുന്നത്. സെഷനുകൾ ലളിതവും വിധിക്കാത്തതുമാണ്; മലയാളത്തിലോ ഇംഗ്ലീഷിലോ രണ്ടിലുമോ. | I mostly work with men who find it hard to talk about stress, anger or low mood. Sessions are straightforward and judgement-free, in Malayalam, English or both. | needs native-speaker review |
 | `data/workshops:workshops[exam-stress-parents].title` | പരീക്ഷാ സമ്മർദ്ദം: മാതാപിതാക്കൾക്കായി | Exam stress: a session for parents | needs native-speaker review |
 | `data/workshops:workshops[exam-stress-parents].summary` | പരീക്ഷാ സമ്മർദ്ദം അമിതമാകുന്നത് എങ്ങനെ തിരിച്ചറിയാം, അത് കൂട്ടാതെ വീട്ടിൽ എങ്ങനെ സംസാരിക്കാം. | How to notice when exam pressure is becoming too much, and how to talk about it at home without adding to it. | needs native-speaker review |
 | `data/workshops:workshops[exam-stress-parents].audience` | വിദ്യാർത്ഥികളുടെ മാതാപിതാക്കൾ | Parents of students | needs native-speaker review |
-| `data/workshops:workshops[exam-stress-parents].facilitator` | [നയിക്കുന്നയാളുടെ പേര്] | [Facilitator name] | needs native-speaker review |
+| `data/workshops:workshops[exam-stress-parents].facilitator` | ഫാത്തിമ റഹ്മാൻ | Fathima Rahman | needs native-speaker review |
 | `data/workshops:workshops[sleep-busy-mind].title` | മനസ്സ് ശാന്തമാകാത്തപ്പോൾ നന്നായി ഉറങ്ങാൻ | Sleeping better when your mind won't settle | needs native-speaker review |
 | `data/workshops:workshops[sleep-busy-mind].summary` | ദിവസം ശാന്തമായി അവസാനിപ്പിക്കാനുള്ള ലളിതമായ ശീലങ്ങൾ, പുലർച്ചെ രണ്ട് മണിക്ക് ഉറക്കമില്ലാതെ കിടക്കുമ്പോൾ എന്ത് ചെയ്യാം. | Simple, practical habits for winding down, and what to do when you're lying awake at 2am. | needs native-speaker review |
 | `data/workshops:workshops[sleep-busy-mind].audience` | മുതിർന്നവർ | Adults | needs native-speaker review |
-| `data/workshops:workshops[sleep-busy-mind].facilitator` | [നയിക്കുന്നയാളുടെ പേര്] | [Facilitator name] | needs native-speaker review |
+| `data/workshops:workshops[sleep-busy-mind].facilitator` | അഞ്ജലി മേനോൻ | Anjali Menon | needs native-speaker review |
 | `data/workshops:workshops[life-abroad].title` | പ്രവാസ ജീവിതം: ദൂരെയായിരിക്കുമ്പോഴും ബന്ധം നിലനിർത്താൻ | Life abroad: staying connected while far from home | needs native-speaker review |
 | `data/workshops:workshops[life-abroad].summary` | കുടുംബത്തിൽ നിന്ന് അകലെ ജീവിക്കുന്ന മലയാളികൾക്ക്: ഒറ്റപ്പെടൽ, കുറ്റബോധം, അകലം, ബന്ധങ്ങൾ അടുപ്പത്തോടെ നിലനിർത്തൽ. | For Malayalis living away from family: loneliness, guilt, distance, and keeping relationships close. | needs native-speaker review |
 | `data/workshops:workshops[life-abroad].audience` | വിദേശത്ത് താമസിക്കുന്ന മലയാളികൾ | Malayalis living abroad | needs native-speaker review |
-| `data/workshops:workshops[life-abroad].facilitator` | [നയിക്കുന്നയാളുടെ പേര്] | [Facilitator name] | needs native-speaker review |
+| `data/workshops:workshops[life-abroad].facilitator` | സ്നേഹ തോമസ് | Sneha Thomas | needs native-speaker review |
 
 ## Long-form content (MDX)
 

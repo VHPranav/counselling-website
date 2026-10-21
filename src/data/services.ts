@@ -1,10 +1,12 @@
 import type { Service } from "./types";
+import { siteConfig } from "../config/site.ts";
+import { demoPrices } from "./demo.ts";
 
 /**
  * Session types. To set a price, replace `null` with a number in rupees,
  * e.g. priceInr: 1500. Durations are a starting suggestion — confirm them (see TODO.md).
  */
-export const services: Service[] = [
+const baseServices: Service[] = [
   {
     slug: "individual",
     name: { en: "Individual therapy", ml: "വ്യക്തിഗത തെറാപ്പി" },
@@ -87,5 +89,10 @@ export const services: Service[] = [
     modes: ["video", "audio"],
   },
 ];
+
+/** Demo mode fills in sample prices; otherwise prices stay as set above. */
+export const services: Service[] = siteConfig.demoMode
+  ? baseServices.map((s) => ({ ...s, priceInr: s.priceInr ?? demoPrices[s.slug] ?? null }))
+  : baseServices;
 
 export const serviceBySlug = Object.fromEntries(services.map((s) => [s.slug, s])) as Record<string, Service>;

@@ -1,4 +1,6 @@
 import type { Therapist } from "./types";
+import { siteConfig } from "../config/site.ts";
+import { demoTherapists } from "./demo.ts";
 
 /**
  * PLACEHOLDER PROFILES. These are not real people. Replace each entry with a
@@ -19,7 +21,7 @@ const placeholder = (n: number) => ({
   photo: null,
 });
 
-export const therapists: Therapist[] = [
+const placeholderTherapists: Therapist[] = [
   {
     slug: "therapist-1",
     ...placeholder(1),
@@ -81,6 +83,9 @@ export const therapists: Therapist[] = [
     tone: "moss",
   },
 ];
+
+/** The live list: demo profiles while demo mode is on, placeholders otherwise. */
+export const therapists: Therapist[] = siteConfig.demoMode ? demoTherapists : placeholderTherapists;
 
 /** Therapists who work with any of the given concerns, best overlap first. */
 export function matchTherapists(concernSlugs: string[], limit = 3): Therapist[] {

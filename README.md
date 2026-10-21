@@ -88,6 +88,14 @@ empty space on the left for text). Next.js serves resized AVIF/WebP automaticall
 The originals were cropped slightly at the bottom-right to remove Gemini's visible
 sparkle mark.
 
+**Demo mode** (`demoMode` in `src/config/site.ts`) adds AI-generated, fictional
+people: a hero portrait (`src/assets/images/hero-portrait.jpg`) and six therapist
+portraits (`src/assets/portraits/`, listed in `src/lib/portraits.ts`). With demo
+mode off, the hero falls back to the people-free room photo and therapists use the
+illustrated avatar until real, consented photos are added. To add a real photo, put
+a portrait JPG (about 900×960) in `src/assets/portraits/`, list it in
+`src/lib/portraits.ts`, and set the therapist's `photo` field to the same key.
+
 ## SEO
 
 - Every page has its own title, description, canonical URL and `hreflang` pair

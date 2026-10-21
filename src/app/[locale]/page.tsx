@@ -5,6 +5,7 @@ import monsoonWindow from "@/assets/images/monsoon-window.jpg";
 import { siteConfig } from "@/config/site";
 import { concernBySlug } from "@/data/concerns";
 import { faqs } from "@/data/faqs";
+import { demoTestimonials } from "@/data/demo";
 import { moods } from "@/data/moods";
 import { services } from "@/data/services";
 import { matchTherapists, therapists } from "@/data/therapists";
@@ -38,7 +39,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero locale={locale} t={h.hero} />
+      <Hero locale={locale} t={h.hero} team={therapists} />
       <MoodSection locale={locale} t={t} />
       <ServicesSection locale={locale} t={t} />
       <HowItWorks
@@ -52,7 +53,7 @@ export default async function HomePage() {
       />
       <TherapistsSection locale={locale} t={t} />
       <BreathSection t={h.breath} />
-      <TestimonialsSection t={h.testimonials} />
+      <TestimonialsSection locale={locale} t={h.testimonials} />
       <FaqSection locale={locale} t={t} />
       <BusinessSection locale={locale} t={h.business} />
       <FinalCta locale={locale} t={t} />
@@ -166,7 +167,7 @@ function TherapistsSection({ locale, t }: { locale: Locale; t: Messages }) {
             </Reveal>
           ))}
         </ul>
-        <p className="mt-8 text-sm text-cocoa-soft">
+        <p className="mt-8 max-w-2xl text-sm text-cocoa-soft">
           <Ph>{tt.credentialsNote}</Ph>
         </p>
       </Container>
@@ -196,24 +197,28 @@ function BreathSection({ t }: { t: Messages["home"]["breath"] }) {
   );
 }
 
-function TestimonialsSection({ t }: { t: Messages["home"]["testimonials"] }) {
+function TestimonialsSection({ locale, t }: { locale: Locale; t: Messages["home"]["testimonials"] }) {
+  // Demo mode: fictional sample quotes. Otherwise: clearly marked placeholders.
+  const items = siteConfig.demoMode
+    ? demoTestimonials.map((d) => ({ quote: d.quote[locale], who: d.who[locale] }))
+    : [1, 2, 3, 4, 5].map((n) => ({ quote: format(t.quote, { n }), who: t.who }));
   return (
     <Section className="overflow-hidden">
       <Container>
         <SectionHeader eyebrow={t.eyebrow} title={t.title} />
-        <p className="mt-3 text-sm text-cocoa-soft">{t.note}</p>
+        {t.note ? <p className="mt-3 text-sm text-cocoa-soft">{t.note}</p> : null}
       </Container>
-      <Marquee className="mt-12" label={t.title} seconds={70} pauseLabel={t.pause} playLabel={t.play}>
-        {[1, 2, 3, 4, 5].map((n) => (
-          <figure key={n} className="flex w-[19rem] shrink-0 flex-col justify-between rounded-pebble bg-sand p-7 sm:w-[24rem]">
-            <svg viewBox="0 0 32 24" width="32" height="24" aria-hidden className="text-clay">
+      <Marquee className="mt-10" label={t.title} seconds={80} pauseLabel={t.pause} playLabel={t.play}>
+        {items.map((item, i) => (
+          <figure key={i} className="flex w-[17rem] shrink-0 flex-col justify-between rounded-pebble bg-sand p-6 sm:w-[21rem]">
+            <svg viewBox="0 0 32 24" width="24" height="18" aria-hidden className="text-clay">
               <path d="M0 24V14C0 6 4 1 12 0v5c-4 1-6 4-6 8h6v11H0Zm18 0V14c0-8 4-13 12-14v5c-4 1-6 4-6 8h6v11H18Z" fill="currentColor" />
             </svg>
-            <blockquote className="mt-5 font-display text-h4 leading-snug">
-              <Ph>{format(t.quote, { n })}</Ph>
+            <blockquote className="mt-4 font-display text-lead leading-relaxed">
+              <Ph>{item.quote}</Ph>
             </blockquote>
-            <figcaption className="mt-6 text-sm text-cocoa-soft">
-              <Ph>{t.who}</Ph>
+            <figcaption className="mt-5 text-[0.8125rem] font-medium text-cocoa-soft">
+              <Ph>{item.who}</Ph>
             </figcaption>
           </figure>
         ))}

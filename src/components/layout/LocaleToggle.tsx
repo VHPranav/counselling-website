@@ -22,7 +22,7 @@ export function LocaleToggle({
     <nav aria-label={label} className={className}>
       <ul
         className={cn(
-          "relative flex items-center rounded-full p-1 text-sm ring-1 ring-inset",
+          "relative flex items-center rounded-full p-1 text-[0.8125rem] ring-1 ring-inset",
           tone === "light" ? "bg-cream-soft/80 ring-cocoa/15" : "bg-forest-soft ring-cream/15",
         )}
       >
@@ -37,7 +37,7 @@ export function LocaleToggle({
                 aria-current={active ? "true" : undefined}
                 scroll={false}
                 className={cn(
-                  "flex min-h-9 min-w-11 items-center justify-center rounded-full px-3 leading-none transition-colors duration-300",
+                  "flex min-h-8 min-w-10 items-center justify-center rounded-full px-3 leading-none transition-colors duration-300",
                   loc === "ml" && "pt-[0.15em]",
                   active
                     ? tone === "light"

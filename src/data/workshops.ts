@@ -1,4 +1,6 @@
 import type { Workshop } from "./types";
+import { siteConfig } from "../config/site.ts";
+import { demoFacilitators } from "./demo.ts";
 
 /**
  * SAMPLE EVENTS. Replace with your real schedule. Events whose start time has
@@ -6,7 +8,7 @@ import type { Workshop } from "./types";
  */
 const facilitator = { en: "[Facilitator name]", ml: "[നയിക്കുന്നയാളുടെ പേര്]" };
 
-export const workshops: Workshop[] = [
+const baseWorkshops: Workshop[] = [
   {
     slug: "exam-stress-parents",
     sample: true,
@@ -56,3 +58,7 @@ export const workshops: Workshop[] = [
     seats: 50,
   },
 ];
+
+export const workshops: Workshop[] = siteConfig.demoMode
+  ? baseWorkshops.map((w) => ({ ...w, sample: false, facilitator: demoFacilitators[w.slug] ?? w.facilitator }))
+  : baseWorkshops;

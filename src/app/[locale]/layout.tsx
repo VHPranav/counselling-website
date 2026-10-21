@@ -29,6 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
       alternateLocale: locales.filter((l) => l !== locale).map((l) => localeTags[l].replace("-", "_")),
     },
     formatDetection: { telephone: false },
+    // Demo content must never be indexed.
+    ...(siteConfig.demoMode ? { robots: { index: false, follow: false } } : {}),
   };
 }
 

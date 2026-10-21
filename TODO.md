@@ -4,6 +4,19 @@ Everything below is a placeholder or a decision on the site today. Placeholders 
 `[square brackets]` are highlighted on the page (striped ochre) so they can't slip
 through. Search the code for `[` to find any stragglers.
 
+## 0. Demo mode (switch off first)
+
+The site is in **demo mode** for client presentations (`demoMode: true` in
+`src/config/site.ts`). It shows six fictional therapists with AI-generated
+portraits, sample prices, sample testimonials and filled-in sample text
+(`src/data/demo.ts`, `messages/demo.*.json`), and a hero portrait of a woman
+(also AI-generated). None of these people exist.
+
+- [ ] Set `demoMode: false` before launch. This brings back the labelled
+      placeholders, the people-free hero photo, and normal indexing (demo mode
+      marks every page noindex and blocks crawlers in robots.txt).
+- [ ] Never publish the demo names, credentials, prices or testimonials as real.
+
 ## 1. Must have before launch
 
 ### Brand and contact

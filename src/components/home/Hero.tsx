@@ -1,12 +1,18 @@
 import Image from "next/image";
 import { Fragment, type CSSProperties } from "react";
 import heroRoom from "@/assets/images/hero-kerala-room.jpg";
+import heroPortrait from "@/assets/images/hero-portrait.jpg";
+import { siteConfig } from "@/config/site";
 import { href, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/dictionaries";
 import { ArrowIcon, Button } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/Section";
 import { ParallaxScene } from "@/components/motion/ParallaxScene";
 import { Blob } from "@/components/shapes/Shapes";
+import Link from "next/link";
+import { TherapistAvatar } from "@/components/therapists/TherapistCard";
+import type { Therapist } from "@/data/types";
+import { format } from "@/i18n/dictionaries";
 
 /** Splits a headline into word spans for the CSS word-by-word reveal. */
 function RevealWords({ text }: { text: string }) {
@@ -26,8 +32,15 @@ function RevealWords({ text }: { text: string }) {
   );
 }
 
-export function Hero({ locale, t }: { locale: Locale; t: Messages["home"]["hero"] }) {
+export function Hero({ locale, t, team = [] }: { locale: Locale; t: Messages["home"]["hero"]; team?: Therapist[] }) {
+  const faces = team.filter((th) => th.photo).slice(0, 4);
   const points = [t.point1, t.point2, t.point3];
+  // Demo mode shows an AI-generated portrait; launch mode keeps the people-free room photo.
+  const photo = siteConfig.demoMode ? heroPortrait : heroRoom;
+  const position = siteConfig.demoMode
+    ? "object-[82%_30%] sm:object-[100%_30%] lg:object-[78%_35%]"
+    : "object-[72%_50%] lg:object-[100%_50%]";
+  const frame = siteConfig.demoMode ? "aspect-[5/6] sm:aspect-[16/10]" : "aspect-[4/3] sm:aspect-[16/10]";
   return (
     <section className="grain relative overflow-hidden bg-cream pb-16 pt-10 sm:pb-20 sm:pt-16 lg:flex lg:min-h-[calc(100dvh-5rem)] lg:items-center lg:py-14">
       {/* Mobile-only organic accents (the photo carries the desktop composition) */}
@@ -45,7 +58,7 @@ export function Hero({ locale, t }: { locale: Locale; t: Messages["home"]["hero"
           <Eyebrow className="fade-up">{t.eyebrow}</Eyebrow>
           <div className="relative mt-6">
             <div aria-hidden className="hero-glow pointer-events-none absolute -inset-x-16 -inset-y-10 -z-10 rounded-full opacity-70 lg:opacity-40" />
-            <h1 className="text-display lg:text-[min(var(--text-display),4.5rem)] lg:[:lang(ml)_&]:text-[3.4rem]">
+            <h1 className="text-display">
               <RevealWords text={t.title} />
             </h1>
           </div>
@@ -60,7 +73,23 @@ export function Hero({ locale, t }: { locale: Locale; t: Messages["home"]["hero"
               {t.ctaSecondary}
             </Button>
           </div>
-          <ul className="fade-up mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-cocoa-soft" style={{ "--i": 10 } as CSSProperties}>
+          {faces.length ? (
+            <Link
+              href={href(locale, "/therapists")}
+              className="fade-up group mt-8 inline-flex items-center gap-3"
+              style={{ "--i": 9 } as CSSProperties}
+            >
+              <span className="flex -space-x-3">
+                {faces.map((th) => (
+                  <TherapistAvatar key={th.slug} tone={th.tone} photo={th.photo} round sizes="40px" className="size-10 ring-2 ring-cream" />
+                ))}
+              </span>
+              <span className="text-sm font-medium text-cocoa underline-offset-4 group-hover:underline">
+                {format(t.team, { n: team.length })} →
+              </span>
+            </Link>
+          ) : null}
+          <ul className="fade-up mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-cocoa-soft" style={{ "--i": 10 } as CSSProperties}>
             {points.map((p) => (
               <li key={p} className="flex items-center gap-2">
                 <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden className="text-moss">
@@ -74,20 +103,20 @@ export function Hero({ locale, t }: { locale: Locale; t: Messages["home"]["hero"
       </Container>
 
       {/*
-        Hero photo (generated in Google Flow; no people, see TODO.md).
+        Hero photo (generated in Google Flow, see TODO.md).
         Mobile: an arch-topped photo under the text. Desktop: full-bleed behind it,
         with the plain sunlit wall on the left sitting under the headline.
       */}
-      <div className="relative mx-4 mt-12 aspect-[4/3] overflow-hidden rounded-t-[999px] rounded-b-pebble sm:mx-6 sm:aspect-[16/10] lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none">
+      <div className={`relative mx-4 mt-12 ${frame} overflow-hidden rounded-t-[999px] rounded-b-pebble sm:mx-6 lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none`}>
         <Image
-          src={heroRoom}
+          src={photo}
           alt=""
           fill
           preload
           fetchPriority="high"
           placeholder="blur"
           sizes="(min-width: 1024px) 100vw, calc(100vw - 2rem)"
-          className="hero-photo object-cover object-[72%_50%] lg:object-[100%_50%]"
+          className={`hero-photo object-cover ${position}`}
         />
         {/* Soft cream wash so the headline always reads on desktop */}
         <div aria-hidden className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgb(246_240_230/0.94)_0%,rgb(246_240_230/0.82)_38%,rgb(246_240_230/0.25)_62%,transparent_78%)] lg:block" />

@@ -35,6 +35,7 @@ export type FlowTherapist = {
   services: string[];
   modes: Array<"video" | "audio">;
   tone: Therapist["tone"];
+  photo: string | null;
   price: string;
 };
 
@@ -395,7 +396,7 @@ export function BookingFlow({ locale, t, common, modeLabels, services, therapist
                       }}
                     >
                       <span className="flex items-center gap-3">
-                        <TherapistAvatar tone={th.tone} className="h-14 w-11 shrink-0" />
+                        <TherapistAvatar tone={th.tone} photo={th.photo} round sizes="48px" className="size-12 shrink-0" />
                         <span className="min-w-0">
                           <span className="block font-medium">
                             <Ph>{th.name}</Ph>

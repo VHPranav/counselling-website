@@ -25,7 +25,7 @@ export function Card({
 } & Omit<ComponentProps<"div">, "className" | "children">) {
   const lift = href || interactive;
   const classes = cn(
-    "relative block rounded-pebble p-6 sm:p-8 ring-1 ring-cocoa/[0.07]",
+    "relative block rounded-pebble p-5 sm:p-6 ring-1 ring-cocoa/[0.07]",
     surface[tone],
     lift &&
       "transition-[transform,box-shadow] duration-500 ease-[var(--ease-soft)] hover:-translate-y-1 hover:shadow-warm-lg focus-within:shadow-warm-lg",

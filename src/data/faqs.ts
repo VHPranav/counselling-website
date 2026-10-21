@@ -1,10 +1,12 @@
 import type { Faq } from "./types";
+import { siteConfig } from "../config/site.ts";
+import { demoFaqAnswers } from "./demo.ts";
 
 /**
  * Frequently asked questions. Answers describe how the service is intended to
  * work; confirm each against your actual policies before launch (see TODO.md).
  */
-export const faqs: Faq[] = [
+const baseFaqs: Faq[] = [
   {
     id: "confidential",
     home: true,
@@ -136,3 +138,8 @@ export const faqs: Faq[] = [
     },
   },
 ];
+
+/** Demo mode swaps in sample answers where the real ones are still placeholders. */
+export const faqs: Faq[] = siteConfig.demoMode
+  ? baseFaqs.map((f) => (demoFaqAnswers[f.id] ? { ...f, answer: demoFaqAnswers[f.id] } : f))
+  : baseFaqs;

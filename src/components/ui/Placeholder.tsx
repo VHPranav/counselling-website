@@ -1,4 +1,5 @@
 import { Fragment, type ReactNode } from "react";
+import { siteConfig } from "@/config/site";
 
 /**
  * Renders text, wrapping any [bracketed placeholder] in a highlighted marker
@@ -6,7 +7,8 @@ import { Fragment, type ReactNode } from "react";
  */
 export function Ph({ children, title }: { children: string; title?: string }): ReactNode {
   const parts = children.split(/(\[[^\]]+\])/g);
-  if (parts.length === 1) return children;
+  // Demo mode shows remaining placeholders as plain text (no striped marker).
+  if (parts.length === 1 || siteConfig.demoMode) return children;
   return parts.map((part, i) =>
     /^\[[^\]]+\]$/.test(part) ? (
       <mark key={i} className="ph" title={title} data-placeholder="">

@@ -61,7 +61,7 @@ export default async function TherapistProfilePage({ params }: PageProps<"/[loca
             ]}
           />
           <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,18rem)_1fr] md:items-end lg:gap-16">
-            <TherapistAvatar tone={th.tone} className="aspect-[4/5] w-full max-w-72" />
+            <TherapistAvatar tone={th.tone} photo={th.photo} preload sizes="(min-width: 768px) 18rem, 80vw" className="aspect-[4/5] w-full max-w-72 rounded-pebble shadow-warm-lg" />
             <div>
               <Heading level={1} size={1}>
                 <Ph>{card.name}</Ph>
