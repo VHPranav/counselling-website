@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
 import "../globals.css";
+import "../palette.css";
+import "@/components/motion/TextMotion.css";
 import { fontVariables } from "../fonts";
 import { siteConfig } from "@/config/site";
 import { localeTags, locales } from "@/i18n/config";
@@ -7,6 +10,8 @@ import { getLocale, getMessages } from "@/i18n/dictionaries";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { ScrollReset } from "@/components/motion/ScrollReset";
+import { ScrollReveals } from "@/components/motion/ScrollReveals";
 import { MotionBoot } from "@/components/motion/MotionBoot";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
 import { abroadPlaces, keralaPlaces } from "@/data/places";
@@ -51,7 +56,7 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
         "@id": `${siteConfig.siteUrl}/#organization`,
         name: siteConfig.brandName,
         url: siteConfig.siteUrl,
-        logo: `${siteConfig.siteUrl}/icon.svg`,
+        logo: `${siteConfig.siteUrl}/icon.png`,
         description: t.meta.description,
         knowsLanguage: ["en"],
         areaServed: [
@@ -81,6 +86,7 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
           {children}
         </main>
         <Footer locale={locale} t={t} />
+        <Suspense fallback={null}><ScrollReset /><ScrollReveals /></Suspense>
         <MotionBoot />
         <SiteAnalytics />
       </body>

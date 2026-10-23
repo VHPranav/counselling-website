@@ -1,0 +1,32 @@
+/* Four shared surfaces, applied consistently across pages and cards. */
+:root {
+  --color-cream: #f6f0e6;
+  --color-cream-soft: #fbf8f2;
+  --color-sage-wash: #e8eadf;
+  --color-forest: #2f3a2c;
+  --color-sand: var(--color-sage-wash);
+  --color-blush: var(--color-cream-soft);
+  --color-forest-soft: var(--color-forest);
+}
+
+/* Extend inner-page heroes behind the floating navigation without moving copy. */
+.page-intro.page-intro {
+  --intro-header-height: 4.5rem;
+  --intro-top-space: 2rem;
+  margin-top: calc(-1 * var(--intro-header-height));
+  padding-top: calc(var(--intro-header-height) + var(--intro-top-space));
+}
+.page-intro.concern-intro, .page-intro.services-page-intro { --intro-top-space: 1.75rem; }
+.page-intro.psychologist-intro { --intro-top-space: 1.5rem; }
+@media (max-width: 639px) {
+  .page-intro.page-intro { --intro-header-height: 4.25rem; }
+}
+@media (min-width: 640px) {
+  .page-intro:not(.concern-intro, .services-page-intro, .psychologist-intro) { --intro-top-space: 3rem; }
+}
+
+/* Programmatic reading targets should not receive the interactive-control ring. */
+:where(main, h1, h2, h3, h4, h5, h6, [role="alert"])[tabindex="-1"]:focus {
+  outline: none;
+  box-shadow: none;
+}

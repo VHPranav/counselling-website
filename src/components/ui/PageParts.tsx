@@ -1,10 +1,11 @@
+import { WordText } from "@/components/motion/WordText";
 import Image from "next/image";
 import Link from "next/link";
 import { pageImages, type PageImageKey } from "@/lib/page-images";
 import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { ArrowIcon, Button } from "./Button";
-import { Container, Eyebrow, Heading, Section } from "./Section";
+import { Container, Heading, Section } from "./Section";
 import { Blob, Ripple } from "@/components/shapes/Shapes";
 
 export type Crumb = { label: string; href?: string };
@@ -39,7 +40,6 @@ export function Breadcrumbs({ items, label }: { items: Crumb[]; label: string })
  * (desktop), or an arched photo under the text (mobile).
  */
 export function PageHero({
-  eyebrow,
   title,
   lead,
   crumbs,
@@ -64,16 +64,16 @@ export function PageHero({
 
   if (!photo) {
     return (
-      <Section tone={tone} grain spacing="none" className="overflow-hidden pb-14 pt-8 sm:pb-20 sm:pt-12">
+      <Section tone={tone} grain spacing="none" className="page-intro overflow-hidden pb-14 pt-8 sm:pb-20 sm:pt-12">
         <Blob variant={0} className="pointer-events-none absolute -right-48 -top-40 w-[34rem] text-sand/80 sm:w-[44rem] [.bg-sand_&]:text-cream/50" />
         <Ripple className="pointer-events-none absolute -bottom-10 right-[6%] hidden w-80 text-clay/25 md:block" />
         <Container className="relative">
           {crumbs && crumbLabel ? <Breadcrumbs items={crumbs} label={crumbLabel} /> : null}
-          {eyebrow ? <Eyebrow className="mt-8">{eyebrow}</Eyebrow> : null}
-          <Heading level={1} size={1} className={cn("max-w-4xl", eyebrow ? "mt-4" : "mt-8")}>
+
+          <Heading level={1} size={1} className={cn("max-w-4xl", "mt-8")}>
             {title}
           </Heading>
-          {lead ? <p className="mt-5 max-w-2xl text-lead text-cocoa-soft">{lead}</p> : null}
+          {lead ? <p className="mt-5 max-w-2xl text-lead text-cocoa-soft"><WordText>{lead}</WordText></p> : null}
           {children}
         </Container>
       </Section>
@@ -81,18 +81,18 @@ export function PageHero({
   }
 
   return (
-    <section className="grain relative overflow-hidden bg-cream pb-14 pt-8 sm:pb-20 sm:pt-10 lg:flex lg:min-h-[calc(100dvh-4.5rem)] lg:flex-col lg:py-10">
+    <section className="page-intro grain relative overflow-hidden bg-cream pb-14 pt-8 sm:pb-20 sm:pt-10 lg:flex lg:min-h-[calc(100dvh-4.5rem)] lg:flex-col lg:py-10">
       <Container size="wide" className="relative z-10 lg:flex lg:flex-1 lg:flex-col">
         {crumbs && crumbLabel ? <Breadcrumbs items={crumbs} label={crumbLabel} /> : null}
         <div className="lg:my-auto lg:max-w-[52%] lg:py-12 xl:max-w-[46%]">
-          {eyebrow ? <Eyebrow className="fade-up mt-8 lg:mt-0">{eyebrow}</Eyebrow> : null}
-          <Heading level={1} size="display" className={cn("fade-up", eyebrow ? "mt-5" : "mt-8 lg:mt-0")} style={{ "--i": 1 } as CSSProperties}>
+
+          <Heading level={1} size="display" className={cn("fade-up", "mt-8 lg:mt-0")} style={{ "--i": 1 } as CSSProperties}>
             {title}
           </Heading>
           {lead ? (
-            <p className="fade-up mt-6 max-w-xl text-lead text-cocoa-soft" style={{ "--i": 3 } as CSSProperties}>
+            <p className="fade-up mt-6 max-w-xl text-lead text-cocoa-soft" style={{ "--i": 3 } as CSSProperties}><WordText>
               {lead}
-            </p>
+            </WordText></p>
           ) : null}
           {children ? (
             <div className="fade-up" style={{ "--i": 5 } as CSSProperties}>
@@ -162,7 +162,7 @@ export function CtaBand({
           <Heading level={2} size={2}>
             {title}
           </Heading>
-          <p className="mt-3 text-lead text-cocoa-soft">{body}</p>
+          <p className="mt-3 text-lead text-cocoa-soft"><WordText>{body}</WordText></p>
         </div>
         <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
           <Button href={primary.href} size="lg" magnetic icon={<ArrowIcon />}>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { NavigationLink } from "./NavLinks";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, type ReactNode } from "react";
 
@@ -16,7 +17,7 @@ export function MobileMenu({
 }: {
   openLabel: string;
   closeLabel: string;
-  links: Array<{ href: string; label: string }>;
+  links: NavigationLink[];
   footer?: ReactNode;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -65,6 +66,14 @@ export function MobileMenu({
           <ul className="flex flex-col">
             {links.map((link) => (
               <li key={link.href} className="border-b border-cocoa/10">
+                {link.children ? (
+                  <details className="group/mobile">
+                    <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between font-display text-h3 [&::-webkit-details-marker]:hidden">{link.label}<span aria-hidden="true" className="font-sans text-xl group-open/mobile:rotate-45">+</span></summary>
+                    <ul className="mb-4 grid gap-1 border-l border-cocoa/15 pl-4">
+                      {link.children.map((child) => <li key={child.href}><Link href={child.href} onClick={() => ref.current?.close()} aria-current={pathname === child.href ? "page" : undefined} className="flex min-h-11 items-center py-2 text-sm aria-[current=page]:font-semibold aria-[current=page]:text-clay-deep">{child.label}</Link></li>)}
+                    </ul>
+                  </details>
+                ) : (
                 <Link
                   href={link.href}
                   aria-current={pathname === link.href || pathname?.startsWith(`${link.href}/`) ? "page" : undefined}
@@ -72,6 +81,7 @@ export function MobileMenu({
                 >
                   {link.label}
                 </Link>
+                )}
               </li>
             ))}
           </ul>

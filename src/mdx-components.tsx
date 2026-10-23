@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import { CrisisCallout } from "@/components/layout/CrisisCallout";
@@ -17,11 +18,11 @@ function marks(children: ReactNode): ReactNode {
 const components: MDXComponents = {
   CrisisCallout,
   Helplines,
-  h2: (props) => <h2 className="mt-14 text-h3 first:mt-0" {...props} />,
-  h3: (props) => <h3 className="mt-10 text-h4" {...props} />,
+  h2: ({ children, ...props }) => <h2 className="mt-14 text-h3 first:mt-0" {...props}><WordText>{children}</WordText></h2>,
+  h3: ({ children, ...props }) => <h3 className="mt-10 text-h4" {...props}><WordText>{children}</WordText></h3>,
   p: ({ children, ...props }) => (
     <p className="mt-4 text-cocoa-soft" {...props}>
-      {marks(children)}
+      <WordText>{marks(children)}</WordText>
     </p>
   ),
   ul: (props) => <ul className="mt-4 space-y-2.5" {...props} />,

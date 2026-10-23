@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import { href } from "@/i18n/config";
 import { getLocale, getMessages } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
@@ -38,16 +39,16 @@ export default async function BusinessPage() {
                 <span aria-hidden className="font-display text-h3 text-clay-deep">
                   0{i + 1}
                 </span>
-                <h3 className="mt-3 text-h4">{p.title}</h3>
-                <p className="mt-2 text-cocoa-soft">
+                <h3 className="mt-3 text-h4"><WordText>{p.title}</WordText></h3>
+                <p className="mt-2 text-cocoa-soft"><WordText>
                   <Ph>{p.body}</Ph>
-                </p>
+                </WordText></p>
               </Reveal>
             ))}
             <li className="flex items-center rounded-pebble bg-forest p-6 text-cream on-dark sm:p-8">
               <div>
-                <h3 className="text-h4">{b.privacyTitle}</h3>
-                <p className="mt-2 text-cream/85">{b.privacyBody}</p>
+                <h3 className="text-h4"><WordText>{b.privacyTitle}</WordText></h3>
+                <p className="mt-2 text-cream/85"><WordText>{b.privacyBody}</WordText></p>
               </div>
             </li>
           </ul>
@@ -64,22 +65,22 @@ export default async function BusinessPage() {
                 <span aria-hidden className="flex size-12 shrink-0 items-center justify-center rounded-full bg-cream-soft font-display text-h4">
                   {i + 1}
                 </span>
-                <p className="pt-2.5 text-lead">{step}</p>
+                <p className="pt-2.5 text-lead"><WordText>{step}</WordText></p>
               </li>
             ))}
           </ol>
-          <p className="mt-10 text-sm">
+          <p className="mt-10 text-sm"><WordText>
             <Ph>{b.clientsNote}</Ph>
-          </p>
+          </WordText></p>
         </Container>
       </Section>
 
       <Section spacing="tight" id="enquire" className="scroll-mt-20">
         <Container size="narrow">
           <Heading level={2}>{b.formTitle}</Heading>
-          <p className="mt-3 text-cocoa-soft">
+          <p className="mt-3 text-cocoa-soft"><WordText>
             <Ph>{b.formLead}</Ph>
-          </p>
+          </WordText></p>
           <div className="mt-8">
             <EnquiryForm
               kind="business"

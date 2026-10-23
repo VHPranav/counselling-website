@@ -1,0 +1,192 @@
+.home-hero-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  /* Include the floating header in the full-height opening screen. */
+  --hero-header-height: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-top: calc(-1 * var(--hero-header-height));
+  /* Reserve space below the copy for the portrait and moving ribbon. */
+  padding-top: calc(var(--hero-header-height) + 2rem);
+  padding-bottom: 15rem;
+  color: var(--color-cocoa);
+  text-align: center;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 3rem, 65rem);
+  margin: 0 auto;
+}
+
+.home-hero-title {
+  margin: 0;
+  font-size: clamp(2.75rem, 5.7vw, 5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.home-hero-title > span,
+.home-hero-title > em {
+  display: block;
+}
+
+.home-hero-title em {
+  font-weight: 400;
+}
+
+.home-hero-lead {
+  max-width: 33rem;
+  margin: 1.375rem auto 0;
+  color: var(--color-cocoa-soft);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+.home-hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 1.5rem;
+}
+
+.home-hero-primary {
+  min-height: 3.5rem;
+  padding-inline: 2rem;
+  font-size: 1rem;
+  border: 1.5px solid var(--color-cocoa);
+  box-shadow: 0 3px 0 rgb(59 42 34 / 0.08);
+}
+
+.home-hero-secondary {
+  font-size: 0.8125rem;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-color: color-mix(in srgb, var(--color-cocoa) 35%, transparent);
+}
+
+.home-hero-assurance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0;
+  color: var(--color-cocoa-soft);
+  font-size: 0.75rem;
+}
+
+.home-hero-assurance svg {
+  flex-shrink: 0;
+}
+
+.home-hero-flow {
+  position: absolute;
+  bottom: clamp(1rem, 3vh, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max(100%, 68rem);
+  aspect-ratio: 1440 / 320;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.home-hero-paths {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.home-hero-pathsMobile { display: none; }
+
+.home-hero-thoughtText {
+  white-space: pre;
+  fill: var(--color-cocoa);
+  opacity: 0.3;
+  font-family: var(--font-sans);
+  font-size: 20px;
+}
+
+.home-hero-ribbon {
+  stroke: var(--color-ink);
+  stroke-width: 44;
+}
+
+.home-hero-ribbonText {
+  white-space: pre;
+  fill: var(--color-cream);
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.home-hero-media {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: clamp(9rem, 13vw, 11rem);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 4px solid var(--color-cream-soft);
+  border-radius: 1.25rem;
+  background: var(--color-sand);
+  box-shadow: 0 8px 28px rgb(59 42 34 / 0.15);
+  transform: translateX(-50%);
+}
+
+.home-hero-portrait {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+html:lang(ml) .home-hero-title {
+  font-size: clamp(2rem, 4.8vw, 4rem);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+html:lang(ml) .home-hero-title em {
+  font-style: normal;
+}
+
+@media (max-width: 639px) {
+  .home-hero-hero { --hero-header-height: 4.25rem; }
+  .home-hero-content { width: min(100% - 2.5rem, 32rem); }
+  .home-hero-title { font-size: clamp(2.5rem, 9.5vw, 3.5rem); line-height: 1.08; }
+  .home-hero-title em { max-width: 11ch; margin: 0.1em auto 0; }
+  .home-hero-lead { margin-top: 1.5rem; }
+  .home-hero-flow { width: max(100%, 24.375rem); aspect-ratio: 390 / 180; }
+  .home-hero-paths { display: none; }
+  .home-hero-pathsMobile { display: block; width: 100%; height: 100%; }
+  .home-hero-thoughtText { font-size: 12px; }
+  .home-hero-ribbon { stroke-width: 30; }
+  .home-hero-ribbonText { font-size: 13px; }
+  .home-hero-media { width: 9rem; border-radius: 1rem; }
+  html:lang(ml) .home-hero-title { font-size: 1.9rem; }
+  html:lang(ml) .home-hero-title em { max-width: none; }
+}
+
+
+/* Keep the full portrait visible on shorter laptop screens. */
+@media (min-width: 640px) and (max-height: 800px) {
+  .home-hero-hero { padding-top: calc(var(--hero-header-height) + 1rem); }
+  .home-hero-title { font-size: clamp(2.75rem, 5vw, 4rem); }
+  .home-hero-lead { margin-top: 1rem; font-size: 1rem; line-height: 1.5; }
+  .home-hero-actions { margin-top: 1rem; }
+}

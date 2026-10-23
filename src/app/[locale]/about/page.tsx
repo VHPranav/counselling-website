@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import Image from "next/image";
 import heldHands from "@/assets/images/held-hands.jpg";
 import { siteConfig } from "@/config/site";
@@ -37,14 +38,14 @@ export default async function AboutPage() {
         <Container className="grid items-center gap-12 md:grid-cols-[1.3fr_1fr]">
           <div>
             <Heading level={2}>{a.storyTitle}</Heading>
-            <p className="mt-5 text-lead text-cocoa-soft">{a.story1}</p>
-            <p className="mt-4 text-lead text-cocoa-soft">
+            <p className="mt-5 text-lead text-cocoa-soft"><WordText>{a.story1}</WordText></p>
+            <p className="mt-4 text-lead text-cocoa-soft"><WordText>
               <Ph>{a.story2}</Ph>
-            </p>
+            </WordText></p>
           </div>
           <div className="relative mx-auto w-full max-w-sm">
             <Blob variant={2} aria-hidden className="absolute -bottom-8 -left-10 w-3/4 text-sage/50" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-pebble shadow-warm-lg">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-pebble">
               <Image src={heldHands} alt="" fill placeholder="blur" sizes="(min-width: 768px) 24rem, calc(100vw - 2rem)" className="object-cover" />
             </div>
             <BananaLeaf aria-hidden className="absolute -right-6 -bottom-4 w-1/4 rotate-[18deg] text-moss" />
@@ -59,8 +60,8 @@ export default async function AboutPage() {
             {values.map((v, i) => (
               <Reveal as="li" key={v.title} delay={(i % 2) * 100} className="rounded-pebble bg-cream-soft p-6 sm:p-8">
                 <span aria-hidden className={`block size-3 rounded-full ${glyphColours[i]}`} />
-                <h3 className="mt-5 text-h3">{v.title}</h3>
-                <p className="mt-2 text-cocoa-soft">{v.body}</p>
+                <h3 className="mt-5 text-h3"><WordText>{v.title}</WordText></h3>
+                <p className="mt-2 text-cocoa-soft"><WordText>{v.body}</WordText></p>
               </Reveal>
             ))}
           </ul>
@@ -73,9 +74,9 @@ export default async function AboutPage() {
             <Heading level={2} size={3}>
               {a.trustTitle}
             </Heading>
-            <p className="mt-4 text-cocoa-soft">
+            <p className="mt-4 text-cocoa-soft"><WordText>
               <Ph>{a.trustLead}</Ph>
-            </p>
+            </WordText></p>
             <ul className="mt-6 space-y-3">
               {[a.trust1, a.trust2, a.trust3].map((item) => (
                 <li key={item} className="rounded-soft bg-cream-soft p-4 text-sm ring-1 ring-cocoa/10">
@@ -88,9 +89,9 @@ export default async function AboutPage() {
             <Heading level={2} size={3}>
               {a.teamTitle}
             </Heading>
-            <p className="mt-4 rounded-soft bg-sand/60 p-5 text-sm">
+            <p className="mt-4 rounded-soft bg-sand/60 p-5 text-sm"><WordText>
               <Ph>{a.teamNote}</Ph>
-            </p>
+            </WordText></p>
           </div>
         </Container>
       </Section>
@@ -101,7 +102,7 @@ export default async function AboutPage() {
             <Heading level={2} size={3}>
               {a.whereTitle}
             </Heading>
-            <p className="mt-4 text-cocoa-soft">{a.whereBody}</p>
+            <p className="mt-4 text-cocoa-soft"><WordText>{a.whereBody}</WordText></p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
             {[
@@ -109,7 +110,7 @@ export default async function AboutPage() {
               { title: a.whereAbroad, places: abroadPlaces },
             ].map((group) => (
               <div key={group.title}>
-                <h3 className="font-sans text-sm font-semibold text-moss">{group.title}</h3>
+                <h3 className="font-sans text-sm font-semibold text-moss"><WordText>{group.title}</WordText></h3>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {group.places.map((p) => (
                     <li key={p.en} className="rounded-full bg-cream-soft px-3 py-1.5 text-sm">

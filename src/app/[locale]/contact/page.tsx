@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import { siteConfig } from "@/config/site";
 import { href } from "@/i18n/config";
 import { getLocale, getMessages } from "@/i18n/dictionaries";
@@ -35,9 +36,9 @@ export default async function ContactPage() {
             <Heading level={2} size={3}>
               {c.formTitle}
             </Heading>
-            <p className="mt-2 text-sm text-cocoa-soft">
+            <p className="mt-2 text-sm text-cocoa-soft"><WordText>
               <Ph>{c.reply}</Ph>
-            </p>
+            </WordText></p>
             <div className="mt-8">
               <EnquiryForm
                 kind="contact"
@@ -51,7 +52,7 @@ export default async function ContactPage() {
           </div>
           <aside className="space-y-6 lg:pt-14">
             <div className="rounded-pebble bg-sand p-6 sm:p-8">
-              <h2 className="text-h4">{c.directTitle}</h2>
+              <h2 className="text-h4"><WordText>{c.directTitle}</WordText></h2>
               <dl className="mt-5 space-y-4">
                 <div>
                   <dt className="text-sm text-cocoa-soft">{t.footer.whatsapp}</dt>

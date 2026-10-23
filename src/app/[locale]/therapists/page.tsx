@@ -1,12 +1,12 @@
-import { concerns } from "@/data/concerns";
-import { services } from "@/data/services";
+import { WordText } from "@/components/motion/WordText";
 import { therapists } from "@/data/therapists";
 import { href } from "@/i18n/config";
 import { getLocale, getMessages } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
 import { cardLabels, toCardData } from "@/lib/therapists";
-import { PageHero } from "@/components/ui/PageParts";
-import { Ph } from "@/components/ui/Placeholder";
+import { Breadcrumbs } from "@/components/ui/PageParts";
+import { Button } from "@/components/ui/Button";
+import "@/components/therapists/TherapistDirectory.css";
 import { Container, Section } from "@/components/ui/Section";
 import { TherapistDirectory } from "@/components/therapists/TherapistDirectory";
 
@@ -21,35 +21,23 @@ export default async function TherapistsPage() {
   const p = t.therapistsPage;
   return (
     <>
-      <PageHero image="therapists"
-        eyebrow={p.eyebrow}
-        title={p.title}
-        lead={p.lead}
-        crumbLabel={t.common.breadcrumb}
-        crumbs={[{ label: t.common.home, href: href(locale) }, { label: t.nav.therapists }]}
-      >
-        <p className="mt-6 text-sm">
-          <Ph>{p.placeholderNote}</Ph>
-        </p>
-      </PageHero>
+      <section className="page-intro psychologist-intro">
+        <Container>
+          <Breadcrumbs label={t.common.breadcrumb} items={[{ label: t.common.home, href: href(locale) }, { label: t.nav.therapists }]} />
+          <div className="psychologist-intro-content"><div><h1><WordText>Find a psychologist <em>you can open up to.</em></WordText></h1><p className="psychologist-intro-lead"><WordText>Meet our Malayalam- and English-speaking practitioners. Compare their approach, session fee and availability, then choose who feels right for you.</WordText></p></div><Button href={href(locale, "/book?match=1")} variant="secondary">{p.match}</Button></div>
+          <ol className="psychologist-journey"><li><span>01</span>Choose your psychologist</li><li><span>02</span>Book a session</li><li><span>03</span>Meet privately online</li></ol>
+        </Container>
+      </section>
       <Section spacing="tight">
         <Container size="wide">
           <TherapistDirectory
             entries={therapists.map((th) => ({
               card: toCardData(th, locale, t),
-              languages: th.languages,
-              concerns: th.concerns,
-              services: th.services,
-              availability: th.availability,
+              bio: th.bio[locale],
+              bookHref: href(locale, `/book?therapist=${th.slug}`),
             }))}
             labels={p}
             cardLabels={cardLabels(t)}
-            languageOptions={[
-              { value: "ml", label: t.common.ml },
-              { value: "en", label: t.common.en },
-            ]}
-            concernOptions={concerns.map((c) => ({ value: c.slug, label: c.name[locale] }))}
-            serviceOptions={services.map((s) => ({ value: s.slug, label: s.name[locale] }))}
             matchHref={href(locale, "/book?match=1")}
           />
         </Container>

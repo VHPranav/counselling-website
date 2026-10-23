@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import type { ComponentProps, ElementType, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
@@ -6,7 +7,7 @@ type Tone = "cream" | "sand" | "sage" | "forest";
 const tones: Record<Tone, string> = {
   cream: "bg-cream text-cocoa",
   sand: "bg-sand text-cocoa",
-  sage: "bg-sage/35 text-cocoa",
+  sage: "bg-sand text-cocoa",
   forest: "bg-forest text-cream on-dark grain grain-light",
 };
 
@@ -67,10 +68,11 @@ const headingSizes: Record<"display" | HeadingLevel, string> = {
 
 export function Heading({
   level = 2,
+  children,
   size,
   className,
   ...props
 }: { level?: HeadingLevel; size?: "display" | HeadingLevel } & ComponentProps<"h2">) {
   const Tag = `h${level}` as const;
-  return <Tag className={cn(headingSizes[size ?? level], className)} {...props} />;
+  return <Tag className={cn(headingSizes[size ?? level], className)} {...props}><WordText>{children}</WordText></Tag>;
 }

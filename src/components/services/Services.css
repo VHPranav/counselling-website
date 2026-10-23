@@ -1,0 +1,50 @@
+.services-page-intro { padding-block: 1.75rem 2.5rem; background: var(--color-cream); }
+.services-page-introGrid { display: grid; grid-template-columns: 1.5fr 0.8fr; gap: clamp(2rem, 6vw, 6rem); margin-top: 1.75rem; align-items: center; }
+.services-page-intro h1 { font-size: clamp(2.75rem, 4.5vw, 4.25rem); line-height: 1.08; letter-spacing: -0.035em; }
+.services-page-introGrid > div > p { max-width: 38rem; margin-top: 1.25rem; font-size: 1rem; line-height: 1.75; color: var(--color-cocoa-soft); }
+.services-page-assurances { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.5rem; font-size: 0.75rem; color: var(--color-cocoa-soft); }
+.services-page-assurances span { display: inline-flex; gap: 0.5rem; align-items: center; }
+.services-page-assurances span::before { content: ""; width: 0.3rem; height: 0.3rem; background: var(--color-moss); border-radius: 50%; }
+.services-page-help { padding: 1.75rem; background: var(--color-sage-wash); border-radius: 1.25rem 3rem 1.25rem 1.25rem; }
+.services-page-help h2 { font-size: 1.75rem; line-height: 1.2; }
+.services-page-help p { font-size: 0.875rem; line-height: 1.7; color: var(--color-cocoa-soft); margin-block: 0.9rem 1.25rem; }
+.services-page-directoryHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.5rem; }
+.services-page-directoryHeading h2, .services-page-followUp h2, .services-page-faqGrid h2 { font-size: clamp(1.75rem, 2.8vw, 2.5rem); line-height: 1.2; }
+.services-page-directoryHeading > p { max-width: 23rem; font-size: 0.875rem; line-height: 1.7; color: var(--color-cocoa-soft); }
+.services-page-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.services-page-anchor { scroll-margin-top: 7rem; }
+.services-page-card { height: 100%; display: flex; flex-direction: column; border: 1px solid rgb(59 42 34 / 0.13); background: var(--color-cream-soft); border-radius: 1.25rem; overflow: hidden; }
+.services-page-cardMain { display: grid; grid-template-columns: 0.85fr 1.4fr; gap: 1.25rem; padding: 1rem; flex: 1; }
+.services-page-photo { display: block; position: relative; min-height: 12.5rem; overflow: hidden; border-radius: 0.75rem; }
+.services-page-photo img { transition: transform 350ms; }
+.services-page-photo:hover img { transform: scale(1.035); }
+.services-page-cardCopy { align-self: center; padding-block: 0.5rem; }
+.services-page-cardCopy h3 { font-size: clamp(1.5rem, 2.1vw, 1.875rem); line-height: 1.15; }
+.services-page-cardCopy h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.services-page-audience { margin-top: 0.65rem; font-size: 0.75rem; color: var(--color-moss); }
+.services-page-description { margin-top: 0.8rem; font-size: 0.875rem; line-height: 1.7; color: var(--color-cocoa-soft); }
+.services-page-session { margin-top: 1rem; font-size: 0.75rem; color: var(--color-cocoa-soft); }
+.services-page-cardFooter { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; border-top: 1px solid rgb(59 42 34 / 0.1); }
+.services-page-feeLabel { display: block; font-size: 0.6875rem; color: var(--color-cocoa-soft); }
+.services-page-cardFooter > div > p { font-size: 1.125rem; margin-top: 0.25rem; font-weight: 500; }
+.services-page-cardActions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.services-page-explore { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; min-height: 2.75rem; font-size: 0.75rem; text-decoration: underline; text-underline-offset: 3px; }
+.services-page-book { min-height: 2.75rem; background: var(--color-forest); color: var(--color-cream-soft); box-shadow: none; }
+.services-page-book:hover { background: var(--color-moss); box-shadow: none; }
+.services-page-previewNote { margin-top: 1rem; font-size: 0.6875rem; color: var(--color-cocoa-soft); }
+.services-page-followUp { margin-inline: 1rem; border-radius: 1.5rem; scroll-margin-top: 7rem; }
+.services-page-followUpGrid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
+.services-page-followUp h2 { color: var(--color-cream); }
+.services-page-followUpGrid > div > p { max-width: 30rem; margin-top: 1rem; font-size: 0.875rem; line-height: 1.7; color: rgb(251 248 242 / 0.8); }
+.services-page-followUpDetails { display: grid; grid-template-columns: 1fr; justify-items: start; gap: 0.8rem; padding-left: 3rem; border-left: 1px solid rgb(251 248 242 / 0.25); }
+.services-page-followUpDetails > p { margin-top: 0 !important; }
+.services-page-followUpDetails strong { font-size: 1.375rem; font-weight: 500; }
+.services-page-followUpDetails strong span { font-size: 0.75rem; font-weight: 400; }
+.services-page-followUpDetails > a:last-child { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 0.75rem; text-decoration: underline; text-underline-offset: 3px; }
+.services-page-faqGrid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 6vw, 6rem); }
+.services-page-faqGrid > div > p { margin-top: 1rem; max-width: 25rem; font-size: 0.875rem; line-height: 1.7; color: var(--color-cocoa-soft); }
+.services-page-teamLink { display: inline-flex; gap: 0.5rem; align-items: center; min-height: 2.75rem; margin-top: 1rem; font-size: 0.875rem; color: var(--color-clay-deeper); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 1023px) { .services-page-introGrid { gap: 2rem; grid-template-columns: 1.3fr 1fr; } .services-page-grid { gap: 1rem; } .services-page-cardMain { grid-template-columns: 0.7fr 1fr; gap: 0.9rem; padding: 0.8rem; } .services-page-cardCopy h3 { font-size: 1.5rem; } .services-page-cardFooter { padding: 1rem; } .services-page-cardActions { gap: 0.75rem; } }
+@media (max-width: 767px) { .services-page-introGrid { grid-template-columns: 1fr; } .services-page-help { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding: 1.25rem; } .services-page-help h2 { font-size: 1.5rem; } .services-page-help h2 br { display: none; } .services-page-help p { display: none; } .services-page-grid { grid-template-columns: 1fr; } .services-page-cardMain { grid-template-columns: 0.8fr 1.4fr; gap: 1.25rem; padding: 1rem; } .services-page-directoryHeading { flex-direction: column; align-items: flex-start; gap: 0.75rem; } .services-page-followUpGrid, .services-page-faqGrid { grid-template-columns: 1fr; gap: 1.5rem; } .services-page-followUpDetails { padding-left: 0; padding-top: 1.5rem; border-left: 0; border-top: 1px solid rgb(251 248 242 / 0.25); } }
+@media (max-width: 420px) { .services-page-intro h1 { font-size: 2.625rem; } .services-page-help { grid-template-columns: 1fr; } .services-page-help > a { justify-self: start; } .services-page-cardMain { gap: 1rem; grid-template-columns: 0.75fr 1.35fr; } .services-page-photo { min-height: 12rem; } .services-page-cardCopy h3 { font-size: 1.375rem; } .services-page-description { font-size: 0.8125rem; } .services-page-cardFooter { gap: 0.75rem; } .services-page-cardActions { gap: 0.75rem; } }
+@media (prefers-reduced-motion: reduce) { .services-page-photo img { transition: none; } }

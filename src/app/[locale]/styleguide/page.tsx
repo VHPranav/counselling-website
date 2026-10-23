@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import ml from "../../../../messages/ml.json";
@@ -8,7 +9,7 @@ import { Card } from "@/components/ui/Card";
 import { Field } from "@/components/ui/Field";
 import { Marquee } from "@/components/ui/Marquee";
 import { Ph } from "@/components/ui/Placeholder";
-import { Container, Eyebrow, Heading, Section } from "@/components/ui/Section";
+import { Container, Heading, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
 import { Arch, BananaLeaf, Blob, BrandMark, PalmFrond, Pebble, Ripple } from "@/components/shapes/Shapes";
 import { ChipDemo } from "./ChipDemo";
@@ -51,11 +52,11 @@ export default async function StyleguidePage() {
     <>
       <Section spacing="tight" grain>
         <Container>
-          <Eyebrow>{s.title}</Eyebrow>
+
           <Heading level={1} className="mt-4">
             {s.title}
           </Heading>
-          <p className="mt-4 max-w-2xl text-lead text-cocoa-soft">{s.intro}</p>
+          <p className="mt-4 max-w-2xl text-lead text-cocoa-soft"><WordText>{s.intro}</WordText></p>
         </Container>
       </Section>
 
@@ -65,9 +66,9 @@ export default async function StyleguidePage() {
             <li key={sw.name} className="overflow-hidden rounded-soft bg-cream-soft ring-1 ring-cocoa/10">
               <div className={`${sw.cls} flex h-20 items-end p-3 text-sm ${sw.dark ? "text-cream" : "text-cocoa"}`}>Aa</div>
               <div className="p-3 text-sm">
-                <p className="font-medium">{sw.name}</p>
-                <p className="text-cocoa-soft tabular-nums">{sw.hex}</p>
-                <p className="text-cocoa-soft">{sw.note}</p>
+                <p className="font-medium"><WordText>{sw.name}</WordText></p>
+                <p className="text-cocoa-soft tabular-nums"><WordText>{sw.hex}</WordText></p>
+                <p className="text-cocoa-soft"><WordText>{sw.note}</WordText></p>
               </div>
             </li>
           ))}
@@ -79,9 +80,9 @@ export default async function StyleguidePage() {
           {typeScale.map(([size, cls]) => (
             <div key={size} className="grid gap-2 sm:grid-cols-[6rem_1fr] sm:items-baseline">
               <code className="text-sm text-cocoa-soft">{size}</code>
-              <p className={cls}>
+              <p className={cls}><WordText>
                 {s.sample}
-              </p>
+              </WordText></p>
             </div>
           ))}
         </div>
@@ -119,10 +120,10 @@ export default async function StyleguidePage() {
                 <Heading level={3} size={4}>
                   {s.cardTitle}
                 </Heading>
-                <p className={`mt-3 ${tone === "forest" ? "text-cream/85" : "text-cocoa-soft"}`}>{s.cardBody}</p>
-                <p className="mt-6 text-sm font-medium">
+                <p className={`mt-3 ${tone === "forest" ? "text-cream/85" : "text-cocoa-soft"}`}><WordText>{s.cardBody}</WordText></p>
+                <p className="mt-6 text-sm font-medium"><WordText>
                   <Ph>{s.cardMeta}</Ph>
-                </p>
+                </WordText></p>
               </Card>
             </Reveal>
           ))}
@@ -186,24 +187,24 @@ export default async function StyleguidePage() {
 
       {/* Always rendered in Malayalam, in both locales, to check shaping. */}
       <Block title={s.malayalam} tone="sand">
-        <p className="mb-8 max-w-2xl text-cocoa-soft">{s.malayalamNote}</p>
+        <p className="mb-8 max-w-2xl text-cocoa-soft"><WordText>{s.malayalamNote}</WordText></p>
         <div lang="ml" className="space-y-6 rounded-pebble bg-cream p-6 sm:p-10">
-          <p className="font-display text-display leading-[1.3]">{ml.home.hero.title}</p>
-          <p className="font-display text-h2 leading-[1.4]">{ml.styleguide.sample}</p>
-          <p className="text-base leading-[1.8]">{ml.styleguide.sample}</p>
+          <p className="font-display text-display leading-[1.3]"><WordText>{ml.home.hero.title}</WordText></p>
+          <p className="font-display text-h2 leading-[1.4]"><WordText>{ml.styleguide.sample}</WordText></p>
+          <p className="text-base leading-[1.8]"><WordText>{ml.styleguide.sample}</WordText></p>
           <div className="flex flex-wrap gap-3">
             <Button icon={<ArrowIcon />}>{ml.nav.book}</Button>
             <Button variant="secondary">{ml.styleguide.buttonSecondary}</Button>
           </div>
           <ChipDemo labels={[ml.styleguide.chipAnxious, ml.styleguide.chipLow, ml.styleguide.chipOverwhelmed, ml.styleguide.chipTalk]} />
-          <p className="flex flex-wrap gap-x-6 gap-y-2 text-[0.9375rem]">
+          <p className="flex flex-wrap gap-x-6 gap-y-2 text-[0.9375rem]"><WordText>
             {Object.values(ml.nav).map((label) => (
               <span key={label} className="link-underline">
                 {label}
               </span>
             ))}
-          </p>
-          <p className="text-h4 leading-[1.8]">ൻ ൺ ർ ൽ ൾ · ക്ഷ ന്ത ങ്ങ ത്ത സ്ത്ര ന്ന ഞ്ഞ ക്ക ണ്ട ദ്ധ ഷ്ട ത്സ ങ്ക ന്റെ</p>
+          </WordText></p>
+          <p className="text-h4 leading-[1.8]"><WordText>ൻ ൺ ർ ൽ ൾ · ക്ഷ ന്ത ങ്ങ ത്ത സ്ത്ര ന്ന ഞ്ഞ ക്ക ണ്ട ദ്ധ ഷ്ട ത്സ ങ്ക ന്റെ</WordText></p>
         </div>
       </Block>
     </>

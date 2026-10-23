@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import { workshops } from "@/data/workshops";
 import { href } from "@/i18n/config";
 import { format, getLocale, getMessages } from "@/i18n/dictionaries";
@@ -39,9 +40,9 @@ export default async function CommunityPage() {
             {c.upcoming}
           </Heading>
           {upcoming.some((w) => w.sample) ? (
-            <p className="mt-2 text-sm">
+            <p className="mt-2 text-sm"><WordText>
               <Ph>{c.sampleNote}</Ph>
-            </p>
+            </WordText></p>
           ) : null}
           {upcoming.length ? (
             <ul className="mt-8 grid gap-5 lg:grid-cols-3">
@@ -56,13 +57,13 @@ export default async function CommunityPage() {
                           <span className="font-display text-h3 leading-none">{new Intl.DateTimeFormat(intl, { day: "numeric", timeZone: "Asia/Kolkata" }).format(start)}</span>
                         </time>
                         <div>
-                          <h3 className="text-h4 leading-snug">{w.title[locale]}</h3>
-                          <p className="mt-1 text-sm text-cocoa-soft">
+                          <h3 className="text-h4 leading-snug"><WordText>{w.title[locale]}</WordText></h3>
+                          <p className="mt-1 text-sm text-cocoa-soft"><WordText>
                             {new Intl.DateTimeFormat(intl, { weekday: "long", hour: "numeric", minute: "2-digit", timeZone: "Asia/Kolkata", timeZoneName: "short" }).format(start)}
-                          </p>
+                          </WordText></p>
                         </div>
                       </div>
-                      <p className="mt-4 text-cocoa-soft">{w.summary[locale]}</p>
+                      <p className="mt-4 text-cocoa-soft"><WordText>{w.summary[locale]}</WordText></p>
                       <ul className="mt-5 flex flex-wrap gap-2 text-xs">
                         {[c.online, format(c.minutes, { n: w.durationMinutes }), w.languages.map((l) => t.common[l]).join(" + "), w.audience[locale]].map((tag) => (
                           <li key={tag} className="rounded-full bg-sand px-3 py-1">
@@ -70,9 +71,9 @@ export default async function CommunityPage() {
                           </li>
                         ))}
                       </ul>
-                      <p className="mt-4 text-sm">
+                      <p className="mt-4 text-sm"><WordText>
                         <Ph>{format(c.facilitator, { name: w.facilitator[locale] })}</Ph>
-                      </p>
+                      </WordText></p>
                       <div className="mt-auto flex items-center justify-between gap-4 border-t border-cocoa/10 pt-5">
                         <span className="text-sm font-medium">
                           {w.priceInr == null ? c.free : formatInr(w.priceInr, locale)} · {format(c.seats, { n: w.seats })}
@@ -87,7 +88,7 @@ export default async function CommunityPage() {
               })}
             </ul>
           ) : (
-            <p className="mt-8 rounded-soft bg-sand/60 p-6">{c.empty}</p>
+            <p className="mt-8 rounded-soft bg-sand/60 p-6"><WordText>{c.empty}</WordText></p>
           )}
         </Container>
       </Section>

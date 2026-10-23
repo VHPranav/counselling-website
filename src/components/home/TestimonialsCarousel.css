@@ -1,0 +1,115 @@
+.reviews-carousel {
+  margin-top: 1.75rem;
+}
+
+.reviews-carousel-track {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 88%;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.reviews-carousel-track::-webkit-scrollbar { display: none; }
+
+.reviews-carousel-slide {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.reviews-carousel-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 18rem;
+  border-radius: 1.75rem;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--color-cocoa);
+}
+
+.reviews-carousel-quote {
+  height: 3rem;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 1;
+  opacity: 0.45;
+}
+
+.reviews-carousel-card blockquote {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.reviews-carousel-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 2rem;
+  margin-top: auto;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.reviews-carousel-avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--color-cocoa);
+  color: var(--color-cream);
+  font-size: 0.75rem;
+}
+
+.reviews-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.reviews-carousel-position {
+  color: var(--color-cocoa);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.reviews-carousel-position span:last-child { opacity: 0.55; }
+
+.reviews-carousel-arrows { display: flex; gap: 0.75rem; }
+
+.reviews-carousel-arrows button {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid color-mix(in srgb, var(--color-cocoa) 40%, transparent);
+  border-radius: 50%;
+  color: var(--color-cocoa);
+  cursor: pointer;
+  transition: background-color 180ms, color 180ms, opacity 180ms;
+}
+
+.reviews-carousel-arrows button:hover:not(:disabled) {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+.reviews-carousel-arrows button:disabled { opacity: 0.3; cursor: default; }
+
+@media (min-width: 640px) {
+  .reviews-carousel-track { grid-auto-columns: calc((100% - 1.5rem) / 2); gap: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .reviews-carousel-track { grid-auto-columns: calc((100% - 3rem) / 3); }
+}

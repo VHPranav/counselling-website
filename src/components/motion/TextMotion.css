@@ -1,0 +1,6 @@
+[data-blur-word] { display: inline-block; max-width: 100%; vertical-align: baseline; }
+/* The word sequence replaces the earlier whole-line fade on shared page heroes. */
+.fade-up:has([data-blur-word]) { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-blur-word] { filter: none; opacity: 1; translate: none; }
+}

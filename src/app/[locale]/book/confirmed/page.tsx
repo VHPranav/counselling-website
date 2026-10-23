@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import { Suspense } from "react";
 import { siteConfig } from "@/config/site";
 import { href } from "@/i18n/config";
@@ -32,7 +33,7 @@ export default async function ConfirmedPage() {
           <Heading level={1} size={1}>
             {c.title}
           </Heading>
-          <p className="mt-4 text-lead text-cocoa-soft">{c.lead}</p>
+          <p className="mt-4 text-lead text-cocoa-soft"><WordText>{c.lead}</WordText></p>
 
           <div className="mt-10">
             <Suspense fallback={<div className="h-40 rounded-pebble bg-sand/40" aria-busy="true" />}>
@@ -50,9 +51,9 @@ export default async function ConfirmedPage() {
                 <span aria-hidden className="flex size-9 shrink-0 items-center justify-center rounded-full bg-sand font-display text-lead">
                   {i + 1}
                 </span>
-                <p className="pt-1">
+                <p className="pt-1"><WordText>
                   <Ph>{line}</Ph>
-                </p>
+                </WordText></p>
               </li>
             ))}
           </ol>
@@ -65,7 +66,7 @@ export default async function ConfirmedPage() {
 
       <Section tone="sage" grain spacing="tight">
         <Container size="narrow" className="flex flex-col items-center text-center">
-          <h2 className="text-h3">{c.breathe}</h2>
+          <h2 className="text-h3"><WordText>{c.breathe}</WordText></h2>
           <div className="mt-8">
             <Breathing labels={t.home.breath} />
           </div>

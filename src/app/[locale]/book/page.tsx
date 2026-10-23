@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import { Suspense } from "react";
 import { services } from "@/data/services";
 import { therapists } from "@/data/therapists";
@@ -45,13 +46,13 @@ export default async function BookPage() {
 
   return (
     <>
-      <Section grain spacing="none" className="pb-20 pt-8 sm:pt-12">
+      <Section grain spacing="none" className="page-intro pb-20 pt-8 sm:pt-12">
         <Container size="wide">
           <Breadcrumbs label={t.common.breadcrumb} items={[{ label: t.common.home, href: href(locale) }, { label: b.title }]} />
           <Heading level={1} size={1} className="mt-8">
             {b.title}
           </Heading>
-          <p className="mt-3 max-w-2xl text-lead text-cocoa-soft">{b.lead}</p>
+          <p className="mt-3 max-w-2xl text-lead text-cocoa-soft"><WordText>{b.lead}</WordText></p>
           <div className="mt-10">
             {/* The flow reads ?service= / ?therapist= / ?match= from the URL, so it sits in Suspense. */}
             <Suspense fallback={<div className="min-h-[60vh] rounded-pebble bg-sand/40" aria-busy="true" />}>

@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { siteConfig } from "@/config/site";
@@ -53,17 +54,17 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
             label={t.common.breadcrumb}
             items={[{ label: t.common.home, href: href(locale) }, { label: t.nav.blog, href: href(locale, "/blog") }, { label: post.meta.title }]}
           />
-          <p className="mt-10 text-sm text-cocoa-soft">
+          <p className="mt-10 text-sm text-cocoa-soft"><WordText>
             <time dateTime={post.meta.date}>{new Intl.DateTimeFormat(intl, { dateStyle: "long" }).format(new Date(post.meta.date))}</time> ·{" "}
             {format(b.minRead, { n: post.meta.readingMinutes })}
-          </p>
+          </WordText></p>
           <Heading level={1} size={1} className="mt-3">
             {post.meta.title}
           </Heading>
-          <p className="mt-5 text-lead text-cocoa-soft">{post.meta.description}</p>
-          <p className="mt-6 text-sm">
+          <p className="mt-5 text-lead text-cocoa-soft"><WordText>{post.meta.description}</WordText></p>
+          <p className="mt-6 text-sm"><WordText>
             <Ph>{format(b.by, { author: post.meta.author })}</Ph>
-          </p>
+          </WordText></p>
         </Container>
       </Section>
       <Section spacing="tight" className="pt-4">
@@ -71,12 +72,12 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
           <article className="text-lead [&_p]:text-[length:inherit]">
             <post.Content />
           </article>
-          <p className="mt-12 rounded-soft bg-sand/60 p-4 text-sm text-cocoa-soft">{b.disclaimer}</p>
+          <p className="mt-12 rounded-soft bg-sand/60 p-4 text-sm text-cocoa-soft"><WordText>{b.disclaimer}</WordText></p>
           {others.length ? (
             <nav aria-labelledby="read-next" className="mt-12 border-t border-cocoa/10 pt-8">
-              <h2 id="read-next" className="text-h4">
+              <h2 id="read-next" className="text-h4"><WordText>
                 {b.readNext}
-              </h2>
+              </WordText></h2>
               <ul className="mt-4 space-y-3">
                 {others.map((p) => (
                   <li key={p.slug}>

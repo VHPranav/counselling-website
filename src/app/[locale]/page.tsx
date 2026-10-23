@@ -1,35 +1,28 @@
-import beachWalk from "@/assets/images/beach-walk.jpg";
-import officeImg from "@/assets/pages/business.jpg";
-import { crisisLines } from "@/config/safety";
-import Image from "next/image";
+import { WordText } from "@/components/motion/WordText";
 import Link from "next/link";
-import backwatersDawn from "@/assets/images/backwaters-dawn.jpg";
-import monsoonWindow from "@/assets/images/monsoon-window.jpg";
 import { siteConfig } from "@/config/site";
 import { concernBySlug } from "@/data/concerns";
 import { faqs } from "@/data/faqs";
 import { demoTestimonials } from "@/data/demo";
 import { moods } from "@/data/moods";
-import { services } from "@/data/services";
 import { matchTherapists, therapists } from "@/data/therapists";
 import { href, type Locale } from "@/i18n/config";
 import { format, getLocale, getMessages, type Messages } from "@/i18n/dictionaries";
-import { cardLabels, formatInr, toCardData } from "@/lib/therapists";
+import { cardLabels, toCardData } from "@/lib/therapists";
 import { pageMetadata } from "@/lib/metadata";
 import { ArrowIcon, Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import { Marquee } from "@/components/ui/Marquee";
 import { FaqList } from "@/components/ui/PageParts";
 import { Ph } from "@/components/ui/Placeholder";
-import { Container, Eyebrow, Heading, Section } from "@/components/ui/Section";
+import { Container, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
-import { BananaLeaf, Ripple } from "@/components/shapes/Shapes";
-import { Breathing } from "@/components/home/Breathing";
 import { Hero } from "@/components/home/Hero";
+import { TestimonialsCarousel } from "@/components/home/TestimonialsCarousel";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { MoodSelector, type MoodOption } from "@/components/home/MoodSelector";
-import { ServiceGlyph } from "@/components/home/ServiceGlyph";
-import { TherapistCard } from "@/components/therapists/TherapistCard";
+import { ServiceChooser } from "@/components/services/ServiceChooser";
+import { discoveryLabels as d } from "@/data/service-discovery";
+import "./Home.css";
+import { TherapistAvatar } from "@/components/therapists/TherapistCard";
 
 export function generateMetadata() {
   return pageMetadata({ path: "/" });
@@ -42,10 +35,12 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero locale={locale} t={h.hero} team={therapists} />
+      <Hero locale={locale} t={h.hero} flow={h.flow} team={therapists} />
       <MoodSection locale={locale} t={t} />
-      <ServicesSection locale={locale} t={t} />
+      <ServiceChooser locale={locale} />
+      <TherapistsSection locale={locale} t={t} />
       <HowItWorks
+        eyebrow={h.how.eyebrow}
         title={h.how.title}
         steps={([1, 2, 3, 4] as const).map((n) => ({
           title: h.how[`step${n}Title`],
@@ -53,24 +48,19 @@ export default async function HomePage() {
           label: format(h.how.stepLabel, { n }),
         }))}
       />
-      <TherapistsSection locale={locale} t={t} />
-      <BreathSection t={h.breath} />
-      <TestimonialsSection locale={locale} t={h.testimonials} />
+      <TestimonialsSection locale={locale} t={h.testimonials} f={h.flow} />
       <FaqSection locale={locale} t={t} />
-      <BusinessSection locale={locale} t={h.business} />
       <FinalCta locale={locale} t={t} />
     </>
   );
 }
 
-function SectionHeader({ title, lead, className }: { title: string; lead?: string; className?: string }) {
+/** Big serif title with an italic second phrase (Wispr-style). */
+function MegaTitle({ top, italic, className, as: Tag = "h2" }: { top: string; italic: string; className?: string; as?: "h2" | "h3" }) {
   return (
-    <Reveal className={className}>
-      <Heading level={2} className="mt-4 max-w-3xl">
-        {title}
-      </Heading>
-      {lead ? <p className="mt-4 max-w-2xl text-lead text-cocoa-soft [.on-dark_&]:text-cream/80">{lead}</p> : null}
-    </Reveal>
+    <Tag className={`text-mega-sm text-balance ${className ?? ""}`}>
+      <WordText>{top} <em>{italic}</em></WordText>
+    </Tag>
   );
 }
 
@@ -86,10 +76,8 @@ function MoodSection({ locale, t }: { locale: Locale; t: Messages }) {
       .map((c) => ({ slug: c.slug, name: c.name[locale], summary: c.summary[locale], href: href(locale, `/concerns/${c.slug}`) })),
     therapists: matchTherapists(mood.concerns, 2).map((th) => toCardData(th, locale, t)),
   }));
-  const line = crisisLines[0];
   return (
-    <Section id="mood" tone="sand" grain className="scroll-mt-16 overflow-clip">
-      <Ripple className="pointer-events-none absolute -right-20 top-10 w-[28rem] text-cream/70" />
+    <Section id="mood" spacing="tight" className="thanal-mood mx-3 mt-6 scroll-mt-0 overflow-clip rounded-[2rem] sm:mx-4">
       <Container>
         <MoodSelector
           moods={options}
@@ -97,61 +85,13 @@ function MoodSection({ locale, t }: { locale: Locale; t: Messages }) {
           cardLabels={cardLabels(t)}
           bookHref={href(locale, "/book")}
           matchHref={href(locale, "/book?match=1")}
-          crisis={{ text: format(m.crisis, { name: line.name[locale] }), tel: line.tel, number: line.number }}
           heading={
             <Reveal>
-              <Eyebrow>{m.eyebrow}</Eyebrow>
-              <Heading level={2} className="mt-4">
-                {m.title}
-              </Heading>
+
+              <MegaTitle top={t.home.flow.moodTop} italic={t.home.flow.moodItalic} className="mx-auto" />
             </Reveal>
           }
         />
-      </Container>
-    </Section>
-  );
-}
-
-function ServicesSection({ locale, t }: { locale: Locale; t: Messages }) {
-  const s = t.home.services;
-  return (
-    <Section>
-      <Container>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <SectionHeader title={s.title} />
-          <Link href={href(locale, "/services")} className="text-link shrink-0 font-medium">
-            {s.viewAll}
-          </Link>
-        </div>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-          <Reveal as="li" className="relative min-h-72 overflow-hidden rounded-pebble sm:row-span-1">
-            <Image src={beachWalk} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 26rem, (min-width: 640px) 50vw, 100vw" className="object-cover object-[50%_60%]" />
-            <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/10 to-transparent" />
-            <p className="absolute inset-x-0 bottom-0 p-6 font-display text-h4 leading-snug text-cream">{s.photoCaption}</p>
-          </Reveal>
-          {services.map((svc, i) => (
-            <Reveal as="li" key={svc.slug} delay={((i + 1) % 3) * 90}>
-              <Card href={href(locale, `/services#${svc.slug}`)} tone={i < 2 ? "sand" : "cream"} className="group flex h-full flex-col">
-                <div className="flex items-start justify-between gap-4">
-                  <ServiceGlyph slug={svc.slug} className="size-12 sm:size-14" />
-                  <ArrowIcon className="text-clay-deep transition-transform duration-300 group-hover:translate-x-1" />
-                </div>
-                <h3 className="mt-6 text-h3">{svc.name[locale]}</h3>
-                <p className="mt-1 text-sm font-medium text-moss">{svc.audience[locale]}</p>
-                <p className="mt-3 text-cocoa-soft">{svc.summary[locale]}</p>
-                <p className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 pt-6 text-sm">
-                  <span>{format(s.minutes, { n: svc.durationMinutes })}</span>
-                  <span aria-hidden className="text-cocoa/30">·</span>
-                  <span>{svc.modes.map((mode) => s[mode]).join(" / ")}</span>
-                  <span aria-hidden className="text-cocoa/30">·</span>
-                  <span className="font-medium">
-                    <Ph>{svc.priceInr == null ? s.price : formatInr(svc.priceInr, locale)}</Ph>
-                  </span>
-                </p>
-              </Card>
-            </Reveal>
-          ))}
-        </ul>
       </Container>
     </Section>
   );
@@ -161,130 +101,84 @@ function TherapistsSection({ locale, t }: { locale: Locale; t: Messages }) {
   const tt = t.home.therapists;
   const preview = therapists.slice(0, 4).map((th) => toCardData(th, locale, t));
   return (
-    <Section tone="sand" grain className="overflow-hidden">
-      <BananaLeaf className="pointer-events-none absolute -left-10 bottom-0 w-36 rotate-[20deg] text-moss/15 lg:w-52" />
+    <Section id="team" spacing="tight" className="thanal-team overflow-hidden">
       <Container className="relative">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <SectionHeader title={tt.title} lead={tt.lead} />
+          <div className="max-w-2xl">
+
+            <MegaTitle top={d.teamTitle[locale]} italic={d.teamItalic[locale]} className="mt-3" />
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-cocoa-soft"><WordText>{d.teamLead[locale]}</WordText></p>
+          </div>
           <Button href={href(locale, "/therapists")} variant="secondary" className="shrink-0 self-start md:self-auto">
             {tt.viewAll}
           </Button>
         </div>
-        {/* Swipeable row on mobile, grid on desktop */}
-        <ul className="-mx-4 mt-12 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-4 sm:scroll-px-6 [scrollbar-width:none] sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0 lg:pb-0">
+        <ul className="mt-7 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {preview.map((data, i) => (
-            <Reveal as="li" key={data.slug} delay={i * 90} className="w-[78%] shrink-0 snap-start xs:w-[60%] sm:w-[45%] lg:w-auto">
-              <TherapistCard data={data} labels={cardLabels(t)} />
+            <Reveal as="li" key={data.slug} delay={i * 60}>
+              <article className="thanal-practitioner group relative h-full">
+                <TherapistAvatar tone={data.tone} photo={data.photo} className="aspect-[4/3] w-full rounded-[1.25rem]!" sizes="(min-width: 1024px) 22vw, 44vw" />
+                <h3 className="mt-4 font-sans text-sm font-semibold leading-snug tracking-normal"><WordText>
+                  <Link href={data.href} className="after:absolute after:inset-0 after:rounded-[1.25rem] after:content-['']"><Ph>{data.name}</Ph></Link>
+                </WordText></h3>
+                <p className="mt-1 text-xs text-clay-deep"><WordText><Ph>{data.role}</Ph></WordText></p>
+                <p className="mt-2 text-xs leading-relaxed text-cocoa-soft"><WordText><Ph>{data.credential}</Ph></WordText></p>
+                <p className="mt-3 border-t border-cocoa/10 pt-3 text-xs text-cocoa-soft"><WordText>{data.languages}</WordText></p>
+                <p className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs font-medium"><WordText>
+                  <Ph>{data.price}</Ph><span aria-hidden="true" className="text-clay-deep">{tt.viewProfile} →</span>
+                </WordText></p>
+              </article>
             </Reveal>
           ))}
         </ul>
-        <p className="mt-8 max-w-2xl text-sm text-cocoa-soft">
+        <p className="mt-5 max-w-2xl text-xs text-cocoa-soft"><WordText>
           <Ph>{tt.credentialsNote}</Ph>
-        </p>
+        </WordText></p>
       </Container>
     </Section>
   );
 }
 
-function BreathSection({ t }: { t: Messages["home"]["breath"] }) {
-  return (
-    <Section id="breathe" tone="sage" className="scroll-mt-16 overflow-hidden">
-      {/* Dawn on the backwaters (generated in Google Flow). The open water on the
-          left sits under the text; the canoe and palms frame the breathing circle. */}
-      <Image
-        src={backwatersDawn}
-        alt=""
-        fill
-        placeholder="blur"
-        sizes="100vw"
-        className="object-cover object-[70%_50%]"
-      />
-      <div aria-hidden className="absolute inset-0 bg-cream/70 md:bg-transparent md:bg-gradient-to-r md:from-cream/85 md:via-cream/45 md:to-cream/10" />
-      <Container className="relative grid items-center gap-12 md:grid-cols-2">
-        <SectionHeader title={t.title} lead={t.lead} />
-        <Breathing labels={t} />
-      </Container>
-    </Section>
-  );
-}
-
-function TestimonialsSection({ locale, t }: { locale: Locale; t: Messages["home"]["testimonials"] }) {
+function TestimonialsSection({ locale, t, f }: { locale: Locale; t: Messages["home"]["testimonials"]; f: Messages["home"]["flow"] }) {
   // Demo mode: fictional sample quotes. Otherwise: clearly marked placeholders.
   const items = siteConfig.demoMode
     ? demoTestimonials.map((d) => ({ quote: d.quote[locale], who: d.who[locale] }))
     : [1, 2, 3, 4, 5].map((n) => ({ quote: format(t.quote, { n }), who: t.who }));
   return (
-    <Section className="overflow-hidden">
-      <Container>
-        <SectionHeader title={t.title} />
-        {t.note ? <p className="mt-3 text-sm text-cocoa-soft">{t.note}</p> : null}
+    <section className="thanal-reviews mx-3 my-6 overflow-hidden rounded-[2rem] py-10 sm:mx-4 sm:py-14">
+      <Container size="wide">
+        <Reveal className="text-center">
+
+          <MegaTitle top={f.testiTop} italic={f.testiItalic} className="mx-auto mt-3 max-w-3xl" />
+          <p className="mt-3 text-xs text-cocoa-soft"><WordText>{siteConfig.demoMode ? d.sampleReviews[locale] : t.note}</WordText></p>
+        </Reveal>
+        <TestimonialsCarousel
+          items={items}
+          label={`${f.testiTop} ${f.testiItalic}`}
+          previousLabel={t.previous}
+          nextLabel={t.next}
+        />
       </Container>
-      <Marquee className="mt-10" label={t.title} seconds={80}>
-        {items.map((item, i) => (
-          <figure key={i} className="flex w-[17rem] shrink-0 flex-col justify-between rounded-pebble bg-sand p-6 sm:w-[21rem]">
-            <svg viewBox="0 0 32 24" width="24" height="18" aria-hidden className="text-clay">
-              <path d="M0 24V14C0 6 4 1 12 0v5c-4 1-6 4-6 8h6v11H0Zm18 0V14c0-8 4-13 12-14v5c-4 1-6 4-6 8h6v11H18Z" fill="currentColor" />
-            </svg>
-            <blockquote className="mt-4 font-display text-lead leading-relaxed">
-              <Ph>{item.quote}</Ph>
-            </blockquote>
-            <figcaption className="mt-5 text-[0.8125rem] font-medium text-cocoa-soft">
-              <Ph>{item.who}</Ph>
-            </figcaption>
-          </figure>
-        ))}
-      </Marquee>
-    </Section>
+    </section>
   );
 }
 
 function FaqSection({ locale, t }: { locale: Locale; t: Messages }) {
   const f = t.home.faq;
+  const fl = t.home.flow;
+  const items = faqs.filter((q) => q.home).map((q) => ({ q: q.question[locale], a: q.answer[locale] }));
   return (
-    <Section tone="sand">
-      <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
-        <div>
-          <SectionHeader title={f.title} />
-          <Link href={href(locale, "/faq")} className="text-link mt-6 inline-block font-medium">
-            {f.viewAll}
-          </Link>
-        </div>
-        <FaqList items={faqs.filter((q) => q.home).map((q) => ({ q: q.question[locale], a: q.answer[locale] }))} />
-      </Container>
-    </Section>
-  );
-}
+    <Section id="faq" spacing="tight">
+      <Container className="grid items-start gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div className="lg:sticky lg:top-28">
 
-function BusinessSection({ locale, t }: { locale: Locale; t: Messages["home"]["business"] }) {
-  const items = [
-    { title: t.workTitle, body: t.workBody },
-    { title: t.campusTitle, body: t.campusBody },
-  ];
-  return (
-    <Section tone="forest" className="overflow-hidden">
-      <Ripple className="pointer-events-none absolute -right-24 -top-10 w-[36rem] text-sage/20" />
-      <BananaLeaf className="pointer-events-none absolute -bottom-16 left-[8%] w-32 rotate-[-18deg] text-moss/35" />
-      <Container className="relative grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-        <div className="min-w-0">
-          <SectionHeader title={t.title} lead={t.lead} />
-          <Button href={href(locale, "/business")} variant="light" className="mt-8" icon={<ArrowIcon />}>
-            {t.cta}
-          </Button>
+          <MegaTitle top={fl.faqTop} italic={fl.faqItalic} className="mt-3" />
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-cocoa-soft"><WordText>{d.faqLead[locale]}</WordText></p>
+          <Link href={href(locale, "/contact")} className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-clay-deeper underline">{t.home.cta.secondary} <ArrowIcon /></Link>
         </div>
-        <div className="grid gap-4">
-          <Reveal className="relative aspect-[16/9] overflow-hidden rounded-pebble">
-            <Image src={officeImg} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 36rem, 100vw" className="object-cover object-[50%_45%]" />
-          </Reveal>
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {items.map((it, i) => (
-            <Reveal as="li" key={it.title} delay={i * 120}>
-              <Card tone="forest" className="h-full">
-                <h3 className="text-h3">{it.title}</h3>
-                <p className="mt-3 text-cream/80">{it.body}</p>
-              </Card>
-            </Reveal>
-          ))}
-        </ul>
+        <div>
+          <FaqList items={items.slice(0, 5)} />
+          <Link href={href(locale, "/faq")} className="text-link mt-5 inline-flex min-h-11 items-center text-sm">{f.viewAll}</Link>
         </div>
       </Container>
     </Section>
@@ -293,50 +187,19 @@ function BusinessSection({ locale, t }: { locale: Locale; t: Messages["home"]["b
 
 function FinalCta({ locale, t }: { locale: Locale; t: Messages }) {
   const c = t.home.cta;
-  const hasWhatsApp = /^\d+$/.test(siteConfig.contact.whatsapp);
+  const fl = t.home.flow;
   return (
-    <Section id="get-started" spacing="none" className="scroll-mt-16 overflow-hidden pt-20 sm:pt-28 lg:flex lg:min-h-[44rem] lg:items-center lg:py-28">
-      <Container size="wide" className="relative z-10">
-        <Reveal className="lg:max-w-[46%]">
-          <Heading level={2} size={1}>
-            {c.title}
-          </Heading>
-          <p className="mt-5 max-w-xl text-lead text-cocoa-soft">{c.lead}</p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button href={href(locale, "/book")} size="lg" magnetic icon={<ArrowIcon />}>
-              {c.primary}
-            </Button>
-            <Button href={href(locale, "/contact")} size="lg" variant="secondary" className="bg-cream/60 backdrop-blur-sm">
-              {c.secondary}
-            </Button>
-          </div>
-          <p className="mt-8 text-sm text-cocoa-soft">
-            {hasWhatsApp ? (
-              <a href={`https://wa.me/${siteConfig.contact.whatsapp}`} className="text-link" rel="noopener">
-                {c.whatsapp}
-              </a>
-            ) : (
-              <>
-                {c.whatsapp} <Ph>{siteConfig.contact.phoneDisplay}</Ph>
-              </>
-            )}
-          </p>
-          <p className="mt-3 max-w-md text-sm text-cocoa-soft">{c.someone}</p>
-        </Reveal>
+    <section id="get-started" className="mx-3 my-6 scroll-mt-0 rounded-[2rem] bg-sand px-6 py-10 sm:mx-4 sm:rounded-[2.5rem] sm:py-12">
+      <Container className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+        <div className="max-w-xl">
+          <MegaTitle top={fl.ctaTop} italic={fl.ctaItalic} />
+          <p className="mt-3 text-sm text-cocoa-soft"><WordText>{c.lead}</WordText></p>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <Button href={href(locale, "/book")} size="lg" icon={<ArrowIcon />}>{c.primary}</Button>
+          <Button href={href(locale, "/contact")} size="lg" variant="secondary">{c.secondary}</Button>
+        </div>
       </Container>
-      {/* Monsoon window with chai (generated in Google Flow). Mobile: a rounded
-          photo under the text. Desktop: full-bleed, plain wall under the text. */}
-      <div className="relative mx-4 mb-20 mt-12 aspect-[4/3] overflow-hidden rounded-pebble sm:mx-6 sm:mb-28 lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none">
-        <Image
-          src={monsoonWindow}
-          alt=""
-          fill
-          placeholder="blur"
-          sizes="(min-width: 1024px) 100vw, calc(100vw - 2rem)"
-          className="object-cover object-[70%_70%] lg:object-[100%_85%]"
-        />
-        <div aria-hidden className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgb(246_240_230/0.94)_0%,rgb(246_240_230/0.8)_40%,rgb(246_240_230/0.2)_62%,transparent_80%)] lg:block" />
-      </div>
-    </Section>
+    </section>
   );
 }

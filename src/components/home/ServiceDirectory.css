@@ -1,0 +1,16 @@
+.thanal-section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; }
+.thanal-section-heading h2 { max-width: 42rem; font-size: clamp(2rem, 3.5vw, 3.25rem); }
+.thanal-service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+.thanal-service-card { display: block; height: 100%; overflow: hidden; border-radius: 1.25rem; background: var(--color-cream-soft); border: 1px solid rgb(59 42 34 / 0.08); transition: transform 250ms, box-shadow 250ms; }
+.thanal-service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgb(59 42 34 / 0.08); }
+.thanal-service-image { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+.thanal-service-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 35%, rgb(35 27 23 / 0.35)); }
+.thanal-service-tag { position: absolute; z-index: 1; bottom: 0.75rem; left: 0.75rem; padding: 0.3rem 0.65rem; border-radius: 99px; background: var(--color-cream-soft); color: var(--color-cocoa); font-size: 0.6875rem; }
+.thanal-service-copy { padding: 1.25rem; }
+.thanal-service-copy h3 { font-size: 1.5rem; }
+.thanal-service-copy p { margin-top: 0.5rem; color: var(--color-cocoa-soft); font-size: 0.8125rem; }
+.thanal-service-link { display: flex; justify-content: space-between; gap: 0.5rem; margin-top: 1.25rem; font-size: 0.75rem; font-weight: 500; }
+.thanal-directory-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1rem; }
+.thanal-directory-footer a { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 0.75rem; color: var(--color-clay-deeper); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 1023px) { .thanal-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .thanal-section-heading { align-items: flex-start; flex-direction: column; } .thanal-section-heading p { max-width: 36rem; } }
+@media (max-width: 639px) { .thanal-service-grid { gap: 0.75rem; } .thanal-service-image { aspect-ratio: 1; } .thanal-service-copy { padding: 0.9rem; } .thanal-service-copy h3 { font-size: 1.1875rem; } .thanal-service-copy p { font-size: 0.75rem; } .thanal-service-link { font-size: 0.6875rem; margin-top: 0.75rem; } .thanal-service-tag { left: 0.5rem; bottom: 0.5rem; font-size: 0.5625rem; padding: 0.25rem 0.5rem; } }

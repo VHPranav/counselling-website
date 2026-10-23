@@ -1,5 +1,8 @@
 "use client";
 
+import { WordText } from "@/components/motion/WordText";
+
+
 import Link from "next/link";
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { ArrowIcon, Button } from "@/components/ui/Button";
@@ -133,7 +136,6 @@ export function MoodSelector({
   cardLabels,
   bookHref,
   matchHref,
-  crisis,
   heading,
 }: {
   moods: MoodOption[];
@@ -141,8 +143,6 @@ export function MoodSelector({
   cardLabels: TherapistCardLabels;
   bookHref: string;
   matchHref: string;
-  /** Always-visible safety line, e.g. "Feeling unsafe right now? Call Tele-MANAS 14416". */
-  crisis: { text: string; tel: string; number: string };
   /** The section heading, rendered by the server for consistent styling. */
   heading: ReactNode;
 }) {
@@ -180,22 +180,10 @@ export function MoodSelector({
         />
       ))}
 
-      <div className="relative grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
-        <div className="lg:pt-2">
+      <div className="relative grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
+        <div className="flex flex-col items-center justify-center text-center lg:self-center">
           {heading}
-          <p className="mt-5 flex items-start gap-2.5 text-sm text-cocoa-soft">
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden className="mt-0.5 shrink-0 text-moss">
-              <rect {...stroke} x="5" y="10.5" width="14" height="9.5" rx="2.5" />
-              <path {...stroke} d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" />
-            </svg>
-            <span>{labels.lead}</span>
-          </p>
-          <p className="mt-8 hidden border-l-2 border-clay/40 pl-4 text-sm text-cocoa-soft lg:block">
-            {crisis.text}{" "}
-            <a href={`tel:${crisis.tel}`} className="font-semibold text-clay-deeper underline underline-offset-4">
-              {crisis.number}
-            </a>
-          </p>
+          <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-cocoa-soft"><WordText>{labels.lead}</WordText></p>
         </div>
 
         <div>
@@ -214,7 +202,7 @@ export function MoodSelector({
                   onClick={() => setSelectedId(on ? null : m.id)}
                   style={{ "--i": i } as CSSProperties}
                   className={cn(
-                    "group relative flex min-h-28 flex-col items-start justify-between gap-4 rounded-[1.25rem] p-4 text-left sm:min-h-32 sm:p-5",
+                    "group relative flex min-h-24 flex-col items-start justify-between gap-3 rounded-[1.25rem] p-4 text-left sm:min-h-28",
                     "ring-1 ring-inset transition-[background-color,color,box-shadow,transform] duration-300 ease-[var(--ease-soft)]",
                     "touch-manipulation active:scale-[0.98] motion-reduce:transition-none",
                     on
@@ -224,7 +212,7 @@ export function MoodSelector({
                 >
                   <span
                     className={cn(
-                      "grid size-11 place-items-center rounded-full transition-transform duration-500 ease-[var(--ease-soft)] group-hover:scale-110",
+                      "grid size-9 place-items-center rounded-full transition-transform duration-500 ease-[var(--ease-soft)] group-hover:scale-110",
                       on ? "bg-cream/15 text-cream" : tint.chip,
                     )}
                   >
@@ -247,18 +235,12 @@ export function MoodSelector({
               );
             })}
           </div>
-          <p className="mt-6 border-l-2 border-clay/40 pl-4 text-sm text-cocoa-soft lg:hidden">
-            {crisis.text}{" "}
-            <a href={`tel:${crisis.tel}`} className="font-semibold text-clay-deeper underline underline-offset-4">
-              {crisis.number}
-            </a>
-          </p>
         </div>
       </div>
 
-      <p className="sr-only" aria-live="polite">
+      <p className="sr-only" aria-live="polite"><WordText>
         {selected?.response ?? ""}
-      </p>
+      </WordText></p>
 
       <div ref={resultsRef} className="relative scroll-mt-28">
         {selected ? (
@@ -269,15 +251,15 @@ export function MoodSelector({
                 <span className={cn("grid size-12 shrink-0 place-items-center rounded-full", (tints[selected.id] ?? fallbackTint).chip)}>
                   <MoodIcon id={selected.id} />
                 </span>
-                <p className="max-w-3xl font-display text-h3 leading-snug text-cocoa">{selected.response}</p>
+                <p className="max-w-3xl font-display text-h3 leading-snug text-cocoa"><WordText>{selected.response}</WordText></p>
               </div>
             </div>
 
             {/* Topics */}
             <div className="fade-up rounded-pebble bg-cream-soft p-6 ring-1 ring-cocoa/[0.06] sm:p-7 lg:col-span-4" style={{ "--i": 1 } as CSSProperties}>
-              <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-moss [:lang(ml)_&]:text-sm [:lang(ml)_&]:normal-case [:lang(ml)_&]:tracking-normal">
+              <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-moss [:lang(ml)_&]:text-sm [:lang(ml)_&]:normal-case [:lang(ml)_&]:tracking-normal"><WordText>
                 {labels.concernsTitle}
-              </h3>
+              </WordText></h3>
               <ul className="mt-4 divide-y divide-cocoa/10">
                 {selected.concerns.map((c) => (
                   <li key={c.slug}>
@@ -295,9 +277,9 @@ export function MoodSelector({
 
             {/* Therapists */}
             <div className="fade-up rounded-pebble bg-cream-soft p-6 ring-1 ring-cocoa/[0.06] sm:p-7 lg:col-span-5" style={{ "--i": 2 } as CSSProperties}>
-              <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-moss [:lang(ml)_&]:text-sm [:lang(ml)_&]:normal-case [:lang(ml)_&]:tracking-normal">
+              <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-moss [:lang(ml)_&]:text-sm [:lang(ml)_&]:normal-case [:lang(ml)_&]:tracking-normal"><WordText>
                 {labels.therapistsTitle}
-              </h3>
+              </WordText></h3>
               <ul className="mt-4 grid gap-3">
                 {selected.therapists.slice(0, 2).map((th) => (
                   <li key={th.slug}>
@@ -313,8 +295,8 @@ export function MoodSelector({
               style={{ "--i": 3 } as CSSProperties}
             >
               <div>
-                <p className="font-display text-h4 text-cream">{labels.readyTitle}</p>
-                <p className="mt-2 text-sm text-cream/75">{labels.readyBody}</p>
+                <p className="font-display text-h4 text-cream"><WordText>{labels.readyTitle}</WordText></p>
+                <p className="mt-2 text-sm text-cream/75"><WordText>{labels.readyBody}</WordText></p>
               </div>
               <div className="mt-6 flex flex-col gap-2.5">
                 <Button href={bookHref} magnetic icon={<ArrowIcon />} className="w-full justify-center">
@@ -334,7 +316,7 @@ export function MoodSelector({
             </div>
           </div>
         ) : (
-          <p className="mt-10 text-sm text-cocoa-soft lg:text-right">{labels.prompt}</p>
+          <p className="mt-6 text-sm text-cocoa-soft lg:text-right"><WordText>{labels.prompt}</WordText></p>
         )}
       </div>
     </>

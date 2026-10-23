@@ -45,7 +45,7 @@ const nextConfig: NextConfig = {
     // Any path without a language prefix goes to the English version:
     // /about → /en/about. Any legacy /ml paths redirect to /en.
     // Excludes framework files, public assets and root metadata files.
-    const skip = "en|_next|textures|icon\\.svg|robots\\.txt|sitemap\\.xml|favicon\\.ico|\\.well-known";
+    const skip = "en|_next|textures|videos|icon\\.png|apple-icon\\.png|robots\\.txt|sitemap\\.xml|favicon\\.ico|\\.well-known";
     return [
       { source: "/", destination: "/en", permanent: false },
       { source: "/ml", destination: "/en", permanent: true },

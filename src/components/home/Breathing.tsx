@@ -34,7 +34,7 @@ export function Breathing({ labels }: { labels: { in: string; out: string; pause
         {/* Soft halo rings */}
         <div className="absolute inset-0 rounded-full bg-cream/40 motion-safe:animate-[breathe_10s_var(--ease-breath)_infinite]" style={{ animationDelay: "-0.3s" }} />
         <div className="absolute inset-[12%] rounded-full bg-cream/50 motion-safe:animate-[breathe_10s_var(--ease-breath)_infinite]" style={{ animationDelay: "-0.15s" }} />
-        <div className="absolute inset-[22%] rounded-full bg-gradient-to-br from-clay/80 to-ochre/80 shadow-warm-lg motion-safe:animate-[breathe_10s_var(--ease-breath)_infinite]" />
+        <div className="absolute inset-[22%] rounded-full bg-gradient-to-br from-clay/80 to-ochre/80 motion-safe:animate-[breathe_10s_var(--ease-breath)_infinite]" />
         <div className="relative font-display text-h4 font-medium text-cocoa">
           {reduced ? null : (
             <>

@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import Link from "next/link";
 import { href } from "@/i18n/config";
 import { format, getLocale, getMessages } from "@/i18n/dictionaries";
@@ -40,12 +41,12 @@ export default async function BlogPage() {
                     <Pebble className="absolute bottom-6 left-8 w-16 text-cream/80" />
                   </div>
                   <div className="flex flex-1 flex-col p-6 sm:p-8">
-                    <p className="text-sm text-cocoa-soft">
+                    <p className="text-sm text-cocoa-soft"><WordText>
                       <time dateTime={post.meta.date}>{new Intl.DateTimeFormat(intl, { dateStyle: "long" }).format(new Date(post.meta.date))}</time> ·{" "}
                       {format(b.minRead, { n: post.meta.readingMinutes })}
-                    </p>
-                    <h2 className="mt-3 text-h3 leading-snug">{post.meta.title}</h2>
-                    <p className="mt-3 text-cocoa-soft">{post.meta.description}</p>
+                    </WordText></p>
+                    <h2 className="mt-3 text-h3 leading-snug"><WordText>{post.meta.title}</WordText></h2>
+                    <p className="mt-3 text-cocoa-soft"><WordText>{post.meta.description}</WordText></p>
                     <span className="mt-auto flex items-center gap-2 pt-6 text-sm font-medium text-clay-deep">
                       {t.common.readMore}
                       <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />

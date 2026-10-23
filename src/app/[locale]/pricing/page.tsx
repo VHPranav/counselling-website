@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import Link from "next/link";
 import { faqs } from "@/data/faqs";
 import { services } from "@/data/services";
@@ -66,10 +67,10 @@ export default async function PricingPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-sm text-cocoa-soft">{p.note}</p>
-          <p className="mt-2 text-sm">
+          <p className="mt-4 text-sm text-cocoa-soft"><WordText>{p.note}</WordText></p>
+          <p className="mt-2 text-sm"><WordText>
             <Ph>{p.international}</Ph>
-          </p>
+          </WordText></p>
           <Button href={href(locale, "/book")} size="lg" className="mt-8">
             {t.nav.book}
           </Button>
@@ -84,10 +85,10 @@ export default async function PricingPage() {
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {included.map((i) => (
               <li key={i.title} className="rounded-soft bg-cream-soft p-5">
-                <p className="font-medium">{i.title}</p>
-                <p className="mt-1 text-sm text-cocoa-soft">
+                <p className="font-medium"><WordText>{i.title}</WordText></p>
+                <p className="mt-1 text-sm text-cocoa-soft"><WordText>
                   <Ph>{i.body}</Ph>
-                </p>
+                </WordText></p>
               </li>
             ))}
           </ul>

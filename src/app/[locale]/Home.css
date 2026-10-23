@@ -1,0 +1,8 @@
+/* Homepage sections only: the hero retains its existing stylesheet. */
+.thanal-mood { background: var(--color-sage-wash); border: 1px solid rgb(59 42 34 / 0.06); }
+.thanal-team { background: var(--color-cream-soft); }
+.thanal-practitioner { padding-bottom: 1rem; }
+.thanal-practitioner h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.thanal-reviews { background: var(--color-cream); color: var(--color-cocoa); }
+.thanal-reviews .reviews-carousel-card { border-radius: 1.25rem; border: 1px solid rgb(59 42 34 / 0.06); }
+.thanal-reviews .reviews-carousel-quote { color: var(--color-clay-deep); }

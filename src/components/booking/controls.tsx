@@ -24,9 +24,9 @@ export function RadioCard({
     <label
       htmlFor={id}
       className={cn(
-        "relative flex cursor-pointer gap-4 rounded-pebble p-5 ring-1 ring-inset transition-[background-color,box-shadow,transform] duration-300 ease-[var(--ease-soft)]",
+        "booking-choice relative flex cursor-pointer gap-4 rounded-pebble p-5 ring-1 ring-inset transition-[background-color,box-shadow] duration-200 ease-[var(--ease-soft)]",
         "has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-3 has-[:focus-visible]:outline-ochre",
-        checked ? "bg-cream-soft shadow-warm ring-2 ring-clay-deep" : "bg-cream-soft/70 ring-cocoa/15 hover:-translate-y-0.5 hover:ring-cocoa/40",
+        checked ? "bg-cream-soft shadow-warm ring-2 ring-clay-deep" : "bg-cream-soft/70 ring-cocoa/15 hover:ring-cocoa/40",
         className,
       )}
     >

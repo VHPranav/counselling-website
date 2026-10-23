@@ -3,17 +3,17 @@
 import { useEffect } from "react";
 
 /**
- * Desktop-only polish, loaded after the page is idle:
+ * Smooth scrolling and desktop polish, loaded after the page is idle:
  * - Lenis smooth scrolling
  * - magnetic pull on elements with data-magnetic
  * - a soft trailing cursor ring that grows over links and buttons
- * Nothing runs on touch devices or with reduced motion.
+ * Native touch scrolling is retained; reduced motion disables the enhancements.
  */
 export function MotionBoot() {
   useEffect(() => {
     const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!fine || reduce) return;
+    if (reduce) return;
 
     const cleanups: Array<() => void> = [];
     let cancelled = false;
@@ -22,12 +22,14 @@ export function MotionBoot() {
       // Smooth scroll
       const { default: Lenis } = await import("lenis");
       if (cancelled) return;
-      const lenis = new Lenis({ autoRaf: true, lerp: 0.11, anchors: { offset: -96 } });
+      const lenis = new Lenis({ autoRaf: true, smoothWheel: true, syncTouch: false, lerp: 0.09, anchors: true });
       (window as unknown as { __lenis?: unknown }).__lenis = lenis;
       cleanups.push(() => {
         lenis.destroy();
         delete (window as unknown as { __lenis?: unknown }).__lenis;
       });
+
+      if (!fine) return;
 
       // Magnetic buttons (delegated, so it works for elements added later)
       let magnet: HTMLElement | null = null;

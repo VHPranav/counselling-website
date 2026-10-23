@@ -1,3 +1,4 @@
+import { WordText } from "@/components/motion/WordText";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { href } from "@/i18n/config";
@@ -46,25 +47,25 @@ export default async function LegalPage({ params }: PageProps<"/[locale]/legal/[
       <Container className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
         <div className="min-w-0 max-w-3xl">
           <Breadcrumbs label={t.common.breadcrumb} items={[{ label: t.common.home, href: href(locale) }, { label: t.footer.legal }, { label: title }]} />
-          <p role="note" className="mt-8 rounded-soft bg-ochre/20 p-4 text-sm font-medium ring-1 ring-ochre/60">
+          <p role="note" className="mt-8 rounded-soft bg-ochre/20 p-4 text-sm font-medium ring-1 ring-ochre/60"><WordText>
             <Ph>{l.reviewBanner}</Ph>
-          </p>
+          </WordText></p>
           <Heading level={1} size={1} className="mt-8">
             {title}
           </Heading>
-          <p className="mt-3 text-sm text-cocoa-soft">{format(l.updated, { date: updated })}</p>
+          <p className="mt-3 text-sm text-cocoa-soft"><WordText>{format(l.updated, { date: updated })}</WordText></p>
           <article className="mt-10">
             <Content />
           </article>
-          <p className="mt-12 text-sm text-cocoa-soft">
+          <p className="mt-12 text-sm text-cocoa-soft"><WordText>
             <Ph>{l.versionNote}</Ph>
-          </p>
+          </WordText></p>
         </div>
         <aside className="lg:sticky lg:top-28 lg:self-start">
           <nav aria-labelledby="other-policies" className="rounded-pebble bg-sand p-6">
-            <h2 id="other-policies" className="font-sans text-sm font-semibold">
+            <h2 id="other-policies" className="font-sans text-sm font-semibold"><WordText>
               {l.otherPolicies}
-            </h2>
+            </WordText></h2>
             <ul className="mt-3 space-y-1">
               {legalSlugs.map((s) => (
                 <li key={s}>

@@ -12,15 +12,18 @@
 @theme {
   --color-cream: #f6f0e6;
   --color-cream-soft: #fbf8f2;
-  --color-sand: #e8dcc8;
+  --color-sage-wash: #e8eadf;
+  --color-sand: var(--color-sage-wash); /* shared surface, retained token for existing components */
   --color-clay: #c47a5a;
   --color-clay-deep: #9c5238;
   --color-clay-deeper: #7f4029; /* added: CTA hover, links on sand */
   --color-ochre: #d9a441;
+  --color-blush: var(--color-cream-soft); /* shared ivory surface */
+  --color-ink: #231b17; /* near-black for dark sections */
   --color-sage: #a3a98b;
   --color-moss: #5e6b4a;
   --color-forest: #2f3a2c;
-  --color-forest-soft: #3b4838; /* added: cards on forest */
+  --color-forest-soft: var(--color-forest);
   --color-cocoa: #3b2a22;
   --color-cocoa-soft: #5c4a40; /* added: secondary text, 7.4:1 on cream */
 
@@ -251,6 +254,17 @@ html:lang(ml) {
   animation: hero-photo-in 2.4s var(--ease-soft) both;
 }
 
+@keyframes waveform {
+  0%, 100% {
+    transform: scaleY(0.3);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
 /* Soft blur-fade-up used for lead text, CTAs and other hero elements. */
 @keyframes fade-up {
   from {
@@ -431,4 +445,24 @@ html.lenis body {
   ::view-transition-new(*) {
     animation: none !important;
   }
+}
+
+/* Wispr-style display type: big serif with an italic phrase. */
+.text-mega {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 1.6rem + 4.2vw, 5.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+.text-mega-sm {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.4rem + 2.6vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+}
+.text-mega em,
+.text-mega-sm em {
+  font-style: italic;
 }

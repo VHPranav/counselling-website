@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "ghost" | "light";
+type Variant = "primary" | "secondary" | "ghost" | "light" | "accent";
 type Size = "md" | "lg" | "sm";
 
 const base =
@@ -17,6 +17,8 @@ const variants: Record<Variant, string> = {
     "bg-transparent text-cocoa ring-1 ring-inset ring-cocoa/30 hover:ring-cocoa hover:bg-cocoa/[0.04] active:scale-[0.98]",
   ghost: "bg-transparent text-cocoa hover:bg-sand/70 active:scale-[0.98]",
   light: "bg-cream text-forest hover:bg-white shadow-warm active:scale-[0.98]",
+  accent:
+    "rounded-xl! bg-blush text-cocoa ring-2 ring-inset ring-cocoa hover:bg-sand active:scale-[0.98]",
 };
 
 // Min height 44px everywhere for touch targets; extra vertical room for Malayalam.

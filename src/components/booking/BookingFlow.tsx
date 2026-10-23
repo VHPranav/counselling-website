@@ -14,6 +14,8 @@ import type { Therapist } from "@/data/types";
 import type { Messages } from "@/i18n/dictionaries";
 import { cn } from "@/lib/cn";
 import { Checkbox, RadioCard, Segmented, SelectField } from "./controls";
+import type Lenis from "lenis";
+import "./BookingMotion.css";
 
 export type FlowService = {
   slug: string;
@@ -126,7 +128,7 @@ export function BookingFlow({ locale, t, common, modeLabels, services, therapist
 
   // ---- Step navigation with browser history (back button goes to the previous step)
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const firstRender = useRef(true);
+  const previousStep = useRef(step);
   const goTo = useCallback((next: number) => {
     setStep(next);
     window.history.pushState({ bookingStep: next }, "");
@@ -141,13 +143,16 @@ export function BookingFlow({ locale, t, common, modeLabels, services, therapist
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
+    if (previousStep.current === step) return;
+    previousStep.current = step;
     headingRef.current?.focus({ preventScroll: true });
-    const top = headingRef.current?.closest("section")?.getBoundingClientRect().top ?? 0;
-    if (top < 0) headingRef.current?.closest("section")?.scrollIntoView({ block: "start" });
+    const section = headingRef.current?.closest("section");
+    if (section && section.getBoundingClientRect().top < 96) {
+      const target = Math.max(0, section.getBoundingClientRect().top + window.scrollY - 96);
+      const lenis = (window as unknown as { __lenis?: Lenis }).__lenis;
+      lenis?.scrollTo(target, { immediate: true, force: true });
+      window.scrollTo({ top: target, behavior: "instant" });
+    }
   }, [step]);
 
   // ---- Availability, fetched when the time step opens (cached per query)
@@ -853,8 +858,8 @@ function StepShell({
   children: ReactNode;
 }) {
   return (
-    <div className="fade-up">
-      <h2 ref={headingRef} tabIndex={-1} className="mt-2 text-h2 outline-none">
+    <div className="booking-step-panel">
+      <h2 ref={headingRef} tabIndex={-1} className="booking-step-heading mt-2 text-h2 outline-none">
         {title}
       </h2>
       {lead ? <p className="mt-2 text-cocoa-soft">{lead}</p> : null}

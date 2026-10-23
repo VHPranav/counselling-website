@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
+import { services } from "@/data/services";
 import { concerns } from "@/data/concerns";
 import { therapists } from "@/data/therapists";
 import { localeTags, locales } from "@/i18n/config";
@@ -15,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "",
     "/services",
-    "/concerns",
+    ...services.map((service) => `/services/${service.slug}`),
     ...concerns.map((c) => `/concerns/${c.slug}`),
     "/therapists",
     ...therapists.map((t) => `/therapists/${t.slug}`),

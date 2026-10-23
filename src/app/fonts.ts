@@ -5,6 +5,7 @@ export const fraunces = Fraunces({
   subsets: ["latin"],
   // SOFT gives the warm, rounded feel. Optical sizing is skipped to halve the file size.
   axes: ["SOFT"],
+  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-fraunces",
 });
