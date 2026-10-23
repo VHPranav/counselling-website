@@ -27,6 +27,7 @@ export function toCardData(th: Therapist, locale: Locale, t: Messages): Therapis
     price: th.priceFromInr == null ? format(tt.from, { price: t.home.services.price }) : format(tt.from, { price: formatInr(th.priceFromInr, locale) }),
     next,
     photo: th.photo,
+    voiceIntroSrc: th.voiceIntroSrc,
     tone: th.tone,
   };
 }

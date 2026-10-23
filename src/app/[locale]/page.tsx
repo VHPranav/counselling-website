@@ -22,7 +22,7 @@ import { MoodSelector, type MoodOption } from "@/components/home/MoodSelector";
 import { ServiceChooser } from "@/components/services/ServiceChooser";
 import { discoveryLabels as d } from "@/data/service-discovery";
 import "./Home.css";
-import { TherapistAvatar } from "@/components/therapists/TherapistCard";
+import { PractitionerCard } from "@/components/therapists/PractitionerCard";
 
 export function generateMetadata() {
   return pageMetadata({ path: "/" });
@@ -99,7 +99,7 @@ function MoodSection({ locale, t }: { locale: Locale; t: Messages }) {
 
 function TherapistsSection({ locale, t }: { locale: Locale; t: Messages }) {
   const tt = t.home.therapists;
-  const preview = therapists.slice(0, 4).map((th) => toCardData(th, locale, t));
+  const preview = therapists.slice(0, 6).map((th) => toCardData(th, locale, t));
   return (
     <Section id="team" spacing="tight" className="thanal-team overflow-hidden">
       <Container className="relative">
@@ -113,23 +113,8 @@ function TherapistsSection({ locale, t }: { locale: Locale; t: Messages }) {
             {tt.viewAll}
           </Button>
         </div>
-        <ul className="mt-7 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
-          {preview.map((data, i) => (
-            <Reveal as="li" key={data.slug} delay={i * 60}>
-              <article className="thanal-practitioner group relative h-full">
-                <TherapistAvatar tone={data.tone} photo={data.photo} className="aspect-[4/3] w-full rounded-[1.25rem]!" sizes="(min-width: 1024px) 22vw, 44vw" />
-                <h3 className="mt-4 font-sans text-sm font-semibold leading-snug tracking-normal"><WordText>
-                  <Link href={data.href} className="after:absolute after:inset-0 after:rounded-[1.25rem] after:content-['']"><Ph>{data.name}</Ph></Link>
-                </WordText></h3>
-                <p className="mt-1 text-xs text-clay-deep"><WordText><Ph>{data.role}</Ph></WordText></p>
-                <p className="mt-2 text-xs leading-relaxed text-cocoa-soft"><WordText><Ph>{data.credential}</Ph></WordText></p>
-                <p className="mt-3 border-t border-cocoa/10 pt-3 text-xs text-cocoa-soft"><WordText>{data.languages}</WordText></p>
-                <p className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs font-medium"><WordText>
-                  <Ph>{data.price}</Ph><span aria-hidden="true" className="text-clay-deep">{tt.viewProfile} →</span>
-                </WordText></p>
-              </article>
-            </Reveal>
-          ))}
+        <ul className="home-practitioner-grid home-practitioner-grid-six">
+          {preview.map((data, i) => <Reveal as="li" key={data.slug} delay={i * 60}><PractitionerCard data={data} bookHref={href(locale, `/book?therapist=${data.slug}`)} profileLabel={tt.viewProfile} /></Reveal>)}
         </ul>
         <p className="mt-5 max-w-2xl text-xs text-cocoa-soft"><WordText>
           <Ph>{tt.credentialsNote}</Ph>

@@ -53,6 +53,8 @@ export type Therapist = {
   availability: "this-week" | "next-week" | "later";
   /** Path under /public, or null for the illustrated placeholder. */
   photo: string | null;
+  /** Optional, consented recording for the card voice introduction. */
+  voiceIntroSrc?: string;
   /** Placeholder avatar colour. */
   tone: "clay" | "moss" | "ochre" | "sage";
 };

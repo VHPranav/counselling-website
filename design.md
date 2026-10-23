@@ -165,3 +165,10 @@ Booking step changes use a brief 220 ms entrance without blur, with subtle 320 m
 ### Heading versus paragraph motion
 
 Reference checks: Framer's Text Effects lesson (https://www.framer.com/academy/lessons/text-effects) and GSAP SplitText documentation (https://gsap.com/docs/v3/Plugins/SplitText/). Headings retain the word-by-word blur-up sequence; paragraphs and subtext now reveal by rendered line, with every word in a line sharing the same delay and gentler 5 px blur / 10 px rise over 520 ms. Font readiness is checked before observation, line groups are measured at reveal time for the current breakpoint, and active motion settles immediately on resize. Added text spans to remaining page and MDX text renderers for consistency. Booking keeps its faster intro timings and its form controls remain exempt. Card top-left scale entrances are unchanged.
+
+
+### Practitioner cards: Thanal interpretation of Oppam
+
+Shared homepage, directory and related-profile cards now include voice-introduction players. Recordings are not yet supplied: players display disabled “Coming soon” placeholders, as requested; adding a voiceIntroSrc enables playback, seeking and one recording at a time. The homepage displays six profiles in three columns on wide desktop, two on tablet and one on mobile. The directory retains two desktop columns.
+
+The composition intentionally differs from the reference: inset arch portraits, serif names, rounded cream shells, simple divided facts, a full-width voice strip, and a separate profile/book action row. Sage, pale yellow and blush accents follow each practitioner's existing tone, adding variety within cards while retaining the existing section backgrounds. Profile and booking links preserve the selected practitioner. No competitor portraits, recordings, fees or credentials are reused.

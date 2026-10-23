@@ -1,0 +1,41 @@
+.practitioner-card { height: 100%; min-width: 0; display: flex; flex-direction: column; border: 1px solid rgb(59 42 34 / 0.13); border-radius: 1.5rem; overflow: hidden; background: var(--color-cream-soft); }
+.practitioner-card-clay { --practitioner-accent: #f0ded8; }
+.practitioner-card-moss, .practitioner-card-sage { --practitioner-accent: #e1e8d8; }
+.practitioner-card-ochre { --practitioner-accent: #f3e9bd; }
+.practitioner-card-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 10rem; padding: 1.1rem 1.1rem 1.1rem 1.3rem; background: var(--practitioner-accent, var(--color-sage-wash)); }
+.practitioner-card-header > div { padding-block: 1.25rem; }
+.practitioner-card-header h3 { font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.3; font-weight: 500; letter-spacing: -0.025em; }
+.practitioner-card-header h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.practitioner-card-header p { font-size: 0.8125rem; line-height: 1.55; margin-top: 0.4rem; color: var(--color-cocoa-soft); }
+.practitioner-card-portrait { display: block; width: 7rem; height: 8.25rem; border-radius: 4rem 4rem 1rem 1rem; box-shadow: 0 0 0 5px rgb(255 255 255 / 0.35); flex: none; overflow: hidden; }
+.practitioner-card-portrait > div { border-radius: 0; }
+.practitioner-card-body { display: flex; flex-direction: column; flex: 1; padding: 1rem 1.25rem 1.25rem; }
+.practitioner-card-topics { display: flex; flex-wrap: wrap; gap: 0.4rem; min-height: 2.25rem; align-content: flex-start; }
+.practitioner-card-topics li { padding: 0.4rem 0.65rem; border: 1px solid rgb(59 42 34 / 0.1); border-radius: 99px; font-size: 0.6875rem; line-height: 1.4; }
+.practitioner-card-voice { display: flex; align-items: center; gap: 0.75rem; padding-block: 0.75rem; margin-top: 0.65rem; border-block: 1px solid rgb(59 42 34 / 0.1); }
+.practitioner-card-profile { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; flex: none; min-height: 2.75rem; padding: 0.5rem 0.85rem; text-underline-offset: 4px; font-size: 0.75rem; }
+.practitioner-card-profile:hover { text-decoration: underline; }
+.practitioner-card-facts { display: flex; gap: 0.6rem; padding-block: 1rem; }
+.practitioner-card-facts > div { display: flex; flex-direction: column; flex: 1; min-width: 0; gap: 0.35rem; padding: 0.3rem 0.6rem 0.3rem 0; }
+.practitioner-card-facts > div + div { border-left: 1px solid rgb(59 42 34 / 0.12); padding-left: 0.6rem; }
+.practitioner-card-facts dd { font-size: 0.8125rem; line-height: 1.4; font-weight: 500; }
+.practitioner-card-facts dt { font-size: 0.6875rem; line-height: 1.4; color: var(--color-cocoa-soft); }
+.practitioner-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-top: 1px solid rgb(59 42 34 / 0.1); padding-top: 0.75rem; margin-top: auto; }
+.practitioner-card-footer > div { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; width: 100%; }
+.practitioner-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-top: 0.9rem; }
+.practitioner-card-footer p { font-size: 0.75rem; color: var(--color-cocoa-soft); }
+.practitioner-card-footer strong { display: block; font-size: 0.875rem; font-weight: 500; }
+.practitioner-card-book { min-width: 9rem; min-height: 2.75rem; background: var(--color-forest); color: var(--color-cream-soft); box-shadow: none; }
+.practitioner-card-book:hover { background: var(--color-moss); box-shadow: none; }
+.voice-intro { display: flex; align-items: center; gap: 0.5rem; flex: 1; min-width: 0; padding: 0.35rem 0.65rem 0.35rem 0.35rem; border-radius: 99px; background: var(--practitioner-accent, var(--color-cream)); }
+.voice-intro-play { display: grid; place-items: center; width: 2.1rem; min-height: 2.25rem; flex: none; border-radius: 50%; color: var(--color-forest); }
+.voice-intro-play:disabled { cursor: default; opacity: 0.5; }
+.voice-intro-track { position: relative; flex: 1; min-width: 0; }
+.voice-intro-wave { display: flex; gap: 2px; align-items: center; justify-content: space-between; height: 2rem; overflow: hidden; color: var(--color-moss); }
+.voice-intro-wave span { display: block; flex: 1; min-width: 2px; max-width: 3px; border-radius: 99px; background: currentColor; }
+.voice-intro-seek { position: absolute; inset: 0; opacity: 0; width: 100%; cursor: pointer; }
+.voice-intro-track:has(.voice-intro-seek:focus-visible) { outline: 2px solid var(--color-forest); outline-offset: 3px; }
+.voice-intro-caption { font-size: 0.625rem; white-space: nowrap; color: var(--color-cocoa-soft); }
+.home-practitioner-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.75rem; }
+@media (min-width: 1100px) { .home-practitioner-grid-six { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) { .home-practitioner-grid { grid-template-columns: 1fr; gap: 1rem; } .practitioner-card-header { padding: 1rem 1.1rem; min-height: 9rem; } .practitioner-card-portrait { width: 7rem; height: 8.25rem; } .practitioner-card-header h3 { font-size: 1.125rem; } .practitioner-card-body { padding: 0.9rem 1rem 1rem; } .practitioner-card-voice { gap: 0.5rem; } .practitioner-card-profile { padding-inline: 0.65rem; font-size: 0.6875rem; } .practitioner-card-facts { gap: 0.4rem; } .practitioner-card-facts > div { padding: 0.6rem 0.45rem; } .practitioner-card-facts dd { font-size: 0.75rem; } .voice-intro-caption { font-size: 0.5625rem; } }

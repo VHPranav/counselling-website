@@ -1,3 +1,4 @@
+import { PractitionerCard } from "@/components/therapists/PractitionerCard";
 import { WordText } from "@/components/motion/WordText";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,12 +8,12 @@ import { therapists } from "@/data/therapists";
 import { href } from "@/i18n/config";
 import { format, getLocale, getMessages } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
-import { cardLabels, formatInr, toCardData } from "@/lib/therapists";
+import { formatInr, toCardData } from "@/lib/therapists";
 import { ArrowIcon, Button } from "@/components/ui/Button";
 import { Breadcrumbs } from "@/components/ui/PageParts";
 import { Ph } from "@/components/ui/Placeholder";
 import { Container, Heading, Section } from "@/components/ui/Section";
-import { TherapistAvatar, TherapistCard } from "@/components/therapists/TherapistCard";
+import { TherapistAvatar } from "@/components/therapists/TherapistCard";
 import "./Profile.css";
 
 export function generateStaticParams() {
@@ -117,10 +118,10 @@ export default async function TherapistProfilePage({ params }: PageProps<"/[loca
             <Heading level={2} size={3}>
               {p.other}
             </Heading>
-            <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="home-practitioner-grid">
               {others.map((o) => (
                 <li key={o.slug}>
-                  <TherapistCard data={o} labels={cardLabels(t)} compact />
+                  <PractitionerCard data={o} bookHref={href(locale, `/book?therapist=${o.slug}`)} profileLabel={t.home.therapists.viewProfile} />
                 </li>
               ))}
             </ul>

@@ -18,6 +18,7 @@ export type TherapistCardData = {
   price: string;
   next: string;
   photo: string | null;
+  voiceIntroSrc?: string;
   tone: Therapist["tone"];
 };
 

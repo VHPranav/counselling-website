@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const cards = [
-  '[data-reveal="card"]', '.services-page-card', '.psychologist-card',
+  '[data-reveal="card"]', '.practitioner-card', '.services-page-card', '.psychologist-card',
   '.concern-practitioner-card', '.concern-sign-grid > li', '.concern-benefit-grid > li',
   '.concern-session-grid > li', '.concern-experience-grid > li', '.concern-resource-grid > a',
   '.concern-process-steps > li', '.reviews-carousel-card', '.thanal-practitioner',

@@ -33,7 +33,6 @@ export default async function TherapistsPage() {
           <TherapistDirectory
             entries={therapists.map((th) => ({
               card: toCardData(th, locale, t),
-              bio: th.bio[locale],
               bookHref: href(locale, `/book?therapist=${th.slug}`),
             }))}
             labels={p}
